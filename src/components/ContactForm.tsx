@@ -3,37 +3,26 @@
 import { useState, useSyncExternalStore, type FormEvent } from "react";
 import Link from "next/link";
 import { getSupabase } from "@/lib/supabase";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 type Status = "idle" | "sending" | "sent" | "error";
 type Variant = "talk" | "review";
 
 const subscribeNever = () => () => {};
 
-const copy = {
-  talk: {
-    button: "Send message",
-    sentTitle: "Thanks, we have your message.",
-    sentText: "We will reply to the email address you gave us.",
-    error: "We could not send your message.",
-  },
-  review: {
-    button: "Get my free review",
-    sentTitle: "Thanks, we have your listing.",
-    sentText: "We will email our review to the address you gave us.",
-    error: "We could not send your listing.",
-  },
-};
 
 export default function ContactForm({ variant = "talk" }: { variant?: Variant }) {
   const [status, setStatus] = useState<Status>("idle");
   // False until React has hydrated, so the form can never submit natively.
   const ready = useSyncExternalStore(subscribeNever, () => true, () => false);
-  const text = copy[variant];
+  const { t, href } = useLocale();
+  const form = t.form;
+  const text = form[variant];
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const form = event.currentTarget;
-    const data = new FormData(form);
+    const target = event.currentTarget;
+    const data = new FormData(target);
     setStatus("sending");
 
     // Both forms write to the leads table; `source` tells them apart.
@@ -50,7 +39,7 @@ export default function ContactForm({ variant = "talk" }: { variant?: Variant })
           listing_url: isReview ? String(data.get("listing") ?? "").trim() : null,
         });
       if (error) throw error;
-      form.reset();
+      target.reset();
       setStatus("sent");
     } catch (err) {
       console.error(err);
@@ -75,13 +64,13 @@ export default function ContactForm({ variant = "talk" }: { variant?: Variant })
     <form method="post" onSubmit={handleSubmit} className="space-y-5">
       <div>
         <label htmlFor={`${variant}-name`} className={label}>
-          Name
+          {form.name}
         </label>
         <input id={`${variant}-name`} name="name" required autoComplete="name" className={field} />
       </div>
       <div>
         <label htmlFor={`${variant}-email`} className={label}>
-          Email
+          {form.email}
         </label>
         <input
           id={`${variant}-email`}
@@ -95,7 +84,7 @@ export default function ContactForm({ variant = "talk" }: { variant?: Variant })
       {variant === "review" ? (
         <div>
           <label htmlFor="review-listing" className={label}>
-            Amazon listing link
+            {form.listing}
           </label>
           <input
             id="review-listing"
@@ -109,14 +98,14 @@ export default function ContactForm({ variant = "talk" }: { variant?: Variant })
       ) : (
         <div>
           <label htmlFor="talk-message" className={label}>
-            Message
+            {form.message}
           </label>
           <textarea
             id="talk-message"
             name="message"
             required
             rows={4}
-            placeholder="What do you sell, and what do you want to improve?"
+            placeholder={form.messagePlaceholder}
             className={field}
           />
         </div>
@@ -126,17 +115,17 @@ export default function ContactForm({ variant = "talk" }: { variant?: Variant })
         disabled={!ready || status === "sending"}
         className="w-full rounded-full bg-cyan px-6 py-4 font-display font-semibold text-graphite transition-transform duration-150 ease-out active:scale-[0.98] disabled:opacity-70"
       >
-        {status === "sending" ? "Sending..." : text.button}
+        {status === "sending" ? form.sending : text.button}
       </button>
       {status === "error" && (
         <p role="alert" className="text-sm text-apricot">
-          {text.error} Try again, or email us at nautilostd@gmail.com.
+          {text.error} {form.retry} nautilostd@gmail.com.
         </p>
       )}
       <p className="text-sm text-offwhite/75">
-        We only use your details to reply to you. Read our{" "}
-        <Link href="/privacy" className="underline underline-offset-4 hover:text-cyan">
-          privacy note
+        {form.privacyBefore}{" "}
+        <Link href={href("/privacy")} className="underline underline-offset-4 hover:text-cyan">
+          {form.privacyLink}
         </Link>
         .
       </p>

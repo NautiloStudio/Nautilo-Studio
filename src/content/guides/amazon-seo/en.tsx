@@ -1,7 +1,5 @@
-import type { Metadata } from "next";
 import Link from "next/link";
-import LandingPage, { type LandingContent } from "@/components/LandingPage";
-import { SITE_URL } from "@/lib/landing-pages";
+import type { GuideCopy } from "../types";
 
 const AMAZON_SEO_GUIDE = "https://sell.amazon.com/blog/amazon-seo";
 const TITLE_RULES = "https://sellercentral.amazon.com/gp/help/external/GYTR6SYGFA5E3EQC";
@@ -11,20 +9,7 @@ const title = "Amazon SEO for US Sellers: Rank Higher | Nautilo Studio";
 const description =
   "Amazon SEO for US sellers: what decides where your product ranks, where your keywords belong and the mistakes to avoid. Get a free listing review today.";
 
-export const metadata: Metadata = {
-  title,
-  description,
-  alternates: { canonical: `${SITE_URL}/amazon-seo` },
-  openGraph: {
-    title,
-    description,
-    url: `${SITE_URL}/amazon-seo`,
-    siteName: "Nautilo Studio",
-    type: "article",
-  },
-};
-
-const page: LandingContent = {
+const page: GuideCopy["page"] = {
   slug: "amazon-seo",
   breadcrumb: "Amazon SEO",
   question: "How do you rank higher in Amazon search results?",
@@ -181,6 +166,5 @@ const page: LandingContent = {
   ],
 };
 
-export default function AmazonSeoPage() {
-  return <LandingPage page={page} />;
-}
+const copy: GuideCopy = { title, page };
+export default copy;

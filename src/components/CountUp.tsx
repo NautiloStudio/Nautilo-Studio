@@ -1,16 +1,19 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { localeTags } from "@/i18n/config";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 type Props = { to: number; from?: number; duration?: number; prefix?: string; suffix?: string };
 
-const format = (value: number) => Math.round(value).toLocaleString("en-US");
 
 // Counts up to its value the first time it scrolls into view. The final value reserves the
 // space from the start, so nothing shifts while the digits change.
 export default function CountUp({ to, from = 0, duration = 1400, prefix = "", suffix = "" }: Props) {
   const ref = useRef<HTMLSpanElement>(null);
   const [value, setValue] = useState(from);
+  const { lang } = useLocale();
+  const format = (n: number) => Math.round(n).toLocaleString(localeTags[lang]);
 
   useEffect(() => {
     const node = ref.current;

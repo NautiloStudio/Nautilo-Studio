@@ -10,81 +10,30 @@ import SellerMarquee from "@/components/SellerMarquee";
 import SiteHeader from "@/components/SiteHeader";
 import StepDemo from "@/components/StepDemo";
 import TalkButton from "@/components/TalkButton";
+import SiteFooter from "@/components/SiteFooter";
+import { withCounts } from "@/components/withCounts";
+import { hasLocale, localePath } from "@/i18n/config";
+import { getDictionary } from "@/i18n/dictionaries";
+import { notFound } from "next/navigation";
 
-const services = [
-  {
-    title: "Ads & SEO",
-    problem: "“Shoppers can’t find my product.”",
-    text: "We improve your keyword ranking and run Sponsored Products campaigns, so more shoppers reach your listings.",
-    image: "/img/service-ads.jpg",
-    alt: "Magnifying glass leaning against a small parcel",
-    tile: "bg-cyan",
-    span: "md:col-span-7",
-    guide: { href: "/amazon-seo", label: "Read our Amazon SEO guide" },
-  },
-  {
-    title: "Listing optimisation",
-    problem: "“People look, but they don’t buy.”",
-    text: "We rework your titles, bullets, A+ content and images, so more visitors choose to buy.",
-    image: "/img/service-listing.jpg",
-    alt: "Bamboo cutting board with a blank paper tag",
-    tile: "bg-apricot",
-    span: "md:col-span-5",
-    guide: {
-      href: "/listing-optimization",
-      label: "Read our listing optimisation guide",
-    },
-  },
-  {
-    title: "Data analysis",
-    problem: "“I don’t know which numbers matter.”",
-    text: "We turn your sales, traffic and conversion data into clear next steps.",
-    image: "/img/service-data.jpg",
-    alt: "Cardboard parcels stacked in rising columns like a bar chart",
-    tile: "bg-royal",
-    span: "md:col-span-5",
-    guide: { href: "/data-analysis", label: "Read our data analysis guide" },
-  },
-  {
-    title: "AI automation",
-    problem: "“Repetitive work eats my week.”",
-    text: "We set up AI agents to handle repetitive listing and reporting tasks.",
-    guide: { href: "/ai-automation", label: "Read our AI automation guide" },
-    image: "/img/service-ai.jpg",
-    alt: "White robotic arm placing a parcel at the end of a neat row",
-    tile: "bg-graphite",
-    span: "md:col-span-7",
-  },
+// Pictures and links for each service; the words come from the dictionary, in the same order.
+const serviceMedia = [
+  { image: "/img/service-ads.jpg", tile: "bg-cyan", href: "/amazon-seo" },
+  { image: "/img/service-listing.jpg", tile: "bg-apricot", href: "/listing-optimization" },
+  { image: "/img/service-data.jpg", tile: "bg-royal", href: "/data-analysis" },
+  { image: "/img/service-ai.jpg", tile: "bg-graphite", href: "/ai-automation" },
 ];
+const demos = ["analyse", "optimise", "automate"] as const;
 
-const steps = [
-  {
-    word: "Analyse.",
-    demo: "analyse" as const,
-    text: "We read your sales, traffic and conversion data and turn it into clear next steps.",
-  },
-  {
-    word: "Optimise.",
-    demo: "optimise" as const,
-    text: "We work on titles, bullets, A+ content and images, then on keywords and Sponsored Products campaigns.",
-  },
-  {
-    word: "Automate.",
-    demo: "automate" as const,
-    text: "AI agents take over the repetitive listing and reporting tasks.",
-  },
-];
+export default async function Home({ params }: PageProps<"/[lang]">) {
+  const { lang } = await params;
+  if (!hasLocale(lang)) notFound();
+  const dict = await getDictionary(lang);
+  const t = dict.home;
+  const href = (path: string) => localePath(lang, path);
+  const services = t.services.map((service, index) => ({ ...service, ...serviceMedia[index] }));
+  const steps = t.steps.map((step, index) => ({ ...step, demo: demos[index] }));
 
-const reviewSteps = [
-  "You send us a link to one Amazon listing.",
-  "We review its title, bullets, A+ content and images.",
-  "We email you what we’d improve first.",
-];
-
-const statement =
-  "Running an Amazon store takes enough time. Improving every listing shouldn’t be on you alone.";
-
-export default function Home() {
   return (
     <>
       <SiteHeader onHome />
@@ -96,36 +45,36 @@ export default function Home() {
             className="rise mx-auto max-w-6xl font-display text-[clamp(2.6rem,6.4vw,6rem)] font-bold leading-[1.02] tracking-[-0.04em]"
             style={{ "--i": 0 } as React.CSSProperties}
           >
-            The marketing team your Amazon store doesn’t have.
+            {t.title}
           </h1>
           <p
             className="rise mx-auto mt-7 max-w-xl text-lg leading-relaxed text-slate sm:text-xl"
             style={{ "--i": 1 } as React.CSSProperties}
           >
-            Data and AI to help US Amazon sellers grow and convert more.
+            {t.subtitle}
           </p>
           <div
             className="rise mt-9 flex flex-wrap items-center justify-center gap-x-7 gap-y-4"
             style={{ "--i": 2 } as React.CSSProperties}
           >
-            <TalkButton href="#review" label="Get a free listing review" />
+            <TalkButton href="#review" label={t.getReview} />
             <a
               href="#services"
               className="font-display font-semibold text-graphite underline decoration-sand decoration-2 underline-offset-8 py-3 transition-colors hover:decoration-royal"
             >
-              See our services
+              {t.seeServices}
             </a>
           </div>
           <p
             className="rise mt-5 text-slate"
             style={{ "--i": 3 } as React.CSSProperties}
           >
-            Not sure what you need?{" "}
+            {t.notSure}{" "}
             <a
               href="#contact"
               className="font-medium text-graphite underline underline-offset-4 transition-colors hover:text-royal"
             >
-              Talk to us
+              {t.talk}
             </a>
             .
           </p>
@@ -140,33 +89,32 @@ export default function Home() {
         </section>
 
         {/* Who we're built for */}
-        <SellerMarquee />
+        <SellerMarquee t={dict.marquee} />
 
         {/* Statement */}
         <section className="mx-auto max-w-6xl px-4 py-28 text-center sm:px-6 md:py-44">
           <p className="font-display text-[clamp(2.2rem,5.6vw,5.25rem)] font-bold leading-[1.06] tracking-[-0.035em]">
-            {statement.split(" ").map((word, i) => (
+            {t.statement.split(" ").map((word, i) => (
               <span key={i} className="ink-word">
                 {word}{" "}
               </span>
             ))}
           </p>
           <p className="reveal mx-auto mt-10 max-w-xl text-lg leading-relaxed text-slate sm:text-xl">
-            You already sell a good product on Amazon. Agencies do it for you
-            and tools leave you on your own, so we work on it with you.
+            {t.statementText}
           </p>
         </section>
 
         {/* Services */}
         <section id="services" className="mx-auto max-w-7xl px-4 sm:px-6">
           <h2 className="reveal max-w-3xl font-display text-[clamp(2rem,4.4vw,4rem)] font-bold leading-[1.05] tracking-[-0.03em]">
-            Which of these sounds like your store?
+            {t.servicesHeading}
           </h2>
           {/* Cards stack on top of each other as you scroll, each leaving its label visible. */}
           <ol className="m-0 mt-12 list-none space-y-6 p-0">
             {services.map((service, index) => (
               <li
-                key={service.title}
+                key={service.href}
                 className="sticky"
                 style={
                   {
@@ -187,10 +135,10 @@ export default function Home() {
                         {service.text}
                       </p>
                       <Link
-                        href={service.guide.href}
+                        href={href(service.href)}
                         className="group mt-6 inline-flex items-center gap-3 rounded-full bg-royal py-2 pl-5 pr-2 font-display font-semibold text-offwhite transition-transform duration-150 ease-out active:scale-[0.97]"
                       >
-                        {service.guide.label}
+                        {service.guide}
                         <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/15 transition-transform duration-300 ease-(--ease-out-strong) group-hover:-translate-y-px group-hover:translate-x-0.5">
                           <ArrowUpRight size={16} weight="bold" aria-hidden />
                         </span>
@@ -222,11 +170,10 @@ export default function Home() {
           <div className="grid items-start gap-10 md:grid-cols-2 md:gap-16">
             <div className="md:sticky md:top-28">
               <h2 className="font-display text-[clamp(2rem,4.4vw,4rem)] font-bold leading-[1.05] tracking-[-0.03em]">
-                Grow chamber by chamber.
+                {t.howHeading}
               </h2>
               <p className="mt-5 max-w-md text-lg leading-relaxed text-slate">
-                A nautilus adds one chamber at a time along the golden spiral.
-                Your store can grow the same way.
+                {t.howText}
               </p>
               <Nautilus
                 fillOnScroll
@@ -242,7 +189,7 @@ export default function Home() {
                 {steps.map((step) => (
                   <li key={step.word} className="glow-card rounded-[2rem]">
                     <div className="flex min-h-[46vh] flex-col justify-between gap-8 rounded-[2rem] bg-white p-6 md:p-10">
-                      <StepDemo kind={step.demo} />
+                      <StepDemo kind={step.demo} t={dict.demo} />
                       <div>
                         <p className="font-display text-[clamp(2.4rem,5vw,4.5rem)] font-bold tracking-[-0.03em] text-royal">
                           {step.word}
@@ -260,10 +207,10 @@ export default function Home() {
         </section>
 
         {/* Case study */}
-        <CaseStudy />
+        <CaseStudy t={dict.caseStudy} />
 
         {/* Free guides */}
-        <GuideGallery />
+        <GuideGallery heading={withCounts(dict.common.gallery.heading)} />
 
         {/* Free listing review */}
         <section
@@ -273,10 +220,10 @@ export default function Home() {
           <div className="grid gap-12 rounded-[2rem] bg-graphite px-8 py-14 text-offwhite md:grid-cols-2 md:gap-16 md:px-16 md:py-24">
             <div>
               <h2 className="font-display text-[clamp(2rem,4.4vw,4rem)] font-bold leading-[1.05] tracking-[-0.03em]">
-                Get a free listing review.
+                {t.reviewHeading}
               </h2>
               <ol className="m-0 mt-8 list-none space-y-4 p-0">
-                {reviewSteps.map((step, index) => (
+                {dict.reviewSteps.map((step, index) => (
                   <li
                     key={step}
                     className="flex gap-4 text-lg leading-relaxed text-offwhite/85"
@@ -304,17 +251,16 @@ export default function Home() {
           <div className="grid gap-12 rounded-[2rem] bg-royal px-8 py-14 text-offwhite md:grid-cols-2 md:gap-16 md:px-16 md:py-24">
             <div>
               <h2 className="font-display text-[clamp(2rem,4.4vw,4rem)] font-bold leading-[1.05] tracking-[-0.03em]">
-                Prefer to talk? Tell us about your store.
+                {t.contactHeading}
               </h2>
               <p className="mt-5 font-display text-xl font-semibold text-cyan md:text-2xl">
-                Book a free 30-minute consultancy session.
+                {t.contactOffer}
               </p>
               <p className="mt-5 max-w-md text-lg leading-relaxed text-offwhite/80">
-                Say what you sell and what you want to improve. We reply by
-                email.
+                {t.contactText}
               </p>
               <p className="mt-8 text-offwhite/80">
-                Prefer your own inbox? Write to{" "}
+                {t.contactInbox}{" "}
                 <a
                   href="mailto:nautilostd@gmail.com"
                   className="text-cyan underline underline-offset-4"
@@ -328,18 +274,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="mx-auto mt-10 flex w-full max-w-7xl flex-col gap-2 px-4 pb-10 text-sm text-slate sm:flex-row sm:items-center sm:justify-between sm:px-6">
-        <p>© 2026 Nautilo Studio. Analyse. Optimise. Automate.</p>
-        <p>
-          A student project at TBS Education Barcelona.{" "}
-          <Link
-            href="/privacy"
-            className="underline underline-offset-4 hover:text-royal"
-          >
-            Privacy note
-          </Link>
-        </p>
-      </footer>
+<SiteFooter lang={lang} path="/" t={dict.footer} />
     </>
   );
 }

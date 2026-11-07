@@ -31,11 +31,11 @@ export default function TalkButton({
   return (
     <a
       href={href}
-      className={`group inline-flex items-center rounded-full font-display font-semibold whitespace-nowrap transition-transform duration-150 ease-out active:scale-[0.97] ${tones[tone]} ${sizing}`}
+      className={`group inline-flex items-center rounded-full text-left font-display font-semibold sm:whitespace-nowrap transition-transform duration-150 ease-out active:scale-[0.97] ${tones[tone]} ${sizing}`}
     >
       {label}
       <span
-        className={`flex items-center justify-center rounded-full transition-transform duration-300 ease-(--ease-out-strong) group-hover:translate-x-0.5 group-hover:-translate-y-px ${circles[tone]} ${
+        className={`flex shrink-0 items-center justify-center rounded-full transition-transform duration-300 ease-(--ease-out-strong) group-hover:translate-x-0.5 group-hover:-translate-y-px ${circles[tone]} ${
           size === "md" ? "h-9 w-9" : "h-7 w-7"
         }`}
       >
