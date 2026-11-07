@@ -1,7 +1,5 @@
-import type { Metadata } from "next";
 import Link from "next/link";
-import LandingPage, { type LandingContent } from "@/components/LandingPage";
-import { SITE_URL } from "@/lib/landing-pages";
+import type { GuideCopy } from "../types";
 
 const PRODUCT_LISTINGS = "https://sell.amazon.com/blog/amazon-product-listings";
 const PRODUCT_PHOTOS = "https://sell.amazon.com/blog/product-photos";
@@ -12,20 +10,7 @@ const title = "Amazon Listing Optimization for US Sellers | Nautilo Studio";
 const description =
   "How to optimize an Amazon listing so more visitors buy: titles, bullet points, images, A+ content and testing. Free PDF guide and free listing review.";
 
-export const metadata: Metadata = {
-  title,
-  description,
-  alternates: { canonical: `${SITE_URL}/listing-optimization` },
-  openGraph: {
-    title,
-    description,
-    url: `${SITE_URL}/listing-optimization`,
-    siteName: "Nautilo Studio",
-    type: "article",
-  },
-};
-
-const page: LandingContent = {
+const page: GuideCopy["page"] = {
   slug: "listing-optimization",
   breadcrumb: "Listing optimisation",
   question: "How do you optimize an Amazon listing so more shoppers buy?",
@@ -187,6 +172,5 @@ const page: LandingContent = {
   ],
 };
 
-export default function ListingOptimizationPage() {
-  return <LandingPage page={page} />;
-}
+const copy: GuideCopy = { title, page };
+export default copy;

@@ -5,7 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ArrowUpRight, LinkedinLogo } from "@phosphor-icons/react/dist/ssr";
 import NautilusLoader from "@/components/NautilusLoader";
-import { team, type TeamMember } from "@/lib/team";
+import { team as people, type TeamMember } from "@/lib/team";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 const CHARGE_MS = 1100;
 const darkTiles = ["bg-royal", "bg-graphite"];
@@ -38,6 +39,19 @@ function Portrait({ member, sizes, className = "" }: { member: TeamMember; sizes
 }
 
 export default function TeamCarousel() {
+  const { t, href } = useLocale();
+  // Names, photos and links from lib/team, with the role and summary in the page language.
+  const team: TeamMember[] = people.map((person) => {
+    const copy = t.team.members[person.name as keyof typeof t.team.members];
+    if (!copy) return person;
+    return {
+      ...person,
+      role: copy.role,
+      summary: copy.summary,
+      focus: [...copy.focus],
+      guide: { href: person.guide.href, label: copy.guide },
+    };
+  });
   const trackRef = useRef<HTMLDivElement>(null);
   const slideRefs = useRef<(HTMLElement | null)[]>([]);
   const [active, setActive] = useState(0);
@@ -100,7 +114,7 @@ export default function TeamCarousel() {
   const gauge = (progress * (total - 1) + 1) / total;
 
   return (
-    <div aria-roledescription="carousel" aria-label="The Nautilo Studio team">
+    <div aria-roledescription="carousel" aria-label={t.team.label}>
       {/* Everyone at a glance: pick a person to jump to their card */}
       <div className="flex flex-wrap items-end justify-between gap-6">
         <ul className="m-0 grid w-full list-none grid-cols-2 gap-3 p-0 sm:grid-cols-4 lg:w-auto lg:flex-1">
@@ -134,14 +148,14 @@ export default function TeamCarousel() {
         <div className="flex items-center gap-4">
           <NautilusLoader progress={gauge} className="h-14 w-14" />
           <p className="m-0 w-20 font-display text-sm font-semibold text-slate" aria-live="polite">
-            {active + 1} of {total}
+            {active + 1} {t.team.of} {total}
           </p>
           <div className="flex gap-2">
             <button
               type="button"
               onClick={() => goTo(Math.max(0, active - 1))}
               disabled={active === 0}
-              aria-label="Previous person"
+              aria-label={t.team.previous}
               className="flex h-11 w-11 items-center justify-center rounded-full bg-white ring-1 ring-sand transition-opacity hover:ring-royal disabled:opacity-40"
             >
               <ArrowLeft size={18} weight="bold" aria-hidden />
@@ -150,7 +164,7 @@ export default function TeamCarousel() {
               type="button"
               onClick={() => goTo(Math.min(total - 1, active + 1))}
               disabled={active === total - 1}
-              aria-label="Next person"
+              aria-label={t.team.next}
               className="flex h-11 w-11 items-center justify-center rounded-full bg-royal text-offwhite transition-opacity disabled:opacity-40"
             >
               <ArrowRight size={18} weight="bold" aria-hidden />
@@ -164,7 +178,7 @@ export default function TeamCarousel() {
         ref={trackRef}
         onScroll={onScroll}
         tabIndex={0}
-        aria-label="Team members, scroll sideways"
+        aria-label={t.team.scroll}
         className="relative mt-8 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-royal [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {team.map((member, index) => {
@@ -177,7 +191,7 @@ export default function TeamCarousel() {
                 slideRefs.current[index] = node;
               }}
               aria-roledescription="slide"
-              aria-label={`${index + 1} of ${total}: ${member.name}`}
+              aria-label={`${index + 1} ${t.team.of} ${total}: ${member.name}`}
               className="grid w-[88%] shrink-0 snap-start items-center gap-6 rounded-[2rem] bg-white p-4 sm:w-[80%] sm:p-5 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:gap-10 lg:w-[74%]"
             >
               <div
@@ -211,7 +225,7 @@ export default function TeamCarousel() {
                 </ul>
                 <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
                   <Link
-                    href={member.guide.href}
+                    href={href(member.guide.href)}
                     tabIndex={isActive ? undefined : -1}
                     className="group inline-flex items-center gap-2 font-display font-semibold text-royal"
                   >

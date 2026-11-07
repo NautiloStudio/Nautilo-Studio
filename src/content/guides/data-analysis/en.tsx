@@ -1,7 +1,5 @@
-import type { Metadata } from "next";
 import Link from "next/link";
-import LandingPage, { type LandingContent } from "@/components/LandingPage";
-import { SITE_URL } from "@/lib/landing-pages";
+import type { GuideCopy } from "../types";
 
 const BRAND_ANALYTICS = "https://sell.amazon.com/blog/brand-analytics";
 const ACOS = "https://advertising.amazon.com/library/guides/acos-advertising-cost-of-sales";
@@ -11,20 +9,7 @@ const title = "Amazon Data Analysis: Which Numbers Matter | Nautilo Studio";
 const description =
   "The Amazon numbers US sellers should track every week, what each one tells you and where to find it in Seller Central. Get a free listing review today.";
 
-export const metadata: Metadata = {
-  title,
-  description,
-  alternates: { canonical: `${SITE_URL}/data-analysis` },
-  openGraph: {
-    title,
-    description,
-    url: `${SITE_URL}/data-analysis`,
-    siteName: "Nautilo Studio",
-    type: "article",
-  },
-};
-
-const page: LandingContent = {
+const page: GuideCopy["page"] = {
   slug: "data-analysis",
   breadcrumb: "Data analysis",
   question: "Which Amazon numbers should sellers track?",
@@ -164,6 +149,5 @@ const page: LandingContent = {
   ],
 };
 
-export default function DataAnalysisPage() {
-  return <LandingPage page={page} />;
-}
+const copy: GuideCopy = { title, page };
+export default copy;

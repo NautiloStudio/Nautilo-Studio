@@ -1,6 +1,4 @@
-import type { Metadata } from "next";
-import LandingPage, { type LandingContent } from "@/components/LandingPage";
-import { SITE_URL } from "@/lib/landing-pages";
+import type { GuideCopy } from "../types";
 
 const SELLER_ASSISTANT =
   "https://www.aboutamazon.com/news/innovation-at-amazon/seller-assistant-agentic-ai";
@@ -13,20 +11,7 @@ const title = "AI Automation for US Amazon Sellers | Nautilo Studio";
 const description =
   "AI automation helps US Amazon sellers save time on listings, inventory and reports. See what to automate and what to keep human. Get a free listing review.";
 
-export const metadata: Metadata = {
-  title,
-  description,
-  alternates: { canonical: `${SITE_URL}/ai-automation` },
-  openGraph: {
-    title,
-    description,
-    url: `${SITE_URL}/ai-automation`,
-    siteName: "Nautilo Studio",
-    type: "article",
-  },
-};
-
-const page: LandingContent = {
+const page: GuideCopy["page"] = {
   slug: "ai-automation",
   breadcrumb: "AI automation",
   question: "How can AI automation help Amazon sellers?",
@@ -163,6 +148,5 @@ const page: LandingContent = {
   ],
 };
 
-export default function AiAutomationPage() {
-  return <LandingPage page={page} />;
-}
+const copy: GuideCopy = { title, page };
+export default copy;

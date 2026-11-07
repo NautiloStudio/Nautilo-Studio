@@ -7,7 +7,10 @@ import GuideGallery from "@/components/GuideGallery";
 import SiteHeader from "@/components/SiteHeader";
 import StepDemo, { type DemoKind } from "@/components/StepDemo";
 import TalkButton from "@/components/TalkButton";
-import { SITE_URL } from "@/lib/landing-pages";
+import SiteFooter from "@/components/SiteFooter";
+import { withCounts } from "@/components/withCounts";
+import { SITE_URL, localePath, localeTags, pageUrl, type Locale } from "@/i18n/config";
+import type { Dictionary } from "@/i18n/dictionaries/en";
 
 export type LandingSection = { id: string; heading: string; body: ReactNode };
 export type LandingFaq = { question: string; answer: string };
@@ -26,21 +29,16 @@ export type LandingContent = {
   faqs: LandingFaq[];
 };
 
-const reviewSteps = [
-  "You send us a link to one Amazon listing.",
-  "We review its title, bullets, A+ content and images.",
-  "We email you what we’d improve first.",
-];
-
 // Article, FAQ and breadcrumb data for search engines and AI answer engines.
-function structuredData(page: LandingContent) {
-  const url = `${SITE_URL}/${page.slug}`;
+function structuredData(page: LandingContent, lang: Locale, home: string) {
+  const url = pageUrl(lang, `/${page.slug}`);
   const organization = { "@type": "Organization", name: "Nautilo Studio", url: SITE_URL };
   return [
     {
       "@context": "https://schema.org",
       "@type": "Article",
       headline: page.question,
+      inLanguage: localeTags[lang],
       description: page.description,
       mainEntityOfPage: url,
       dateModified: page.updated,
@@ -60,7 +58,7 @@ function structuredData(page: LandingContent) {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+        { "@type": "ListItem", position: 1, name: home, item: pageUrl(lang, "/") },
         { "@type": "ListItem", position: 2, name: page.breadcrumb, item: url },
       ],
     },
@@ -78,13 +76,26 @@ const scenes: Record<string, DemoKind> = {
 const h2 =
   "font-display text-[clamp(1.75rem,3.2vw,2.75rem)] font-bold leading-[1.1] tracking-[-0.025em]";
 
-export default function LandingPage({ page }: { page: LandingContent }) {
+export default function LandingPage({
+  page,
+  lang,
+  dict,
+}: {
+  page: LandingContent;
+  lang: Locale;
+  dict: Dictionary;
+}) {
+  const t = dict.landing;
+  const href = (path: string) => localePath(lang, path);
+  const pdf = `/guides/nautilo-${page.slug}-guide.pdf`;
+  const pdfNote = dict.common.pdfLanguage ? ` (${dict.common.pdfLanguage})` : "";
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(structuredData(page)).replace(/</g, "\\u003c"),
+          __html: JSON.stringify(structuredData(page, lang, t.home)).replace(/</g, "\\u003c"),
         }}
       />
 
@@ -96,11 +107,11 @@ export default function LandingPage({ page }: { page: LandingContent }) {
           <div className="mx-auto max-w-7xl px-4 pt-32 sm:px-6 md:pt-40">
             <div className="grid items-center gap-10 md:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] md:gap-14">
               <div>
-                <nav aria-label="Breadcrumb" className="text-sm text-slate">
+                <nav aria-label={t.breadcrumb} className="text-sm text-slate">
                   <ol className="m-0 flex list-none gap-2 p-0">
                     <li>
-                      <Link href="/" className="underline underline-offset-4 hover:text-royal">
-                        Home
+                      <Link href={href("/")} className="underline underline-offset-4 hover:text-royal">
+                        {t.home}
                       </Link>
                     </li>
                     <li aria-hidden>/</li>
@@ -119,22 +130,23 @@ export default function LandingPage({ page }: { page: LandingContent }) {
                   className="rise mt-8 flex flex-wrap items-center gap-x-7 gap-y-4"
                   style={{ "--i": 1 } as React.CSSProperties}
                 >
-                  <TalkButton href="#review" label="Get a free listing review" />
+                  <TalkButton href="#review" label={t.getReview} />
                   <a
-                    href={`/guides/nautilo-${page.slug}-guide.pdf`}
+                    href={pdf}
                     download
                     className="group inline-flex items-center gap-3 rounded-full bg-white py-2 pl-5 pr-2 font-display font-semibold text-graphite ring-2 ring-graphite transition-transform duration-150 ease-out active:scale-[0.97]"
                   >
-                    Download the free PDF guide
+                    {t.downloadPdf}
+                    {pdfNote}
                     <span className="flex h-9 w-9 items-center justify-center rounded-full bg-cyan transition-transform duration-300 ease-(--ease-out-strong) group-hover:translate-y-0.5">
                       <DownloadSimple size={18} weight="bold" aria-hidden />
                     </span>
                   </a>
                   <Link
-                    href="/#contact"
+                    href={href("/#contact")}
                     className="py-3 font-display font-semibold text-graphite underline decoration-sand decoration-2 underline-offset-8 transition-colors hover:decoration-royal"
                   >
-                    Talk to us
+                    {t.talk}
                   </Link>
                 </div>
               </div>
@@ -143,7 +155,7 @@ export default function LandingPage({ page }: { page: LandingContent }) {
                   className={`flex min-h-[20rem] items-center justify-center rounded-[2rem] p-6 md:aspect-[4/3] md:p-10 ${page.image.tile}`}
                 >
                   <div className="w-full max-w-md">
-                    <StepDemo kind={scenes[page.slug] ?? "optimise"} />
+                    <StepDemo kind={scenes[page.slug] ?? "optimise"} t={dict.demo} />
                   </div>
                 </div>
               </div>
@@ -153,7 +165,7 @@ export default function LandingPage({ page }: { page: LandingContent }) {
               style={{ "--i": 3 } as React.CSSProperties}
             >
               <p className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-cyan">
-                Short answer
+                {t.shortAnswer}
               </p>
               <p className="mt-4 max-w-4xl font-display text-[clamp(1.25rem,2.3vw,1.75rem)] font-medium leading-[1.35] tracking-[-0.01em]">
                 {page.answer}
@@ -194,16 +206,17 @@ export default function LandingPage({ page }: { page: LandingContent }) {
               {/* Full guide as a PDF, with the nautilus ring to draw the eye */}
               <div className="glow-card rounded-[2rem]">
               <a
-                href={`/guides/nautilo-${page.slug}-guide.pdf`}
+                href={pdf}
                 download
                 className="group flex items-center justify-between gap-6 rounded-[2rem] bg-graphite p-6 text-offwhite sm:p-8"
               >
                 <span>
                   <span className="block font-display text-sm font-semibold uppercase tracking-[0.14em] text-cyan">
-                    Free PDF guide · 10 pages
+                    {t.pdfLabel}
+                    {pdfNote}
                   </span>
                   <span className="mt-2 block font-display text-2xl font-semibold leading-snug tracking-[-0.01em]">
-                    Download the full guide, with examples, charts and a checklist.
+                    {t.pdfText}
                   </span>
                 </span>
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-cyan text-graphite transition-transform duration-300 ease-(--ease-out-strong) group-hover:translate-y-0.5">
@@ -214,15 +227,15 @@ export default function LandingPage({ page }: { page: LandingContent }) {
 
               {/* Case study teaser */}
               <Link
-                href="/#case-study"
+                href={href("/#case-study")}
                 className="reveal group flex items-center justify-between gap-6 rounded-[2rem] bg-apricot p-6 sm:p-8"
               >
                 <span>
                   <span className="block font-display text-sm font-semibold uppercase tracking-[0.14em] text-graphite/70">
-                    Case study
+                    {t.caseLabel}
                   </span>
                   <span className="mt-2 block font-display text-2xl font-semibold leading-snug tracking-[-0.01em]">
-                    See a seller draft next to the listing we suggested.
+                    {t.caseText}
                   </span>
                 </span>
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-graphite text-offwhite transition-transform duration-300 ease-(--ease-out-strong) group-hover:-translate-y-px group-hover:translate-x-0.5">
@@ -232,7 +245,7 @@ export default function LandingPage({ page }: { page: LandingContent }) {
 
               {/* FAQ */}
               <section id="faq" className="reveal scroll-mt-28">
-                <h2 className={h2}>Frequently asked questions</h2>
+                <h2 className={h2}>{t.faq}</h2>
                 <div className="mt-6 max-w-4xl divide-y divide-sand border-y border-sand">
                   {page.faqs.map((faq) => (
                     <details key={faq.question} className="group py-5">
@@ -254,31 +267,31 @@ export default function LandingPage({ page }: { page: LandingContent }) {
               {/* Internal links */}
               <section aria-labelledby="related" className="reveal">
                 <h2 id="related" className="font-display text-xl font-semibold">
-                  More from Nautilo Studio
+                  {t.more}
                 </h2>
                 <ul className="mt-4 flex flex-wrap gap-3 p-0">
                   <li className="list-none">
                     <Link
-                      href="/#services"
+                      href={href("/#services")}
                       className="inline-block rounded-full bg-white px-4 py-2 ring-1 ring-sand transition-colors hover:ring-royal"
                     >
-                      Our services for Amazon sellers
+                      {t.moreServices}
                     </Link>
                   </li>
                   <li className="list-none">
                     <Link
-                      href="/#how"
+                      href={href("/#how")}
                       className="inline-block rounded-full bg-white px-4 py-2 ring-1 ring-sand transition-colors hover:ring-royal"
                     >
-                      How we work
+                      {t.moreHow}
                     </Link>
                   </li>
                   <li className="list-none">
                     <Link
-                      href="/#contact"
+                      href={href("/#contact")}
                       className="inline-block rounded-full bg-white px-4 py-2 ring-1 ring-sand transition-colors hover:ring-royal"
                     >
-                      Talk to us
+                      {t.moreTalk}
                     </Link>
                   </li>
                 </ul>
@@ -290,12 +303,8 @@ export default function LandingPage({ page }: { page: LandingContent }) {
         <GuideGallery
           exclude={page.slug}
           id="more-guides"
-          heading={
-            <>
-              Keep reading: <CountUp to={3} /> more free guides.
-            </>
-          }
-          intro="Each one comes with examples, charts and a checklist you can download."
+          heading={withCounts(dict.common.gallery.moreHeading)}
+          intro={dict.common.gallery.moreIntro}
         />
 
         {/* Free listing review */}
@@ -303,13 +312,13 @@ export default function LandingPage({ page }: { page: LandingContent }) {
           <div className="grid gap-12 rounded-[2rem] bg-graphite px-8 py-14 text-offwhite md:grid-cols-2 md:gap-16 md:px-16 md:py-24">
             <div>
               <h2 className="font-display text-[clamp(2rem,4.4vw,4rem)] font-bold leading-[1.05] tracking-[-0.03em]">
-                Want us to check your listing?
+                {t.reviewHeading}
               </h2>
               <p className="mt-5 max-w-md text-lg leading-relaxed text-offwhite/80">
-                Send one listing and we’ll tell you, for free, what to fix first.
+                {t.reviewText}
               </p>
               <ol className="m-0 mt-8 list-none space-y-4 p-0">
-                {reviewSteps.map((step, index) => (
+                {dict.reviewSteps.map((step, index) => (
                   <li key={step} className="flex gap-4 text-lg leading-relaxed text-offwhite/85">
                     <span className="w-4 shrink-0 font-display font-semibold text-cyan" aria-hidden>
                       {index + 1}
@@ -324,15 +333,7 @@ export default function LandingPage({ page }: { page: LandingContent }) {
         </section>
       </main>
 
-      <footer className="mx-auto mt-10 flex w-full max-w-7xl flex-col gap-2 px-4 pb-10 text-sm text-slate sm:flex-row sm:items-center sm:justify-between sm:px-6">
-        <p>© 2026 Nautilo Studio. Analyse. Optimise. Automate.</p>
-        <p>
-          A student project at TBS Education Barcelona.{" "}
-          <Link href="/privacy" className="underline underline-offset-4 hover:text-royal">
-            Privacy note
-          </Link>
-        </p>
-      </footer>
+<SiteFooter lang={lang} path={`/${page.slug}`} t={dict.footer} />
     </>
   );
 }

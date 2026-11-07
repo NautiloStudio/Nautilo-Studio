@@ -485,3 +485,8 @@ textarea {
     transition: none;
   }
 }
+
+/* German compounds are long: let headings hyphenate instead of overflowing on phones. */
+:lang(de) :is(h1, h2, h3) {
+  hyphens: auto;
+}
