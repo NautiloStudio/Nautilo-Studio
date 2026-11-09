@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import ContactForm from "@/components/ContactForm";
 import Nautilus from "@/components/Nautilus";
 import SiteHeader from "@/components/SiteHeader";
-import TeamCarousel from "@/components/TeamCarousel";
+import TeamGallery from "@/components/TeamGallery";
 import SiteFooter from "@/components/SiteFooter";
 import { SITE_URL, alternates, hasLocale, localeTags } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -138,7 +138,7 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
             </p>
           </div>
           <div className="mt-10">
-            <TeamCarousel />
+            <TeamGallery />
           </div>
         </section>
 

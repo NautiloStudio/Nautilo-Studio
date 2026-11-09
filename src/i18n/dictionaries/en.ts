@@ -114,7 +114,8 @@ const en = {
       of: "of",
       previous: "Previous person",
       next: "Next person",
-      scroll: "Team members, scroll sideways",
+      scroll: "Team members",
+      hint: "Pick a person to read their profile.",
       members: {
         "Filippo Verace": {
           role: "SEO & Ads Lead",

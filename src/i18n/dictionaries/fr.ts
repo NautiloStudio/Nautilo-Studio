@@ -111,7 +111,8 @@ const fr: Dictionary = {
       of: "sur",
       previous: "Personne précédente",
       next: "Personne suivante",
-      scroll: "Membres de l’équipe, faites défiler sur le côté",
+      scroll: "Membres de l’équipe",
+      hint: "Choisissez une personne pour lire son profil.",
       members: {
         "Filippo Verace": {
           role: "Responsable SEO et Ads",

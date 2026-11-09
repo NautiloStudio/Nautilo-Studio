@@ -110,7 +110,8 @@ const it: Dictionary = {
       of: "di",
       previous: "Persona precedente",
       next: "Persona successiva",
-      scroll: "Membri del team, scorri di lato",
+      scroll: "Membri del team",
+      hint: "Scegli una persona per leggere il suo profilo.",
       members: {
         "Filippo Verace": {
           role: "Responsabile SEO e Ads",
