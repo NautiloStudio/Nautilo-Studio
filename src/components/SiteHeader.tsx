@@ -24,9 +24,11 @@ type MenuItem = { href: string; label: string; current?: boolean };
 export default function SiteHeader({
   onHome = false,
   guide,
+  reviewHref = "#review",
 }: {
   onHome?: boolean;
   guide?: string;
+  reviewHref?: string;
 }) {
   const [open, setOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
@@ -193,9 +195,9 @@ export default function SiteHeader({
                 </Link>
               </>
             )}
-            {/* Every page that uses this bar has its own free review form with id="review". */}
+            {/* Pages with their own free review form use "#review"; the others pass a link to one. */}
             <TalkButton
-              href="#review"
+              href={reviewHref}
               label={t.header.freeReview}
               tone="cyan"
               size="sm"

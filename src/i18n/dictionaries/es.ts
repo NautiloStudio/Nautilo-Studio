@@ -370,6 +370,23 @@ const es: Dictionary = {
     reviewText: "Envíanosla y los cuatro te diremos gratis qué arreglar primero.",
   },
 
+  thanks: {
+    metaTitle: "Gracias | Nautilo Studio",
+    back: "Volver a la página de inicio",
+    review: {
+      label: "Ficha recibida",
+      title: "Gracias. Hemos recibido tu ficha.",
+      text: "Revisaremos su título, viñetas, contenido A+ e imágenes, y te escribiremos qué mejoraríamos primero. Mira tu bandeja de entrada y, por si acaso, la carpeta de spam.",
+    },
+    talk: {
+      label: "Mensaje recibido",
+      title: "Gracias. Hemos recibido tu mensaje.",
+      text: "Uno de nosotros te responderá al correo que nos has indicado. Mira tu bandeja de entrada y, por si acaso, la carpeta de spam.",
+    },
+    guidesHeading: "Mientras tanto: {4} guías gratuitas.",
+    guidesIntro: "Una guía por servicio, con ejemplos, gráficos y una lista de comprobación.",
+  },
+
   privacy: {
     back: "Volver a la página de inicio",
     title: "Nota de privacidad",

@@ -372,6 +372,23 @@ const de: Dictionary = {
     reviewText: "Schicken Sie es uns, und wir vier sagen Ihnen kostenlos, was Sie zuerst verbessern sollten.",
   },
 
+  thanks: {
+    metaTitle: "Danke | Nautilo Studio",
+    back: "Zurück zur Startseite",
+    review: {
+      label: "Listing erhalten",
+      title: "Danke. Wir haben Ihr Listing erhalten.",
+      text: "Wir prüfen Titel, Bullet Points, A+ Content und Bilder und schreiben Ihnen, was wir zuerst verbessern würden. Schauen Sie in Ihr Postfach und sicherheitshalber auch in den Spam-Ordner.",
+    },
+    talk: {
+      label: "Nachricht erhalten",
+      title: "Danke. Wir haben Ihre Nachricht erhalten.",
+      text: "Eine oder einer von uns antwortet an die angegebene E-Mail-Adresse. Schauen Sie in Ihr Postfach und sicherheitshalber auch in den Spam-Ordner.",
+    },
+    guidesHeading: "In der Zwischenzeit: {4} kostenlose Leitfäden.",
+    guidesIntro: "Ein Leitfaden pro Leistung, mit Beispielen, Diagrammen und einer Checkliste.",
+  },
+
   privacy: {
     back: "Zurück zur Startseite",
     title: "Datenschutzhinweis",

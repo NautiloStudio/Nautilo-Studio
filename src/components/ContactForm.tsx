@@ -2,7 +2,7 @@
 
 import { useState, useSyncExternalStore, type FormEvent } from "react";
 import Link from "next/link";
-import { getSupabase } from "@/lib/supabase";
+import { useRouter } from "next/navigation";
 import { useLocale } from "@/i18n/LocaleProvider";
 
 type Status = "idle" | "sending" | "sent" | "error";
@@ -15,7 +15,8 @@ export default function ContactForm({ variant = "talk" }: { variant?: Variant })
   const [status, setStatus] = useState<Status>("idle");
   // False until React has hydrated, so the form can never submit natively.
   const ready = useSyncExternalStore(subscribeNever, () => true, () => false);
-  const { t, href } = useLocale();
+  const { t, href, lang } = useLocale();
+  const router = useRouter();
   const form = t.form;
   const text = form[variant];
 
@@ -25,22 +26,26 @@ export default function ContactForm({ variant = "talk" }: { variant?: Variant })
     const data = new FormData(target);
     setStatus("sending");
 
-    // Both forms write to the leads table; `source` tells them apart.
-    const isReview = variant === "review";
-
+    // The server saves the lead and emails the team (see app/api/lead). On success the visitor
+    // moves to a thank-you page, which Vercel Analytics counts as a conversion.
     try {
-      const { error } = await getSupabase()
-        .from("leads")
-        .insert({
-          source: variant,
-          name: String(data.get("name") ?? "").trim(),
-          email: String(data.get("email") ?? "").trim(),
-          message: isReview ? null : String(data.get("message") ?? "").trim(),
-          listing_url: isReview ? String(data.get("listing") ?? "").trim() : null,
-        });
-      if (error) throw error;
+      const response = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          variant,
+          lang,
+          name: data.get("name"),
+          email: data.get("email"),
+          message: data.get("message"),
+          listing: data.get("listing"),
+          website: data.get("website"),
+        }),
+      });
+      if (!response.ok) throw new Error(`Lead request failed: ${response.status}`);
       target.reset();
       setStatus("sent");
+      router.push(href(variant === "review" ? "/thanks/review" : "/thanks/message"));
     } catch (err) {
       console.error(err);
       setStatus("error");
@@ -61,7 +66,12 @@ export default function ContactForm({ variant = "talk" }: { variant?: Variant })
   const label = "mb-2 block text-sm font-medium text-offwhite";
 
   return (
-    <form method="post" onSubmit={handleSubmit} className="space-y-5">
+    <form method="post" onSubmit={handleSubmit} className="relative space-y-5">
+      {/* Left empty by people (it's hidden); bots that fill it are ignored by the server. */}
+      <div aria-hidden className="absolute -left-[9999px] h-px w-px overflow-hidden">
+        <label htmlFor={`${variant}-website`}>Website</label>
+        <input id={`${variant}-website`} name="website" tabIndex={-1} autoComplete="off" />
+      </div>
       <div>
         <label htmlFor={`${variant}-name`} className={label}>
           {form.name}
