@@ -110,7 +110,8 @@ const es: Dictionary = {
       of: "de",
       previous: "Persona anterior",
       next: "Persona siguiente",
-      scroll: "Miembros del equipo, desplázate hacia los lados",
+      scroll: "Miembros del equipo",
+      hint: "Elige a una persona para leer su perfil.",
       members: {
         "Filippo Verace": {
           role: "Responsable de SEO y Ads",

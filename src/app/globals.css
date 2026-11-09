@@ -490,3 +490,52 @@ textarea {
 :lang(de) :is(h1, h2, h3) {
   hyphens: auto;
 }
+
+/* About page team gallery: the open card widens, its portrait slides to the left and the colour charges in. */
+.team-panel {
+  transition:
+    flex-grow 650ms var(--ease-out-strong),
+    box-shadow 400ms ease;
+}
+.team-portrait {
+  transition:
+    width 650ms var(--ease-out-strong),
+    height 650ms var(--ease-out-strong);
+}
+.team-photo {
+  transform: scale(var(--zoom, 1));
+  transition: transform 700ms var(--ease-out-strong);
+}
+.team-panel:not([data-open]):hover .team-photo {
+  transform: scale(calc(var(--zoom, 1) * 1.05));
+}
+.team-wash {
+  mix-blend-mode: color;
+  transition: opacity 900ms var(--ease-out-strong);
+}
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes team-in {
+    from {
+      opacity: 0;
+      transform: translateY(0.75rem);
+    }
+  }
+  .team-details > div > * {
+    animation: team-in 600ms var(--ease-out-strong) both;
+  }
+  .team-details > div > :nth-child(2) { animation-delay: 60ms; }
+  .team-details > div > :nth-child(3) { animation-delay: 120ms; }
+  .team-details > div > :nth-child(4) { animation-delay: 180ms; }
+  .team-details > div > :nth-child(5) { animation-delay: 240ms; }
+  .team-badge {
+    animation: team-in 600ms 300ms var(--ease-out-strong) both;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .team-panel,
+  .team-portrait,
+  .team-photo,
+  .team-wash {
+    transition: none;
+  }
+}
