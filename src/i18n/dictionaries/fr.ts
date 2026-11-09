@@ -372,6 +372,23 @@ const fr: Dictionary = {
     reviewText: "Envoyez-la-nous et nous vous dirons tous les quatre, gratuitement, quoi corriger en premier.",
   },
 
+  thanks: {
+    metaTitle: "Merci | Nautilo Studio",
+    back: "Retour à l’accueil",
+    review: {
+      label: "Fiche reçue",
+      title: "Merci. Nous avons bien reçu votre fiche.",
+      text: "Nous allons analyser son titre, ses puces, son contenu A+ et ses images, puis vous écrire ce que nous améliorerions en premier. Surveillez votre boîte de réception, et vos spams au cas où.",
+    },
+    talk: {
+      label: "Message reçu",
+      title: "Merci. Nous avons bien reçu votre message.",
+      text: "L’un de nous vous répondra à l’adresse e-mail indiquée. Surveillez votre boîte de réception, et vos spams au cas où.",
+    },
+    guidesHeading: "En attendant : {4} guides gratuits.",
+    guidesIntro: "Un guide par service, avec des exemples, des graphiques et une checklist.",
+  },
+
   privacy: {
     back: "Retour à l’accueil",
     title: "Note de confidentialité",

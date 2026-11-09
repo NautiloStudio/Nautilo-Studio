@@ -373,6 +373,23 @@ const en = {
     reviewText: "Send it to us and the four of us will tell you, for free, what to fix first.",
   },
 
+  thanks: {
+    metaTitle: "Thank you | Nautilo Studio",
+    back: "Back to the homepage",
+    review: {
+      label: "Listing received",
+      title: "Thanks. We have your listing.",
+      text: "We’ll review its title, bullets, A+ content and images, and email you what we would improve first. Check your inbox, and your spam folder just in case.",
+    },
+    talk: {
+      label: "Message received",
+      title: "Thanks. We have your message.",
+      text: "One of us will reply to the email address you gave us. Check your inbox, and your spam folder just in case.",
+    },
+    guidesHeading: "While you wait: {4} free guides.",
+    guidesIntro: "One guide for each service, with examples, charts and a checklist.",
+  },
+
   privacy: {
     back: "Back to the homepage",
     title: "Privacy note",
