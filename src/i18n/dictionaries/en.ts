@@ -15,6 +15,7 @@ const en = {
       menu: "Menu",
       howWeWork: "How we work",
       aboutUs: "About us",
+      blog: "Blog",
       openMenu: "Open menu",
       closeMenu: "Close menu",
       guidesTitle: "Our service guides",

@@ -12,6 +12,7 @@ const es: Dictionary = {
       menu: "Menú",
       howWeWork: "Cómo trabajamos",
       aboutUs: "Quiénes somos",
+      blog: "Blog",
       openMenu: "Abrir menú",
       closeMenu: "Cerrar menú",
       guidesTitle: "Nuestras guías de servicios",

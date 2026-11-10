@@ -72,6 +72,8 @@ export default function SiteHeader({
           label: t.header.aboutUs,
           current: pathname === "/about",
         },
+        // The blog is English only, so it always links to /blog.
+        { href: "/blog", label: t.header.blog, current: pathname.startsWith("/blog") },
       ];
   // Links that also sit in the bar, and the screen width from which they do (the list hides them there).
   const barLinks: Record<string, string> = {

@@ -12,16 +12,17 @@ const description =
 const page: GuideCopy["page"] = {
   slug: "amazon-seo",
   breadcrumb: "Amazon SEO",
-  question: "How do you rank higher in Amazon search results?",
+  question: "Amazon SEO: how do you rank higher in Amazon search?",
   answer:
-    "Amazon shows the products that best match a search and that shoppers are most likely to buy. Put the words shoppers type into your title, bullets and backend search terms, then make the listing convincing enough to sell. Those sales, with good listing quality, push the product higher over time.",
+    "Amazon SEO is how you get your product in front of shoppers who search for it: Amazon shows the products that best match a search and that shoppers are most likely to buy. Put the words shoppers type into your title, bullets and backend search terms, then make the listing convincing enough to sell. Those sales, with good listing quality, push the product higher over time.",
   description,
   image: {
     src: "/img/service-ads.jpg",
     alt: "Magnifying glass leaning against a small parcel",
     tile: "bg-cyan",
   },
-  updated: "2026-11-06",
+  updated: "2026-11-10",
+  author: { name: "Filippo Verace", role: "SEO & Ads Lead", href: "/about" },
   facts: [
     { value: 200, suffix: " chars", label: "Title limit in Amazon’s SEO guide" },
     { value: 60, suffix: " chars", label: "Title length Amazon recommends" },
@@ -31,7 +32,7 @@ const page: GuideCopy["page"] = {
   sections: [
     {
       id: "how-ranking-works",
-      heading: "How does Amazon decide where you rank?",
+      heading: "Amazon ranking factors: what decides where you rank?",
       body: (
         <ul>
           <li>
@@ -57,7 +58,7 @@ const page: GuideCopy["page"] = {
     },
     {
       id: "find-keywords",
-      heading: "How do you find the keywords shoppers use?",
+      heading: "Amazon keyword research: how do you find what shoppers search?",
       body: (
         <ul>
           <li>
@@ -81,7 +82,7 @@ const page: GuideCopy["page"] = {
     },
     {
       id: "where-to-put-keywords",
-      heading: "Where should your keywords go?",
+      heading: "Where should your Amazon keywords go?",
       body: (
         <ul>
           <li>
@@ -108,14 +109,15 @@ const page: GuideCopy["page"] = {
             <a href={SEARCH_TERMS_HELP} target="_blank" rel="noopener noreferrer">
               current length limit
             </a>
-            .
+            , and see our step-by-step guide to{" "}
+            <Link href="/blog/amazon-backend-keywords">filling in Amazon backend keywords</Link>.
           </li>
         </ul>
       ),
     },
     {
       id: "common-mistakes",
-      heading: "What are the most common mistakes?",
+      heading: "What are the most common Amazon SEO mistakes?",
       body: (
         <>
           <ul>

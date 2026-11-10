@@ -13,6 +13,7 @@ const de: Dictionary = {
       menu: "Menü",
       howWeWork: "So arbeiten wir",
       aboutUs: "Über uns",
+      blog: "Blog",
       openMenu: "Menü öffnen",
       closeMenu: "Menü schließen",
       guidesTitle: "Unsere Leitfäden",

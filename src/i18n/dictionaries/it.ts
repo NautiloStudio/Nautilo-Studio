@@ -12,6 +12,7 @@ const it: Dictionary = {
       menu: "Menu",
       howWeWork: "Come lavoriamo",
       aboutUs: "Chi siamo",
+      blog: "Blog",
       openMenu: "Apri il menu",
       closeMenu: "Chiudi il menu",
       guidesTitle: "Le nostre guide ai servizi",
