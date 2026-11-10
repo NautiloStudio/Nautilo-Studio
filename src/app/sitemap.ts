@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { alternates, locales } from "@/i18n/config";
 import { landingPages } from "@/lib/landing-pages";
+import { posts } from "@/content/blog";
+import { SITE_URL } from "@/i18n/config";
 
 // Every page in every language, each listing its translations so search engines link them.
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -16,7 +18,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/privacy", priority: 0.2, changeFrequency: "yearly" },
   ];
 
-  return pages.flatMap(({ path, ...rest }) =>
+  // The blog is English only, so it has one address per page and no translations.
+  const blog: MetadataRoute.Sitemap = [
+    { url: `${SITE_URL}/blog`, changeFrequency: "weekly", priority: 0.7 },
+    ...posts.map((post) => ({
+      url: `${SITE_URL}/blog/${post.slug}`,
+      lastModified: post.updated,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+  ];
+
+  return [...pages.flatMap(({ path, ...rest }) =>
     locales.map((lang) => {
       const links = alternates(lang, path);
       return {
@@ -25,5 +38,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
         alternates: { languages: links.languages },
       };
     }),
-  );
+  ), ...blog];
 }
