@@ -24,6 +24,8 @@ export type LandingContent = {
   description: string; // same text as the meta description
   image: { src: string; alt: string; tile: string };
   updated: string; // ISO date
+  // Optional named author, shown under the H1 with the update date (English guides only for now).
+  author?: { name: string; role: string; href: string };
   facts: LandingFact[]; // real numbers from Amazon or the guide itself, never results
   sections: LandingSection[];
   faqs: LandingFaq[];
@@ -42,7 +44,9 @@ function structuredData(page: LandingContent, lang: Locale, home: string) {
       description: page.description,
       mainEntityOfPage: url,
       dateModified: page.updated,
-      author: organization,
+      author: page.author
+        ? { "@type": "Person", name: page.author.name, jobTitle: page.author.role, url: `${SITE_URL}${page.author.href}`, worksFor: organization }
+        : organization,
       publisher: organization,
     },
     {
@@ -126,6 +130,22 @@ export default function LandingPage({
                 >
                   {page.question}
                 </h1>
+                {page.author && (
+                  <p className="rise mt-5 text-sm text-slate" style={{ "--i": 1 } as React.CSSProperties}>
+                    By{" "}
+                    <Link href={href(page.author.href)} className="font-medium text-graphite underline decoration-sand underline-offset-4 hover:decoration-royal">
+                      {page.author.name}
+                    </Link>
+                    , {page.author.role} · Updated{" "}
+                    <time dateTime={page.updated}>
+                      {new Date(`${page.updated}T12:00:00Z`).toLocaleDateString(localeTags[lang], {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </time>
+                  </p>
+                )}
                 <div
                   className="rise mt-8 flex flex-wrap items-center gap-x-7 gap-y-4"
                   style={{ "--i": 1 } as React.CSSProperties}
