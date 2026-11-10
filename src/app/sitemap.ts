@@ -1,16 +1,29 @@
 import type { MetadataRoute } from "next";
-import { SITE_URL, landingPages } from "@/lib/landing-pages";
+import { alternates, locales } from "@/i18n/config";
+import { landingPages } from "@/lib/landing-pages";
 
+// Every page in every language, each listing its translations so search engines link them.
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    { url: SITE_URL, changeFrequency: "monthly", priority: 1 },
+  const pages: { path: string; priority: number; lastModified?: string; changeFrequency: "monthly" | "yearly" }[] = [
+    { path: "/", priority: 1, changeFrequency: "monthly" },
     ...landingPages.map((page) => ({
-      url: `${SITE_URL}/${page.slug}`,
+      path: `/${page.slug}`,
+      priority: 0.8,
       lastModified: page.updated,
       changeFrequency: "monthly" as const,
-      priority: 0.8,
     })),
-    { url: `${SITE_URL}/about`, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${SITE_URL}/privacy`, changeFrequency: "yearly", priority: 0.2 },
+    { path: "/about", priority: 0.6, changeFrequency: "monthly" },
+    { path: "/privacy", priority: 0.2, changeFrequency: "yearly" },
   ];
+
+  return pages.flatMap(({ path, ...rest }) =>
+    locales.map((lang) => {
+      const links = alternates(lang, path);
+      return {
+        url: links.canonical,
+        ...rest,
+        alternates: { languages: links.languages },
+      };
+    }),
+  );
 }

@@ -2,56 +2,50 @@
 
 import { useState, useSyncExternalStore, type FormEvent } from "react";
 import Link from "next/link";
-import { getSupabase } from "@/lib/supabase";
+import { useRouter } from "next/navigation";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 type Status = "idle" | "sending" | "sent" | "error";
 type Variant = "talk" | "review";
 
 const subscribeNever = () => () => {};
 
-const copy = {
-  talk: {
-    button: "Send message",
-    sentTitle: "Thanks, we have your message.",
-    sentText: "We will reply to the email address you gave us.",
-    error: "We could not send your message.",
-  },
-  review: {
-    button: "Get my free review",
-    sentTitle: "Thanks, we have your listing.",
-    sentText: "We will email our review to the address you gave us.",
-    error: "We could not send your listing.",
-  },
-};
 
 export default function ContactForm({ variant = "talk" }: { variant?: Variant }) {
   const [status, setStatus] = useState<Status>("idle");
   // False until React has hydrated, so the form can never submit natively.
   const ready = useSyncExternalStore(subscribeNever, () => true, () => false);
-  const text = copy[variant];
+  const { t, href, lang } = useLocale();
+  const router = useRouter();
+  const form = t.form;
+  const text = form[variant];
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const form = event.currentTarget;
-    const data = new FormData(form);
+    const target = event.currentTarget;
+    const data = new FormData(target);
     setStatus("sending");
 
-    // Both forms write to the leads table; `source` tells them apart.
-    const isReview = variant === "review";
-
+    // The server saves the lead and emails the team (see app/api/lead). On success the visitor
+    // moves to a thank-you page, which Vercel Analytics counts as a conversion.
     try {
-      const { error } = await getSupabase()
-        .from("leads")
-        .insert({
-          source: variant,
-          name: String(data.get("name") ?? "").trim(),
-          email: String(data.get("email") ?? "").trim(),
-          message: isReview ? null : String(data.get("message") ?? "").trim(),
-          listing_url: isReview ? String(data.get("listing") ?? "").trim() : null,
-        });
-      if (error) throw error;
-      form.reset();
+      const response = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          variant,
+          lang,
+          name: data.get("name"),
+          email: data.get("email"),
+          message: data.get("message"),
+          listing: data.get("listing"),
+          website: data.get("website"),
+        }),
+      });
+      if (!response.ok) throw new Error(`Lead request failed: ${response.status}`);
+      target.reset();
       setStatus("sent");
+      router.push(href(variant === "review" ? "/thanks/review" : "/thanks/message"));
     } catch (err) {
       console.error(err);
       setStatus("error");
@@ -72,16 +66,21 @@ export default function ContactForm({ variant = "talk" }: { variant?: Variant })
   const label = "mb-2 block text-sm font-medium text-offwhite";
 
   return (
-    <form method="post" onSubmit={handleSubmit} className="space-y-5">
+    <form method="post" onSubmit={handleSubmit} className="relative space-y-5">
+      {/* Left empty by people (it's hidden); bots that fill it are ignored by the server. */}
+      <div aria-hidden className="absolute -left-[9999px] h-px w-px overflow-hidden">
+        <label htmlFor={`${variant}-website`}>Website</label>
+        <input id={`${variant}-website`} name="website" tabIndex={-1} autoComplete="off" />
+      </div>
       <div>
         <label htmlFor={`${variant}-name`} className={label}>
-          Name
+          {form.name}
         </label>
         <input id={`${variant}-name`} name="name" required autoComplete="name" className={field} />
       </div>
       <div>
         <label htmlFor={`${variant}-email`} className={label}>
-          Email
+          {form.email}
         </label>
         <input
           id={`${variant}-email`}
@@ -95,7 +94,7 @@ export default function ContactForm({ variant = "talk" }: { variant?: Variant })
       {variant === "review" ? (
         <div>
           <label htmlFor="review-listing" className={label}>
-            Amazon listing link
+            {form.listing}
           </label>
           <input
             id="review-listing"
@@ -109,14 +108,14 @@ export default function ContactForm({ variant = "talk" }: { variant?: Variant })
       ) : (
         <div>
           <label htmlFor="talk-message" className={label}>
-            Message
+            {form.message}
           </label>
           <textarea
             id="talk-message"
             name="message"
             required
             rows={4}
-            placeholder="What do you sell, and what do you want to improve?"
+            placeholder={form.messagePlaceholder}
             className={field}
           />
         </div>
@@ -126,17 +125,17 @@ export default function ContactForm({ variant = "talk" }: { variant?: Variant })
         disabled={!ready || status === "sending"}
         className="w-full rounded-full bg-cyan px-6 py-4 font-display font-semibold text-graphite transition-transform duration-150 ease-out active:scale-[0.98] disabled:opacity-70"
       >
-        {status === "sending" ? "Sending..." : text.button}
+        {status === "sending" ? form.sending : text.button}
       </button>
       {status === "error" && (
         <p role="alert" className="text-sm text-apricot">
-          {text.error} Try again, or email us at nautilostd@gmail.com.
+          {text.error} {form.retry} nautilostd@gmail.com.
         </p>
       )}
       <p className="text-sm text-offwhite/75">
-        We only use your details to reply to you. Read our{" "}
-        <Link href="/privacy" className="underline underline-offset-4 hover:text-cyan">
-          privacy note
+        {form.privacyBefore}{" "}
+        <Link href={href("/privacy")} className="underline underline-offset-4 hover:text-cyan">
+          {form.privacyLink}
         </Link>
         .
       </p>

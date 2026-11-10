@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useLocale } from "@/i18n/LocaleProvider";
 import NautilusLoader from "./NautilusLoader";
 
 // How far the finger has to travel, after resistance, before letting go reloads the page.
@@ -11,6 +12,7 @@ const RESISTANCE = 0.45;
 // Touch screens only: pulling down at the top of the page slides the page content down,
 // fills the nautilus chamber by chamber and reloads once it is full. The top bar never moves.
 export default function PullToRefresh() {
+  const { t } = useLocale();
   const [pull, setPull] = useState(0);
   const [refreshing, setRefreshing] = useState(false);
   const start = useRef<number | null>(null);
@@ -79,7 +81,7 @@ export default function PullToRefresh() {
       <NautilusLoader
         spinning={refreshing}
         progress={pull / THRESHOLD}
-        label={refreshing ? "Reloading the page" : undefined}
+        label={refreshing ? t.reloading : undefined}
         className="h-12 w-12"
       />
     </div>

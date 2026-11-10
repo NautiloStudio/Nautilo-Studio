@@ -1,14 +1,20 @@
 import type { ReactNode } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, CaretDown, DownloadSimple } from "@phosphor-icons/react/dist/ssr";
 import ContactForm from "@/components/ContactForm";
+import CountUp from "@/components/CountUp";
+import GuideGallery from "@/components/GuideGallery";
 import SiteHeader from "@/components/SiteHeader";
+import StepDemo, { type DemoKind } from "@/components/StepDemo";
 import TalkButton from "@/components/TalkButton";
-import { SITE_URL, landingPages } from "@/lib/landing-pages";
+import SiteFooter from "@/components/SiteFooter";
+import { withCounts } from "@/components/withCounts";
+import { SITE_URL, localePath, localeTags, pageUrl, type Locale } from "@/i18n/config";
+import type { Dictionary } from "@/i18n/dictionaries/en";
 
 export type LandingSection = { id: string; heading: string; body: ReactNode };
 export type LandingFaq = { question: string; answer: string };
+export type LandingFact = { value: number; prefix?: string; suffix?: string; label: string };
 
 export type LandingContent = {
   slug: string;
@@ -18,25 +24,21 @@ export type LandingContent = {
   description: string; // same text as the meta description
   image: { src: string; alt: string; tile: string };
   updated: string; // ISO date
+  facts: LandingFact[]; // real numbers from Amazon or the guide itself, never results
   sections: LandingSection[];
   faqs: LandingFaq[];
 };
 
-const reviewSteps = [
-  "You send us a link to one Amazon listing.",
-  "We review its title, bullets, A+ content and images.",
-  "We email you what we’d improve first.",
-];
-
 // Article, FAQ and breadcrumb data for search engines and AI answer engines.
-function structuredData(page: LandingContent) {
-  const url = `${SITE_URL}/${page.slug}`;
+function structuredData(page: LandingContent, lang: Locale, home: string) {
+  const url = pageUrl(lang, `/${page.slug}`);
   const organization = { "@type": "Organization", name: "Nautilo Studio", url: SITE_URL };
   return [
     {
       "@context": "https://schema.org",
       "@type": "Article",
       headline: page.question,
+      inLanguage: localeTags[lang],
       description: page.description,
       mainEntityOfPage: url,
       dateModified: page.updated,
@@ -56,25 +58,44 @@ function structuredData(page: LandingContent) {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+        { "@type": "ListItem", position: 1, name: home, item: pageUrl(lang, "/") },
         { "@type": "ListItem", position: 2, name: page.breadcrumb, item: url },
       ],
     },
   ];
 }
 
+// The looping scene shown in each guide's hero.
+const scenes: Record<string, DemoKind> = {
+  "amazon-seo": "search",
+  "listing-optimization": "optimise",
+  "data-analysis": "analyse",
+  "ai-automation": "automate",
+};
+
 const h2 =
   "font-display text-[clamp(1.75rem,3.2vw,2.75rem)] font-bold leading-[1.1] tracking-[-0.025em]";
 
-export default function LandingPage({ page }: { page: LandingContent }) {
-  const related = landingPages.filter((link) => link.slug !== page.slug);
+export default function LandingPage({
+  page,
+  lang,
+  dict,
+}: {
+  page: LandingContent;
+  lang: Locale;
+  dict: Dictionary;
+}) {
+  const t = dict.landing;
+  const href = (path: string) => localePath(lang, path);
+  const pdf = `/guides/nautilo-${page.slug}-guide.pdf`;
+  const pdfNote = dict.common.pdfLanguage ? ` (${dict.common.pdfLanguage})` : "";
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(structuredData(page)).replace(/</g, "\\u003c"),
+          __html: JSON.stringify(structuredData(page, lang, t.home)).replace(/</g, "\\u003c"),
         }}
       />
 
@@ -86,11 +107,11 @@ export default function LandingPage({ page }: { page: LandingContent }) {
           <div className="mx-auto max-w-7xl px-4 pt-32 sm:px-6 md:pt-40">
             <div className="grid items-center gap-10 md:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] md:gap-14">
               <div>
-                <nav aria-label="Breadcrumb" className="text-sm text-slate">
+                <nav aria-label={t.breadcrumb} className="text-sm text-slate">
                   <ol className="m-0 flex list-none gap-2 p-0">
                     <li>
-                      <Link href="/" className="underline underline-offset-4 hover:text-royal">
-                        Home
+                      <Link href={href("/")} className="underline underline-offset-4 hover:text-royal">
+                        {t.home}
                       </Link>
                     </li>
                     <li aria-hidden>/</li>
@@ -109,37 +130,34 @@ export default function LandingPage({ page }: { page: LandingContent }) {
                   className="rise mt-8 flex flex-wrap items-center gap-x-7 gap-y-4"
                   style={{ "--i": 1 } as React.CSSProperties}
                 >
-                  <TalkButton href="#review" label="Get a free listing review" />
+                  <TalkButton href="#review" label={t.getReview} />
                   <a
-                    href={`/guides/nautilo-${page.slug}-guide.pdf`}
+                    href={pdf}
                     download
                     className="group inline-flex items-center gap-3 rounded-full bg-white py-2 pl-5 pr-2 font-display font-semibold text-graphite ring-2 ring-graphite transition-transform duration-150 ease-out active:scale-[0.97]"
                   >
-                    Download the free PDF guide
+                    {t.downloadPdf}
+                    {pdfNote}
                     <span className="flex h-9 w-9 items-center justify-center rounded-full bg-cyan transition-transform duration-300 ease-(--ease-out-strong) group-hover:translate-y-0.5">
                       <DownloadSimple size={18} weight="bold" aria-hidden />
                     </span>
                   </a>
                   <Link
-                    href="/#contact"
+                    href={href("/#contact")}
                     className="py-3 font-display font-semibold text-graphite underline decoration-sand decoration-2 underline-offset-8 transition-colors hover:decoration-royal"
                   >
-                    Talk to us
+                    {t.talk}
                   </Link>
                 </div>
               </div>
-              <div
-                className={`rise relative aspect-[4/3] overflow-hidden rounded-[2rem] ${page.image.tile}`}
-                style={{ "--i": 2 } as React.CSSProperties}
-              >
-                <Image
-                  src={page.image.src}
-                  alt={page.image.alt}
-                  fill
-                  priority
-                  sizes="(min-width: 768px) 40vw, 100vw"
-                  className="object-cover"
-                />
+              <div className="rise glow-card rounded-[2rem]" style={{ "--i": 2 } as React.CSSProperties}>
+                <div
+                  className={`flex min-h-[20rem] items-center justify-center rounded-[2rem] p-6 md:aspect-[4/3] md:p-10 ${page.image.tile}`}
+                >
+                  <div className="w-full max-w-md">
+                    <StepDemo kind={scenes[page.slug] ?? "optimise"} t={dict.demo} />
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -147,61 +165,77 @@ export default function LandingPage({ page }: { page: LandingContent }) {
               style={{ "--i": 3 } as React.CSSProperties}
             >
               <p className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-cyan">
-                Short answer
+                {t.shortAnswer}
               </p>
               <p className="mt-4 max-w-4xl font-display text-[clamp(1.25rem,2.3vw,1.75rem)] font-medium leading-[1.35] tracking-[-0.01em]">
                 {page.answer}
               </p>
             </div>
+
+            {/* Numbers that count up: facts from Amazon or this guide, not client results */}
+            <ul className="m-0 mt-5 grid list-none gap-3 p-0 sm:grid-cols-2 lg:grid-cols-4">
+              {page.facts.map((fact) => (
+                <li key={fact.label} className="reveal rounded-[1.5rem] bg-white p-6">
+                  <p className="font-display text-[clamp(2.4rem,4vw,3.5rem)] font-bold leading-none tracking-[-0.03em] text-royal">
+                    <CountUp to={fact.value} prefix={fact.prefix} suffix={fact.suffix} />
+                  </p>
+                  <p className="mt-3 text-slate">{fact.label}</p>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Sections: the heading stays beside its content on wide screens */}
           <div className="mx-auto mt-20 max-w-7xl space-y-16 px-4 sm:px-6 md:mt-28 md:space-y-24">
-            <div className="space-y-16 md:space-y-24">
-              {page.sections.map((section) => (
+            <div className="stack-list space-y-16 md:space-y-24">
+              {page.sections.map((section, index) => (
                 <section
                   key={section.id}
                   id={section.id}
-                  className="reveal grid scroll-mt-28 gap-6 border-t border-sand pt-10 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:gap-14"
+                  className="stack-section grid scroll-mt-28 gap-6 border-t border-sand pt-10 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:gap-14"
+                  style={{ "--i": index } as React.CSSProperties}
                 >
-                  <h2 className={`${h2} md:sticky md:top-28 md:self-start`}>{section.heading}</h2>
-                  <div className="space-y-5 text-lg leading-relaxed text-slate [&_a]:text-graphite [&_a]:underline [&_a]:decoration-royal/40 [&_a]:underline-offset-4 [&_a:hover]:text-royal [&_h3]:font-display [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:text-graphite [&_li]:pl-1 [&_ol]:list-decimal [&_ol]:space-y-3 [&_ol]:pl-6 [&_strong]:font-semibold [&_strong]:text-graphite [&_ul]:grid [&_ul]:list-none [&_ul]:gap-3 [&_ul]:p-0 md:[&_ul]:grid-cols-2 [&_ul>li]:rounded-[1.5rem] [&_ul>li]:bg-white [&_ul>li]:p-6 [&_ul>li]:text-base md:[&_ul>li:last-child:nth-child(odd)]:col-span-2">
+                  <h2 className={h2}>{section.heading}</h2>
+                  <div className="space-y-5 text-lg leading-relaxed text-slate [&_a]:text-graphite [&_a]:underline [&_a]:decoration-royal/40 [&_a]:underline-offset-4 [&_a:hover]:text-royal [&_h3]:font-display [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:text-graphite [&_li]:pl-1 [&_ol]:list-inside [&_ol]:list-decimal [&_ol]:space-y-3 [&_ol]:p-0 [&_ol>li]:rounded-[1.5rem] [&_ol>li]:bg-white [&_ol>li]:p-5 [&_ol>li]:text-base [&_strong]:font-semibold [&_strong]:text-graphite [&_ul]:grid [&_ul]:list-none [&_ul]:gap-3 [&_ul]:p-0 md:[&_ul]:grid-cols-2 [&_ul>li]:rounded-[1.5rem] [&_ul>li]:bg-white [&_ul>li]:p-6 [&_ul>li]:text-base md:[&_ul>li:last-child:nth-child(odd)]:col-span-2">
                     {section.body}
                   </div>
                 </section>
               ))}
             </div>
 
-              {/* Full guide as a PDF */}
+              {/* Full guide as a PDF, with the nautilus ring to draw the eye */}
+              <div className="glow-card rounded-[2rem]">
               <a
-                href={`/guides/nautilo-${page.slug}-guide.pdf`}
+                href={pdf}
                 download
-                className="reveal group flex items-center justify-between gap-6 rounded-[2rem] bg-graphite p-6 text-offwhite sm:p-8"
+                className="group flex items-center justify-between gap-6 rounded-[2rem] bg-graphite p-6 text-offwhite sm:p-8"
               >
                 <span>
                   <span className="block font-display text-sm font-semibold uppercase tracking-[0.14em] text-cyan">
-                    Free PDF guide · 10 pages
+                    {t.pdfLabel}
+                    {pdfNote}
                   </span>
                   <span className="mt-2 block font-display text-2xl font-semibold leading-snug tracking-[-0.01em]">
-                    Download the full guide, with examples, charts and a checklist.
+                    {t.pdfText}
                   </span>
                 </span>
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-cyan text-graphite transition-transform duration-300 ease-(--ease-out-strong) group-hover:translate-y-0.5">
                   <DownloadSimple size={20} weight="bold" aria-hidden />
                 </span>
               </a>
+              </div>
 
               {/* Case study teaser */}
               <Link
-                href="/#case-study"
+                href={href("/#case-study")}
                 className="reveal group flex items-center justify-between gap-6 rounded-[2rem] bg-apricot p-6 sm:p-8"
               >
                 <span>
                   <span className="block font-display text-sm font-semibold uppercase tracking-[0.14em] text-graphite/70">
-                    Case study
+                    {t.caseLabel}
                   </span>
                   <span className="mt-2 block font-display text-2xl font-semibold leading-snug tracking-[-0.01em]">
-                    See a seller draft next to the listing we suggested.
+                    {t.caseText}
                   </span>
                 </span>
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-graphite text-offwhite transition-transform duration-300 ease-(--ease-out-strong) group-hover:-translate-y-px group-hover:translate-x-0.5">
@@ -211,7 +245,7 @@ export default function LandingPage({ page }: { page: LandingContent }) {
 
               {/* FAQ */}
               <section id="faq" className="reveal scroll-mt-28">
-                <h2 className={h2}>Frequently asked questions</h2>
+                <h2 className={h2}>{t.faq}</h2>
                 <div className="mt-6 max-w-4xl divide-y divide-sand border-y border-sand">
                   {page.faqs.map((faq) => (
                     <details key={faq.question} className="group py-5">
@@ -233,41 +267,31 @@ export default function LandingPage({ page }: { page: LandingContent }) {
               {/* Internal links */}
               <section aria-labelledby="related" className="reveal">
                 <h2 id="related" className="font-display text-xl font-semibold">
-                  Keep reading
+                  {t.more}
                 </h2>
                 <ul className="mt-4 flex flex-wrap gap-3 p-0">
-                  {related.map((link) => (
-                    <li key={link.slug} className="list-none">
-                      <Link
-                        href={`/${link.slug}`}
-                        className="inline-block rounded-full bg-white px-4 py-2 ring-1 ring-sand transition-colors hover:ring-royal"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
                   <li className="list-none">
                     <Link
-                      href="/#services"
+                      href={href("/#services")}
                       className="inline-block rounded-full bg-white px-4 py-2 ring-1 ring-sand transition-colors hover:ring-royal"
                     >
-                      Our services for Amazon sellers
+                      {t.moreServices}
                     </Link>
                   </li>
                   <li className="list-none">
                     <Link
-                      href="/#how"
+                      href={href("/#how")}
                       className="inline-block rounded-full bg-white px-4 py-2 ring-1 ring-sand transition-colors hover:ring-royal"
                     >
-                      How we work
+                      {t.moreHow}
                     </Link>
                   </li>
                   <li className="list-none">
                     <Link
-                      href="/#contact"
+                      href={href("/#contact")}
                       className="inline-block rounded-full bg-white px-4 py-2 ring-1 ring-sand transition-colors hover:ring-royal"
                     >
-                      Talk to us
+                      {t.moreTalk}
                     </Link>
                   </li>
                 </ul>
@@ -275,18 +299,26 @@ export default function LandingPage({ page }: { page: LandingContent }) {
           </div>
         </article>
 
+        {/* The other guides, as an expanding gallery */}
+        <GuideGallery
+          exclude={page.slug}
+          id="more-guides"
+          heading={withCounts(dict.common.gallery.moreHeading)}
+          intro={dict.common.gallery.moreIntro}
+        />
+
         {/* Free listing review */}
         <section id="review" className="on-dark mx-auto mt-28 max-w-7xl scroll-mt-24 px-4 sm:px-6 md:mt-36">
           <div className="grid gap-12 rounded-[2rem] bg-graphite px-8 py-14 text-offwhite md:grid-cols-2 md:gap-16 md:px-16 md:py-24">
             <div>
               <h2 className="font-display text-[clamp(2rem,4.4vw,4rem)] font-bold leading-[1.05] tracking-[-0.03em]">
-                Want us to check your listing?
+                {t.reviewHeading}
               </h2>
               <p className="mt-5 max-w-md text-lg leading-relaxed text-offwhite/80">
-                Send one listing and we’ll tell you, for free, what to fix first.
+                {t.reviewText}
               </p>
               <ol className="m-0 mt-8 list-none space-y-4 p-0">
-                {reviewSteps.map((step, index) => (
+                {dict.reviewSteps.map((step, index) => (
                   <li key={step} className="flex gap-4 text-lg leading-relaxed text-offwhite/85">
                     <span className="w-4 shrink-0 font-display font-semibold text-cyan" aria-hidden>
                       {index + 1}
@@ -301,15 +333,7 @@ export default function LandingPage({ page }: { page: LandingContent }) {
         </section>
       </main>
 
-      <footer className="mx-auto mt-10 flex w-full max-w-7xl flex-col gap-2 px-4 pb-10 text-sm text-slate sm:flex-row sm:items-center sm:justify-between sm:px-6">
-        <p>© 2026 Nautilo Studio. Analyse. Optimise. Automate.</p>
-        <p>
-          A student project at TBS Education Barcelona.{" "}
-          <Link href="/privacy" className="underline underline-offset-4 hover:text-royal">
-            Privacy note
-          </Link>
-        </p>
-      </footer>
+<SiteFooter lang={lang} path={`/${page.slug}`} t={dict.footer} />
     </>
   );
 }

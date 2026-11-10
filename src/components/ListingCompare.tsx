@@ -2,37 +2,19 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { useLocale } from "@/i18n/LocaleProvider";
 
-const versions = {
-  before: {
-    label: "Before",
-    image: "/img/listing-before.jpg",
-    alt: "Dim, blurry phone photo of a bamboo cutting board on a cluttered kitchen counter",
-    title:
-      "Bamboo Cutting Board Kitchen Chopping Board Wood Large Board For Kitchen Best Quality Cheese Board Gift",
-    bullets: [
-      "HIGH QUALITY BAMBOO MATERIAL VERY GOOD",
-      "Many uses for kitchen",
-      "Best board for you and your family",
-    ],
-  },
-  after: {
-    label: "After",
-    image: "/img/listing-after.jpg",
-    alt: "Sharp, evenly lit photo of a bamboo cutting board with a juice groove on a white background",
-    title: "Bamboo Cutting Board with Juice Groove, Large, for Meat, Bread and Cheese",
-    bullets: [
-      "The juice groove keeps your counter clean while you carve.",
-      "Bamboo is gentle on knife edges.",
-      "Wash by hand and dry upright.",
-    ],
-  },
+const images = {
+  before: "/img/listing-before.jpg",
+  after: "/img/listing-after.jpg",
 };
 
-type Key = keyof typeof versions;
+type Key = keyof typeof images;
 const keys: Key[] = ["before", "after"];
 
 export default function ListingCompare() {
+  const { t } = useLocale();
+  const versions = t.listingCompare;
   const [active, setActive] = useState<Key>("before");
   const root = useRef<HTMLElement>(null);
   const touched = useRef(false);
@@ -69,7 +51,7 @@ export default function ListingCompare() {
       <div className="rounded-[2rem] bg-white p-5 shadow-[0_30px_80px_-30px_rgba(28,47,214,0.35)] sm:p-8">
         <div
           role="group"
-          aria-label="Show the example listing before or after optimisation"
+          aria-label={versions.group}
           className="relative mb-5 inline-grid grid-cols-2 rounded-full bg-offwhite p-1 sm:mb-8"
         >
           <span
@@ -107,7 +89,7 @@ export default function ListingCompare() {
               >
                 <div className="relative aspect-[4/3] overflow-hidden rounded-2xl sm:aspect-square">
                   <Image
-                    src={version.image}
+                    src={images[key]}
                     alt={version.alt}
                     fill
                     sizes="(min-width: 640px) 380px, 90vw"
@@ -130,7 +112,7 @@ export default function ListingCompare() {
         </div>
       </div>
       <figcaption className="mt-4 text-center text-sm text-slate">
-        An example we wrote to show the idea, not a client result.
+        {versions.caption}
       </figcaption>
     </figure>
   );

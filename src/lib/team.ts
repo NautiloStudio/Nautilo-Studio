@@ -9,6 +9,8 @@ export type TeamMember = {
   linkedin: string;
   photo?: string;
   tile: string; // background colour behind the photo, matching the service tile on the homepage
+  // Framing, so every face sits at the same height and size: CSS object-position and a zoom factor.
+  frame?: { position: string; zoom: number };
 };
 
 export const team: TeamMember[] = [
@@ -21,6 +23,7 @@ export const team: TeamMember[] = [
     guide: { href: "/amazon-seo", label: "Read the Amazon SEO guide" },
     linkedin: "https://www.linkedin.com/in/filippoverace/",
     photo: "/team/filippo.jpg",
+    frame: { position: "50% 28%", zoom: 1 },
     tile: "bg-cyan",
   },
   {
@@ -32,6 +35,7 @@ export const team: TeamMember[] = [
     guide: { href: "/listing-optimization", label: "Read the listing optimisation guide" },
     linkedin: "https://www.linkedin.com/in/maria-giraldo/",
     photo: "/team/maria.jpg",
+    frame: { position: "50% 26%", zoom: 1.16 },
     tile: "bg-apricot",
   },
   {
@@ -43,6 +47,7 @@ export const team: TeamMember[] = [
     guide: { href: "/data-analysis", label: "Read the data analysis guide" },
     linkedin: "https://www.linkedin.com/in/veronika-matkovska-b5955a173/",
     photo: "/team/veronika.jpg",
+    frame: { position: "50% 30%", zoom: 1.06 },
     tile: "bg-royal",
   },
   {
@@ -54,6 +59,7 @@ export const team: TeamMember[] = [
     guide: { href: "/ai-automation", label: "Read the AI automation guide" },
     linkedin: "https://www.linkedin.com/in/carloambrosini/",
     photo: "/team/carlo.jpg",
+    frame: { position: "50% 28%", zoom: 1.04 },
     tile: "bg-graphite",
   },
 ];
