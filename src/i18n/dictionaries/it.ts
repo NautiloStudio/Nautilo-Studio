@@ -405,7 +405,7 @@ const it: Dictionary = {
     minRead: "min di lettura",
     photo: "Foto",
     by: "Di",
-    updated: "Aggiornato il",
+    updated: "Aggiornato:",
     contents: "In questa guida",
     sources: "Fonti",
     nextStep: "Prossimo passo",

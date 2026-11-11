@@ -19,8 +19,9 @@ const post: BlogPost = {
   excerpt:
     "Was ins versteckte Feld für Suchbegriffe gehört, was Sie weglassen sollten und ein Beispiel, das Sie für Ihr Listing übernehmen können.",
   published: "2026-11-10",
-  updated: "2026-11-10",
+  updated: "2026-11-11",
   readMinutes: 9,
+  author: { name: "Filippo Verace", role: "SEO & Ads Lead", href: "/about" },
   hero: { ...heroPhoto, alt: "Lupe über der Tastatur eines Laptops" },
   intro: (
     <>
@@ -33,8 +34,8 @@ const post: BlogPost = {
       <p>
         Dieser Ratgeber erklärt, was das Feld ist, warum es weiterhin zählt, wie Sie die richtigen
         Wörter finden und wie Sie sie eintragen, mit einem Beispiel am Ende. Wenn das Thema neu für
-        Sie ist, beginnen Sie mit unserem <Link href={p("/services/amazon-seo")}>Ratgeber zu Amazon SEO</Link>,
-        der zeigt, wie Amazon Produkte reiht.
+        Sie ist, beginnen Sie mit unserer Seite zu <Link href={p("/services/amazon-seo")}>B2B-SEO für Amazon-Händler</Link>,
+        die zeigt, wie Amazon Produkte reiht.
       </p>
     </>
   ),
@@ -336,7 +337,7 @@ const post: BlogPost = {
   ],
   cta: {
     text: "Backend Keywords sind ein Teil von Amazon SEO. Sehen Sie, wie Titel, Bullet Points und Verkäufe zusammenspielen, oder lassen Sie uns Ihr Listing kostenlos prüfen.",
-    pillar: { href: "/services/amazon-seo", label: "Unseren Ratgeber zu Amazon SEO lesen" },
+    pillar: { href: "/services/amazon-seo", label: "Unseren B2B-SEO-Service für Amazon-Händler ansehen" },
     formHeading: "Sollen wir Ihre Backend Keywords prüfen?",
     formText: "Senden Sie uns ein Listing, und wir sagen Ihnen kostenlos, was wir zuerst ändern würden.",
   },
