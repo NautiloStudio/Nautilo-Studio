@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { GuideCopy } from "../types";
 
@@ -117,11 +118,11 @@ const page: GuideCopy["page"] = {
     },
     {
       id: "b2b-seo-service",
-      heading: "Our B2B SEO service for Amazon sellers: what’s included",
+      heading: "What our B2B SEO agency does for Amazon sellers",
       body: (
         <>
           <p>
-            For a brand on Amazon, SEO is the B2B marketing that keeps bringing shoppers after the work is done. Our B2B SEO service covers four steps:
+            Think of it as SEO B2B marketing for your Amazon brand: once the work is done, it keeps bringing shoppers in. Our B2B SEO service covers four steps:
           </p>
           <ul>
             <li>
@@ -138,6 +139,19 @@ const page: GuideCopy["page"] = {
               Amazon data analysis service.
             </li>
           </ul>
+          <figure className="m-0">
+            <Image
+              src="/img/amazon-seo-dashboard.webp"
+              alt="Laptop showing an Amazon B2B SEO and advertising dashboard: keyword rankings, organic traffic and ACOS by ad campaign"
+              width={1600}
+              height={899}
+              sizes="(min-width: 768px) 55vw, 100vw"
+              className="h-auto w-full rounded-[1.5rem]"
+            />
+            <figcaption className="mt-3 text-sm text-slate">
+              The kind of dashboard we track rank and sales with. Example numbers, not a client result.
+            </figcaption>
+          </figure>
           <p>
             The work is done by our team in Barcelona. <Link href="/about">Meet the team behind Nautilo Studio</Link>.
           </p>
