@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight, CaretDown } from "@phosphor-icons/react/dist/ssr";
 import { BlogPhotoFigure } from "@/components/BlogFigures";
 import ContactForm from "@/components/ContactForm";
+import LandingContents from "@/components/LandingContents";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import TalkButton from "@/components/TalkButton";
@@ -84,7 +85,17 @@ export default function BlogArticle({ post, lang, dict }: { post: BlogPost; lang
       <SiteHeader reviewHref="#review" />
 
       <main id="main" className="flex-1 overflow-x-clip">
-        <article className="mx-auto max-w-3xl px-4 pt-32 sm:px-6 md:pt-40">
+        {/* Wide screens: the contents list stays beside the article while you read and marks the
+            section you are in. Narrower screens keep the list above the first section. */}
+        <article className="mx-auto grid max-w-6xl gap-12 px-4 pt-32 sm:px-6 md:pt-40 lg:grid-cols-[minmax(0,15rem)_minmax(0,1fr)] lg:gap-16">
+          <LandingContents
+            label={t.contents}
+            items={[
+              ...post.sections.map(({ id, heading }) => ({ id, heading })),
+              { id: "faq", heading: dict.landing.faq },
+            ]}
+          />
+          <div className="min-w-0 max-w-3xl">
           <nav aria-label={dict.landing.breadcrumb} className="text-sm text-slate">
             <ol className="m-0 flex flex-wrap list-none gap-2 p-0">
               <li>
@@ -143,7 +154,7 @@ export default function BlogArticle({ post, lang, dict }: { post: BlogPost; lang
           </div>
 
           {/* Contents */}
-          <nav aria-labelledby="contents" className="mt-10 rounded-[2rem] bg-white p-6 sm:p-8">
+          <nav aria-labelledby="contents" className="mt-10 rounded-[2rem] bg-white p-6 sm:p-8 lg:hidden">
             <p id="contents" className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-royal">
               {t.contents}
             </p>
@@ -233,6 +244,7 @@ export default function BlogArticle({ post, lang, dict }: { post: BlogPost; lang
               ))}
             </ol>
           </section>
+          </div>
         </article>
 
         {/* Free listing review */}
