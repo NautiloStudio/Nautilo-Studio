@@ -8,23 +8,23 @@ const SEARCH_TERMS_HELP = "https://sellercentral.amazon.com/help/hub/reference/e
 
 const p = (path: string) => localePath("de", path);
 
-const title = "Amazon-SEO: So ranken Sie Produkte höher | Nautilo Studio";
+const title = "B2B-SEO für Amazon-Händler: höher ranken | Nautilo Studio";
 const description =
-  "Amazon-SEO für Händler in den USA: was Ihr Ranking bestimmt, wohin Ihre Keywords gehören und welche Fehler Sie vermeiden. Kostenloser Listing-Check.";
+  "Nautilo Studio ist die B2B-SEO-Agentur für Amazon-Händler in den USA: Wir finden, wonach Käufer suchen, und setzen es dorthin, wo Amazon es liest. Gratis-Check.";
 
 const page: GuideCopy["page"] = {
   slug: "amazon-seo",
-  breadcrumb: "Amazon-SEO",
-  question: "Wie ranken Sie in den Amazon-Suchergebnissen höher?",
+  breadcrumb: "B2B-SEO für Amazon",
+  question: "B2B-SEO für Amazon-Händler: Wie ranken Sie in der Amazon-Suche höher?",
   answer:
-    "Amazon zeigt die Produkte, die am besten zu einer Suche passen und die Käufer am ehesten kaufen. Bringen Sie die Wörter, die Käufer eintippen, in Titel, Bullet Points und Backend-Suchbegriffe, und machen Sie das Listing überzeugend genug, um zu verkaufen. Diese Verkäufe bringen das Produkt zusammen mit einem guten Listing mit der Zeit nach oben.",
+    "B2B-SEO für Amazon-Händler, also Amazon-SEO, bringt Ihr Produkt vor die Käufer, die danach suchen. Amazon zeigt die Produkte, die am besten zu einer Suche passen und die Käufer am ehesten kaufen. Bringen Sie die Wörter, die Käufer eintippen, in Titel, Bullet Points und Backend-Suchbegriffe, und machen Sie das Listing überzeugend genug, um zu verkaufen. Diese Verkäufe bringen das Produkt zusammen mit einem guten Listing mit der Zeit nach oben.",
   description,
   image: {
     src: "/img/service-ads.jpg",
     alt: "Lupe, an ein kleines Paket gelehnt",
     tile: "bg-cyan",
   },
-  updated: "2026-11-07",
+  updated: "2026-11-11",
   facts: [
     { value: 200, label: "Zeichen als Titellimit laut Amazons SEO-Leitfaden" },
     { value: 60, label: "Zeichen, die Amazon für den Titel empfiehlt" },
@@ -119,6 +119,35 @@ const page: GuideCopy["page"] = {
       ),
     },
     {
+      id: "b2b-seo-service",
+      heading: "Unser B2B-SEO-Service für Amazon-Händler: was dazugehört",
+      body: (
+        <>
+          <p>
+            Für eine Marke auf Amazon ist SEO das B2B-Marketing, das auch nach getaner Arbeit weiter Käufer bringt. Unser B2B-SEO-Service umfasst vier Schritte:
+          </p>
+          <ul>
+            <li>
+              <strong>Keyword-Recherche.</strong> Die Suchen, die Ihre Käufer wirklich eintippen, aus Amazons eigenen Tools.
+            </li>
+            <li>
+              <strong>Titel und Bullet Points.</strong> So umgeschrieben, dass die wichtigsten Keywords vorn stehen und gut lesbar bleiben.
+            </li>
+            <li>
+              <strong>Backend-Suchbegriffe.</strong> Synonyme und Tippfehler, im Rahmen der Amazon-Regeln.
+            </li>
+            <li>
+              <strong>Tracking.</strong> Nach jeder Änderung prüfen wir Ranking und Verkäufe mit unserem{" "}
+              <Link href={p("/services/data-analysis")}>Service für Amazon-Datenanalyse</Link>.
+            </li>
+          </ul>
+          <p>
+            Die Arbeit macht unser Team in Barcelona. <Link href={p("/about")}>Lernen Sie das Team von Nautilo Studio kennen</Link>.
+          </p>
+        </>
+      ),
+    },
+    {
       id: "common-mistakes",
       heading: "Was sind die häufigsten Fehler?",
       body: (
@@ -143,8 +172,9 @@ const page: GuideCopy["page"] = {
           </ul>
           <p>
             Das Ranking bringt Käufer zu Ihnen. Unser{" "}
-            <Link href={p("/listing-optimization")}>Leitfaden zur Listing-Optimierung</Link> zeigt,
-            wie Sie aus diesen Besuchen Verkäufe machen.
+            <Link href={p("/services/listing-optimization")}>Leitfaden zur Listing-Optimierung</Link> zeigt,
+            wie Sie aus diesen Besuchen Verkäufe machen, und unser{" "}
+            <Link href={p("/blog")}>Blog für Amazon-Händler</Link> bietet weitere Schritt-für-Schritt-Leitfäden.
           </p>
         </>
       ),

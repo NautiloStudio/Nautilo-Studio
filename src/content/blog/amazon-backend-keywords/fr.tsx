@@ -34,7 +34,7 @@ const post: BlogPost = {
       <p>
         Ce guide explique ce qu’est ce champ, pourquoi il compte encore, comment trouver les bons mots
         et comment les écrire, avec un exemple concret à la fin. Si le sujet est nouveau pour vous,
-        commencez par notre <Link href={p("/amazon-seo")}>guide du SEO sur Amazon</Link>, qui montre
+        commencez par notre <Link href={p("/services/amazon-seo")}>guide du SEO sur Amazon</Link>, qui montre
         comment Amazon classe les produits.
       </p>
     </>
@@ -231,7 +231,7 @@ const post: BlogPost = {
           </p>
           <p>
             Pour travailler la partie visible de la même fiche, titre, puces et images, lisez notre{" "}
-            <Link href={p("/listing-optimization")}>guide d’optimisation des fiches Amazon</Link>.
+            <Link href={p("/services/listing-optimization")}>guide d’optimisation des fiches Amazon</Link>.
           </p>
         </>
       ),
@@ -261,7 +261,7 @@ const post: BlogPost = {
           </ul>
           <p>
             Vous ne savez pas quels chiffres suivre ? Notre{" "}
-            <Link href={p("/data-analysis")}>guide de l’analyse de données Amazon</Link> présente les
+            <Link href={p("/services/data-analysis")}>guide de l’analyse de données Amazon</Link> présente les
             quatre qui comptent le plus et où les trouver.
           </p>
         </>
@@ -339,7 +339,7 @@ const post: BlogPost = {
   ],
   cta: {
     text: "Les mots-clés backend sont une partie du SEO sur Amazon. Voyez comment titre, puces et ventes s’articulent, ou laissez-nous auditer votre fiche gratuitement.",
-    pillar: { href: "/amazon-seo", label: "Lire notre guide du SEO sur Amazon" },
+    pillar: { href: "/services/amazon-seo", label: "Lire notre guide du SEO sur Amazon" },
     formHeading: "Vous voulez que nous vérifiions vos mots-clés backend ?",
     formText: "Envoyez-nous une fiche et nous vous dirons, gratuitement, ce que nous changerions en premier.",
   },

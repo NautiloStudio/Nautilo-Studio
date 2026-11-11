@@ -8,23 +8,23 @@ const SEARCH_TERMS_HELP = "https://sellercentral.amazon.com/help/hub/reference/e
 
 const p = (path: string) => localePath("it", path);
 
-const title = "SEO su Amazon: come salire nei risultati | Nautilo Studio";
+const title = "SEO B2B per venditori Amazon: sali in alto | Nautilo Studio";
 const description =
-  "SEO su Amazon per venditori negli USA: cosa decide la tua posizione, dove vanno le parole chiave e quali errori evitare. Richiedi una revisione gratuita.";
+  "Nautilo Studio è l’agenzia SEO B2B per venditori Amazon USA: troviamo cosa cercano i clienti e lo mettiamo dove Amazon lo legge. Chiedi la revisione gratuita.";
 
 const page: GuideCopy["page"] = {
   slug: "amazon-seo",
-  breadcrumb: "SEO su Amazon",
-  question: "Come si sale nei risultati di ricerca di Amazon?",
+  breadcrumb: "SEO B2B per Amazon",
+  question: "SEO B2B per venditori Amazon: come si sale nelle ricerche di Amazon?",
   answer:
-    "Amazon mostra i prodotti che rispondono meglio a una ricerca e che i clienti hanno più probabilità di comprare. Inserisci le parole che i clienti digitano nel titolo, nei punti elenco e nei termini di ricerca nascosti, poi rendi la scheda abbastanza convincente da vendere. Quelle vendite, insieme a una scheda di qualità, fanno salire il prodotto nel tempo.",
+    "La SEO B2B per venditori Amazon, cioè la SEO su Amazon, mette il tuo prodotto davanti a chi lo cerca. Amazon mostra i prodotti che rispondono meglio a una ricerca e che i clienti hanno più probabilità di comprare. Inserisci le parole che i clienti digitano nel titolo, nei punti elenco e nei termini di ricerca nascosti, poi rendi la scheda abbastanza convincente da vendere. Quelle vendite, insieme a una scheda di qualità, fanno salire il prodotto nel tempo.",
   description,
   image: {
     src: "/img/service-ads.jpg",
     alt: "Lente d’ingrandimento appoggiata a un piccolo pacco",
     tile: "bg-cyan",
   },
-  updated: "2026-11-07",
+  updated: "2026-11-11",
   facts: [
     { value: 200, label: "Caratteri come limite del titolo nella guida SEO di Amazon" },
     { value: 60, label: "Caratteri che Amazon consiglia per il titolo" },
@@ -120,6 +120,35 @@ const page: GuideCopy["page"] = {
       ),
     },
     {
+      id: "b2b-seo-service",
+      heading: "Il nostro servizio SEO B2B per venditori Amazon: cosa include",
+      body: (
+        <>
+          <p>
+            Per un brand su Amazon, la SEO è il marketing B2B che continua a portare clienti anche a lavoro finito. Il nostro servizio SEO B2B comprende quattro passaggi:
+          </p>
+          <ul>
+            <li>
+              <strong>Ricerca delle parole chiave.</strong> Le ricerche che i tuoi clienti digitano davvero, dagli strumenti di Amazon.
+            </li>
+            <li>
+              <strong>Titolo e punti elenco.</strong> Riscritti perché le parole chiave principali vengano prima e si leggano bene.
+            </li>
+            <li>
+              <strong>Termini di ricerca nascosti.</strong> Sinonimi ed errori di battitura, nel rispetto delle regole di Amazon.
+            </li>
+            <li>
+              <strong>Monitoraggio.</strong> Dopo ogni modifica controlliamo posizione e vendite con il nostro{" "}
+              <Link href={p("/services/data-analysis")}>servizio di analisi dei dati Amazon</Link>.
+            </li>
+          </ul>
+          <p>
+            Il lavoro lo fa il nostro team a Barcellona. <Link href={p("/about")}>Conosci il team di Nautilo Studio</Link>.
+          </p>
+        </>
+      ),
+    },
+    {
       id: "common-mistakes",
       heading: "Quali sono gli errori più comuni?",
       body: (
@@ -143,8 +172,9 @@ const page: GuideCopy["page"] = {
           </ul>
           <p>
             Il posizionamento porta i clienti. La nostra{" "}
-            <Link href={p("/listing-optimization")}>guida all’ottimizzazione delle schede</Link>{" "}
-            spiega come trasformare quelle visite in vendite.
+            <Link href={p("/services/listing-optimization")}>guida all’ottimizzazione delle schede</Link>{" "}
+            spiega come trasformare quelle visite in vendite, e sul nostro{" "}
+            <Link href={p("/blog")}>blog per venditori Amazon</Link> trovi altre guide passo passo.
           </p>
         </>
       ),

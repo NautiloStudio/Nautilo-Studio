@@ -33,7 +33,7 @@ const post: BlogPost = {
       <p>
         Dieser Ratgeber erklärt, was das Feld ist, warum es weiterhin zählt, wie Sie die richtigen
         Wörter finden und wie Sie sie eintragen, mit einem Beispiel am Ende. Wenn das Thema neu für
-        Sie ist, beginnen Sie mit unserem <Link href={p("/amazon-seo")}>Ratgeber zu Amazon SEO</Link>,
+        Sie ist, beginnen Sie mit unserem <Link href={p("/services/amazon-seo")}>Ratgeber zu Amazon SEO</Link>,
         der zeigt, wie Amazon Produkte reiht.
       </p>
     </>
@@ -228,7 +228,7 @@ const post: BlogPost = {
           </p>
           <p>
             Für die sichtbare Seite desselben Listings, also Titel, Bullet Points und Bilder, lesen Sie
-            unseren <Link href={p("/listing-optimization")}>Ratgeber zur Optimierung von Amazon-Listings</Link>.
+            unseren <Link href={p("/services/listing-optimization")}>Ratgeber zur Optimierung von Amazon-Listings</Link>.
           </p>
         </>
       ),
@@ -258,7 +258,7 @@ const post: BlogPost = {
           </ul>
           <p>
             Unsicher, welche Zahlen Sie beobachten sollten? Unser{" "}
-            <Link href={p("/data-analysis")}>Ratgeber zur Amazon-Datenanalyse</Link> erklärt die vier
+            <Link href={p("/services/data-analysis")}>Ratgeber zur Amazon-Datenanalyse</Link> erklärt die vier
             wichtigsten und wo Sie sie finden.
           </p>
         </>
@@ -336,7 +336,7 @@ const post: BlogPost = {
   ],
   cta: {
     text: "Backend Keywords sind ein Teil von Amazon SEO. Sehen Sie, wie Titel, Bullet Points und Verkäufe zusammenspielen, oder lassen Sie uns Ihr Listing kostenlos prüfen.",
-    pillar: { href: "/amazon-seo", label: "Unseren Ratgeber zu Amazon SEO lesen" },
+    pillar: { href: "/services/amazon-seo", label: "Unseren Ratgeber zu Amazon SEO lesen" },
     formHeading: "Sollen wir Ihre Backend Keywords prüfen?",
     formText: "Senden Sie uns ein Listing, und wir sagen Ihnen kostenlos, was wir zuerst ändern würden.",
   },

@@ -57,7 +57,7 @@ const en = {
       moreHeading: "Keep reading: {3} more free guides.",
       moreIntro: "Each one comes with examples, charts and a checklist you can download.",
       tenPage: "10-page guide",
-      read: "Read the guide",
+      read: "Read the guide: {name}",
       download: "Download PDF",
     },
     // Shown next to PDF links in languages other than English, since the PDFs are in English.

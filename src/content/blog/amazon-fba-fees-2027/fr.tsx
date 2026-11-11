@@ -35,7 +35,7 @@ const post: BlogPost = {
       <p>
         Cet article résume les cinq changements les plus importants, les dates à noter et comment
         vérifier, produit par produit, leur effet sur vos marges. Si la lecture de vos chiffres est
-        nouvelle pour vous, notre <Link href={p("/data-analysis")}>guide de l’analyse de données Amazon</Link>{" "}
+        nouvelle pour vous, notre <Link href={p("/services/data-analysis")}>guide de l’analyse de données Amazon</Link>{" "}
         indique par quels rapports commencer.
       </p>
     </>
@@ -239,7 +239,7 @@ const post: BlogPost = {
           <p>
             Les frais ne sont qu’une partie du bénéfice. Pour voir comment sessions, conversion et
             publicité s’articulent, lisez notre{" "}
-            <Link href={p("/data-analysis")}>guide des chiffres Amazon qui comptent</Link>.
+            <Link href={p("/services/data-analysis")}>guide des chiffres Amazon qui comptent</Link>.
           </p>
         </>
       ),
@@ -290,7 +290,7 @@ const post: BlogPost = {
   ],
   cta: {
     text: "Les nouveaux frais changent les calculs de chaque produit. Voyez quels chiffres suivre chaque semaine, ou laissez-nous jeter un œil gratuit à l’une de vos fiches.",
-    pillar: { href: "/data-analysis", label: "Lire notre guide de l’analyse de données" },
+    pillar: { href: "/services/data-analysis", label: "Lire notre guide de l’analyse de données" },
     formHeading: "Vous ne savez pas ce que les frais 2027 changent pour vous ?",
     formText: "Envoyez-nous une fiche et nous vous dirons, gratuitement, ce que nous vérifierions en premier.",
   },

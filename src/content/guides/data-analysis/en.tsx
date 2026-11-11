@@ -67,12 +67,12 @@ const page: GuideCopy["page"] = {
         <ul>
           <li>
             <strong>Few sessions.</strong> Shoppers aren’t finding the product. Look at your
-            keywords with our <Link href="/amazon-seo">Amazon SEO guide</Link>.
+            keywords with our <Link href="/services/amazon-seo">Amazon SEO guide</Link>.
           </li>
           <li>
             <strong>Many sessions, low conversion.</strong> Shoppers arrive but don’t buy. Work on
             the listing with our{" "}
-            <Link href="/listing-optimization">listing optimisation guide</Link>.
+            <Link href="/services/listing-optimization">listing optimisation guide</Link>.
           </li>
           <li>
             <strong>Featured Offer lost.</strong> Check your price, stock and shipping against the

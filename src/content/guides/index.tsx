@@ -45,7 +45,7 @@ export async function guideMetadata(slug: Slug, params: Promise<{ lang: string }
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
   const { title, page } = await load(slug, lang);
-  const links = alternates(lang, `/${slug}`);
+  const links = alternates(lang, `/services/${slug}`);
   return {
     title,
     description: page.description,

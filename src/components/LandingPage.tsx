@@ -32,8 +32,8 @@ export type LandingContent = {
 };
 
 // Article, FAQ and breadcrumb data for search engines and AI answer engines.
-function structuredData(page: LandingContent, lang: Locale, home: string) {
-  const url = pageUrl(lang, `/${page.slug}`);
+function structuredData(page: LandingContent, lang: Locale, home: string, services: string) {
+  const url = pageUrl(lang, `/services/${page.slug}`);
   const organization = { "@type": "Organization", name: "Nautilo Studio", url: SITE_URL };
   return [
     {
@@ -63,7 +63,8 @@ function structuredData(page: LandingContent, lang: Locale, home: string) {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: home, item: pageUrl(lang, "/") },
-        { "@type": "ListItem", position: 2, name: page.breadcrumb, item: url },
+        { "@type": "ListItem", position: 2, name: services, item: pageUrl(lang, "/#services") },
+        { "@type": "ListItem", position: 3, name: page.breadcrumb, item: url },
       ],
     },
   ];
@@ -97,7 +98,7 @@ export default function LandingPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(structuredData(page, lang, t.home)).replace(/</g, "\\u003c"),
+          __html: JSON.stringify(structuredData(page, lang, t.home, dict.common.header.services)).replace(/</g, "\\u003c"),
         }}
       />
 
@@ -114,6 +115,12 @@ export default function LandingPage({
                     <li>
                       <Link href={href("/")} className="underline underline-offset-4 hover:text-royal">
                         {t.home}
+                      </Link>
+                    </li>
+                    <li aria-hidden>/</li>
+                    <li>
+                      <Link href={href("/#services")} className="underline underline-offset-4 hover:text-royal">
+                        {dict.common.header.services}
                       </Link>
                     </li>
                     <li aria-hidden>/</li>
@@ -318,7 +325,7 @@ export default function LandingPage({
         </section>
       </main>
 
-<SiteFooter lang={lang} path={`/${page.slug}`} t={dict.footer} />
+<SiteFooter lang={lang} path={`/services/${page.slug}`} t={dict.footer} />
     </>
   );
 }

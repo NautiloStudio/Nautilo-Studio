@@ -75,7 +75,7 @@ export default function SiteHeader({
   }, [open]);
 
   const guides: MenuItem[] = landingPages.map((page) => ({
-    href: href(`/${page.slug}`),
+    href: href(`/services/${page.slug}`),
     label: t.guides[page.slug as keyof typeof t.guides]?.menu ?? page.menu,
     current: page.slug === guide,
   }));

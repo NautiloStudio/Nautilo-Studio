@@ -8,23 +8,23 @@ const SEARCH_TERMS_HELP = "https://sellercentral.amazon.com/help/hub/reference/e
 
 const p = (path: string) => localePath("fr", path);
 
-const title = "SEO Amazon : mieux se classer dans Amazon | Nautilo Studio";
+const title = "SEO B2B pour vendeurs Amazon : mieux classé | Nautilo Studio";
 const description =
-  "SEO Amazon pour vendeurs aux États-Unis : ce qui décide de votre classement, où placer vos mots-clés et les erreurs à éviter. Audit gratuit de votre fiche.";
+  "Nautilo Studio, agence SEO B2B des vendeurs Amazon aux États-Unis : nous trouvons ce que cherchent vos acheteurs et le plaçons où Amazon le lit. Audit gratuit.";
 
 const page: GuideCopy["page"] = {
   slug: "amazon-seo",
-  breadcrumb: "SEO Amazon",
-  question: "Comment mieux se classer dans les résultats de recherche Amazon ?",
+  breadcrumb: "SEO B2B pour Amazon",
+  question: "SEO B2B pour vendeurs Amazon : comment mieux se classer dans Amazon ?",
   answer:
-    "Amazon affiche les produits qui correspondent le mieux à une recherche et que les acheteurs ont le plus de chances d’acheter. Placez les mots que tapent les acheteurs dans votre titre, vos puces et vos termes de recherche cachés, puis rendez la fiche assez convaincante pour vendre. Ces ventes, avec une fiche de qualité, font monter le produit au fil du temps.",
+    "Le SEO B2B pour vendeurs Amazon, ou SEO Amazon, consiste à placer votre produit devant ceux qui le cherchent. Amazon affiche les produits qui correspondent le mieux à une recherche et que les acheteurs ont le plus de chances d’acheter. Placez les mots que tapent les acheteurs dans votre titre, vos puces et vos termes de recherche cachés, puis rendez la fiche assez convaincante pour vendre. Ces ventes, avec une fiche de qualité, font monter le produit au fil du temps.",
   description,
   image: {
     src: "/img/service-ads.jpg",
     alt: "Loupe appuyée contre un petit colis",
     tile: "bg-cyan",
   },
-  updated: "2026-11-07",
+  updated: "2026-11-11",
   facts: [
     { value: 200, label: "Caractères maximum pour le titre selon le guide SEO d’Amazon" },
     { value: 60, label: "Caractères recommandés par Amazon pour le titre" },
@@ -120,6 +120,35 @@ const page: GuideCopy["page"] = {
       ),
     },
     {
+      id: "b2b-seo-service",
+      heading: "Notre service SEO B2B pour vendeurs Amazon : ce qu’il comprend",
+      body: (
+        <>
+          <p>
+            Pour une marque sur Amazon, le SEO est le marketing B2B qui continue d’amener des acheteurs une fois le travail fait. Notre service SEO B2B comprend quatre étapes :
+          </p>
+          <ul>
+            <li>
+              <strong>Recherche de mots-clés.</strong> Les recherches que vos acheteurs tapent vraiment, à partir des outils d’Amazon.
+            </li>
+            <li>
+              <strong>Titre et puces.</strong> Réécrits pour que les mots-clés principaux arrivent en premier et restent lisibles.
+            </li>
+            <li>
+              <strong>Termes de recherche cachés.</strong> Synonymes et fautes de frappe, dans le respect des règles d’Amazon.
+            </li>
+            <li>
+              <strong>Suivi.</strong> Nous vérifions classement et ventes après chaque changement grâce à notre{" "}
+              <Link href={p("/services/data-analysis")}>service d’analyse de données Amazon</Link>.
+            </li>
+          </ul>
+          <p>
+            Le travail est fait par notre équipe à Barcelone. <Link href={p("/about")}>Découvrez l’équipe de Nautilo Studio</Link>.
+          </p>
+        </>
+      ),
+    },
+    {
       id: "common-mistakes",
       heading: "Quelles sont les erreurs les plus courantes ?",
       body: (
@@ -144,8 +173,9 @@ const page: GuideCopy["page"] = {
           </ul>
           <p>
             Le classement amène les acheteurs. Notre{" "}
-            <Link href={p("/listing-optimization")}>guide d’optimisation des fiches</Link> explique
-            comment transformer ces visites en ventes.
+            <Link href={p("/services/listing-optimization")}>guide d’optimisation des fiches</Link> explique
+            comment transformer ces visites en ventes, et notre{" "}
+            <Link href={p("/blog")}>blog pour vendeurs Amazon</Link> propose d’autres guides pas à pas.
           </p>
         </>
       ),

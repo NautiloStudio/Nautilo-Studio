@@ -46,7 +46,7 @@ const page: GuideCopy["page"] = {
           <li>
             <strong>Titre.</strong> Dites ce qu’est le produit, puis la marque et les détails que les
             acheteurs comparent, comme la taille ou la couleur. Notre{" "}
-            <Link href={p("/amazon-seo")}>guide SEO Amazon</Link> explique quels mots utiliser.
+            <Link href={p("/services/amazon-seo")}>guide SEO Amazon</Link> explique quels mots utiliser.
           </li>
           <li>
             <strong>Images.</strong> Amazon vous permet{" "}
@@ -93,7 +93,7 @@ const page: GuideCopy["page"] = {
             </li>
             <li>
               <strong>Peu de visites.</strong> Les acheteurs ne trouvent pas la fiche. Commencez plutôt
-              par le <Link href={p("/amazon-seo")}>SEO Amazon</Link>.
+              par le <Link href={p("/services/amazon-seo")}>SEO Amazon</Link>.
             </li>
             <li>
               <strong>Les mêmes questions reviennent.</strong> Si les avis et les questions des clients
@@ -107,7 +107,7 @@ const page: GuideCopy["page"] = {
           </ul>
           <p>
             Vous ne savez pas quels chiffres regarder ? Notre{" "}
-            <Link href={p("/data-analysis")}>guide d’analyse de données</Link> les explique.
+            <Link href={p("/services/data-analysis")}>guide d’analyse de données</Link> les explique.
           </p>
         </>
       ),

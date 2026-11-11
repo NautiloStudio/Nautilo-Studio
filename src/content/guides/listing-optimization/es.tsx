@@ -46,7 +46,7 @@ const page: GuideCopy["page"] = {
           <li>
             <strong>Título.</strong> Di qué es el producto y después la marca y los detalles que
             comparan los compradores, como la talla o el color. Nuestra{" "}
-            <Link href={p("/amazon-seo")}>guía de SEO en Amazon</Link> explica qué palabras usar.
+            <Link href={p("/services/amazon-seo")}>guía de SEO en Amazon</Link> explica qué palabras usar.
           </li>
           <li>
             <strong>Imágenes.</strong> Amazon te deja{" "}
@@ -93,7 +93,7 @@ const page: GuideCopy["page"] = {
             </li>
             <li>
               <strong>Pocas visitas.</strong> Los compradores no encuentran la ficha. Empieza por el{" "}
-              <Link href={p("/amazon-seo")}>SEO en Amazon</Link>.
+              <Link href={p("/services/amazon-seo")}>SEO en Amazon</Link>.
             </li>
             <li>
               <strong>Siempre salen las mismas preguntas.</strong> Si las reseñas y las preguntas de
@@ -106,7 +106,7 @@ const page: GuideCopy["page"] = {
           </ul>
           <p>
             ¿No sabes qué números mirar? Nuestra{" "}
-            <Link href={p("/data-analysis")}>guía de análisis de datos</Link> te los explica.
+            <Link href={p("/services/data-analysis")}>guía de análisis de datos</Link> te los explica.
           </p>
         </>
       ),

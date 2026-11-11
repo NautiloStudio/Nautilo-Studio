@@ -14,7 +14,7 @@ export const landingPages: LandingPageLink[] = [
     slug: "amazon-seo",
     label: "Amazon SEO: how to rank higher",
     menu: "SEO",
-    updated: "2026-11-05",
+    updated: "2026-11-11",
   },
   {
     slug: "listing-optimization",

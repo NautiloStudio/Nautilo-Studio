@@ -33,7 +33,7 @@ const post: BlogPost = {
       <p>
         Esta guía explica qué es ese campo, por qué sigue importando, cómo encontrar las palabras
         adecuadas y cómo escribirlas, con un ejemplo resuelto al final. Si el tema es nuevo para ti,
-        empieza por nuestra <Link href={p("/amazon-seo")}>guía de SEO en Amazon</Link>, que explica
+        empieza por nuestra <Link href={p("/services/amazon-seo")}>guía de SEO en Amazon</Link>, que explica
         cómo ordena Amazon los productos.
       </p>
     </>
@@ -230,7 +230,7 @@ const post: BlogPost = {
           </p>
           <p>
             Para mejorar la parte visible de la misma ficha, el título, las viñetas y las imágenes, lee
-            nuestra <Link href={p("/listing-optimization")}>guía de optimización de fichas de Amazon</Link>.
+            nuestra <Link href={p("/services/listing-optimization")}>guía de optimización de fichas de Amazon</Link>.
           </p>
         </>
       ),
@@ -260,7 +260,7 @@ const post: BlogPost = {
           </ul>
           <p>
             ¿No sabes qué cifras mirar? Nuestra{" "}
-            <Link href={p("/data-analysis")}>guía de análisis de datos en Amazon</Link> explica las
+            <Link href={p("/services/data-analysis")}>guía de análisis de datos en Amazon</Link> explica las
             cuatro que más importan y dónde encontrarlas.
           </p>
         </>
@@ -340,7 +340,7 @@ const post: BlogPost = {
   ],
   cta: {
     text: "Las palabras clave backend son una parte del SEO en Amazon. Mira cómo encajan título, viñetas y ventas, o deja que revisemos tu ficha gratis.",
-    pillar: { href: "/amazon-seo", label: "Leer nuestra guía de SEO en Amazon" },
+    pillar: { href: "/services/amazon-seo", label: "Leer nuestra guía de SEO en Amazon" },
     formHeading: "¿Quieres que revisemos tus palabras clave backend?",
     formText: "Envíanos una ficha y te diremos, gratis, qué cambiaríamos primero.",
   },

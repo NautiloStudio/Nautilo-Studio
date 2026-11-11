@@ -36,7 +36,7 @@ const post: BlogPost = {
         Questo articolo riassume le cinque novità più importanti, le date da segnare e come
         verificare, prodotto per prodotto, cosa significano per i tuoi margini. Se leggere i tuoi
         numeri è una novità, la nostra{" "}
-        <Link href={p("/data-analysis")}>guida all’analisi dei dati su Amazon</Link> spiega da quali
+        <Link href={p("/services/data-analysis")}>guida all’analisi dei dati su Amazon</Link> spiega da quali
         report partire.
       </p>
     </>
@@ -240,7 +240,7 @@ const post: BlogPost = {
           <p>
             Le commissioni sono solo una parte del profitto. Per vedere come si combinano sessioni,
             conversione e pubblicità, leggi la nostra{" "}
-            <Link href={p("/data-analysis")}>guida ai numeri di Amazon che contano</Link>.
+            <Link href={p("/services/data-analysis")}>guida ai numeri di Amazon che contano</Link>.
           </p>
         </>
       ),
@@ -291,7 +291,7 @@ const post: BlogPost = {
   ],
   cta: {
     text: "Le nuove commissioni cambiano i conti di ogni prodotto. Scopri quali numeri seguire ogni settimana, oppure facci dare un’occhiata gratuita a una delle tue schede.",
-    pillar: { href: "/data-analysis", label: "Leggi la nostra guida all’analisi dei dati" },
+    pillar: { href: "/services/data-analysis", label: "Leggi la nostra guida all’analisi dei dati" },
     formHeading: "Non sai cosa cambiano per te le commissioni 2027?",
     formText: "Mandaci una scheda e ti diremo, gratis, cosa controlleremmo per primo.",
   },

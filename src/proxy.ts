@@ -3,7 +3,7 @@ import { NextResponse, type NextRequest } from "next/server";
 // Keep in sync with src/i18n/config.ts. Proxy runs on its own, so it doesn't import app modules.
 const prefixed = ["es", "fr", "de", "it"];
 
-// English pages keep their short URLs (/amazon-seo) and are served from app/[lang] with lang "en".
+// English pages keep their short URLs (/services/amazon-seo) and are served from app/[lang] with lang "en".
 // /es, /fr, /de and /it go straight through. /en/... redirects to the short URL so each page has one address.
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;

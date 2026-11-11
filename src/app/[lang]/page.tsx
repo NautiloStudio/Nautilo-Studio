@@ -18,10 +18,10 @@ import { notFound } from "next/navigation";
 
 // Pictures and links for each service; the words come from the dictionary, in the same order.
 const serviceMedia = [
-  { image: "/img/service-ads.jpg", tile: "bg-cyan", href: "/amazon-seo" },
-  { image: "/img/service-listing.jpg", tile: "bg-apricot", href: "/listing-optimization" },
-  { image: "/img/service-data.jpg", tile: "bg-royal", href: "/data-analysis" },
-  { image: "/img/service-ai.jpg", tile: "bg-graphite", href: "/ai-automation" },
+  { image: "/img/service-ads.jpg", tile: "bg-cyan", href: "/services/amazon-seo" },
+  { image: "/img/service-listing.jpg", tile: "bg-apricot", href: "/services/listing-optimization" },
+  { image: "/img/service-data.jpg", tile: "bg-royal", href: "/services/data-analysis" },
+  { image: "/img/service-ai.jpg", tile: "bg-graphite", href: "/services/ai-automation" },
 ];
 const demos = ["analyse", "optimise", "automate"] as const;
 
