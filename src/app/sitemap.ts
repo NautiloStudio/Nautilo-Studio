@@ -7,6 +7,7 @@ import { getPosts } from "@/content/blog";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const pages: { path: string; priority: number; lastModified?: string; changeFrequency: "weekly" | "monthly" | "yearly" }[] = [
     { path: "/", priority: 1, changeFrequency: "monthly" },
+    { path: "/services", priority: 0.8, changeFrequency: "monthly" },
     ...landingPages.map((page) => ({
       path: `/services/${page.slug}`,
       priority: 0.8,

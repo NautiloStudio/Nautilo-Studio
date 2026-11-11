@@ -80,12 +80,16 @@ export default function SiteHeader({
     current: page.slug === guide,
   }));
   const how = onHome ? "#how" : href("/#how");
+  // The services hub (level 2), reached from "Services" in the bar on wide screens.
+  const onServices = pathname === "/services";
+  const servicesHub: MenuItem = { href: href("/services"), label: t.header.allServices, current: onServices };
   const onGuide = Boolean(guide);
 
   // What the dropdown lists: on guide pages it is the small-screen version of the menu.
   const menuItems: MenuItem[] = onGuide
-    ? [{ href: href("/"), label: t.header.home }, ...guides]
+    ? [{ href: href("/"), label: t.header.home }, servicesHub, ...guides]
     : [
+        servicesHub,
         ...guides,
         { href: how, label: t.header.howWeWork },
         { href: href("/blog"), label: t.header.blog, current: pathname.startsWith("/blog") },
@@ -183,6 +187,9 @@ export default function SiteHeader({
                 >
                   {t.header.home}
                 </Link>
+                <Link href={href("/services")} className={`hidden xl:inline ${textLink}`}>
+                  {t.header.services}
+                </Link>
                 {guides.map((item) => (
                   <Link
                     key={item.href}
@@ -202,7 +209,16 @@ export default function SiteHeader({
               </>
             ) : (
               <>
-                {toggle}
+                <div className="md:hidden">{toggle}</div>
+                <Link
+                  href={href("/services")}
+                  aria-current={onServices ? "page" : undefined}
+                  className={`hidden md:inline ${textLink} ${
+                    onServices ? "text-cyan underline decoration-2 underline-offset-8" : ""
+                  }`}
+                >
+                  {t.header.services}
+                </Link>
                 <Link href={how} className={`hidden md:inline ${textLink}`}>
                   {t.header.howWeWork}
                 </Link>

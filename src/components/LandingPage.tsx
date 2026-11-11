@@ -67,7 +67,7 @@ function structuredData(page: LandingContent, lang: Locale, home: string, servic
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: home, item: pageUrl(lang, "/") },
-        { "@type": "ListItem", position: 2, name: services, item: pageUrl(lang, "/#services") },
+        { "@type": "ListItem", position: 2, name: services, item: pageUrl(lang, "/services") },
         { "@type": "ListItem", position: 3, name: page.breadcrumb, item: url },
       ],
     },
@@ -128,7 +128,7 @@ export default function LandingPage({
                     </li>
                     <li aria-hidden>/</li>
                     <li>
-                      <Link href={href("/#services")} className="underline underline-offset-4 hover:text-royal">
+                      <Link href={href("/services")} className="underline underline-offset-4 hover:text-royal">
                         {dict.common.header.services}
                       </Link>
                     </li>
