@@ -15,7 +15,7 @@ const description =
 const page: GuideCopy["page"] = {
   slug: "amazon-seo",
   breadcrumb: "B2B-SEO für Amazon",
-  question: "B2B-SEO für Amazon-Händler: Wie ranken Sie in der Amazon-Suche höher?",
+  question: "B2B-SEO für Amazon-Händler: So ranken Sie höher",
   answer:
     "B2B-SEO für Amazon-Händler, also Amazon-SEO, bringt Ihr Produkt vor die Käufer, die danach suchen. Amazon zeigt die Produkte, die am besten zu einer Suche passen und die Käufer am ehesten kaufen. Bringen Sie die Wörter, die Käufer eintippen, in Titel, Bullet Points und Backend-Suchbegriffe, und machen Sie das Listing überzeugend genug, um zu verkaufen. Diese Verkäufe bringen das Produkt zusammen mit einem guten Listing mit der Zeit nach oben.",
   description,
@@ -137,8 +137,8 @@ const page: GuideCopy["page"] = {
               <strong>Backend-Suchbegriffe.</strong> Synonyme und Tippfehler, im Rahmen der Amazon-Regeln.
             </li>
             <li>
-              <strong>Tracking.</strong> Nach jeder Änderung prüfen wir Ranking und Verkäufe mit unserem{" "}
-              <Link href={p("/services/data-analysis")}>Service für Amazon-Datenanalyse</Link>.
+              <strong>Tracking.</strong> Nach jeder Änderung prüfen wir Ranking und Verkäufe mit unserem
+              Service für Amazon-Datenanalyse.
             </li>
           </ul>
           <p>
@@ -173,8 +173,7 @@ const page: GuideCopy["page"] = {
           <p>
             Das Ranking bringt Käufer zu Ihnen. Unser{" "}
             <Link href={p("/services/listing-optimization")}>Leitfaden zur Listing-Optimierung</Link> zeigt,
-            wie Sie aus diesen Besuchen Verkäufe machen, und unser{" "}
-            <Link href={p("/blog")}>Blog für Amazon-Händler</Link> bietet weitere Schritt-für-Schritt-Leitfäden.
+            wie Sie aus diesen Besuchen Verkäufe machen.
           </p>
         </>
       ),

@@ -12,7 +12,7 @@ const description =
 const page: GuideCopy["page"] = {
   slug: "amazon-seo",
   breadcrumb: "B2B SEO for Amazon",
-  question: "B2B SEO for Amazon sellers: how do you rank higher in Amazon search?",
+  question: "B2B SEO for Amazon sellers: how to rank higher",
   answer:
     "B2B SEO for Amazon sellers, or Amazon SEO, is how you get your product in front of shoppers who search for it: Amazon shows the products that best match a search and that shoppers are most likely to buy. Put the words shoppers type into your title, bullets and backend search terms, then make the listing convincing enough to sell. Those sales, with good listing quality, push the product higher over time.",
   description,
@@ -134,8 +134,8 @@ const page: GuideCopy["page"] = {
               <strong>Backend search terms.</strong> Synonyms and misspellings, within Amazon’s rules.
             </li>
             <li>
-              <strong>Tracking.</strong> We check rank and sales after each change with our{" "}
-              <Link href="/services/data-analysis">Amazon data analysis service</Link>.
+              <strong>Tracking.</strong> We check rank and sales after each change with our
+              Amazon data analysis service.
             </li>
           </ul>
           <p>
@@ -167,8 +167,7 @@ const page: GuideCopy["page"] = {
           <p>
             Ranking brings shoppers in. Our{" "}
             <Link href="/services/listing-optimization">listing optimization guide</Link> covers turning
-            those visits into sales, and our{" "}
-            <Link href="/blog">blog for Amazon sellers</Link> has more step-by-step guides.
+            those visits into sales.
           </p>
         </>
       ),

@@ -15,7 +15,7 @@ const description =
 const page: GuideCopy["page"] = {
   slug: "amazon-seo",
   breadcrumb: "SEO B2B pour Amazon",
-  question: "SEO B2B pour vendeurs Amazon : comment mieux se classer dans Amazon ?",
+  question: "SEO B2B pour vendeurs Amazon : comment mieux se classer",
   answer:
     "Le SEO B2B pour vendeurs Amazon, ou SEO Amazon, consiste à placer votre produit devant ceux qui le cherchent. Amazon affiche les produits qui correspondent le mieux à une recherche et que les acheteurs ont le plus de chances d’acheter. Placez les mots que tapent les acheteurs dans votre titre, vos puces et vos termes de recherche cachés, puis rendez la fiche assez convaincante pour vendre. Ces ventes, avec une fiche de qualité, font monter le produit au fil du temps.",
   description,
@@ -138,8 +138,8 @@ const page: GuideCopy["page"] = {
               <strong>Termes de recherche cachés.</strong> Synonymes et fautes de frappe, dans le respect des règles d’Amazon.
             </li>
             <li>
-              <strong>Suivi.</strong> Nous vérifions classement et ventes après chaque changement grâce à notre{" "}
-              <Link href={p("/services/data-analysis")}>service d’analyse de données Amazon</Link>.
+              <strong>Suivi.</strong> Nous vérifions classement et ventes après chaque changement grâce à notre
+              service d’analyse de données Amazon.
             </li>
           </ul>
           <p>
@@ -174,8 +174,7 @@ const page: GuideCopy["page"] = {
           <p>
             Le classement amène les acheteurs. Notre{" "}
             <Link href={p("/services/listing-optimization")}>guide d’optimisation des fiches</Link> explique
-            comment transformer ces visites en ventes, et notre{" "}
-            <Link href={p("/blog")}>blog pour vendeurs Amazon</Link> propose d’autres guides pas à pas.
+            comment transformer ces visites en ventes.
           </p>
         </>
       ),

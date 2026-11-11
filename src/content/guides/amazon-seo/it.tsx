@@ -15,7 +15,7 @@ const description =
 const page: GuideCopy["page"] = {
   slug: "amazon-seo",
   breadcrumb: "SEO B2B per Amazon",
-  question: "SEO B2B per venditori Amazon: come si sale nelle ricerche di Amazon?",
+  question: "SEO B2B per venditori Amazon: come salire nelle ricerche",
   answer:
     "La SEO B2B per venditori Amazon, cioè la SEO su Amazon, mette il tuo prodotto davanti a chi lo cerca. Amazon mostra i prodotti che rispondono meglio a una ricerca e che i clienti hanno più probabilità di comprare. Inserisci le parole che i clienti digitano nel titolo, nei punti elenco e nei termini di ricerca nascosti, poi rendi la scheda abbastanza convincente da vendere. Quelle vendite, insieme a una scheda di qualità, fanno salire il prodotto nel tempo.",
   description,
@@ -138,8 +138,8 @@ const page: GuideCopy["page"] = {
               <strong>Termini di ricerca nascosti.</strong> Sinonimi ed errori di battitura, nel rispetto delle regole di Amazon.
             </li>
             <li>
-              <strong>Monitoraggio.</strong> Dopo ogni modifica controlliamo posizione e vendite con il nostro{" "}
-              <Link href={p("/services/data-analysis")}>servizio di analisi dei dati Amazon</Link>.
+              <strong>Monitoraggio.</strong> Dopo ogni modifica controlliamo posizione e vendite con il nostro
+              servizio di analisi dei dati Amazon.
             </li>
           </ul>
           <p>
@@ -173,8 +173,7 @@ const page: GuideCopy["page"] = {
           <p>
             Il posizionamento porta i clienti. La nostra{" "}
             <Link href={p("/services/listing-optimization")}>guida all’ottimizzazione delle schede</Link>{" "}
-            spiega come trasformare quelle visite in vendite, e sul nostro{" "}
-            <Link href={p("/blog")}>blog per venditori Amazon</Link> trovi altre guide passo passo.
+            spiega come trasformare quelle visite in vendite.
           </p>
         </>
       ),
