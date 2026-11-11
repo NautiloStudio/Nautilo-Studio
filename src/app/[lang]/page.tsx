@@ -18,10 +18,10 @@ import { notFound } from "next/navigation";
 
 // Pictures and links for each service; the words come from the dictionary, in the same order.
 const serviceMedia = [
-  { image: "/img/service-ads.jpg", tile: "bg-cyan", href: "/services/amazon-seo" },
-  { image: "/img/service-listing.jpg", tile: "bg-apricot", href: "/services/listing-optimization" },
-  { image: "/img/service-data.jpg", tile: "bg-royal", href: "/services/data-analysis" },
-  { image: "/img/service-ai.jpg", tile: "bg-graphite", href: "/services/ai-automation" },
+  { image: "/img/amazon-seo-dashboard.webp", tile: "bg-cyan", chip: "bg-cyan text-graphite", href: "/services/amazon-seo" },
+  { image: "/img/service-listing.jpg", tile: "bg-apricot", chip: "bg-apricot text-graphite", href: "/services/listing-optimization" },
+  { image: "/img/service-data.jpg", tile: "bg-royal", chip: "bg-royal text-offwhite", href: "/services/data-analysis" },
+  { image: "/img/service-ai.jpg", tile: "bg-graphite", chip: "bg-graphite text-offwhite", href: "/services/ai-automation" },
 ];
 const demos = ["analyse", "optimise", "automate"] as const;
 
@@ -31,7 +31,12 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   const dict = await getDictionary(lang);
   const t = dict.home;
   const href = (path: string) => localePath(lang, path);
-  const services = t.services.map((service, index) => ({ ...service, ...serviceMedia[index] }));
+  // The SEO card shows the dashboard photo from the SEO page, described in the page's language.
+  const services = t.services.map((service, index) => ({
+    ...service,
+    ...serviceMedia[index],
+    alt: index === 0 ? dict.servicesPage.seoPhotoAlt : service.alt,
+  }));
   const steps = t.steps.map((step, index) => ({ ...step, demo: demos[index] }));
 
   return (
@@ -122,9 +127,11 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                   } as React.CSSProperties
                 }
               >
-                <article className="grid gap-6 rounded-[2rem] bg-white p-5 shadow-[0_-18px_50px_-28px_rgba(22,25,31,0.35)] ring-1 ring-sand sm:p-6 md:h-[30rem] md:grid-cols-2 md:gap-10 md:p-8">
+                <article className="glow-ring grid gap-6 rounded-[2rem] bg-white p-5 shadow-[0_-18px_50px_-28px_rgba(22,25,31,0.35)] sm:p-6 md:h-[30rem] md:grid-cols-2 md:gap-10 md:p-8">
                   <div className="flex flex-col">
-                    <p className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-slate">
+                    <p
+                      className={`self-start rounded-full px-5 py-2 font-display text-[clamp(1.15rem,1.8vw,1.6rem)] font-bold leading-tight tracking-[-0.01em] ${service.chip}`}
+                    >
                       {service.title}
                     </p>
                     <div className="mt-6 md:mt-auto">
@@ -217,7 +224,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
           id="review"
           className="on-dark mx-auto mt-28 max-w-7xl md:mt-44 px-4 sm:px-6"
         >
-          <div className="grid gap-12 rounded-[2rem] bg-graphite px-8 py-14 text-offwhite md:grid-cols-2 md:gap-16 md:px-16 md:py-24">
+          <div className="glow-ring grid gap-12 rounded-[2rem] bg-graphite px-8 py-14 text-offwhite md:grid-cols-2 md:gap-16 md:px-16 md:py-24">
             <div>
               <h2 className="font-display text-[clamp(2rem,4.4vw,4rem)] font-bold leading-[1.05] tracking-[-0.03em]">
                 {t.reviewHeading}
@@ -248,7 +255,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
           id="contact"
           className="on-dark mx-auto mt-5 max-w-7xl px-4 sm:px-6"
         >
-          <div className="grid gap-12 rounded-[2rem] bg-royal px-8 py-14 text-offwhite md:grid-cols-2 md:gap-16 md:px-16 md:py-24">
+          <div className="glow-ring grid gap-12 rounded-[2rem] bg-royal px-8 py-14 text-offwhite md:grid-cols-2 md:gap-16 md:px-16 md:py-24">
             <div>
               <h2 className="font-display text-[clamp(2rem,4.4vw,4rem)] font-bold leading-[1.05] tracking-[-0.03em]">
                 {t.contactHeading}

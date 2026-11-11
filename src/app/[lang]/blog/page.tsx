@@ -137,7 +137,7 @@ export default async function BlogIndex({ params }: PageProps<"/[lang]/blog">) {
               <li key={post.slug} className="reveal">
                 <Link
                   href={href(`/blog/${post.slug}`)}
-                  className="group flex flex-col gap-4 rounded-[2rem] bg-white p-6 ring-1 ring-sand transition-shadow hover:ring-2 hover:ring-royal sm:p-8"
+                  className="glow-ring group flex flex-col gap-4 rounded-[2rem] bg-white p-6 transition-shadow hover:ring-2 hover:ring-royal sm:p-8"
                 >
                   <span className="text-sm text-slate">
                     {formatDate(post.published, lang)} · {post.readMinutes} {t.minRead}

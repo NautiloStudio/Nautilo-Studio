@@ -20,8 +20,8 @@ const page: GuideCopy["page"] = {
     "B2B-SEO für Amazon-Händler, also Amazon-SEO, bringt Ihr Produkt vor die Käufer, die danach suchen. Amazon zeigt die Produkte, die am besten zu einer Suche passen und die Käufer am ehesten kaufen. Bringen Sie die Wörter, die Käufer eintippen, in Titel, Bullet Points und Backend-Suchbegriffe, und machen Sie das Listing überzeugend genug, um zu verkaufen. Diese Verkäufe bringen das Produkt zusammen mit einem guten Listing mit der Zeit nach oben.",
   description,
   image: {
-    src: "/img/service-ads.jpg",
-    alt: "Lupe, an ein kleines Paket gelehnt",
+    src: "/img/amazon-seo-dashboard.webp",
+    alt: "Laptop mit einem Amazon-SEO-Dashboard: Keyword-Rankings und organischer Traffic",
     tile: "bg-cyan",
   },
   updated: "2026-11-11",

@@ -20,8 +20,8 @@ const page: GuideCopy["page"] = {
     "La SEO B2B per venditori Amazon, cioè la SEO su Amazon, mette il tuo prodotto davanti a chi lo cerca. Amazon mostra i prodotti che rispondono meglio a una ricerca e che i clienti hanno più probabilità di comprare. Inserisci le parole che i clienti digitano nel titolo, nei punti elenco e nei termini di ricerca nascosti, poi rendi la scheda abbastanza convincente da vendere. Quelle vendite, insieme a una scheda di qualità, fanno salire il prodotto nel tempo.",
   description,
   image: {
-    src: "/img/service-ads.jpg",
-    alt: "Lente d’ingrandimento appoggiata a un piccolo pacco",
+    src: "/img/amazon-seo-dashboard.webp",
+    alt: "Portatile con una dashboard SEO su Amazon: posizioni delle parole chiave e traffico organico",
     tile: "bg-cyan",
   },
   updated: "2026-11-11",
