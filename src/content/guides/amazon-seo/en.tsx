@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { GuideCopy } from "../types";
 
@@ -119,6 +118,13 @@ const page: GuideCopy["page"] = {
     {
       id: "b2b-seo-service",
       heading: "What our B2B SEO agency does for Amazon sellers",
+      figure: {
+        src: "/img/amazon-seo-dashboard.webp",
+        alt: "Laptop showing an Amazon B2B SEO and advertising dashboard: keyword rankings, organic traffic and ACOS by ad campaign",
+        width: 1600,
+        height: 899,
+        caption: "The kind of dashboard we track rank and sales with. Example numbers, not a client result.",
+      },
       body: (
         <>
           <p>
@@ -139,19 +145,6 @@ const page: GuideCopy["page"] = {
               Amazon data analysis service.
             </li>
           </ul>
-          <figure className="m-0">
-            <Image
-              src="/img/amazon-seo-dashboard.webp"
-              alt="Laptop showing an Amazon B2B SEO and advertising dashboard: keyword rankings, organic traffic and ACOS by ad campaign"
-              width={1600}
-              height={899}
-              sizes="(min-width: 768px) 55vw, 100vw"
-              className="h-auto w-full rounded-[1.5rem]"
-            />
-            <figcaption className="mt-3 text-sm text-slate">
-              The kind of dashboard we track rank and sales with. Example numbers, not a client result.
-            </figcaption>
-          </figure>
           <p>
             The work is done by our team in Barcelona. <Link href="/about">Meet the team behind Nautilo Studio</Link>.
           </p>
