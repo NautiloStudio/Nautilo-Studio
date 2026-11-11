@@ -114,6 +114,11 @@ const page: GuideCopy["page"] = {
             Klicks und ACOS pro Kampagne und Suchbegriff.
           </li>
           <li>
+            <strong>Profit Analytics.</strong> In Seller Central. Zeigt, was Amazon Ihnen pro Produkt
+            berechnet. Die Gebühren ändern sich jedes Jahr: Lesen Sie,{" "}
+            <Link href={p("/blog/amazon-fba-fees-2027")}>was sich bei den Amazon-FBA-Gebühren 2027 ändert</Link>.
+          </li>
+          <li>
             <strong>Ihre eigene Tabelle.</strong> Eine Zeile pro Woche und Produkt, damit Sie Trends
             sehen, die ein einzelner Bericht verbirgt.
           </li>

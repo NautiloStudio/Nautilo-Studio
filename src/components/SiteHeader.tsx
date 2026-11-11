@@ -88,8 +88,7 @@ export default function SiteHeader({
     : [
         ...guides,
         { href: how, label: t.header.howWeWork },
-        // The blog is English only, so it always links to /blog.
-        { href: "/blog", label: t.header.blog, current: pathname.startsWith("/blog") },
+        { href: href("/blog"), label: t.header.blog, current: pathname.startsWith("/blog") },
         {
           href: href("/about"),
           label: t.header.aboutUs,
@@ -208,7 +207,7 @@ export default function SiteHeader({
                   {t.header.howWeWork}
                 </Link>
                 <Link
-                  href="/blog"
+                  href={href("/blog")}
                   aria-current={pathname.startsWith("/blog") ? "page" : undefined}
                   className={`hidden sm:inline ${textLink} ${
                     pathname.startsWith("/blog")

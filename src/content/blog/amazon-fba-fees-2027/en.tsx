@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { BlogPost } from "./types";
+import type { BlogPost } from "../types";
 
 // Amazon's own announcement (November 5, 2026) and the most detailed independent breakdown of it.
 const AMAZON_2027 = "https://sellingpartners.aboutamazon.com/update-to-us-referral-and-fulfillment-by-amazon-fees-for-2027";

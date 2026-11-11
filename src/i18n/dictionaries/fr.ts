@@ -259,7 +259,6 @@ const fr: Dictionary = {
       "Café et thé",
       "Vêtements",
     ],
-    placeholder: "Emplacement pour les logos de partenaires et d’outils, à remplir quand nous en aurons.",
   },
 
   demo: {
@@ -391,6 +390,27 @@ const fr: Dictionary = {
     guidesIntro: "Un guide par service, avec des exemples, des graphiques et une checklist.",
   },
 
+  blog: {
+    metaTitle: "Blog vendeurs Amazon : guides SEO pratiques | Nautilo Studio",
+    metaDescription: "Actualités et guides pratiques pour les vendeurs Amazon aux États-Unis : SEO, fiches, données et IA, à jour à chaque changement. Lisez nos articles et PDF.",
+    label: "Blog",
+    h1: "Le blog des vendeurs Amazon : ce qui change, et quoi faire.",
+    intro: "Amazon change sans cesse le fonctionnement de sa recherche, ce que ses règles autorisent et les outils qu’il donne aux vendeurs dans Seller Central. Nous suivons ces changements pour vous et les transformons en articles courts et pratiques pour les vendeurs aux États-Unis : ce qui est nouveau, pourquoi c’est important et quoi modifier dans vos fiches.",
+    introMore: "Ce blog est mis à jour en continu. De nouveaux articles paraissent au fil de l’actualité d’Amazon : ajoutez cette page à vos favoris et revenez souvent. Pour une vue d’ensemble, commencez par notre",
+    introLink: "guide du SEO sur Amazon",
+    tags: ["Mis à jour en continu", "L’actualité d’Amazon, expliquée", "Articles pratiques", "Guides PDF gratuits"],
+    guidesHeading: "Guides PDF gratuits",
+    guidesIntro: "Un guide de 10 pages pour chacun de nos services, avec des exemples, des graphiques et une checklist. Téléchargement gratuit.",
+    pdfMeta: "PDF · 10 pages",
+    articlesHeading: "Derniers articles",
+    readPost: "Lire l’article sur",
+    minRead: "min de lecture",
+    by: "Par",
+    updated: "Mis à jour le",
+    contents: "Dans ce guide",
+    sources: "Sources",
+    nextStep: "Étape suivante",
+  },
   privacy: {
     back: "Retour à l’accueil",
     title: "Note de confidentialité",

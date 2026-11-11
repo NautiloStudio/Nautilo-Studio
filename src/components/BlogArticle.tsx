@@ -4,28 +4,29 @@ import ContactForm from "@/components/ContactForm";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import TalkButton from "@/components/TalkButton";
-import { SITE_URL } from "@/i18n/config";
+import { localePath, localeTags, pageUrl, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import type { BlogPost } from "@/content/blog/types";
 
-const formatDate = (iso: string) =>
-  new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-US", {
+const formatDate = (iso: string, lang: Locale) =>
+  new Date(`${iso}T12:00:00Z`).toLocaleDateString(localeTags[lang], {
     year: "numeric",
     month: "long",
     day: "numeric",
   });
 
 // Article, FAQ and breadcrumb data for search engines and AI answer engines.
-function structuredData(post: BlogPost) {
-  const url = `${SITE_URL}/blog/${post.slug}`;
-  const organization = { "@type": "Organization", name: "Nautilo Studio", url: SITE_URL };
+function structuredData(post: BlogPost, lang: Locale, dict: Dictionary) {
+  const url = pageUrl(lang, `/blog/${post.slug}`);
+  const home = pageUrl(lang, "/");
+  const organization = { "@type": "Organization", name: "Nautilo Studio", url: home };
   return [
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       headline: post.h1,
       description: post.description,
-      inLanguage: "en-US",
+      inLanguage: localeTags[lang],
       mainEntityOfPage: url,
       datePublished: post.published,
       dateModified: post.updated,
@@ -34,7 +35,7 @@ function structuredData(post: BlogPost) {
           "@type": "Person",
           name: post.author.name,
           jobTitle: post.author.role,
-          url: `${SITE_URL}${post.author.href}`,
+          url: pageUrl(lang, post.author.href),
           worksFor: organization,
         },
       }),
@@ -55,8 +56,8 @@ function structuredData(post: BlogPost) {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-        { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+        { "@type": "ListItem", position: 1, name: dict.landing.home, item: home },
+        { "@type": "ListItem", position: 2, name: dict.blog.label, item: pageUrl(lang, "/blog") },
         { "@type": "ListItem", position: 3, name: post.h1, item: url },
       ],
     },
@@ -69,28 +70,30 @@ const prose =
 
 const h2 = "font-display text-[clamp(1.75rem,3.2vw,2.5rem)] font-bold leading-[1.1] tracking-[-0.025em]";
 
-export default function BlogArticle({ post, dict }: { post: BlogPost; dict: Dictionary }) {
+export default function BlogArticle({ post, lang, dict }: { post: BlogPost; lang: Locale; dict: Dictionary }) {
+  const t = dict.blog;
+  const href = (path: string) => localePath(lang, path);
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData(post)).replace(/</g, "\\u003c") }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData(post, lang, dict)).replace(/</g, "\\u003c") }}
       />
       <SiteHeader reviewHref="#review" />
 
       <main id="main" className="flex-1 overflow-x-clip">
         <article className="mx-auto max-w-3xl px-4 pt-32 sm:px-6 md:pt-40">
-          <nav aria-label="Breadcrumb" className="text-sm text-slate">
+          <nav aria-label={dict.landing.breadcrumb} className="text-sm text-slate">
             <ol className="m-0 flex flex-wrap list-none gap-2 p-0">
               <li>
-                <Link href="/" className="underline underline-offset-4 hover:text-royal">
-                  Home
+                <Link href={href("/")} className="underline underline-offset-4 hover:text-royal">
+                  {dict.landing.home}
                 </Link>
               </li>
               <li aria-hidden>/</li>
               <li>
-                <Link href="/blog" className="underline underline-offset-4 hover:text-royal">
-                  Blog
+                <Link href={href("/blog")} className="underline underline-offset-4 hover:text-royal">
+                  {t.label}
                 </Link>
               </li>
               <li aria-hidden>/</li>
@@ -109,9 +112,9 @@ export default function BlogArticle({ post, dict }: { post: BlogPost; dict: Dict
           <p className="rise mt-6 text-sm text-slate" style={{ "--i": 1 } as React.CSSProperties}>
             {post.author && (
               <>
-                By{" "}
+                {t.by}{" "}
                 <Link
-                  href={post.author.href}
+                  href={href(post.author.href)}
                   className="font-medium text-graphite underline decoration-sand underline-offset-4 hover:decoration-royal"
                 >
                   {post.author.name}
@@ -119,14 +122,14 @@ export default function BlogArticle({ post, dict }: { post: BlogPost; dict: Dict
                 , {post.author.role} ·{" "}
               </>
             )}
-            <time dateTime={post.published}>{formatDate(post.published)}</time>
+            <time dateTime={post.published}>{formatDate(post.published, lang)}</time>
             {post.updated !== post.published && (
               <>
                 {" "}
-                · Updated <time dateTime={post.updated}>{formatDate(post.updated)}</time>
+                · {t.updated} <time dateTime={post.updated}>{formatDate(post.updated, lang)}</time>
               </>
             )}{" "}
-            · {post.readMinutes} min read
+            · {post.readMinutes} {t.minRead}
           </p>
 
           <div className={`rise mt-10 ${prose}`} style={{ "--i": 2 } as React.CSSProperties}>
@@ -136,7 +139,7 @@ export default function BlogArticle({ post, dict }: { post: BlogPost; dict: Dict
           {/* Contents */}
           <nav aria-labelledby="contents" className="mt-10 rounded-[2rem] bg-white p-6 sm:p-8">
             <p id="contents" className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-royal">
-              In this guide
+              {t.contents}
             </p>
             <ol className="m-0 mt-4 list-decimal space-y-2 pl-5 text-slate marker:font-display marker:text-royal">
               {post.sections.map((section) => (
@@ -148,7 +151,7 @@ export default function BlogArticle({ post, dict }: { post: BlogPost; dict: Dict
               ))}
               <li>
                 <a href="#faq" className="transition-colors hover:text-royal">
-                  Frequently asked questions
+                  {dict.landing.faq}
                 </a>
               </li>
             </ol>
@@ -164,15 +167,15 @@ export default function BlogArticle({ post, dict }: { post: BlogPost; dict: Dict
           {/* Call to action: the landing page and the free review */}
           <aside className="reveal on-dark mt-16 rounded-[2rem] bg-royal p-8 text-offwhite md:p-10">
             <p className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-cyan">
-              Next step
+              {t.nextStep}
             </p>
             <p className="mt-3 font-display text-[clamp(1.4rem,2.6vw,2rem)] font-semibold leading-snug tracking-[-0.01em]">
               {post.cta.text}
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-x-7 gap-y-4">
-              <TalkButton href="#review" label="Get a free listing review" tone="cyan" />
+              <TalkButton href="#review" label={dict.landing.getReview} tone="cyan" />
               <Link
-                href={post.cta.pillar.href}
+                href={href(post.cta.pillar.href)}
                 className="group inline-flex items-center gap-2 font-display font-semibold text-offwhite underline decoration-cyan/60 decoration-2 underline-offset-8"
               >
                 {post.cta.pillar.label}
@@ -183,7 +186,7 @@ export default function BlogArticle({ post, dict }: { post: BlogPost; dict: Dict
 
           {/* FAQ */}
           <section id="faq" className="reveal mt-16 scroll-mt-28">
-            <h2 className={h2}>Frequently asked questions</h2>
+            <h2 className={h2}>{dict.landing.faq}</h2>
             <div className="mt-6 divide-y divide-sand border-y border-sand">
               {post.faqs.map((faq) => (
                 <details key={faq.question} className="group py-5">
@@ -205,7 +208,7 @@ export default function BlogArticle({ post, dict }: { post: BlogPost; dict: Dict
           {/* Sources */}
           <section aria-labelledby="sources" className="mt-12">
             <h2 id="sources" className="font-display text-xl font-semibold">
-              Sources
+              {t.sources}
             </h2>
             <ol className="mt-4 space-y-2 pl-5 text-slate">
               {post.sources.map((source) => (
@@ -242,7 +245,7 @@ export default function BlogArticle({ post, dict }: { post: BlogPost; dict: Dict
         </section>
       </main>
 
-      <SiteFooter lang="en" path={`/blog/${post.slug}`} t={dict.footer} />
+      <SiteFooter lang={lang} path={`/blog/${post.slug}`} t={dict.footer} />
     </>
   );
 }

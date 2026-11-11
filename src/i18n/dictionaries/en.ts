@@ -259,7 +259,6 @@ const en = {
       "Coffee and tea",
       "Apparel",
     ],
-    placeholder: "Space for partner and tool logos, to fill in once we have them.",
   },
 
   // The small looping example scenes. All numbers are examples.
@@ -392,6 +391,27 @@ const en = {
     guidesIntro: "One guide for each service, with examples, charts and a checklist.",
   },
 
+  blog: {
+    metaTitle: "Amazon Seller Blog: Practical SEO Guides | Nautilo Studio",
+    metaDescription: "News and practical guides for US Amazon sellers on SEO, listings, data and AI, updated as Amazon changes. Read the latest posts and get our free PDF guides.",
+    label: "Blog",
+    h1: "The Amazon seller blog: what changed, and what to do about it.",
+    intro: "Amazon keeps changing how search works, what its rules allow and which tools sellers get in Seller Central. We follow those changes for you and turn them into short, practical articles for US sellers: what is new, why it matters and what to change in your listings.",
+    introMore: "This blog is updated continuously. New articles go up as new things happen on Amazon, so bookmark this page and check back. For the full picture, start with our",
+    introLink: "Amazon SEO guide",
+    tags: ["Updated continuously", "Amazon news, explained", "How-to articles", "Free PDF guides"],
+    guidesHeading: "Free PDF guides",
+    guidesIntro: "One 10-page guide for each of our services, with examples, charts and a checklist. Free to download.",
+    pdfMeta: "PDF · 10 pages",
+    articlesHeading: "Latest articles",
+    readPost: "Read the post on",
+    minRead: "min read",
+    by: "By",
+    updated: "Updated",
+    contents: "In this guide",
+    sources: "Sources",
+    nextStep: "Next step",
+  },
   privacy: {
     back: "Back to the homepage",
     title: "Privacy note",

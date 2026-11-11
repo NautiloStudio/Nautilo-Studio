@@ -111,6 +111,11 @@ const page: GuideCopy["page"] = {
             vendite, clic e ACOS per ogni campagna e termine di ricerca.
           </li>
           <li>
+            <strong>Profit Analytics.</strong> In Seller Central. Mostra quanto Amazon ti addebita per
+            ogni prodotto. Le commissioni cambiano ogni anno: scopri{" "}
+            <Link href={p("/blog/amazon-fba-fees-2027")}>cosa cambia nelle commissioni Amazon FBA 2027</Link>.
+          </li>
+          <li>
             <strong>Il tuo foglio di calcolo.</strong> Una riga per settimana e per prodotto, così
             vedi tendenze che un singolo report nasconde.
           </li>

@@ -259,7 +259,6 @@ const de: Dictionary = {
       "Kaffee und Tee",
       "Bekleidung",
     ],
-    placeholder: "Platz für Logos von Partnern und Tools, sobald wir welche haben.",
   },
 
   demo: {
@@ -391,6 +390,27 @@ const de: Dictionary = {
     guidesIntro: "Ein Leitfaden pro Leistung, mit Beispielen, Diagrammen und einer Checkliste.",
   },
 
+  blog: {
+    metaTitle: "Blog für Amazon-Händler: SEO-Ratgeber | Nautilo Studio",
+    metaDescription: "News und praktische Ratgeber für Amazon-Händler in den USA zu SEO, Listings, Daten und KI, aktuell bei jeder Änderung. Lesen Sie Artikel und PDF-Guides.",
+    label: "Blog",
+    h1: "Der Blog für Amazon-Händler: was sich ändert und was zu tun ist.",
+    intro: "Amazon ändert ständig, wie die Suche funktioniert, was die Regeln erlauben und welche Tools Händler in Seller Central bekommen. Wir verfolgen diese Änderungen für Sie und machen daraus kurze, praktische Artikel für Händler in den USA: was neu ist, warum es zählt und was Sie an Ihren Listings ändern sollten.",
+    introMore: "Dieser Blog wird laufend aktualisiert. Neue Artikel erscheinen, sobald sich bei Amazon etwas tut. Speichern Sie diese Seite also und schauen Sie wieder vorbei. Den Gesamtüberblick gibt unser",
+    introLink: "Ratgeber zu Amazon SEO",
+    tags: ["Laufend aktualisiert", "Amazon-News, erklärt", "Praxis-Artikel", "Kostenlose PDF-Guides"],
+    guidesHeading: "Kostenlose PDF-Guides",
+    guidesIntro: "Ein 10-seitiger Guide für jeden unserer Services, mit Beispielen, Grafiken und einer Checkliste. Kostenlos zum Download.",
+    pdfMeta: "PDF · 10 Seiten",
+    articlesHeading: "Neueste Artikel",
+    readPost: "Zum Artikel:",
+    minRead: "Min. Lesezeit",
+    by: "Von",
+    updated: "Aktualisiert am",
+    contents: "In diesem Ratgeber",
+    sources: "Quellen",
+    nextStep: "Nächster Schritt",
+  },
   privacy: {
     back: "Zurück zur Startseite",
     title: "Datenschutzhinweis",

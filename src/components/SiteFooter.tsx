@@ -17,7 +17,7 @@ export default function SiteFooter({
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <p>© 2026 Nautilo Studio. {t.tagline}</p>
         <p>
-          <Link href="/blog" className="underline underline-offset-4 hover:text-royal">
+          <Link href={localePath(lang, "/blog")} className="underline underline-offset-4 hover:text-royal">
             Blog
           </Link>
           {" · "}
