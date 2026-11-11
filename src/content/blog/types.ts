@@ -11,7 +11,7 @@ export type BlogPost = {
   breadcrumb: string; // short name for the breadcrumb
   keyword: string; // primary keyword, for reference
   excerpt: string; // one line for the blog index
-  author: { name: string; role: string; href: string };
+  author?: { name: string; role: string; href: string }; // leave out to publish without a named author
   published: string; // ISO date
   updated: string; // ISO date
   readMinutes: number;
