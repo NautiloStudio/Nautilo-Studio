@@ -167,16 +167,15 @@ export default function BlogArticle({ post, dict }: { post: BlogPost; dict: Dict
               Next step
             </p>
             <p className="mt-3 font-display text-[clamp(1.4rem,2.6vw,2rem)] font-semibold leading-snug tracking-[-0.01em]">
-              Backend keywords are one part of Amazon SEO. See how titles, bullets and sales fit
-              together, or let us check your listing for free.
+              {post.cta.text}
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-x-7 gap-y-4">
               <TalkButton href="#review" label="Get a free listing review" tone="cyan" />
               <Link
-                href="/amazon-seo"
+                href={post.cta.pillar.href}
                 className="group inline-flex items-center gap-2 font-display font-semibold text-offwhite underline decoration-cyan/60 decoration-2 underline-offset-8"
               >
-                Read our Amazon SEO guide
+                {post.cta.pillar.label}
                 <ArrowUpRight size={16} weight="bold" aria-hidden />
               </Link>
             </div>
@@ -232,10 +231,10 @@ export default function BlogArticle({ post, dict }: { post: BlogPost; dict: Dict
           <div className="grid gap-12 rounded-[2rem] bg-graphite px-8 py-14 text-offwhite md:grid-cols-2 md:gap-16 md:px-16 md:py-24">
             <div>
               <h2 className="font-display text-[clamp(2rem,4.4vw,4rem)] font-bold leading-[1.05] tracking-[-0.03em]">
-                Want us to check your backend keywords?
+                {post.cta.formHeading}
               </h2>
               <p className="mt-5 max-w-md text-lg leading-relaxed text-offwhite/80">
-                Send one listing and we’ll tell you, for free, what we would change first.
+                {post.cta.formText}
               </p>
             </div>
             <ContactForm variant="review" />
