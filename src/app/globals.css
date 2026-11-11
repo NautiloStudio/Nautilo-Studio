@@ -539,3 +539,20 @@ textarea {
     transition: none;
   }
 }
+
+/* Count-up numbers (CountUp.tsx): the digits are drawn from data attributes, so the page text
+   only holds the final number once. ::before reserves the final width, ::after shows the count.
+   The "/ ''" alt text keeps screen readers from reading the generated digits. */
+.count-up::before,
+.count-up::after {
+  grid-area: 1 / 1;
+}
+.count-up::before {
+  content: attr(data-final);
+  content: attr(data-final) / "";
+  visibility: hidden;
+}
+.count-up::after {
+  content: attr(data-value);
+  content: attr(data-value) / "";
+}
