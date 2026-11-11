@@ -9,6 +9,7 @@ const es: Dictionary = {
       main: "Principal",
       home: "Inicio",
       services: "Servicios",
+      allServices: "Todos los servicios",
       menu: "Menú",
       howWeWork: "Cómo trabajamos",
       aboutUs: "Quiénes somos",
@@ -147,6 +148,11 @@ const es: Dictionary = {
   },
 
   meta: {
+    services: {
+      title: "Servicios de marketing en Amazon en EE. UU. | Nautilo Studio",
+      description:
+        "Cuatro servicios de marketing en Amazon para vendedores en EE. UU.: SEO, fichas, análisis de datos y automatización con IA. Conócelos y pide tu revisión gratis.",
+    },
     home: {
       title: "Agencia de marketing Amazon para marcas | Nautilo Studio",
       description:
@@ -164,6 +170,7 @@ const es: Dictionary = {
   },
 
   footer: {
+    services: "Servicios",
     tagline: "Analiza. Optimiza. Automatiza.",
     student: "Un proyecto de estudiantes de TBS Education Barcelona.",
     privacy: "Nota de privacidad",
@@ -409,6 +416,13 @@ const es: Dictionary = {
     contents: "En esta guía",
     sources: "Fuentes",
     nextStep: "Siguiente paso",
+  },
+  servicesPage: {
+    seoPhotoAlt: "Portátil con un panel de SEO en Amazon: posiciones de palabras clave y tráfico orgánico",
+    h1: "Servicios de marketing en Amazon para vendedores en EE. UU.",
+    intro:
+      "Cuatro servicios, un objetivo: que más compradores adecuados encuentren tu producto y lo compren. Elige el problema que se parece al de tu tienda y abre su página.",
+    closing: "¿No sabes por dónde empezar? Envíanos una ficha y te lo decimos gratis.",
   },
   privacy: {
     back: "Volver a la página de inicio",

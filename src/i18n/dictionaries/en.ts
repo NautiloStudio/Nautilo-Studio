@@ -12,6 +12,7 @@ const en = {
       main: "Main",
       home: "Home",
       services: "Services",
+      allServices: "All services",
       menu: "Menu",
       howWeWork: "How we work",
       aboutUs: "About us",
@@ -152,6 +153,11 @@ const en = {
 
   // Rendered on the server only.
   meta: {
+    services: {
+      title: "Amazon Marketing Services for US Sellers | Nautilo Studio",
+      description:
+        "Four Amazon marketing services for US sellers: SEO, listing optimization, data analysis and AI automation. See what each one does and get a free listing review.",
+    },
     home: {
       title: "Amazon Marketing Agency for US Sellers | Nautilo Studio",
       description:
@@ -169,6 +175,7 @@ const en = {
   },
 
   footer: {
+    services: "Services",
     tagline: "Analyse. Optimise. Automate.",
     student: "A student project at TBS Education Barcelona.",
     privacy: "Privacy note",
@@ -412,6 +419,13 @@ const en = {
     contents: "In this guide",
     sources: "Sources",
     nextStep: "Next step",
+  },
+  servicesPage: {
+    seoPhotoAlt: "Laptop showing an Amazon SEO dashboard with keyword rankings and organic traffic",
+    h1: "Amazon marketing services for US sellers",
+    intro:
+      "Four services, one goal: more of the right shoppers find your product and buy it. Pick the problem that sounds like your store and open its page.",
+    closing: "Not sure where to start? Send us one listing and we’ll tell you, for free.",
   },
   privacy: {
     back: "Back to the homepage",

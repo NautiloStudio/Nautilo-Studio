@@ -10,6 +10,7 @@ const fr: Dictionary = {
       main: "Principal",
       home: "Accueil",
       services: "Services",
+      allServices: "Tous les services",
       menu: "Menu",
       howWeWork: "Notre méthode",
       aboutUs: "À propos",
@@ -148,6 +149,11 @@ const fr: Dictionary = {
   },
 
   meta: {
+    services: {
+      title: "Services marketing Amazon pour vendeurs | Nautilo Studio",
+      description:
+        "Quatre services marketing Amazon pour les vendeurs aux États-Unis : SEO, fiches produit, analyse de données et IA. Découvrez-les et demandez un audit gratuit.",
+    },
     home: {
       title: "Agence marketing Amazon pour vendeurs | Nautilo Studio",
       description:
@@ -165,6 +171,7 @@ const fr: Dictionary = {
   },
 
   footer: {
+    services: "Services",
     tagline: "Analyser. Optimiser. Automatiser.",
     student: "Un projet étudiant à TBS Education Barcelone.",
     privacy: "Note de confidentialité",
@@ -411,6 +418,13 @@ const fr: Dictionary = {
     contents: "Dans ce guide",
     sources: "Sources",
     nextStep: "Étape suivante",
+  },
+  servicesPage: {
+    seoPhotoAlt: "Ordinateur portable affichant un tableau de bord SEO Amazon : positions des mots-clés et trafic organique",
+    h1: "Services marketing Amazon pour les vendeurs aux États-Unis",
+    intro:
+      "Quatre services, un seul but : que plus de bons acheteurs trouvent votre produit et l’achètent. Choisissez le problème qui ressemble à votre boutique et ouvrez sa page.",
+    closing: "Vous ne savez pas par où commencer ? Envoyez-nous une fiche, nous vous le dirons gratuitement.",
   },
   privacy: {
     back: "Retour à l’accueil",

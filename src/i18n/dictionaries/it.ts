@@ -9,6 +9,7 @@ const it: Dictionary = {
       main: "Principale",
       home: "Home",
       services: "Servizi",
+      allServices: "Tutti i servizi",
       menu: "Menu",
       howWeWork: "Come lavoriamo",
       aboutUs: "Chi siamo",
@@ -147,6 +148,11 @@ const it: Dictionary = {
   },
 
   meta: {
+    services: {
+      title: "Servizi di marketing su Amazon per vendere | Nautilo Studio",
+      description:
+        "Quattro servizi di marketing su Amazon per venditori negli USA: SEO, schede prodotto, analisi dei dati e automazione con l’IA. Scoprili e chiedi una revisione.",
+    },
     home: {
       title: "Agenzia di marketing per venditori Amazon | Nautilo Studio",
       description:
@@ -164,6 +170,7 @@ const it: Dictionary = {
   },
 
   footer: {
+    services: "Servizi",
     tagline: "Analizza. Ottimizza. Automatizza.",
     student: "Un progetto di studenti della TBS Education Barcelona.",
     privacy: "Nota sulla privacy",
@@ -409,6 +416,13 @@ const it: Dictionary = {
     contents: "In questa guida",
     sources: "Fonti",
     nextStep: "Prossimo passo",
+  },
+  servicesPage: {
+    seoPhotoAlt: "Portatile con una dashboard SEO su Amazon: posizioni delle parole chiave e traffico organico",
+    h1: "Servizi di marketing su Amazon per venditori negli USA",
+    intro:
+      "Quattro servizi, un obiettivo: più clienti giusti trovano il tuo prodotto e lo comprano. Scegli il problema che somiglia al tuo negozio e apri la sua pagina.",
+    closing: "Non sai da dove partire? Mandaci una scheda e te lo diciamo gratis.",
   },
   privacy: {
     back: "Torna alla home page",

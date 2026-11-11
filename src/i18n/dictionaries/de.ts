@@ -10,6 +10,7 @@ const de: Dictionary = {
       main: "Hauptmenü",
       home: "Start",
       services: "Leistungen",
+      allServices: "Alle Services",
       menu: "Menü",
       howWeWork: "So arbeiten wir",
       aboutUs: "Über uns",
@@ -148,6 +149,11 @@ const de: Dictionary = {
   },
 
   meta: {
+    services: {
+      title: "Amazon-Marketing-Services für Händler | Nautilo Studio",
+      description:
+        "Vier Amazon-Marketing-Services für Händler in den USA: SEO, Listing-Optimierung, Datenanalyse und KI-Automatisierung. Lernen Sie sie kennen, Check gratis.",
+    },
     home: {
       title: "Amazon-Marketingagentur für Händler | Nautilo Studio",
       description:
@@ -165,6 +171,7 @@ const de: Dictionary = {
   },
 
   footer: {
+    services: "Services",
     tagline: "Analysieren. Optimieren. Automatisieren.",
     student: "Ein Studierendenprojekt an der TBS Education Barcelona.",
     privacy: "Datenschutzhinweis",
@@ -411,6 +418,13 @@ const de: Dictionary = {
     contents: "In diesem Ratgeber",
     sources: "Quellen",
     nextStep: "Nächster Schritt",
+  },
+  servicesPage: {
+    seoPhotoAlt: "Laptop mit einem Amazon-SEO-Dashboard: Keyword-Rankings und organischer Traffic",
+    h1: "Amazon-Marketing-Services für Händler in den USA",
+    intro:
+      "Vier Services, ein Ziel: Mehr passende Käufer finden Ihr Produkt und kaufen es. Wählen Sie das Problem, das nach Ihrem Shop klingt, und öffnen Sie die passende Seite.",
+    closing: "Sie wissen nicht, wo Sie anfangen sollen? Schicken Sie uns ein Listing, wir sagen es Ihnen kostenlos.",
   },
   privacy: {
     back: "Zurück zur Startseite",
