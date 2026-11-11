@@ -79,7 +79,6 @@ export default function SiteHeader({
     label: t.guides[page.slug as keyof typeof t.guides]?.menu ?? page.menu,
     current: page.slug === guide,
   }));
-  const how = onHome ? "#how" : href("/#how");
   // The services hub (level 2), reached from "Services" in the bar on wide screens.
   const onServices = pathname === "/services";
   const servicesHub: MenuItem = { href: href("/services"), label: t.header.allServices, current: onServices };
@@ -91,7 +90,6 @@ export default function SiteHeader({
     : [
         servicesHub,
         ...guides,
-        { href: how, label: t.header.howWeWork },
         { href: href("/blog"), label: t.header.blog, current: pathname.startsWith("/blog") },
         {
           href: href("/about"),
@@ -101,7 +99,6 @@ export default function SiteHeader({
       ];
   // Links that also sit in the bar, and the screen width from which they do (the list hides them there).
   const barLinks: Record<string, string> = {
-    [t.header.howWeWork]: "md:hidden",
     [t.header.blog]: "sm:hidden",
     [t.header.aboutUs]: "sm:hidden",
   };
@@ -218,9 +215,6 @@ export default function SiteHeader({
                   }`}
                 >
                   {t.header.services}
-                </Link>
-                <Link href={how} className={`hidden md:inline ${textLink}`}>
-                  {t.header.howWeWork}
                 </Link>
                 <Link
                   href={href("/blog")}
