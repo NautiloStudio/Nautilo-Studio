@@ -19,8 +19,9 @@ const post: BlogPost = {
   excerpt:
     "Qué va en el campo oculto de términos de búsqueda, qué dejar fuera y un ejemplo resuelto que puedes copiar para tu ficha.",
   published: "2026-11-10",
-  updated: "2026-11-10",
+  updated: "2026-11-11",
   readMinutes: 9,
+  author: { name: "Filippo Verace", role: "SEO & Ads Lead", href: "/about" },
   hero: { ...heroPhoto, alt: "Lupa sobre el teclado de un portátil" },
   intro: (
     <>
@@ -33,7 +34,7 @@ const post: BlogPost = {
       <p>
         Esta guía explica qué es ese campo, por qué sigue importando, cómo encontrar las palabras
         adecuadas y cómo escribirlas, con un ejemplo resuelto al final. Si el tema es nuevo para ti,
-        empieza por nuestra <Link href={p("/services/amazon-seo")}>guía de SEO en Amazon</Link>, que explica
+        empieza por nuestra página de <Link href={p("/services/amazon-seo")}>SEO B2B para vendedores de Amazon</Link>, que explica
         cómo ordena Amazon los productos.
       </p>
     </>
@@ -340,7 +341,7 @@ const post: BlogPost = {
   ],
   cta: {
     text: "Las palabras clave backend son una parte del SEO en Amazon. Mira cómo encajan título, viñetas y ventas, o deja que revisemos tu ficha gratis.",
-    pillar: { href: "/services/amazon-seo", label: "Leer nuestra guía de SEO en Amazon" },
+    pillar: { href: "/services/amazon-seo", label: "Ver nuestro servicio de SEO B2B para vendedores de Amazon" },
     formHeading: "¿Quieres que revisemos tus palabras clave backend?",
     formText: "Envíanos una ficha y te diremos, gratis, qué cambiaríamos primero.",
   },

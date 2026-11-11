@@ -17,8 +17,9 @@ const post: BlogPost = {
   excerpt:
     "What goes in the hidden search terms field, what to leave out, and a worked example you can copy for your own listing.",
   published: "2026-11-10",
-  updated: "2026-11-10",
+  updated: "2026-11-11",
   readMinutes: 9,
+  author: { name: "Filippo Verace", role: "SEO & Ads Lead", href: "/about" },
   hero: { ...heroPhoto, alt: "Magnifying glass held over a laptop keyboard" },
   intro: (
     <>
@@ -31,7 +32,7 @@ const post: BlogPost = {
       <p>
         This guide explains what the field is, why it still matters, how to find the right words and
         exactly how to write them, with a worked example at the end. If you are new to the topic,
-        start with our <Link href="/services/amazon-seo">guide to Amazon SEO</Link>, which covers the bigger
+        start with our page on <Link href="/services/amazon-seo">B2B SEO for Amazon sellers</Link>, which covers the bigger
         picture of how Amazon ranks products.
       </p>
     </>
@@ -335,7 +336,7 @@ const post: BlogPost = {
   ],
   cta: {
     text: "Backend keywords are one part of Amazon SEO. See how titles, bullets and sales fit together, or let us check your listing for free.",
-    pillar: { href: "/services/amazon-seo", label: "Read our Amazon SEO guide" },
+    pillar: { href: "/services/amazon-seo", label: "See our B2B SEO service for Amazon sellers" },
     formHeading: "Want us to check your backend keywords?",
     formText: "Send one listing and we’ll tell you, for free, what we would change first.",
   },

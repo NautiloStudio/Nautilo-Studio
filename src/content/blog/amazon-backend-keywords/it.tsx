@@ -19,8 +19,9 @@ const post: BlogPost = {
   excerpt:
     "Cosa va nel campo nascosto dei termini di ricerca, cosa lasciare fuori e un esempio pratico da riprendere per la tua scheda.",
   published: "2026-11-10",
-  updated: "2026-11-10",
+  updated: "2026-11-11",
   readMinutes: 9,
+  author: { name: "Filippo Verace", role: "SEO & Ads Lead", href: "/about" },
   hero: { ...heroPhoto, alt: "Lente d’ingrandimento sulla tastiera di un portatile" },
   intro: (
     <>
@@ -34,7 +35,7 @@ const post: BlogPost = {
       <p>
         Questa guida spiega cos’è quel campo, perché conta ancora, come trovare le parole giuste e
         come scriverle, con un esempio pratico alla fine. Se l’argomento è nuovo per te, parti dalla
-        nostra <Link href={p("/services/amazon-seo")}>guida alla SEO su Amazon</Link>, che spiega come Amazon
+        nostra pagina sulla <Link href={p("/services/amazon-seo")}>SEO B2B per venditori Amazon</Link>, che spiega come Amazon
         ordina i prodotti.
       </p>
     </>
@@ -339,7 +340,7 @@ const post: BlogPost = {
   ],
   cta: {
     text: "Le parole chiave backend sono una parte della SEO su Amazon. Scopri come titolo, punti elenco e vendite lavorano insieme, oppure facci controllare la tua scheda gratis.",
-    pillar: { href: "/services/amazon-seo", label: "Leggi la nostra guida alla SEO su Amazon" },
+    pillar: { href: "/services/amazon-seo", label: "Scopri il nostro servizio SEO B2B per venditori Amazon" },
     formHeading: "Vuoi che controlliamo le tue parole chiave backend?",
     formText: "Mandaci una scheda e ti diremo, gratis, cosa cambieremmo per primo.",
   },
