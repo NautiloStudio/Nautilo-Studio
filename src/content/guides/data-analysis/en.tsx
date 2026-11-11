@@ -106,6 +106,11 @@ const page: GuideCopy["page"] = {
             sales, clicks and ACOS for each campaign and search term.
           </li>
           <li>
+            <strong>Profit Analytics.</strong> In Seller Central. It shows what Amazon charges you
+            for each product. Fees change every year: see{" "}
+            <Link href="/blog/amazon-fba-fees-2027">what changes in Amazon FBA fees for 2027</Link>.
+          </li>
+          <li>
             <strong>Your own sheet.</strong> One row per week and per product, so you can see
             trends that a single report hides.
           </li>

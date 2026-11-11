@@ -261,8 +261,7 @@ const post: BlogPost = {
       body: (
         <>
           <p>
-            Most problems come from trying to fit too much in. The mistakes we see most often in
-            listing reviews are:
+            Most problems come from trying to fit too much in. The most common mistakes are:
           </p>
           <ul>
             <li>
@@ -328,6 +327,12 @@ const post: BlogPost = {
       url: PRODUCT_LISTINGS,
     },
   ],
+  cta: {
+    text: "Backend keywords are one part of Amazon SEO. See how titles, bullets and sales fit together, or let us check your listing for free.",
+    pillar: { href: "/amazon-seo", label: "Read our Amazon SEO guide" },
+    formHeading: "Want us to check your backend keywords?",
+    formText: "Send one listing and we’ll tell you, for free, what we would change first.",
+  },
 };
 
 export default post;

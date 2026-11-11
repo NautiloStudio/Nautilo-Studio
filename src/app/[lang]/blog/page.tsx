@@ -141,7 +141,7 @@ export default async function BlogIndex({ params }: PageProps<"/[lang]/blog">) {
                   </span>
                   <span className="text-lg leading-relaxed text-slate">{post.excerpt}</span>
                   <span className="inline-flex items-center gap-2 font-display font-semibold text-royal">
-                    Read the post on {post.breadcrumb.toLowerCase()}
+                    Read the post on {post.breadcrumb}
                     <ArrowUpRight size={16} weight="bold" aria-hidden />
                   </span>
                 </Link>

@@ -19,4 +19,11 @@ export type BlogPost = {
   sections: BlogSection[];
   faqs: { question: string; answer: string }[];
   sources: { title: string; publisher: string; url: string }[];
+  // The one call to action for this post: the closing box and the free review form at the bottom.
+  cta: {
+    text: string; // the sentence in the closing box
+    pillar: { href: string; label: string }; // the service page this post belongs to
+    formHeading: string; // heading next to the review form
+    formText: string; // one line under it
+  };
 };
