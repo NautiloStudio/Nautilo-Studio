@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, CaretDown } from "@phosphor-icons/react/dist/ssr";
 import ContactForm from "@/components/ContactForm";
@@ -12,7 +13,9 @@ import { withCounts } from "@/components/withCounts";
 import { SITE_URL, localePath, localeTags, pageUrl, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 
-export type LandingSection = { id: string; heading: string; body: ReactNode };
+// An optional photo shown under a section's text, rendered here so the image component loads with the page.
+export type LandingFigure = { src: string; alt: string; width: number; height: number; caption?: string };
+export type LandingSection = { id: string; heading: string; body: ReactNode; figure?: LandingFigure };
 export type LandingFaq = { question: string; answer: string };
 export type LandingFact = { value: number; prefix?: string; suffix?: string; label: string };
 
@@ -212,6 +215,21 @@ export default function LandingPage({
                   <h2 className={h2}>{section.heading}</h2>
                   <div className="space-y-5 text-lg leading-relaxed text-slate [&_a]:text-graphite [&_a]:underline [&_a]:decoration-royal/40 [&_a]:underline-offset-4 [&_a:hover]:text-royal [&_h3]:font-display [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:text-graphite [&_li]:pl-1 [&_ol]:list-inside [&_ol]:list-decimal [&_ol]:space-y-3 [&_ol]:p-0 [&_ol>li]:rounded-[1.5rem] [&_ol>li]:bg-white [&_ol>li]:p-5 [&_ol>li]:text-base [&_strong]:font-semibold [&_strong]:text-graphite [&_ul]:grid [&_ul]:list-none [&_ul]:gap-3 [&_ul]:p-0 md:[&_ul]:grid-cols-2 [&_ul>li]:rounded-[1.5rem] [&_ul>li]:bg-white [&_ul>li]:p-6 [&_ul>li]:text-base md:[&_ul>li:last-child:nth-child(odd)]:col-span-2">
                     {section.body}
+                    {section.figure && (
+                      <figure className="m-0">
+                        <Image
+                          src={section.figure.src}
+                          alt={section.figure.alt}
+                          width={section.figure.width}
+                          height={section.figure.height}
+                          sizes="(min-width: 768px) 55vw, 100vw"
+                          className="h-auto w-full rounded-[1.5rem]"
+                        />
+                        {section.figure.caption && (
+                          <figcaption className="mt-3 text-sm text-slate">{section.figure.caption}</figcaption>
+                        )}
+                      </figure>
+                    )}
                   </div>
                 </section>
               ))}
