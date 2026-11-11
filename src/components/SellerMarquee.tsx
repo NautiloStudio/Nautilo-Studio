@@ -65,12 +65,6 @@ export default function SellerMarquee({ t }: { t: Dictionary["marquee"] }) {
           <Row labels={t.categories} hidden />
         </div>
       </div>
-      {/* Placeholder until we have partners: replace with their logos. */}
-      <div className="mx-auto mt-6 max-w-3xl px-4 sm:px-6">
-        <p className="rounded-full border-2 border-dashed border-sand px-6 py-3 text-center text-sm text-slate">
-          {t.placeholder}
-        </p>
-      </div>
     </section>
   );
 }

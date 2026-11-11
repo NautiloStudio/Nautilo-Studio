@@ -1,12 +1,11 @@
 import type { MetadataRoute } from "next";
 import { alternates, locales } from "@/i18n/config";
 import { landingPages } from "@/lib/landing-pages";
-import { posts } from "@/content/blog";
-import { SITE_URL } from "@/i18n/config";
+import { getPosts } from "@/content/blog";
 
 // Every page in every language, each listing its translations so search engines link them.
-export default function sitemap(): MetadataRoute.Sitemap {
-  const pages: { path: string; priority: number; lastModified?: string; changeFrequency: "monthly" | "yearly" }[] = [
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const pages: { path: string; priority: number; lastModified?: string; changeFrequency: "weekly" | "monthly" | "yearly" }[] = [
     { path: "/", priority: 1, changeFrequency: "monthly" },
     ...landingPages.map((page) => ({
       path: `/${page.slug}`,
@@ -16,20 +15,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     { path: "/about", priority: 0.6, changeFrequency: "monthly" },
     { path: "/privacy", priority: 0.2, changeFrequency: "yearly" },
-  ];
-
-  // The blog is English only, so it has one address per page and no translations.
-  const blog: MetadataRoute.Sitemap = [
-    { url: `${SITE_URL}/blog`, changeFrequency: "weekly", priority: 0.7 },
-    ...posts.map((post) => ({
-      url: `${SITE_URL}/blog/${post.slug}`,
+    { path: "/blog", priority: 0.7, changeFrequency: "weekly" },
+    ...(await getPosts("en")).map((post) => ({
+      path: `/blog/${post.slug}`,
+      priority: 0.7,
       lastModified: post.updated,
       changeFrequency: "monthly" as const,
-      priority: 0.7,
     })),
   ];
 
-  return [...pages.flatMap(({ path, ...rest }) =>
+  return pages.flatMap(({ path, ...rest }) =>
     locales.map((lang) => {
       const links = alternates(lang, path);
       return {
@@ -38,5 +33,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
         alternates: { languages: links.languages },
       };
     }),
-  ), ...blog];
+  );
 }

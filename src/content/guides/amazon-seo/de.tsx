@@ -112,7 +112,8 @@ const page: GuideCopy["page"] = {
             <a href={SEARCH_TERMS_HELP} target="_blank" rel="noopener noreferrer">
               aktuelle Längenlimit
             </a>
-            .
+            , und lesen Sie unsere Schritt-für-Schritt-Anleitung zum{" "}
+            <Link href={p("/blog/amazon-backend-keywords")}>Ausfüllen der Amazon-Backend-Keywords</Link>.
           </li>
         </ul>
       ),

@@ -115,6 +115,11 @@ const page: GuideCopy["page"] = {
             gasto, ventas, clics y ACOS de cada campaña y término de búsqueda.
           </li>
           <li>
+            <strong>Profit Analytics.</strong> En Seller Central. Muestra lo que Amazon te cobra por
+            cada producto. Las tarifas cambian cada año: mira{" "}
+            <Link href={p("/blog/amazon-fba-fees-2027")}>qué cambia en las tarifas de Amazon FBA para 2027</Link>.
+          </li>
+          <li>
             <strong>Tu propia hoja de cálculo.</strong> Una fila por semana y por producto, para ver
             tendencias que un solo informe esconde.
           </li>

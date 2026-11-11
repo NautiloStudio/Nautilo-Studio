@@ -24,8 +24,8 @@ const page: GuideCopy["page"] = {
   updated: "2026-11-10",
   author: { name: "Filippo Verace", role: "SEO & Ads Lead", href: "/about" },
   facts: [
-    { value: 200, suffix: " chars", label: "Title limit in Amazon’s SEO guide" },
-    { value: 60, suffix: " chars", label: "Title length Amazon recommends" },
+    { value: 200, label: "Characters allowed in a title, per Amazon’s SEO guide" },
+    { value: 60, label: "Characters Amazon recommends for a title" },
     { value: 2, suffix: "×", label: "Most times a word may appear in a title" },
     { value: 4, label: "Places to find real search terms" },
   ],

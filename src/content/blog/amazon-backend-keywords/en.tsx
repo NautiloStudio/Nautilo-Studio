@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { BlogPost } from "./types";
+import type { BlogPost } from "../types";
 
 const AMAZON_SEO_GUIDE = "https://sell.amazon.com/blog/amazon-seo";
 const PRODUCT_LISTINGS = "https://sell.amazon.com/blog/amazon-product-listings";

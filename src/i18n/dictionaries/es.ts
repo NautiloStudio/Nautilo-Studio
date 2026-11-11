@@ -257,7 +257,6 @@ const es: Dictionary = {
       "Café y té",
       "Ropa",
     ],
-    placeholder: "Espacio para los logos de socios y herramientas, cuando los tengamos.",
   },
 
   demo: {
@@ -389,6 +388,27 @@ const es: Dictionary = {
     guidesIntro: "Una guía por servicio, con ejemplos, gráficos y una lista de comprobación.",
   },
 
+  blog: {
+    metaTitle: "Blog para vendedores de Amazon: guías SEO | Nautilo Studio",
+    metaDescription: "Noticias y guías prácticas para vendedores de Amazon en EE. UU. sobre SEO, fichas, datos e IA, al día con cada cambio. Lee los artículos y las guías PDF.",
+    label: "Blog",
+    h1: "El blog para vendedores de Amazon: qué ha cambiado y qué hacer.",
+    intro: "Amazon cambia sin parar cómo funciona su buscador, qué permiten sus normas y qué herramientas da a los vendedores en Seller Central. Seguimos esos cambios por ti y los convertimos en artículos breves y prácticos para vendedores en EE. UU.: qué hay de nuevo, por qué importa y qué cambiar en tus fichas.",
+    introMore: "Este blog se actualiza de forma continua. Publicamos nuevos artículos a medida que pasan cosas en Amazon, así que guarda esta página y vuelve pronto. Para tener la visión completa, empieza por nuestra",
+    introLink: "guía de SEO en Amazon",
+    tags: ["Actualizado de forma continua", "Noticias de Amazon, explicadas", "Artículos prácticos", "Guías PDF gratis"],
+    guidesHeading: "Guías PDF gratis",
+    guidesIntro: "Una guía de 10 páginas para cada uno de nuestros servicios, con ejemplos, gráficos y una lista de comprobación. Descarga gratuita.",
+    pdfMeta: "PDF · 10 páginas",
+    articlesHeading: "Últimos artículos",
+    readPost: "Leer el artículo sobre",
+    minRead: "min de lectura",
+    by: "Por",
+    updated: "Actualizado",
+    contents: "En esta guía",
+    sources: "Fuentes",
+    nextStep: "Siguiente paso",
+  },
   privacy: {
     back: "Volver a la página de inicio",
     title: "Nota de privacidad",
