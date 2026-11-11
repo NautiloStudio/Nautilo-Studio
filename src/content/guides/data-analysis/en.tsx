@@ -5,16 +5,16 @@ const BRAND_ANALYTICS = "https://sell.amazon.com/blog/brand-analytics";
 const ACOS = "https://advertising.amazon.com/library/guides/acos-advertising-cost-of-sales";
 const BOOST_LISTINGS = "https://sell.amazon.com/blog/how-to-boost-amazon-listings";
 
-const title = "Amazon Data Analysis: Which Numbers Matter | Nautilo Studio";
+const title = "Amazon Data Analysis | Marketing Analytics Agency | Nautilo";
 const description =
-  "The Amazon numbers US sellers should track every week, what each one tells you and where to find it in Seller Central. Get a free listing review today.";
+  "The Amazon numbers a marketing analytics agency tracks every week, what each one tells you and where to find it in Seller Central. Get a free listing review.";
 
 const page: GuideCopy["page"] = {
   slug: "data-analysis",
   breadcrumb: "Data analysis",
-  question: "Which Amazon numbers should sellers track?",
+  question: "Which Amazon numbers does a marketing analytics agency track?",
   answer:
-    "Start with four numbers for each product: sessions, conversion rate, whether you hold the Featured Offer, and your advertising cost of sales (ACOS). Together they show whether a problem is about being found, being chosen or spending too much on ads. Check them every week, compare them with the week before, and change one thing at a time.",
+    "As a marketing analytics agency, we start with four numbers for each product: sessions, conversion rate, whether you hold the Featured Offer, and your advertising cost of sales (ACOS). Together they show whether a problem is about being found, being chosen or spending too much on ads. Check them every week, compare them with the week before, and change one thing at a time.",
   description,
   image: {
     src: "/img/service-data.jpg",
@@ -62,7 +62,7 @@ const page: GuideCopy["page"] = {
     },
     {
       id: "what-they-mean",
-      heading: "What do the numbers tell you?",
+      heading: "What do the numbers tell a marketing analytics agency?",
       body: (
         <ul>
           <li>
@@ -149,7 +149,7 @@ const page: GuideCopy["page"] = {
     {
       question: "Can Nautilo Studio analyse my numbers?",
       answer:
-        "Yes. Data analysis is one of our services. Send us a listing for a free review, or talk to us about the reports you want to understand.",
+        "Yes. We work as a marketing analytics agency for Amazon sellers, and data analysis is one of our services. Send us a listing for a free review, or talk to us about the reports you want to understand.",
     },
   ],
 };

@@ -7,16 +7,16 @@ const WORKFLOWS =
 const ENHANCE_MY_LISTING =
   "https://www.aboutamazon.com/news/innovation-at-amazon/amazon-generative-ai-seller-growth-shopping-experience";
 
-const title = "AI Automation for US Amazon Sellers | Nautilo Studio";
+const title = "Amazon Marketing Automation with AI | Nautilo Studio";
 const description =
-  "AI automation helps US Amazon sellers save time on listings, inventory and reports. See what to automate and what to keep human. Get a free listing review.";
+  "Amazon marketing automation with AI saves US sellers time on listings, inventory and reports. See what to automate and what to keep human. Free listing review.";
 
 const page: GuideCopy["page"] = {
   slug: "ai-automation",
   breadcrumb: "AI automation",
-  question: "How can AI automation help Amazon sellers?",
+  question: "How can Amazon marketing automation with AI help sellers?",
   answer:
-    "AI automation takes over repetitive work like drafting listing content, watching inventory and summarizing reports. Amazon now offers tools for this, including its free Seller Assistant, which can monitor your account and act with your approval. You still make the decisions, so AI saves you time without replacing your judgment.",
+    "Amazon marketing automation uses AI to take over repetitive work like drafting listing content, watching inventory and summarizing reports. Amazon now offers tools for this, including its free Seller Assistant, which can monitor your account and act with your approval. You still make the decisions, so AI saves you time without replacing your judgment.",
   description,
   image: {
     src: "/img/service-ai.jpg",
@@ -115,7 +115,7 @@ const page: GuideCopy["page"] = {
     },
     {
       id: "how-to-start",
-      heading: "How do you start with AI automation?",
+      heading: "How do you start with Amazon marketing automation?",
       body: (
         <ol>
           <li>Pick one task you repeat every week.</li>
@@ -143,7 +143,7 @@ const page: GuideCopy["page"] = {
     {
       question: "Can Nautilo Studio help me set this up?",
       answer:
-        "Yes. AI automation is one of our services. Send us a listing for a free review, or talk to us about the tasks you want to automate.",
+        "Yes. Amazon marketing automation is one of the services we offer as an Amazon marketing agency. Send us a listing for a free review, or talk to us about the tasks you want to automate.",
     },
   ],
 };

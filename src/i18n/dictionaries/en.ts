@@ -155,7 +155,7 @@ const en = {
     home: {
       title: "Amazon Marketing Agency for US Sellers | Nautilo Studio",
       description:
-        "The marketing team your Amazon store doesn’t have. Data and AI to help US Amazon sellers grow and convert more. Get a free listing review.",
+        "Nautilo Studio is an Amazon marketing agency for US sellers: a digital marketing company that uses data and AI to grow your sales. Get a free listing review.",
     },
     about: {
       title: "About Nautilo Studio | Amazon Marketing for US Sellers",
@@ -181,8 +181,8 @@ const en = {
   ],
 
   home: {
-    title: "The marketing team your Amazon store doesn’t have.",
-    subtitle: "Data and AI to help US Amazon sellers grow and convert more.",
+    title: "The Amazon marketing agency your store doesn’t have.",
+    subtitle: "A digital marketing company for US Amazon sellers, with data and AI to help you grow and convert more.",
     getReview: "Get a free listing review",
     seeServices: "See our services",
     notSure: "Not sure what you need?",
@@ -190,8 +190,8 @@ const en = {
     statement:
       "Running an Amazon store takes enough time. Improving every listing shouldn’t be on you alone.",
     statementText:
-      "You already sell a good product on Amazon. Agencies do it for you and tools leave you on your own, so we work on it with you.",
-    servicesHeading: "Which of these sounds like your store?",
+      "You already sell a good product on Amazon. Most digital marketing firms do the work for you and tools leave you on your own, so we work on it with you.",
+    servicesHeading: "Amazon marketing agency services: which sounds like your store?",
     services: [
       {
         title: "Ads & SEO",
@@ -215,9 +215,9 @@ const en = {
         guide: "Read our data analysis guide",
       },
       {
-        title: "AI automation",
+        title: "Amazon marketing automation",
         problem: "“Repetitive work eats my week.”",
-        text: "We set up AI agents to handle repetitive listing and reporting tasks.",
+        text: "We set up AI agents that handle repetitive listing and reporting tasks for you.",
         alt: "White robotic arm placing a parcel at the end of a neat row",
         guide: "Read our AI automation guide",
       },

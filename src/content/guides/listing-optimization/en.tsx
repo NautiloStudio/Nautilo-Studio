@@ -6,16 +6,16 @@ const PRODUCT_PHOTOS = "https://sell.amazon.com/blog/product-photos";
 const A_PLUS = "https://sell.amazon.com/tools/a-content";
 const BOOST_LISTINGS = "https://sell.amazon.com/blog/how-to-boost-amazon-listings";
 
-const title = "Amazon Listing Optimization for US Sellers | Nautilo Studio";
+const title = "Amazon Listing Optimization | Conversion Rate Optimization Agency";
 const description =
-  "How to optimize an Amazon listing so more visitors buy: titles, bullet points, images, A+ content and testing. Free PDF guide and free listing review.";
+  "How a conversion rate optimization agency optimizes an Amazon listing so more visitors buy: titles, bullets, images, A+ content and tests. Free review.";
 
 const page: GuideCopy["page"] = {
   slug: "listing-optimization",
   breadcrumb: "Listing optimisation",
-  question: "How do you optimize an Amazon listing so more shoppers buy?",
+  question: "How does a conversion rate optimization agency optimize an Amazon listing?",
   answer:
-    "Listing optimization means improving your title, bullet points, images and A+ content so that shoppers who land on your page choose to buy. Start with clear images and a title that says exactly what the product is, then use your bullet points to answer the questions buyers have before they order. Test one change at a time and keep the version that sells better.",
+    "Listing optimization is conversion rate optimization for Amazon: improving your title, bullet points, images and A+ content so that shoppers who land on your page choose to buy. Start with clear images and a title that says exactly what the product is, then use your bullet points to answer the questions buyers have before they order. Test one change at a time and keep the version that sells better.",
   description,
   image: {
     src: "/img/service-listing.jpg",
@@ -105,7 +105,7 @@ const page: GuideCopy["page"] = {
     },
     {
       id: "testing",
-      heading: "How do you test what works?",
+      heading: "How does a conversion rate optimization agency test what works?",
       body: (
         <ol>
           <li>
@@ -167,7 +167,7 @@ const page: GuideCopy["page"] = {
     {
       question: "Can Nautilo Studio review my listing?",
       answer:
-        "Yes. Send us a link to one Amazon listing through the free review form on this page and we’ll email you what we would improve first.",
+        "Yes. As a conversion rate optimization agency for Amazon sellers, we start with one listing. Send us a link to it through the free review form on this page and we’ll email you what we would improve first.",
     },
   ],
 };
