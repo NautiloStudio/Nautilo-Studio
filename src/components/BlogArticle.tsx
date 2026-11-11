@@ -29,13 +29,15 @@ function structuredData(post: BlogPost) {
       mainEntityOfPage: url,
       datePublished: post.published,
       dateModified: post.updated,
-      author: {
-        "@type": "Person",
-        name: post.author.name,
-        jobTitle: post.author.role,
-        url: `${SITE_URL}${post.author.href}`,
-        worksFor: organization,
-      },
+      ...(post.author && {
+        author: {
+          "@type": "Person",
+          name: post.author.name,
+          jobTitle: post.author.role,
+          url: `${SITE_URL}${post.author.href}`,
+          worksFor: organization,
+        },
+      }),
       publisher: organization,
       keywords: post.keyword,
       citation: post.sources.map((source) => source.url),
@@ -105,14 +107,19 @@ export default function BlogArticle({ post, dict }: { post: BlogPost; dict: Dict
             {post.h1}
           </h1>
           <p className="rise mt-6 text-sm text-slate" style={{ "--i": 1 } as React.CSSProperties}>
-            By{" "}
-            <Link
-              href={post.author.href}
-              className="font-medium text-graphite underline decoration-sand underline-offset-4 hover:decoration-royal"
-            >
-              {post.author.name}
-            </Link>
-            , {post.author.role} · <time dateTime={post.published}>{formatDate(post.published)}</time>
+            {post.author && (
+              <>
+                By{" "}
+                <Link
+                  href={post.author.href}
+                  className="font-medium text-graphite underline decoration-sand underline-offset-4 hover:decoration-royal"
+                >
+                  {post.author.name}
+                </Link>
+                , {post.author.role} ·{" "}
+              </>
+            )}
+            <time dateTime={post.published}>{formatDate(post.published)}</time>
             {post.updated !== post.published && (
               <>
                 {" "}

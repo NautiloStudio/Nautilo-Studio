@@ -14,7 +14,6 @@ const post: BlogPost = {
   keyword: "amazon backend keywords",
   excerpt:
     "What goes in the hidden search terms field, what to leave out, and a worked example you can copy for your own listing.",
-  author: { name: "Filippo Verace", role: "SEO & Ads Lead", href: "/about" },
   published: "2026-11-10",
   updated: "2026-11-10",
   readMinutes: 9,

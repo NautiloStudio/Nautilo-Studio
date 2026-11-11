@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/blog/[slug
     title: post.title,
     description: post.description,
     alternates: { canonical: url },
-    authors: [{ name: post.author.name, url: `${SITE_URL}${post.author.href}` }],
+    ...(post.author && { authors: [{ name: post.author.name, url: `${SITE_URL}${post.author.href}` }] }),
     openGraph: {
       title: post.title,
       description: post.description,
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/blog/[slug
       locale: "en_US",
       publishedTime: post.published,
       modifiedTime: post.updated,
-      authors: [post.author.name],
+      ...(post.author && { authors: [post.author.name] }),
     },
   };
 }

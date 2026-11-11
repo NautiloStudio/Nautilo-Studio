@@ -133,7 +133,8 @@ export default async function BlogIndex({ params }: PageProps<"/[lang]/blog">) {
                   className="group flex flex-col gap-4 rounded-[2rem] bg-white p-6 ring-1 ring-sand transition-shadow hover:ring-2 hover:ring-royal sm:p-8"
                 >
                   <span className="text-sm text-slate">
-                    {formatDate(post.published)} · {post.readMinutes} min read · {post.author.name}
+                    {formatDate(post.published)} · {post.readMinutes} min read
+                    {post.author && ` · ${post.author.name}`}
                   </span>
                   <span className="font-display text-[clamp(1.5rem,3vw,2.25rem)] font-bold leading-[1.1] tracking-[-0.02em]">
                     {post.h1}
