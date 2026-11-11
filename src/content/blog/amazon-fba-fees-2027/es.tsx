@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { localePath } from "@/i18n/config";
+import { BlogPhotoFigure, FeeChangeFigure } from "@/components/BlogFigures";
 import type { BlogPost } from "../types";
+import { calculatorPhoto, heroPhoto } from "./media";
 
 const AMAZON_2027 = "https://sellingpartners.aboutamazon.com/update-to-us-referral-and-fulfillment-by-amazon-fees-for-2027";
 const AMAZON_2026 = "https://sellingpartners.aboutamazon.com/update-to-u-s-referral-and-fulfillment-by-amazon-fees-for-2026";
@@ -20,6 +22,7 @@ const post: BlogPost = {
   published: "2026-11-11",
   updated: "2026-11-11",
   readMinutes: 8,
+  hero: { ...heroPhoto, alt: "Pasillo de un almacén con estanterías altas llenas de cajas de cartón" },
   intro: (
     <>
       <p>
@@ -77,6 +80,14 @@ const post: BlogPost = {
             Las tarifas siguen usando tres tramos de precio: menos de 10 $, de 10 a 50 $ y más de 50 $.
             Los artículos que cuestan exactamente 10 $ o 50 $ pagan la tarifa de 10 a 50 $.
           </p>
+
+          <FeeChangeFigure
+            lang="es"
+            before={{ label: "2026", value: 2.49 }}
+            after={{ label: "2027", value: 2.72 }}
+            labels={{ title: "Ejemplo de Amazon: la tarifa FBA de una funda de móvil de menos de 10 $", perUnit: "por unidad" }}
+            caption="Tarifa por unidad antes y después del 15 de enero de 2027. Fuente: Amazon."
+          />
 
           <h3>2. Menos productos con tarifas Low-Price FBA</h3>
           <p>
@@ -167,6 +178,7 @@ const post: BlogPost = {
       heading: "Cómo ver lo que las tarifas de 2027 suponen para tus márgenes",
       body: (
         <>
+          <BlogPhotoFigure photo={{ ...calculatorPhoto, alt: "Calculadora sobre gráficos impresos junto a un portátil" }} label="Foto" />
           <p>
             Amazon ha creado dos herramientas para esto. Úsalas antes del 15 de enero, mientras aún
             tienes tiempo de cambiar precios o stock.

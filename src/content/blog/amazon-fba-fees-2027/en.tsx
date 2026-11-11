@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { BlogPhotoFigure, FeeChangeFigure } from "@/components/BlogFigures";
 import type { BlogPost } from "../types";
+import { calculatorPhoto, heroPhoto } from "./media";
 
 // Amazon's own announcement (November 5, 2026) and the most detailed independent breakdown of it.
 const AMAZON_2027 = "https://sellingpartners.aboutamazon.com/update-to-us-referral-and-fulfillment-by-amazon-fees-for-2027";
@@ -19,6 +21,7 @@ const post: BlogPost = {
   published: "2026-11-11",
   updated: "2026-11-11",
   readMinutes: 8,
+  hero: { ...heroPhoto, alt: "Warehouse aisle with tall shelves full of cardboard boxes" },
   intro: (
     <>
       <p>
@@ -73,6 +76,14 @@ const post: BlogPost = {
             Fees keep using three price bands: under $10, $10 to $50, and above $50. Items priced at
             exactly $10 or $50 pay the $10 to $50 rate.
           </p>
+
+          <FeeChangeFigure
+            lang="en"
+            before={{ label: "2026", value: 2.49 }}
+            after={{ label: "2027", value: 2.72 }}
+            labels={{ title: "Amazon’s example: the FBA fee for a phone case under $10", perUnit: "per unit" }}
+            caption="Fee per unit before and after January 15, 2027. Source: Amazon."
+          />
 
           <h3>2. Fewer products get Low-Price FBA rates</h3>
           <p>
@@ -158,6 +169,7 @@ const post: BlogPost = {
       heading: "How to check what the 2027 fees mean for your margins",
       body: (
         <>
+          <BlogPhotoFigure photo={{ ...calculatorPhoto, alt: "Calculator on printed charts next to a laptop on a desk" }} label="Photo" />
           <p>
             Amazon has built two tools for this. Use them before January 15, while you still have time
             to change prices or stock.

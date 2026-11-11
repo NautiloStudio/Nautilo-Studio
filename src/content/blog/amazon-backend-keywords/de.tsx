@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { localePath } from "@/i18n/config";
+import { SearchTermsFigure } from "@/components/BlogFigures";
 import type { BlogPost } from "../types";
+import { heroPhoto } from "./media";
 
 const AMAZON_SEO_GUIDE = "https://sell.amazon.com/blog/amazon-seo";
 const PRODUCT_LISTINGS = "https://sell.amazon.com/blog/amazon-product-listings";
@@ -19,6 +21,7 @@ const post: BlogPost = {
   published: "2026-11-10",
   updated: "2026-11-10",
   readMinutes: 9,
+  hero: { ...heroPhoto, alt: "Lupe über der Tastatur eines Laptops" },
   intro: (
     <>
       <p>
@@ -211,10 +214,13 @@ const post: BlogPost = {
             <em>charcoal</em> ab. Ihre Backend Keywords sollten den Rest abdecken. Ein erster Entwurf
             könnte so aussehen:
           </p>
-          <p className="rounded-2xl bg-white p-5 font-mono text-base text-graphite">
-            insulated flask thermos canteen vacuum leakproof reusable travel gym hiking office kids
-            bpa free metal tumbler ounce black grey gray
-          </p>
+          <SearchTermsFigure
+            labels={{"title": "Schon im Titel", "field": "Search terms", "bytes": "Bytes", "leftOut": "Bewusst weggelassen"}}
+            titleWords={["24 oz", "stainless steel", "water bottle", "screw-top lid", "charcoal"]}
+            terms="insulated flask thermos canteen vacuum leakproof reusable travel gym hiking office kids bpa free metal tumbler ounce black grey gray"
+            leftOut={["Marken", "best", "new", "stainless steel"]}
+            caption="Das Beispiel auf einen Blick: Der Titel deckt die erste Zeile schon ab, das Feld Search terms ergänzt neue Wörter, und die letzte Zeile bleibt draußen."
+          />
           <p>
             Achten Sie darauf, was fehlt: keine Marken, kein „best“, keine Wiederholungen aus dem
             Titel, dafür „grey“ und „gray“, damit Käufer Sie bei beiden Schreibweisen finden. Gleichen

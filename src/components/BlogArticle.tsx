@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight, CaretDown } from "@phosphor-icons/react/dist/ssr";
+import { BlogPhotoFigure } from "@/components/BlogFigures";
 import ContactForm from "@/components/ContactForm";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
@@ -28,6 +29,7 @@ function structuredData(post: BlogPost, lang: Locale, dict: Dictionary) {
       description: post.description,
       inLanguage: localeTags[lang],
       mainEntityOfPage: url,
+      image: new URL(post.hero.image.src, home).href,
       datePublished: post.published,
       dateModified: post.updated,
       ...(post.author && {
@@ -132,7 +134,11 @@ export default function BlogArticle({ post, lang, dict }: { post: BlogPost; lang
             · {post.readMinutes} {t.minRead}
           </p>
 
-          <div className={`rise mt-10 ${prose}`} style={{ "--i": 2 } as React.CSSProperties}>
+          <div className="rise mt-10" style={{ "--i": 2 } as React.CSSProperties}>
+            <BlogPhotoFigure photo={post.hero} label={t.photo} eager />
+          </div>
+
+          <div className={`rise mt-10 ${prose}`} style={{ "--i": 3 } as React.CSSProperties}>
             {post.intro}
           </div>
 

@@ -406,6 +406,7 @@ const en = {
     articlesHeading: "Latest articles",
     readPost: "Read the post on",
     minRead: "min read",
+    photo: "Photo",
     by: "By",
     updated: "Updated",
     contents: "In this guide",
