@@ -31,7 +31,17 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/blog/[slug
       publishedTime: post.published,
       modifiedTime: post.updated,
       ...(post.author && { authors: [post.author.name] }),
+      // The opening photo is the preview when the post is shared.
+      images: [
+        {
+          url: post.hero.image.src,
+          width: post.hero.image.width,
+          height: post.hero.image.height,
+          alt: post.hero.alt,
+        },
+      ],
     },
+    twitter: { card: "summary_large_image", title: post.title, description: post.description },
   };
 }
 
