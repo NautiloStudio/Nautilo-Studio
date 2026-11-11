@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { ArrowUpRight, CaretDown, DownloadSimple } from "@phosphor-icons/react/dist/ssr";
+import { ArrowUpRight, CaretDown } from "@phosphor-icons/react/dist/ssr";
 import ContactForm from "@/components/ContactForm";
 import CountUp from "@/components/CountUp";
 import GuideGallery from "@/components/GuideGallery";
@@ -91,8 +91,6 @@ export default function LandingPage({
 }) {
   const t = dict.landing;
   const href = (path: string) => localePath(lang, path);
-  const pdf = `/guides/nautilo-${page.slug}-guide.pdf`;
-  const pdfNote = dict.common.pdfLanguage ? ` (${dict.common.pdfLanguage})` : "";
 
   return (
     <>
@@ -151,17 +149,6 @@ export default function LandingPage({
                   style={{ "--i": 1 } as React.CSSProperties}
                 >
                   <TalkButton href="#review" label={t.getReview} />
-                  <a
-                    href={pdf}
-                    download
-                    className="group inline-flex items-center gap-3 rounded-full bg-white py-2 pl-5 pr-2 font-display font-semibold text-graphite ring-2 ring-graphite transition-transform duration-150 ease-out active:scale-[0.97]"
-                  >
-                    {t.downloadPdf}
-                    {pdfNote}
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-cyan transition-transform duration-300 ease-(--ease-out-strong) group-hover:translate-y-0.5">
-                      <DownloadSimple size={18} weight="bold" aria-hidden />
-                    </span>
-                  </a>
                   <Link
                     href={href("/#contact")}
                     className="py-3 font-display font-semibold text-graphite underline decoration-sand decoration-2 underline-offset-8 transition-colors hover:decoration-royal"
@@ -222,28 +209,6 @@ export default function LandingPage({
                 </section>
               ))}
             </div>
-
-              {/* Full guide as a PDF, with the nautilus ring to draw the eye */}
-              <div className="glow-card rounded-[2rem]">
-              <a
-                href={pdf}
-                download
-                className="group flex items-center justify-between gap-6 rounded-[2rem] bg-graphite p-6 text-offwhite sm:p-8"
-              >
-                <span>
-                  <span className="block font-display text-sm font-semibold uppercase tracking-[0.14em] text-cyan">
-                    {t.pdfLabel}
-                    {pdfNote}
-                  </span>
-                  <span className="mt-2 block font-display text-2xl font-semibold leading-snug tracking-[-0.01em]">
-                    {t.pdfText}
-                  </span>
-                </span>
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-cyan text-graphite transition-transform duration-300 ease-(--ease-out-strong) group-hover:translate-y-0.5">
-                  <DownloadSimple size={20} weight="bold" aria-hidden />
-                </span>
-              </a>
-              </div>
 
               {/* Case study teaser */}
               <Link
