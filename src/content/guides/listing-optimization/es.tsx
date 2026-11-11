@@ -11,7 +11,7 @@ const p = (path: string) => localePath("es", path);
 
 const title = "Cómo optimizar tu ficha de Amazon | Nautilo Studio";
 const description =
-  "Cómo optimizar una ficha de Amazon para que más visitantes compren: título, viñetas, imágenes, contenido A+ y tests. Guía en PDF y revisión gratuita.";
+  "Cómo optimizar una ficha de Amazon para que más visitantes compren: título, viñetas, imágenes, contenido A+ y tests. Guía en PDF y revisión gratuita hoy.";
 
 const page: GuideCopy["page"] = {
   slug: "listing-optimization",

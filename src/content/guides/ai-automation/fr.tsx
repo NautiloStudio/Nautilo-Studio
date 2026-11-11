@@ -9,7 +9,7 @@ const ENHANCE_MY_LISTING =
 
 const title = "Automatisation IA pour vendeurs Amazon | Nautilo Studio";
 const description =
-  "L’IA fait gagner du temps aux vendeurs Amazon aux États-Unis : fiches, stocks, rapports. Ce qu’il faut automatiser ou garder humain. Audit offert.";
+  "L’IA fait gagner du temps aux vendeurs Amazon aux États-Unis : fiches, stocks, rapports. Ce qu’il faut automatiser ou garder humain. Demandez un audit offert.";
 
 const page: GuideCopy["page"] = {
   slug: "ai-automation",

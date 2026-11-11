@@ -11,7 +11,7 @@ const p = (path: string) => localePath("de", path);
 
 const title = "Amazon-Listing-Optimierung für Händler | Nautilo Studio";
 const description =
-  "So optimieren Sie ein Amazon-Listing, damit mehr Besucher kaufen: Titel, Bullet Points, Bilder, A+ Content und Tests. Gratis PDF-Leitfaden und Check.";
+  "So optimieren Sie ein Amazon-Listing, damit mehr Besucher kaufen: Titel, Bullet Points, Bilder, A+ Content und Tests. Gratis PDF-Leitfaden und Listing-Check.";
 
 const page: GuideCopy["page"] = {
   slug: "listing-optimization",
