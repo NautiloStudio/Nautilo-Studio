@@ -418,6 +418,7 @@ const it: Dictionary = {
     nextStep: "Prossimo passo",
   },
   servicesPage: {
+    seoPhotoAlt: "Portatile con una dashboard SEO su Amazon: posizioni delle parole chiave e traffico organico",
     h1: "Servizi di marketing su Amazon per venditori negli USA",
     intro:
       "Quattro servizi, un obiettivo: più clienti giusti trovano il tuo prodotto e lo comprano. Scegli il problema che somiglia al tuo negozio e apri la sua pagina.",

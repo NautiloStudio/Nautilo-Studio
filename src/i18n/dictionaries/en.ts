@@ -421,6 +421,7 @@ const en = {
     nextStep: "Next step",
   },
   servicesPage: {
+    seoPhotoAlt: "Laptop showing an Amazon SEO dashboard with keyword rankings and organic traffic",
     h1: "Amazon marketing services for US sellers",
     intro:
       "Four services, one goal: more of the right shoppers find your product and buy it. Pick the problem that sounds like your store and open its page.",

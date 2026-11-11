@@ -420,6 +420,7 @@ const fr: Dictionary = {
     nextStep: "Étape suivante",
   },
   servicesPage: {
+    seoPhotoAlt: "Ordinateur portable affichant un tableau de bord SEO Amazon : positions des mots-clés et trafic organique",
     h1: "Services marketing Amazon pour les vendeurs aux États-Unis",
     intro:
       "Quatre services, un seul but : que plus de bons acheteurs trouvent votre produit et l’achètent. Choisissez le problème qui ressemble à votre boutique et ouvrez sa page.",

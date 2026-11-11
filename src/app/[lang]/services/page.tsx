@@ -12,7 +12,7 @@ import { getDictionary } from "@/i18n/dictionaries";
 // The services hub (level 2): one row per service, each opening its own page (level 3).
 // Words come from the home page's service list so both pages always say the same thing.
 const media = [
-  { slug: "amazon-seo", image: "/img/service-ads.jpg", fill: "bg-cyan", ink: "group-hover:text-graphite group-focus-visible:text-graphite", dot: "bg-cyan text-graphite group-hover:bg-graphite group-hover:text-offwhite" },
+  { slug: "amazon-seo", image: "/img/amazon-seo-dashboard.webp", fill: "bg-cyan", ink: "group-hover:text-graphite group-focus-visible:text-graphite", dot: "bg-cyan text-graphite group-hover:bg-graphite group-hover:text-offwhite" },
   { slug: "listing-optimization", image: "/img/service-listing.jpg", fill: "bg-apricot", ink: "group-hover:text-graphite group-focus-visible:text-graphite", dot: "bg-apricot text-graphite group-hover:bg-graphite group-hover:text-offwhite" },
   { slug: "data-analysis", image: "/img/service-data.jpg", fill: "bg-royal", ink: "group-hover:text-offwhite group-focus-visible:text-offwhite", dot: "bg-royal text-offwhite group-hover:bg-offwhite group-hover:text-royal" },
   { slug: "ai-automation", image: "/img/service-ai.jpg", fill: "bg-graphite", ink: "group-hover:text-offwhite group-focus-visible:text-offwhite", dot: "bg-graphite text-offwhite group-hover:bg-offwhite group-hover:text-graphite" },
@@ -44,7 +44,12 @@ export default async function ServicesPage({ params }: PageProps<"/[lang]/servic
   const dict = await getDictionary(lang);
   const t = dict.servicesPage;
   const href = (path: string) => localePath(lang, path);
-  const services = dict.home.services.map((service, index) => ({ ...service, ...media[index] }));
+  // The SEO row shows the dashboard photo from the SEO page, so it needs its own description.
+  const services = dict.home.services.map((service, index) => ({
+    ...service,
+    ...media[index],
+    alt: index === 0 ? t.seoPhotoAlt : service.alt,
+  }));
 
   // The list of services and where this page sits, for search engines.
   const structuredData = [
@@ -93,17 +98,18 @@ export default async function ServicesPage({ params }: PageProps<"/[lang]/servic
             </ol>
           </nav>
 
-          <div className="mt-6 grid items-end gap-6 md:grid-cols-[minmax(0,7fr)_minmax(0,4fr)] md:gap-14">
-            <h1
-              className="rise text-balance font-display text-[clamp(2.4rem,5.6vw,5rem)] font-bold leading-[1.02] tracking-[-0.04em]"
-              style={{ "--i": 0 } as React.CSSProperties}
-            >
-              {t.h1}
-            </h1>
-            <p className="rise max-w-md text-lg leading-relaxed text-slate" style={{ "--i": 1 } as React.CSSProperties}>
-              {t.intro}
-            </p>
-          </div>
+          <h1
+            className="rise mt-6 max-w-5xl text-balance font-display text-[clamp(2.4rem,5.6vw,5rem)] font-bold leading-[1.02] tracking-[-0.04em]"
+            style={{ "--i": 0 } as React.CSSProperties}
+          >
+            {t.h1}
+          </h1>
+          <p
+            className="rise mt-6 max-w-2xl text-pretty text-xl leading-relaxed text-slate md:mt-8"
+            style={{ "--i": 1 } as React.CSSProperties}
+          >
+            {t.intro}
+          </p>
 
           {/* One row per service. Hover or focus floods the row with the service's colour and slides
               its photo in; on small screens the photo is always shown above the words. */}

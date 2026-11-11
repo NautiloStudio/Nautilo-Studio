@@ -420,6 +420,7 @@ const de: Dictionary = {
     nextStep: "Nächster Schritt",
   },
   servicesPage: {
+    seoPhotoAlt: "Laptop mit einem Amazon-SEO-Dashboard: Keyword-Rankings und organischer Traffic",
     h1: "Amazon-Marketing-Services für Händler in den USA",
     intro:
       "Vier Services, ein Ziel: Mehr passende Käufer finden Ihr Produkt und kaufen es. Wählen Sie das Problem, das nach Ihrem Shop klingt, und öffnen Sie die passende Seite.",
