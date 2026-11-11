@@ -31,7 +31,7 @@ const post: BlogPost = {
       <p>
         This guide explains what the field is, why it still matters, how to find the right words and
         exactly how to write them, with a worked example at the end. If you are new to the topic,
-        start with our <Link href="/amazon-seo">guide to Amazon SEO</Link>, which covers the bigger
+        start with our <Link href="/services/amazon-seo">guide to Amazon SEO</Link>, which covers the bigger
         picture of how Amazon ranks products.
       </p>
     </>
@@ -225,7 +225,7 @@ const post: BlogPost = {
           </p>
           <p>
             For a deeper look at the visible side of the same listing, the title, bullets and images,
-            read our <Link href="/listing-optimization">guide to Amazon listing optimization</Link>.
+            read our <Link href="/services/listing-optimization">guide to Amazon listing optimization</Link>.
           </p>
         </>
       ),
@@ -255,7 +255,7 @@ const post: BlogPost = {
           </ul>
           <p>
             Not sure which numbers to watch? Our{" "}
-            <Link href="/data-analysis">guide to Amazon data analysis</Link> explains the four that
+            <Link href="/services/data-analysis">guide to Amazon data analysis</Link> explains the four that
             matter most and where to find them.
           </p>
         </>
@@ -335,7 +335,7 @@ const post: BlogPost = {
   ],
   cta: {
     text: "Backend keywords are one part of Amazon SEO. See how titles, bullets and sales fit together, or let us check your listing for free.",
-    pillar: { href: "/amazon-seo", label: "Read our Amazon SEO guide" },
+    pillar: { href: "/services/amazon-seo", label: "Read our Amazon SEO guide" },
     formHeading: "Want us to check your backend keywords?",
     formText: "Send one listing and we’ll tell you, for free, what we would change first.",
   },

@@ -33,7 +33,7 @@ const post: BlogPost = {
       <p>
         This article sums up the five changes that matter most, the dates to put in your calendar and
         how to check, product by product, what they do to your margins. If you are new to reading your
-        numbers, our <Link href="/data-analysis">guide to Amazon data analysis</Link> explains which
+        numbers, our <Link href="/services/data-analysis">guide to Amazon data analysis</Link> explains which
         reports to start with.
       </p>
     </>
@@ -227,7 +227,7 @@ const post: BlogPost = {
           </ul>
           <p>
             Fees are only one part of profit. To see how sessions, conversion and advertising fit in,
-            read our <Link href="/data-analysis">guide to the Amazon numbers that matter</Link>.
+            read our <Link href="/services/data-analysis">guide to the Amazon numbers that matter</Link>.
           </p>
         </>
       ),
@@ -278,7 +278,7 @@ const post: BlogPost = {
   ],
   cta: {
     text: "New fees change the math on every product. See which numbers to watch each week, or let us take a free look at one of your listings.",
-    pillar: { href: "/data-analysis", label: "Read our Amazon data analysis guide" },
+    pillar: { href: "/services/data-analysis", label: "Read our Amazon data analysis guide" },
     formHeading: "Not sure what the 2027 fees mean for you?",
     formText: "Send one listing and we’ll tell you, for free, what we would check first.",
   },

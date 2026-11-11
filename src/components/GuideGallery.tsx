@@ -93,10 +93,10 @@ export default function GuideGallery({ exclude, heading, intro, id = "guides" }:
                     <p className="mt-3 text-lg leading-relaxed text-offwhite/85">{guide.text}</p>
                     <div className="mt-6 flex flex-wrap items-center gap-3">
                       <Link
-                        href={href(`/${guide.slug}`)}
+                        href={href(`/services/${guide.slug}`)}
                         className="inline-flex items-center gap-2 rounded-full bg-cyan px-5 py-3 font-display font-semibold text-graphite"
                       >
-                        {t.gallery.read}
+                        {t.gallery.read.replace("{name}", guide.name)}
                         <ArrowUpRight size={16} weight="bold" aria-hidden />
                       </Link>
                     </div>

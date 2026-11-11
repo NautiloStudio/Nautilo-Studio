@@ -8,23 +8,23 @@ const SEARCH_TERMS_HELP = "https://sellercentral.amazon.com/help/hub/reference/e
 
 const p = (path: string) => localePath("es", path);
 
-const title = "SEO en Amazon: cómo posicionar mejor | Nautilo Studio";
+const title = "SEO B2B para vendedores de Amazon: sube más | Nautilo Studio";
 const description =
-  "SEO en Amazon para vendedores en EE. UU.: qué decide tu posición, dónde van tus palabras clave y qué errores evitar. Pide una revisión gratis de tu ficha.";
+  "Nautilo Studio, agencia SEO B2B para vendedores de Amazon en EE. UU.: encontramos lo que buscan tus clientes y lo ponemos donde Amazon lo lee. Pide tu revisión.";
 
 const page: GuideCopy["page"] = {
   slug: "amazon-seo",
-  breadcrumb: "SEO en Amazon",
-  question: "¿Cómo se posiciona mejor un producto en las búsquedas de Amazon?",
+  breadcrumb: "SEO B2B para Amazon",
+  question: "SEO B2B para vendedores de Amazon: cómo posicionar mejor",
   answer:
-    "Amazon muestra los productos que mejor responden a una búsqueda y que los compradores tienen más probabilidades de comprar. Pon las palabras que escriben los compradores en tu título, tus viñetas y tus términos de búsqueda ocultos, y haz que la ficha convenza lo suficiente para vender. Esas ventas, junto con una ficha de calidad, hacen subir el producto con el tiempo.",
+    "El SEO B2B para vendedores de Amazon, o SEO en Amazon, es cómo pones tu producto delante de quien lo busca. Amazon muestra los productos que mejor responden a una búsqueda y que los compradores tienen más probabilidades de comprar. Pon las palabras que escriben los compradores en tu título, tus viñetas y tus términos de búsqueda ocultos, y haz que la ficha convenza lo suficiente para vender. Esas ventas, junto con una ficha de calidad, hacen subir el producto con el tiempo.",
   description,
   image: {
     src: "/img/service-ads.jpg",
     alt: "Lupa apoyada en un paquete pequeño",
     tile: "bg-cyan",
   },
-  updated: "2026-11-07",
+  updated: "2026-11-11",
   facts: [
     { value: 200, label: "Caracteres como límite del título en la guía SEO de Amazon" },
     { value: 60, label: "Caracteres que Amazon recomienda para el título" },
@@ -120,6 +120,35 @@ const page: GuideCopy["page"] = {
       ),
     },
     {
+      id: "b2b-seo-service",
+      heading: "Nuestro servicio de SEO B2B para vendedores de Amazon: qué incluye",
+      body: (
+        <>
+          <p>
+            Para una marca en Amazon, el SEO es el marketing B2B que sigue trayendo compradores cuando el trabajo ya está hecho. Nuestro servicio de SEO B2B incluye cuatro pasos:
+          </p>
+          <ul>
+            <li>
+              <strong>Investigación de palabras clave.</strong> Las búsquedas que de verdad escriben tus compradores, con las herramientas de Amazon.
+            </li>
+            <li>
+              <strong>Título y viñetas.</strong> Reescritos para que las palabras clave principales vayan primero y se lean bien.
+            </li>
+            <li>
+              <strong>Términos de búsqueda ocultos.</strong> Sinónimos y errores ortográficos, dentro de las reglas de Amazon.
+            </li>
+            <li>
+              <strong>Seguimiento.</strong> Revisamos posición y ventas tras cada cambio con nuestro
+              servicio de análisis de datos de Amazon.
+            </li>
+          </ul>
+          <p>
+            Lo hace nuestro equipo en Barcelona. <Link href={p("/about")}>Conoce al equipo de Nautilo Studio</Link>.
+          </p>
+        </>
+      ),
+    },
+    {
       id: "common-mistakes",
       heading: "¿Cuáles son los errores más comunes?",
       body: (
@@ -143,7 +172,7 @@ const page: GuideCopy["page"] = {
           </ul>
           <p>
             El posicionamiento trae compradores. Nuestra{" "}
-            <Link href={p("/listing-optimization")}>guía de optimización de fichas</Link> explica
+            <Link href={p("/services/listing-optimization")}>guía de optimización de fichas</Link> explica
             cómo convertir esas visitas en ventas.
           </p>
         </>

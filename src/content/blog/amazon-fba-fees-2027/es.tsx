@@ -35,7 +35,7 @@ const post: BlogPost = {
       <p>
         Este artículo resume los cinco cambios que más importan, las fechas que debes apuntar y cómo
         comprobar, producto por producto, qué hacen con tus márgenes. Si leer tus cifras es nuevo para
-        ti, nuestra <Link href={p("/data-analysis")}>guía de análisis de datos en Amazon</Link> explica
+        ti, nuestra <Link href={p("/services/data-analysis")}>guía de análisis de datos en Amazon</Link> explica
         por qué informes empezar.
       </p>
     </>
@@ -238,7 +238,7 @@ const post: BlogPost = {
           <p>
             Las tarifas son solo una parte del beneficio. Para ver cómo encajan sesiones, conversión y
             publicidad, lee nuestra{" "}
-            <Link href={p("/data-analysis")}>guía de las cifras de Amazon que importan</Link>.
+            <Link href={p("/services/data-analysis")}>guía de las cifras de Amazon que importan</Link>.
           </p>
         </>
       ),
@@ -289,7 +289,7 @@ const post: BlogPost = {
   ],
   cta: {
     text: "Las nuevas tarifas cambian las cuentas de cada producto. Mira qué cifras vigilar cada semana o deja que echemos un vistazo gratis a una de tus fichas.",
-    pillar: { href: "/data-analysis", label: "Leer nuestra guía de análisis de datos" },
+    pillar: { href: "/services/data-analysis", label: "Leer nuestra guía de análisis de datos" },
     formHeading: "¿No sabes qué suponen para ti las tarifas de 2027?",
     formText: "Envíanos una ficha y te diremos, gratis, qué revisaríamos primero.",
   },

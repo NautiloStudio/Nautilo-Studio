@@ -36,7 +36,7 @@ const post: BlogPost = {
         Dieser Artikel fasst die fünf wichtigsten Änderungen zusammen, nennt die Termine für Ihren
         Kalender und zeigt, wie Sie Produkt für Produkt prüfen, was sie für Ihre Margen bedeuten. Wenn
         das Auswerten Ihrer Zahlen neu für Sie ist, erklärt unser{" "}
-        <Link href={p("/data-analysis")}>Ratgeber zur Amazon-Datenanalyse</Link>, mit welchen Berichten
+        <Link href={p("/services/data-analysis")}>Ratgeber zur Amazon-Datenanalyse</Link>, mit welchen Berichten
         Sie anfangen.
       </p>
     </>
@@ -236,7 +236,7 @@ const post: BlogPost = {
           <p>
             Gebühren sind nur ein Teil des Gewinns. Wie Sitzungen, Conversion und Werbung
             zusammenspielen, zeigt unser{" "}
-            <Link href={p("/data-analysis")}>Ratgeber zu den Amazon-Zahlen, die zählen</Link>.
+            <Link href={p("/services/data-analysis")}>Ratgeber zu den Amazon-Zahlen, die zählen</Link>.
           </p>
         </>
       ),
@@ -287,7 +287,7 @@ const post: BlogPost = {
   ],
   cta: {
     text: "Neue Gebühren verändern die Rechnung für jedes Produkt. Sehen Sie, welche Zahlen Sie jede Woche beobachten sollten, oder lassen Sie uns kostenlos eines Ihrer Listings ansehen.",
-    pillar: { href: "/data-analysis", label: "Unseren Ratgeber zur Datenanalyse lesen" },
+    pillar: { href: "/services/data-analysis", label: "Unseren Ratgeber zur Datenanalyse lesen" },
     formHeading: "Unsicher, was die Gebühren 2027 für Sie bedeuten?",
     formText: "Senden Sie uns ein Listing, und wir sagen Ihnen kostenlos, was wir zuerst prüfen würden.",
   },

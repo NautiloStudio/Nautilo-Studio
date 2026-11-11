@@ -55,7 +55,7 @@ const de: Dictionary = {
       moreHeading: "Weiterlesen: {3} weitere kostenlose Leitfäden.",
       moreIntro: "Jeder enthält Beispiele, Diagramme und eine Checkliste zum Herunterladen.",
       tenPage: "Leitfaden mit 10 Seiten",
-      read: "Leitfaden lesen",
+      read: "Leitfaden lesen: {name}",
       download: "PDF herunterladen",
     },
     pdfLanguage: "auf Englisch",

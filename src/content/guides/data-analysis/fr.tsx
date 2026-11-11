@@ -75,12 +75,12 @@ const page: GuideCopy["page"] = {
         <ul>
           <li>
             <strong>Peu de sessions.</strong> Les acheteurs ne trouvent pas le produit. Revoyez vos
-            mots-clés avec notre <Link href={p("/amazon-seo")}>guide SEO Amazon</Link>.
+            mots-clés avec notre <Link href={p("/services/amazon-seo")}>guide SEO Amazon</Link>.
           </li>
           <li>
             <strong>Beaucoup de sessions, peu de conversion.</strong> Les acheteurs arrivent mais
             n’achètent pas. Travaillez la fiche avec notre{" "}
-            <Link href={p("/listing-optimization")}>guide d’optimisation des fiches</Link>.
+            <Link href={p("/services/listing-optimization")}>guide d’optimisation des fiches</Link>.
           </li>
           <li>
             <strong>Offre en vedette perdue.</strong> Comparez votre prix, votre stock et votre

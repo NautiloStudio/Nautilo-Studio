@@ -54,7 +54,7 @@ const it: Dictionary = {
       moreHeading: "Continua a leggere: altre {3} guide gratuite.",
       moreIntro: "Ognuna include esempi, grafici e una checklist da scaricare.",
       tenPage: "Guida di 10 pagine",
-      read: "Leggi la guida",
+      read: "Leggi la guida: {name}",
       download: "Scarica il PDF",
     },
     pdfLanguage: "in inglese",

@@ -38,7 +38,7 @@ const page: GuideCopy["page"] = {
           <li>
             <strong>Title.</strong> Say what the product is, then the brand and the details
             shoppers compare, such as size or colour. Our{" "}
-            <Link href="/amazon-seo">Amazon SEO guide</Link> covers which words to use.
+            <Link href="/services/amazon-seo">Amazon SEO guide</Link> covers which words to use.
           </li>
           <li>
             <strong>Images.</strong> Amazon lets you{" "}
@@ -85,7 +85,7 @@ const page: GuideCopy["page"] = {
             </li>
             <li>
               <strong>Few visits.</strong> Shoppers aren’t finding the listing. Start with{" "}
-              <Link href="/amazon-seo">Amazon SEO</Link> instead.
+              <Link href="/services/amazon-seo">Amazon SEO</Link> instead.
             </li>
             <li>
               <strong>The same questions keep coming up.</strong> If reviews and customer
@@ -98,7 +98,7 @@ const page: GuideCopy["page"] = {
           </ul>
           <p>
             Not sure which numbers to look at? Our{" "}
-            <Link href="/data-analysis">data analysis guide</Link> explains them.
+            <Link href="/services/data-analysis">data analysis guide</Link> explains them.
           </p>
         </>
       ),

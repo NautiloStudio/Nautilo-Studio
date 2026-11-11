@@ -55,7 +55,7 @@ const fr: Dictionary = {
       moreHeading: "Pour aller plus loin : {3} autres guides gratuits.",
       moreIntro: "Chacun contient des exemples, des graphiques et une checklist à télécharger.",
       tenPage: "Guide de 10 pages",
-      read: "Lire le guide",
+      read: "Lire le guide : {name}",
       download: "Télécharger le PDF",
     },
     pdfLanguage: "en anglais",

@@ -5,23 +5,23 @@ const AMAZON_SEO_GUIDE = "https://sell.amazon.com/blog/amazon-seo";
 const TITLE_RULES = "https://sellercentral.amazon.com/gp/help/external/GYTR6SYGFA5E3EQC";
 const SEARCH_TERMS_HELP = "https://sellercentral.amazon.com/help/hub/reference/external/G23501";
 
-const title = "Amazon SEO for US Sellers: Rank Higher | Nautilo Studio";
+const title = "B2B SEO for Amazon Sellers: Rank Higher | Nautilo Studio";
 const description =
-  "Amazon SEO for US sellers: what decides where your product ranks, where your keywords belong and the mistakes to avoid. Get a free listing review today.";
+  "Nautilo Studio is the B2B SEO agency for US Amazon sellers: we find what shoppers search and put it where Amazon reads it. Get a free listing review today.";
 
 const page: GuideCopy["page"] = {
   slug: "amazon-seo",
-  breadcrumb: "Amazon SEO",
-  question: "Amazon SEO: how do you rank higher in Amazon search?",
+  breadcrumb: "B2B SEO for Amazon",
+  question: "B2B SEO for Amazon sellers: how to rank higher",
   answer:
-    "Amazon SEO is how you get your product in front of shoppers who search for it: Amazon shows the products that best match a search and that shoppers are most likely to buy. Put the words shoppers type into your title, bullets and backend search terms, then make the listing convincing enough to sell. Those sales, with good listing quality, push the product higher over time.",
+    "B2B SEO for Amazon sellers, or Amazon SEO, is how you get your product in front of shoppers who search for it: Amazon shows the products that best match a search and that shoppers are most likely to buy. Put the words shoppers type into your title, bullets and backend search terms, then make the listing convincing enough to sell. Those sales, with good listing quality, push the product higher over time.",
   description,
   image: {
     src: "/img/service-ads.jpg",
     alt: "Magnifying glass leaning against a small parcel",
     tile: "bg-cyan",
   },
-  updated: "2026-11-10",
+  updated: "2026-11-11",
   author: { name: "Filippo Verace", role: "SEO & Ads Lead", href: "/about" },
   facts: [
     { value: 200, label: "Characters allowed in a title, per Amazon’s SEO guide" },
@@ -116,6 +116,35 @@ const page: GuideCopy["page"] = {
       ),
     },
     {
+      id: "b2b-seo-service",
+      heading: "Our B2B SEO service for Amazon sellers: what’s included",
+      body: (
+        <>
+          <p>
+            For a brand on Amazon, SEO is the B2B marketing that keeps bringing shoppers after the work is done. Our B2B SEO service covers four steps:
+          </p>
+          <ul>
+            <li>
+              <strong>Keyword research.</strong> The searches your buyers really type, from Amazon’s own tools.
+            </li>
+            <li>
+              <strong>Title and bullets.</strong> Rewritten so the main keywords come first and still read well.
+            </li>
+            <li>
+              <strong>Backend search terms.</strong> Synonyms and misspellings, within Amazon’s rules.
+            </li>
+            <li>
+              <strong>Tracking.</strong> We check rank and sales after each change with our
+              Amazon data analysis service.
+            </li>
+          </ul>
+          <p>
+            The work is done by our team in Barcelona. <Link href="/about">Meet the team behind Nautilo Studio</Link>.
+          </p>
+        </>
+      ),
+    },
+    {
       id: "common-mistakes",
       heading: "What are the most common Amazon SEO mistakes?",
       body: (
@@ -137,7 +166,7 @@ const page: GuideCopy["page"] = {
           </ul>
           <p>
             Ranking brings shoppers in. Our{" "}
-            <Link href="/listing-optimization">listing optimization guide</Link> covers turning
+            <Link href="/services/listing-optimization">listing optimization guide</Link> covers turning
             those visits into sales.
           </p>
         </>

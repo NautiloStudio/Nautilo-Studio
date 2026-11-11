@@ -8,7 +8,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const pages: { path: string; priority: number; lastModified?: string; changeFrequency: "weekly" | "monthly" | "yearly" }[] = [
     { path: "/", priority: 1, changeFrequency: "monthly" },
     ...landingPages.map((page) => ({
-      path: `/${page.slug}`,
+      path: `/services/${page.slug}`,
       priority: 0.8,
       lastModified: page.updated,
       changeFrequency: "monthly" as const,

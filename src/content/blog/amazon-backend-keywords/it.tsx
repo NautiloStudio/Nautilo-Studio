@@ -34,7 +34,7 @@ const post: BlogPost = {
       <p>
         Questa guida spiega cos’è quel campo, perché conta ancora, come trovare le parole giuste e
         come scriverle, con un esempio pratico alla fine. Se l’argomento è nuovo per te, parti dalla
-        nostra <Link href={p("/amazon-seo")}>guida alla SEO su Amazon</Link>, che spiega come Amazon
+        nostra <Link href={p("/services/amazon-seo")}>guida alla SEO su Amazon</Link>, che spiega come Amazon
         ordina i prodotti.
       </p>
     </>
@@ -231,7 +231,7 @@ const post: BlogPost = {
           </p>
           <p>
             Per la parte visibile della stessa scheda, titolo, punti elenco e immagini, leggi la nostra{" "}
-            <Link href={p("/listing-optimization")}>guida all’ottimizzazione delle schede Amazon</Link>.
+            <Link href={p("/services/listing-optimization")}>guida all’ottimizzazione delle schede Amazon</Link>.
           </p>
         </>
       ),
@@ -261,7 +261,7 @@ const post: BlogPost = {
           </ul>
           <p>
             Non sai quali numeri guardare? La nostra{" "}
-            <Link href={p("/data-analysis")}>guida all’analisi dei dati su Amazon</Link> spiega i
+            <Link href={p("/services/data-analysis")}>guida all’analisi dei dati su Amazon</Link> spiega i
             quattro che contano di più e dove trovarli.
           </p>
         </>
@@ -339,7 +339,7 @@ const post: BlogPost = {
   ],
   cta: {
     text: "Le parole chiave backend sono una parte della SEO su Amazon. Scopri come titolo, punti elenco e vendite lavorano insieme, oppure facci controllare la tua scheda gratis.",
-    pillar: { href: "/amazon-seo", label: "Leggi la nostra guida alla SEO su Amazon" },
+    pillar: { href: "/services/amazon-seo", label: "Leggi la nostra guida alla SEO su Amazon" },
     formHeading: "Vuoi che controlliamo le tue parole chiave backend?",
     formText: "Mandaci una scheda e ti diremo, gratis, cosa cambieremmo per primo.",
   },
