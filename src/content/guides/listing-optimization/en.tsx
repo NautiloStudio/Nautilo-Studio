@@ -6,7 +6,7 @@ const PRODUCT_PHOTOS = "https://sell.amazon.com/blog/product-photos";
 const A_PLUS = "https://sell.amazon.com/tools/a-content";
 const BOOST_LISTINGS = "https://sell.amazon.com/blog/how-to-boost-amazon-listings";
 
-const title = "Amazon Listing Optimization | Conversion Rate Optimization Agency";
+const title = "Amazon Conversion Rate Optimization Agency | Nautilo Studio";
 const description =
   "How a conversion rate optimization agency optimizes an Amazon listing so more visitors buy: titles, bullets, images, A+ content and tests. Free review.";
 

@@ -146,11 +146,11 @@ export default function LandingPage({
                 </h1>
                 {page.author && (
                   <p className="rise mt-5 text-sm text-slate" style={{ "--i": 1 } as React.CSSProperties}>
-                    By{" "}
+                    {dict.blog.by}{" "}
                     <Link href={href(page.author.href)} className="font-medium text-graphite underline decoration-sand underline-offset-4 hover:decoration-royal">
                       {page.author.name}
                     </Link>
-                    , {page.author.role} · Updated{" "}
+                    , {page.author.role} · {dict.blog.updated}{" "}
                     <time dateTime={page.updated}>
                       {new Date(`${page.updated}T12:00:00Z`).toLocaleDateString(localeTags[lang], {
                         year: "numeric",

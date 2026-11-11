@@ -160,7 +160,7 @@ const en = {
     about: {
       title: "About Nautilo Studio | Amazon Marketing for US Sellers",
       description:
-        "Nautilo Studio is four master's students at TBS Education in Barcelona, building the marketing team that US Amazon sellers don't have. Meet the team.",
+        "Nautilo Studio is four master's students at TBS Education in Barcelona, building the marketing team that US Amazon sellers don't have. Meet the whole team.",
     },
     privacy: {
       title: "Privacy note | Nautilo Studio",
