@@ -32,61 +32,44 @@ const page: GuideCopy["page"] = {
   sections: [
     {
       id: "how-ranking-works",
-      heading: "Amazon ranking factors: what decides where you rank?",
+      heading: "Amazon SEO ranking factors: what decides where you rank",
       body: (
-        <ul>
-          <li>
-            <strong>Relevance.</strong> The search words appear in your title, bullets, description
-            and backend search terms.
-          </li>
-          <li>
-            <strong>Conversion.</strong> Shoppers click and buy. Images, price, reviews and the
-            Featured Offer all play a part.
-          </li>
-          <li>
-            <strong>Sales history.</strong> Products that sell steadily tend to keep their position.
-          </li>
-          <li>
-            <strong>Listing quality.</strong> Amazon says{" "}
+        <>
+          <p>
+            When a shopper searches, Amazon has to choose which products to show first. It picks the listings that best match the words typed and that the shopper is most likely to buy. That is why B2B SEO for Amazon sellers starts with relevance and ends with sales.
+          </p>
+          <p>
+            Relevance comes from your title, bullet points, description and backend search terms: if a search word appears in none of them, the product rarely shows up for it. Conversion comes next. Shoppers click and buy when the images, price, reviews and Featured Offer convince them, and products that sell steadily tend to keep their position. Amazon also says{" "}
             <a href={AMAZON_SEO_GUIDE} target="_blank" rel="noopener noreferrer">
               listing quality and account health can contribute to rankings
             </a>
-            .
-          </li>
-        </ul>
+            , so a clean, complete listing matters as much as the right words.
+          </p>
+          <blockquote>Relevance gets your product shown. Sales keep it there.</blockquote>
+        </>
       ),
     },
     {
       id: "find-keywords",
-      heading: "Amazon keyword research: how do you find what shoppers search?",
+      heading: "Amazon keyword research: finding the words your buyers type",
       body: (
-        <ul>
-          <li>
-            <strong>Amazon’s search bar.</strong> Type your product word and note what Amazon
-            suggests.
-          </li>
-          <li>
-            <strong>Product Opportunity Explorer.</strong> A free Seller Central tool with top
-            search terms for a niche.
-          </li>
-          <li>
-            <strong>Brand Analytics.</strong> For Brand Registry brands: which searches lead to
-            clicks and sales.
-          </li>
-          <li>
-            <strong>Search term report.</strong> The real searches that led shoppers to your
-            Sponsored Products ads.
-          </li>
-        </ul>
+        <>
+          <p>
+            Good keywords come from what shoppers actually type, not from guesses. The quickest start is Amazon’s own search bar: type your main product word and note the suggestions, because they come from real searches.
+          </p>
+          <p>
+            Seller Central adds free data on top. Product Opportunity Explorer shows the top search terms in a niche. Brand Analytics shows which searches lead to clicks and sales for registered brands. The search term report of your Sponsored Products ads lists the exact searches that brought shoppers to you. Together they give you four sources of real search terms, and a clear list of what to target first.
+          </p>
+        </>
       ),
     },
     {
       id: "where-to-put-keywords",
-      heading: "Where should your Amazon keywords go?",
+      heading: "Where your Amazon keywords go: title, bullets and search terms",
       body: (
-        <ul>
-          <li>
-            <strong>Title.</strong> What the product is first. Amazon’s guide gives{" "}
+        <>
+          <p>
+            Your title carries the most weight, so it should say what the product is in the first few words. Amazon’s guide gives{" "}
             <a href={AMAZON_SEO_GUIDE} target="_blank" rel="noopener noreferrer">
               a 200-character limit and recommends 60 or fewer
             </a>
@@ -94,25 +77,32 @@ const page: GuideCopy["page"] = {
             <a href={TITLE_RULES} target="_blank" rel="noopener noreferrer">
               title rules
             </a>{" "}
-            allow a word at most twice.
-          </li>
-          <li>
-            <strong>Bullet points.</strong> One benefit each, with your secondary keywords where they
-            read naturally.
-          </li>
-          <li>
-            <strong>Description and A+ content.</strong> Materials, size, care and what’s in the box.
-          </li>
-          <li>
-            <strong>Backend search terms.</strong> Synonyms and misspellings, with no repeats, brand
-            names or ASINs. Check the{" "}
+            allow the same word at most twice.
+          </p>
+          <p>
+            Bullet points explain one benefit each and are the natural home for your secondary keywords. The description and A+ content cover materials, size, care and what is in the box. The backend search terms hold the synonyms and misspellings that fit nowhere else, with no repeats, brand names or ASINs. Check the{" "}
             <a href={SEARCH_TERMS_HELP} target="_blank" rel="noopener noreferrer">
               current length limit
             </a>
-            , and see our step-by-step guide to{" "}
+            , then follow our step-by-step guide to{" "}
             <Link href="/blog/amazon-backend-keywords">filling in Amazon backend keywords</Link>.
-          </li>
-        </ul>
+          </p>
+        </>
+      ),
+    },
+    {
+      id: "common-mistakes",
+      heading: "Amazon SEO mistakes that cost you rankings",
+      body: (
+        <>
+          <p>
+            The most common mistake is keyword stuffing: a title packed with every possible term is hard to read and can break Amazon’s title rules. Close behind is using competitor brand names, which Amazon does not allow in the listing or in the search terms.
+          </p>
+          <p>
+            Two quieter mistakes hurt too. Long titles get cut off on phones, so the key words have to come first. And changing everything at once makes it impossible to tell which change helped. Ranking brings shoppers in, and our{" "}
+            <Link href="/services/listing-optimization">listing optimization guide</Link> covers turning those visits into sales.
+          </p>
+        </>
       ),
     },
     {
@@ -128,53 +118,13 @@ const page: GuideCopy["page"] = {
       body: (
         <>
           <p>
-            Think of it as SEO B2B marketing for your Amazon brand: once the work is done, it keeps bringing shoppers in. Our B2B SEO service covers four steps:
+            Think of it as SEO B2B marketing for your Amazon brand: once the work is done, it keeps bringing shoppers in. Our B2B SEO service follows four steps, one listing at a time.
           </p>
-          <ul>
-            <li>
-              <strong>Keyword research.</strong> The searches your buyers really type, from Amazon’s own tools.
-            </li>
-            <li>
-              <strong>Title and bullets.</strong> Rewritten so the main keywords come first and still read well.
-            </li>
-            <li>
-              <strong>Backend search terms.</strong> Synonyms and misspellings, within Amazon’s rules.
-            </li>
-            <li>
-              <strong>Tracking.</strong> We check rank and sales after each change with our
-              Amazon data analysis service.
-            </li>
-          </ul>
+          <p>
+            First we research the searches your buyers really type, using Amazon’s own tools. Then we rewrite your title and bullets so the main keywords come first and still read well, and we fill in the backend search terms with synonyms and misspellings, within Amazon’s rules. Finally we check rank and sales after each change with our Amazon data analysis service.
+          </p>
           <p>
             The work is done by our team in Barcelona. <Link href="/about">Meet the team behind Nautilo Studio</Link>.
-          </p>
-        </>
-      ),
-    },
-    {
-      id: "common-mistakes",
-      heading: "What are the most common Amazon SEO mistakes?",
-      body: (
-        <>
-          <ul>
-            <li>
-              <strong>Keyword stuffing.</strong> Hard to read, and it can break Amazon’s title rules.
-            </li>
-            <li>
-              <strong>Competitor brand names.</strong> Using them in your listing or search terms is
-              against Amazon’s rules.
-            </li>
-            <li>
-              <strong>Forgetting phones.</strong> Long titles get cut off, so the key words go first.
-            </li>
-            <li>
-              <strong>Changing everything at once.</strong> Then you can’t tell which change helped.
-            </li>
-          </ul>
-          <p>
-            Ranking brings shoppers in. Our{" "}
-            <Link href="/services/listing-optimization">listing optimization guide</Link> covers turning
-            those visits into sales.
           </p>
         </>
       ),

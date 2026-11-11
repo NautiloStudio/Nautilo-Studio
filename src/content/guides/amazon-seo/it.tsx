@@ -34,62 +34,44 @@ const page: GuideCopy["page"] = {
   sections: [
     {
       id: "how-ranking-works",
-      heading: "Come decide Amazon la tua posizione?",
+      heading: "Fattori di ranking della SEO su Amazon: cosa decide la tua posizione",
       body: (
-        <ul>
-          <li>
-            <strong>Pertinenza.</strong> Le parole della ricerca compaiono nel titolo, nei punti
-            elenco, nella descrizione e nei termini di ricerca nascosti.
-          </li>
-          <li>
-            <strong>Conversione.</strong> I clienti cliccano e comprano. Contano le immagini, il
-            prezzo, le recensioni e l’Offerta in evidenza.
-          </li>
-          <li>
-            <strong>Storico delle vendite.</strong> I prodotti che vendono con costanza tendono a
-            mantenere la posizione.
-          </li>
-          <li>
-            <strong>Qualità della scheda.</strong> Amazon spiega che{" "}
+        <>
+          <p>
+            Quando un cliente cerca, Amazon deve scegliere quali prodotti mostrare per primi. Sceglie le schede che rispondono meglio alle parole digitate e che il cliente ha più probabilità di comprare. Per questo la SEO B2B per venditori Amazon parte dalla pertinenza e arriva alle vendite.
+          </p>
+          <p>
+            La pertinenza nasce da titolo, punti elenco, descrizione e termini di ricerca nascosti: se una parola non compare in nessuno di questi, il prodotto esce di rado per quella ricerca. Poi conta la conversione. I clienti cliccano e comprano quando immagini, prezzo, recensioni e offerta in evidenza li convincono, e i prodotti che vendono con costanza tendono a mantenere la posizione. Amazon dice anche che{" "}
             <a href={AMAZON_SEO_GUIDE} target="_blank" rel="noopener noreferrer">
-              la qualità della scheda e lo stato dell’account possono contribuire al posizionamento
+              la qualità della scheda e la salute dell’account possono contribuire al ranking
             </a>
-            .
-          </li>
-        </ul>
+            , quindi una scheda pulita e completa conta quanto le parole giuste.
+          </p>
+          <blockquote>La pertinenza fa comparire il tuo prodotto. Le vendite lo tengono in alto.</blockquote>
+        </>
       ),
     },
     {
       id: "find-keywords",
-      heading: "Come trovi le parole che usano i clienti?",
+      heading: "Ricerca delle parole chiave su Amazon: le parole che digitano i tuoi clienti",
       body: (
-        <ul>
-          <li>
-            <strong>La barra di ricerca di Amazon.</strong> Scrivi il nome del tuo prodotto e annota
-            cosa suggerisce Amazon.
-          </li>
-          <li>
-            <strong>Product Opportunity Explorer.</strong> Uno strumento gratuito di Seller Central
-            con i principali termini di ricerca di una nicchia.
-          </li>
-          <li>
-            <strong>Brand Analytics.</strong> Per i marchi iscritti al Registro dei marchi: quali
-            ricerche portano a clic e vendite.
-          </li>
-          <li>
-            <strong>Report dei termini di ricerca.</strong> Le ricerche reali che hanno portato i
-            clienti ai tuoi annunci Sponsored Products.
-          </li>
-        </ul>
+        <>
+          <p>
+            Le parole chiave buone nascono da ciò che i clienti digitano davvero, non da supposizioni. Il modo più veloce per iniziare è la barra di ricerca di Amazon: scrivi la parola principale del tuo prodotto e annota i suggerimenti, perché vengono da ricerche reali.
+          </p>
+          <p>
+            Seller Central aggiunge dati gratuiti. Product Opportunity Explorer mostra i principali termini di ricerca di una nicchia. Brand Analytics mostra ai brand registrati quali ricerche portano a clic e vendite. Il report dei termini di ricerca dei tuoi annunci Sponsored Products elenca le ricerche esatte che ti hanno portato clienti. Insieme sono quattro fonti di ricerche reali e una lista chiara da cui partire.
+          </p>
+        </>
       ),
     },
     {
       id: "where-to-put-keywords",
-      heading: "Dove vanno le tue parole chiave?",
+      heading: "Dove vanno le parole chiave su Amazon: titolo, punti elenco e termini nascosti",
       body: (
-        <ul>
-          <li>
-            <strong>Titolo.</strong> Prima cosa è il prodotto. La guida di Amazon indica{" "}
+        <>
+          <p>
+            Il titolo pesa più di tutto, quindi deve dire cos’è il prodotto nelle prime parole. La guida di Amazon indica{" "}
             <a href={AMAZON_SEO_GUIDE} target="_blank" rel="noopener noreferrer">
               un limite di 200 caratteri e ne consiglia 60 o meno
             </a>
@@ -97,83 +79,54 @@ const page: GuideCopy["page"] = {
             <a href={TITLE_RULES} target="_blank" rel="noopener noreferrer">
               regole sui titoli
             </a>{" "}
-            permettono di ripetere una parola al massimo due volte.
-          </li>
-          <li>
-            <strong>Punti elenco.</strong> Un vantaggio per punto, con le parole chiave secondarie
-            dove suonano naturali.
-          </li>
-          <li>
-            <strong>Descrizione e contenuti A+.</strong> Materiali, misure, manutenzione e contenuto
-            della confezione.
-          </li>
-          <li>
-            <strong>Termini di ricerca nascosti.</strong> Sinonimi ed errori di battitura, senza
-            ripetizioni, nomi di marchi o ASIN. Controlla il{" "}
+            permettono la stessa parola al massimo due volte.
+          </p>
+          <p>
+            Ogni punto elenco spiega un vantaggio ed è il posto naturale per le parole chiave secondarie. Descrizione e contenuti A+ coprono materiali, misure, cura e contenuto della confezione. I termini di ricerca nascosti raccolgono sinonimi ed errori di battitura che non trovano posto altrove, senza ripetizioni, marchi o ASIN. Controlla il{" "}
             <a href={SEARCH_TERMS_HELP} target="_blank" rel="noopener noreferrer">
               limite di lunghezza attuale
             </a>
-            , e leggi la nostra guida passo passo per{" "}
+            , poi segui la nostra guida passo passo per{" "}
             <Link href={p("/blog/amazon-backend-keywords")}>compilare le parole chiave nascoste di Amazon</Link>.
-          </li>
-        </ul>
-      ),
-    },
-    {
-      id: "b2b-seo-service",
-      heading: "Il nostro servizio SEO B2B per venditori Amazon: cosa include",
-      body: (
-        <>
-          <p>
-            Per un brand su Amazon, la SEO è il marketing B2B che continua a portare clienti anche a lavoro finito. Il nostro servizio SEO B2B comprende quattro passaggi:
-          </p>
-          <ul>
-            <li>
-              <strong>Ricerca delle parole chiave.</strong> Le ricerche che i tuoi clienti digitano davvero, dagli strumenti di Amazon.
-            </li>
-            <li>
-              <strong>Titolo e punti elenco.</strong> Riscritti perché le parole chiave principali vengano prima e si leggano bene.
-            </li>
-            <li>
-              <strong>Termini di ricerca nascosti.</strong> Sinonimi ed errori di battitura, nel rispetto delle regole di Amazon.
-            </li>
-            <li>
-              <strong>Monitoraggio.</strong> Dopo ogni modifica controlliamo posizione e vendite con il nostro
-              servizio di analisi dei dati Amazon.
-            </li>
-          </ul>
-          <p>
-            Il lavoro lo fa il nostro team a Barcellona. <Link href={p("/about")}>Conosci il team di Nautilo Studio</Link>.
           </p>
         </>
       ),
     },
     {
       id: "common-mistakes",
-      heading: "Quali sono gli errori più comuni?",
+      heading: "Gli errori di SEO su Amazon che ti fanno perdere posizioni",
       body: (
         <>
-          <ul>
-            <li>
-              <strong>Riempire il titolo di parole chiave.</strong> Si legge male e può violare le
-              regole di Amazon sui titoli.
-            </li>
-            <li>
-              <strong>Marchi della concorrenza.</strong> Usarli nella scheda o nei termini di ricerca
-              è contro le regole di Amazon.
-            </li>
-            <li>
-              <strong>Dimenticare lo smartphone.</strong> I titoli lunghi vengono tagliati, quindi le
-              parole chiave vanno all’inizio.
-            </li>
-            <li>
-              <strong>Cambiare tutto insieme.</strong> Poi non sai quale modifica ha funzionato.
-            </li>
-          </ul>
           <p>
-            Il posizionamento porta i clienti. La nostra{" "}
-            <Link href={p("/services/listing-optimization")}>guida all’ottimizzazione delle schede</Link>{" "}
-            spiega come trasformare quelle visite in vendite.
+            L’errore più comune è riempire il titolo di parole chiave: un titolo con tutti i termini possibili si legge male e può violare le regole di Amazon. Subito dopo viene l’uso di marchi della concorrenza, che Amazon non permette né nella scheda né nei termini di ricerca.
+          </p>
+          <p>
+            Due errori più silenziosi pesano comunque. Sul telefono i titoli lunghi vengono tagliati, quindi le parole chiave devono stare all’inizio. E cambiare tutto insieme impedisce di capire quale modifica ha funzionato. Il posizionamento porta i clienti, e la nostra{" "}
+            <Link href={p("/services/listing-optimization")}>guida all’ottimizzazione delle schede</Link> spiega come trasformare quelle visite in vendite.
+          </p>
+        </>
+      ),
+    },
+    {
+      id: "b2b-seo-service",
+      heading: "Cosa fa la nostra agenzia SEO B2B per i venditori Amazon",
+      figure: {
+        src: "/img/amazon-seo-dashboard.webp",
+        alt: "Portatile con una dashboard di SEO B2B e pubblicità su Amazon: posizioni delle parole chiave, traffico organico e ACOS per campagna",
+        width: 1600,
+        height: 899,
+        caption: "Il tipo di dashboard con cui seguiamo posizione e vendite. Numeri di esempio, non risultati di un cliente.",
+      },
+      body: (
+        <>
+          <p>
+            Pensala come marketing B2B con la SEO per il tuo brand su Amazon: una volta fatto il lavoro, continua a portare clienti. Il nostro servizio SEO B2B segue quattro passaggi, una scheda alla volta.
+          </p>
+          <p>
+            Prima studiamo le ricerche che i tuoi clienti digitano davvero, con gli strumenti di Amazon. Poi riscriviamo titolo e punti elenco perché le parole chiave principali vengano prima e si leggano bene, e compiliamo i termini di ricerca nascosti con sinonimi ed errori di battitura, nel rispetto delle regole di Amazon. Infine, dopo ogni modifica controlliamo posizione e vendite con il nostro servizio di analisi dei dati Amazon.
+          </p>
+          <p>
+            Il lavoro lo fa il nostro team a Barcellona. <Link href={p("/about")}>Conosci il team di Nautilo Studio</Link>.
           </p>
         </>
       ),

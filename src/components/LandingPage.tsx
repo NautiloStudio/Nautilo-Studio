@@ -5,6 +5,7 @@ import { ArrowUpRight, CaretDown } from "@phosphor-icons/react/dist/ssr";
 import ContactForm from "@/components/ContactForm";
 import CountUp from "@/components/CountUp";
 import GuideGallery from "@/components/GuideGallery";
+import LandingContents from "@/components/LandingContents";
 import SiteHeader from "@/components/SiteHeader";
 import StepDemo, { type DemoKind } from "@/components/StepDemo";
 import TalkButton from "@/components/TalkButton";
@@ -80,6 +81,11 @@ const scenes: Record<string, DemoKind> = {
   "data-analysis": "analyse",
   "ai-automation": "automate",
 };
+
+// Body text: a larger opening paragraph, short paragraphs, plain bullet lists, pull quotes with a
+// gradient edge, and rounded figures.
+const prose =
+  "space-y-6 text-lg leading-[1.75] text-slate [&>p:first-child]:text-xl [&>p:first-child]:leading-relaxed [&>p:first-child]:text-graphite [&_a]:text-graphite [&_a]:underline [&_a]:decoration-royal/40 [&_a]:underline-offset-4 [&_a:hover]:text-royal [&_strong]:font-semibold [&_strong]:text-graphite [&_h3]:pt-2 [&_h3]:font-display [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:text-graphite [&_ul]:list-disc [&_ul]:space-y-3 [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:space-y-3 [&_ol]:pl-6 [&_li]:pl-1 [&_li]:marker:text-royal [&_blockquote]:my-10 [&_blockquote]:border-l-4 [&_blockquote]:border-cyan [&_blockquote]:pl-6 [&_blockquote]:font-display [&_blockquote]:text-[clamp(1.5rem,2.6vw,2rem)] [&_blockquote]:font-semibold [&_blockquote]:leading-snug [&_blockquote]:tracking-[-0.015em] [&_blockquote]:text-graphite [&_figure]:my-10";
 
 const h2 =
   "font-display text-[clamp(1.75rem,3.2vw,2.75rem)] font-bold leading-[1.1] tracking-[-0.025em]";
@@ -202,27 +208,34 @@ export default function LandingPage({
             </ul>
           </div>
 
-          {/* Sections: the heading stays beside its content on wide screens */}
-          <div className="mx-auto mt-20 max-w-7xl space-y-16 px-4 sm:px-6 md:mt-28 md:space-y-24">
-            <div className="stack-list space-y-16 md:space-y-24">
-              {page.sections.map((section, index) => (
-                <section
-                  key={section.id}
-                  id={section.id}
-                  className="stack-section grid scroll-mt-28 gap-6 border-t border-sand pt-10 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:gap-14"
-                  style={{ "--i": index } as React.CSSProperties}
-                >
-                  <h2 className={h2}>{section.heading}</h2>
-                  <div className="space-y-5 text-lg leading-relaxed text-slate [&_a]:text-graphite [&_a]:underline [&_a]:decoration-royal/40 [&_a]:underline-offset-4 [&_a:hover]:text-royal [&_h3]:font-display [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:text-graphite [&_li]:pl-1 [&_ol]:list-inside [&_ol]:list-decimal [&_ol]:space-y-3 [&_ol]:p-0 [&_ol>li]:rounded-[1.5rem] [&_ol>li]:bg-white [&_ol>li]:p-5 [&_ol>li]:text-base [&_strong]:font-semibold [&_strong]:text-graphite [&_ul]:grid [&_ul]:list-none [&_ul]:gap-3 [&_ul]:p-0 md:[&_ul]:grid-cols-2 [&_ul>li]:rounded-[1.5rem] [&_ul>li]:bg-white [&_ul>li]:p-6 [&_ul>li]:text-base md:[&_ul>li:last-child:nth-child(odd)]:col-span-2">
-                    {section.body}
+          {/* Body: classic article text in paragraphs, with a numbered contents list that stays
+              beside it on wide screens. Each section opens with its number and a brand-gradient rule. */}
+          <div className="mx-auto mt-20 max-w-7xl px-4 sm:px-6 md:mt-28">
+            <div className="grid gap-12 lg:grid-cols-[minmax(0,16rem)_minmax(0,1fr)] lg:gap-20">
+              <LandingContents
+                label={dict.blog.contents}
+                items={page.sections.map(({ id, heading }) => ({ id, heading }))}
+              />
+              <div className="max-w-3xl">
+                {page.sections.map((section, index) => (
+                  <section key={section.id} id={section.id} className="reveal scroll-mt-28 [&+&]:mt-20 md:[&+&]:mt-24">
+                    <p className="font-display text-sm font-semibold tabular-nums tracking-[0.14em] text-royal">
+                      {String(index + 1).padStart(2, "0")}
+                    </p>
+                    <h2 className={`${h2} mt-3`}>{section.heading}</h2>
+                    <div
+                      aria-hidden
+                      className="mt-6 h-1 w-16 rounded-full bg-[linear-gradient(90deg,var(--color-cyan),var(--color-royal),var(--color-apricot))]"
+                    />
+                    <div className={`mt-8 ${prose}`}>{section.body}</div>
                     {section.figure && (
-                      <figure className="m-0">
+                      <figure className="m-0 mt-10">
                         <Image
                           src={section.figure.src}
                           alt={section.figure.alt}
                           width={section.figure.width}
                           height={section.figure.height}
-                          sizes="(min-width: 768px) 55vw, 100vw"
+                          sizes="(min-width: 800px) 48rem, 100vw"
                           className="h-auto w-full rounded-[1.5rem]"
                         />
                         {section.figure.caption && (
@@ -230,11 +243,13 @@ export default function LandingPage({
                         )}
                       </figure>
                     )}
-                  </div>
-                </section>
-              ))}
+                  </section>
+                ))}
+              </div>
             </div>
+          </div>
 
+          <div className="mx-auto mt-24 max-w-7xl space-y-16 px-4 sm:px-6 md:mt-32 md:space-y-24">
               {/* Case study teaser */}
               <Link
                 href={href("/#case-study")}
