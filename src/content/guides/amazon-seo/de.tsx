@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { localePath } from "@/i18n/config";
 import type { GuideCopy } from "../types";
@@ -111,6 +110,13 @@ const page: GuideCopy["page"] = {
     {
       id: "b2b-seo-service",
       heading: "Was unsere B2B-SEO-Agentur für Amazon-Händler tut",
+      figure: {
+        src: "/img/amazon-seo-dashboard.webp",
+        alt: "Laptop mit einem Dashboard für Amazon-B2B-SEO und Werbung: Keyword-Rankings, organischer Traffic und ACOS pro Kampagne",
+        width: 1600,
+        height: 899,
+        caption: "Die Art von Dashboard, mit der wir Ranking und Verkäufe verfolgen. Beispielzahlen, kein Kundenergebnis.",
+      },
       body: (
         <>
           <p>
@@ -119,19 +125,6 @@ const page: GuideCopy["page"] = {
           <p>
             Zuerst recherchieren wir mit Amazons eigenen Tools die Suchen, die Ihre Käufer wirklich eintippen. Dann schreiben wir Titel und Bullet Points so um, dass die wichtigsten Keywords vorn stehen und gut lesbar bleiben, und füllen die Backend-Suchbegriffe mit Synonymen und Tippfehlern, im Rahmen der Amazon-Regeln. Zum Schluss prüfen wir nach jeder Änderung Ranking und Verkäufe mit unserem Service für Amazon-Datenanalyse.
           </p>
-          <figure className="m-0">
-            <Image
-              src="/img/amazon-seo-dashboard.webp"
-              alt="Laptop mit einem Dashboard für Amazon-B2B-SEO und Werbung: Keyword-Rankings, organischer Traffic und ACOS pro Kampagne"
-              width={1600}
-              height={899}
-              sizes="(min-width: 768px) 48rem, 100vw"
-              className="h-auto w-full rounded-[1.5rem]"
-            />
-            <figcaption className="mt-3 text-sm text-slate">
-              Die Art von Dashboard, mit der wir Ranking und Verkäufe verfolgen. Beispielzahlen, kein Kundenergebnis.
-            </figcaption>
-          </figure>
           <p>
             Die Arbeit macht unser Team in Barcelona. <Link href={p("/about")}>Lernen Sie das Team von Nautilo Studio kennen</Link>.
           </p>

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, CaretDown } from "@phosphor-icons/react/dist/ssr";
 import ContactForm from "@/components/ContactForm";
@@ -13,7 +14,9 @@ import { withCounts } from "@/components/withCounts";
 import { SITE_URL, localePath, localeTags, pageUrl, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 
-export type LandingSection = { id: string; heading: string; body: ReactNode };
+// An optional photo shown under a section's text, rendered here so the image component loads with the page.
+export type LandingFigure = { src: string; alt: string; width: number; height: number; caption?: string };
+export type LandingSection = { id: string; heading: string; body: ReactNode; figure?: LandingFigure };
 export type LandingFaq = { question: string; answer: string };
 export type LandingFact = { value: number; prefix?: string; suffix?: string; label: string };
 
@@ -225,6 +228,21 @@ export default function LandingPage({
                       className="mt-6 h-1 w-16 rounded-full bg-[linear-gradient(90deg,var(--color-cyan),var(--color-royal),var(--color-apricot))]"
                     />
                     <div className={`mt-8 ${prose}`}>{section.body}</div>
+                    {section.figure && (
+                      <figure className="m-0 mt-10">
+                        <Image
+                          src={section.figure.src}
+                          alt={section.figure.alt}
+                          width={section.figure.width}
+                          height={section.figure.height}
+                          sizes="(min-width: 800px) 48rem, 100vw"
+                          className="h-auto w-full rounded-[1.5rem]"
+                        />
+                        {section.figure.caption && (
+                          <figcaption className="mt-3 text-sm text-slate">{section.figure.caption}</figcaption>
+                        )}
+                      </figure>
+                    )}
                   </section>
                 ))}
               </div>

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { localePath } from "@/i18n/config";
 import type { GuideCopy } from "../types";
@@ -111,6 +110,13 @@ const page: GuideCopy["page"] = {
     {
       id: "b2b-seo-service",
       heading: "Qué hace nuestra agencia de SEO B2B por los vendedores de Amazon",
+      figure: {
+        src: "/img/amazon-seo-dashboard.webp",
+        alt: "Portátil con un panel de SEO B2B y publicidad en Amazon: posiciones de palabras clave, tráfico orgánico y ACOS por campaña",
+        width: 1600,
+        height: 899,
+        caption: "El tipo de panel con el que seguimos posición y ventas. Cifras de ejemplo, no resultados de un cliente.",
+      },
       body: (
         <>
           <p>
@@ -119,19 +125,6 @@ const page: GuideCopy["page"] = {
           <p>
             Primero investigamos las búsquedas que de verdad escriben tus compradores, con las herramientas de Amazon. Después reescribimos tu título y tus viñetas para que las palabras clave principales vayan primero y se lean bien, y rellenamos los términos de búsqueda ocultos con sinónimos y errores ortográficos, dentro de las reglas de Amazon. Por último revisamos posición y ventas tras cada cambio con nuestro servicio de análisis de datos de Amazon.
           </p>
-          <figure className="m-0">
-            <Image
-              src="/img/amazon-seo-dashboard.webp"
-              alt="Portátil con un panel de SEO B2B y publicidad en Amazon: posiciones de palabras clave, tráfico orgánico y ACOS por campaña"
-              width={1600}
-              height={899}
-              sizes="(min-width: 768px) 48rem, 100vw"
-              className="h-auto w-full rounded-[1.5rem]"
-            />
-            <figcaption className="mt-3 text-sm text-slate">
-              El tipo de panel con el que seguimos posición y ventas. Cifras de ejemplo, no resultados de un cliente.
-            </figcaption>
-          </figure>
           <p>
             Lo hace nuestro equipo en Barcelona. <Link href={p("/about")}>Conoce al equipo de Nautilo Studio</Link>.
           </p>

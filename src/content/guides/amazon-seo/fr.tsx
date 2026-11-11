@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { localePath } from "@/i18n/config";
 import type { GuideCopy } from "../types";
@@ -111,6 +110,13 @@ const page: GuideCopy["page"] = {
     {
       id: "b2b-seo-service",
       heading: "Ce que fait notre agence SEO B2B pour les vendeurs Amazon",
+      figure: {
+        src: "/img/amazon-seo-dashboard.webp",
+        alt: "Ordinateur portable affichant un tableau de bord SEO B2B et publicité Amazon : positions des mots-clés, trafic organique et ACOS par campagne",
+        width: 1600,
+        height: 899,
+        caption: "Le type de tableau de bord avec lequel nous suivons classement et ventes. Chiffres d’exemple, pas un résultat client.",
+      },
       body: (
         <>
           <p>
@@ -119,19 +125,6 @@ const page: GuideCopy["page"] = {
           <p>
             D’abord, nous étudions les recherches que vos acheteurs tapent vraiment, avec les outils d’Amazon. Ensuite, nous réécrivons votre titre et vos puces pour que les mots-clés principaux arrivent en premier et restent lisibles, et nous remplissons les termes de recherche cachés avec synonymes et fautes de frappe, dans le respect des règles d’Amazon. Enfin, nous vérifions classement et ventes après chaque changement grâce à notre service d’analyse de données Amazon.
           </p>
-          <figure className="m-0">
-            <Image
-              src="/img/amazon-seo-dashboard.webp"
-              alt="Ordinateur portable affichant un tableau de bord SEO B2B et publicité Amazon : positions des mots-clés, trafic organique et ACOS par campagne"
-              width={1600}
-              height={899}
-              sizes="(min-width: 768px) 48rem, 100vw"
-              className="h-auto w-full rounded-[1.5rem]"
-            />
-            <figcaption className="mt-3 text-sm text-slate">
-              Le type de tableau de bord avec lequel nous suivons classement et ventes. Chiffres d’exemple, pas un résultat client.
-            </figcaption>
-          </figure>
           <p>
             Le travail est fait par notre équipe à Barcelone. <Link href={p("/about")}>Découvrez l’équipe de Nautilo Studio</Link>.
           </p>

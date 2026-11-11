@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { GuideCopy } from "../types";
 
@@ -109,6 +108,13 @@ const page: GuideCopy["page"] = {
     {
       id: "b2b-seo-service",
       heading: "What our B2B SEO agency does for Amazon sellers",
+      figure: {
+        src: "/img/amazon-seo-dashboard.webp",
+        alt: "Laptop showing an Amazon B2B SEO and advertising dashboard: keyword rankings, organic traffic and ACOS by ad campaign",
+        width: 1600,
+        height: 899,
+        caption: "The kind of dashboard we track rank and sales with. Example numbers, not a client result.",
+      },
       body: (
         <>
           <p>
@@ -117,19 +123,6 @@ const page: GuideCopy["page"] = {
           <p>
             First we research the searches your buyers really type, using Amazon’s own tools. Then we rewrite your title and bullets so the main keywords come first and still read well, and we fill in the backend search terms with synonyms and misspellings, within Amazon’s rules. Finally we check rank and sales after each change with our Amazon data analysis service.
           </p>
-          <figure className="m-0">
-            <Image
-              src="/img/amazon-seo-dashboard.webp"
-              alt="Laptop showing an Amazon B2B SEO and advertising dashboard: keyword rankings, organic traffic and ACOS by ad campaign"
-              width={1600}
-              height={899}
-              sizes="(min-width: 768px) 48rem, 100vw"
-              className="h-auto w-full rounded-[1.5rem]"
-            />
-            <figcaption className="mt-3 text-sm text-slate">
-              The kind of dashboard we track rank and sales with. Example numbers, not a client result.
-            </figcaption>
-          </figure>
           <p>
             The work is done by our team in Barcelona. <Link href="/about">Meet the team behind Nautilo Studio</Link>.
           </p>
