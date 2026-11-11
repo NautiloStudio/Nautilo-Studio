@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -32,6 +32,9 @@ export default function SiteHeader({
 }) {
   const [open, setOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  // Where the list starts from the bar's left edge, so it opens under the button (from 640px up).
+  const [panelLeft, setPanelLeft] = useState<number | null>(null);
   const panelId = useId();
   const { lang, t, href } = useLocale();
   // The page without its language prefix, so /es/about and /about both read "/about".
@@ -51,6 +54,24 @@ export default function SiteHeader({
       document.removeEventListener("keydown", onKey);
       document.removeEventListener("mousedown", onClick);
     };
+  }, [open]);
+
+  // Line the list up with the button that opened it, without letting it run past the bar's right edge.
+  useLayoutEffect(() => {
+    if (!open) return;
+    const place = () => {
+      const nav = navRef.current?.getBoundingClientRect();
+      const button = toggleRef.current?.getBoundingClientRect();
+      if (!nav || !button || !window.matchMedia("(min-width: 640px)").matches) {
+        setPanelLeft(null);
+        return;
+      }
+      const panelWidth = 320; // sm:w-80
+      setPanelLeft(Math.max(0, Math.min(button.left - nav.left, nav.width - panelWidth)));
+    };
+    place();
+    window.addEventListener("resize", place);
+    return () => window.removeEventListener("resize", place);
   }, [open]);
 
   const guides: MenuItem[] = landingPages.map((page) => ({
@@ -85,6 +106,7 @@ export default function SiteHeader({
   const textLink = "whitespace-nowrap py-3 transition-colors hover:text-cyan";
   const toggle = (
     <button
+      ref={toggleRef}
       type="button"
       aria-expanded={open}
       aria-controls={panelId}
@@ -221,6 +243,7 @@ export default function SiteHeader({
           {open && (
             <div
               id={panelId}
+              style={panelLeft === null ? undefined : { left: panelLeft, right: "auto" }}
               className={`absolute inset-x-0 top-full mt-3 rounded-[1.75rem] bg-graphite p-2 shadow-[0_24px_60px_-20px_rgba(22,25,31,0.6)] ring-1 ring-white/10 sm:left-auto sm:w-80 ${
                 onGuide ? "xl:hidden" : ""
               }`}
