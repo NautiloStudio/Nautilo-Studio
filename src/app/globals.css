@@ -261,6 +261,17 @@ textarea {
   opacity: 0;
 }
 
+/* For boxes that clip their content (overflow: hidden), the ring sits just inside the edge,
+   above the content, and the outer halo is left out because it would be clipped anyway. */
+.glow-ring--inset::before {
+  inset: 0;
+  border-radius: var(--glow-radius, 2rem);
+  z-index: 3;
+}
+.glow-ring--inset::after {
+  display: none;
+}
+
 /* Looping product scenes inside the steps. */
 @keyframes demo-draw {
   0% {

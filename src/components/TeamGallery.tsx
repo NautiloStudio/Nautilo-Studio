@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type KeyboardEvent } from "react";
+import { useEffect, useRef, useState, type KeyboardEvent, type PointerEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ArrowUpRight, LinkedinLogo, Plus } from "@phosphor-icons/react/dist/ssr";
@@ -77,6 +77,20 @@ export default function TeamGallery() {
 
   const go = (index: number) => setOpen((index + total) % total);
 
+  // With a mouse, resting on a portrait opens it, so nobody has to click. A short pause first
+  // keeps a cursor that is only passing across the row from opening every card on its way.
+  const hoverTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const cancelHover = () => {
+    if (hoverTimer.current) clearTimeout(hoverTimer.current);
+    hoverTimer.current = null;
+  };
+  const hoverOpen = (index: number) => (event: PointerEvent<HTMLLIElement>) => {
+    if (event.pointerType !== "mouse" || index === open) return;
+    cancelHover();
+    hoverTimer.current = setTimeout(() => setOpen(index), 140);
+  };
+  useEffect(() => cancelHover, []);
+
   // Left and right arrows move between people anywhere inside the gallery.
   const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
@@ -121,10 +135,12 @@ export default function TeamGallery() {
             <li
               key={member.name}
               data-open={isOpen || undefined}
-              className={`team-panel group relative overflow-hidden rounded-[2rem] bg-white ring-1 ring-sand lg:min-w-0 ${
+              onPointerEnter={hoverOpen(index)}
+              onPointerLeave={cancelHover}
+              className={`team-panel glow-ring glow-ring--inset group relative overflow-hidden rounded-[2rem] bg-white lg:min-w-0 ${
                 isOpen
                   ? "lg:flex-[5] shadow-[0_30px_80px_-40px_rgba(28,47,214,0.45)]"
-                  : `lg:flex-[1] lg:hover:flex-[1.3] ${member.tile}`
+                  : `lg:flex-[1] ${member.tile}`
               }`}
             >
               {/* Portrait: a thumbnail on phones, the whole strip or the left part of the card on wide screens */}
