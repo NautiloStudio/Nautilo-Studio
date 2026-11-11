@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { localePath } from "@/i18n/config";
+import { BlogPhotoFigure, FeeChangeFigure } from "@/components/BlogFigures";
 import type { BlogPost } from "../types";
+import { calculatorPhoto, heroPhoto } from "./media";
 
 const AMAZON_2027 = "https://sellingpartners.aboutamazon.com/update-to-us-referral-and-fulfillment-by-amazon-fees-for-2027";
 const AMAZON_2026 = "https://sellingpartners.aboutamazon.com/update-to-u-s-referral-and-fulfillment-by-amazon-fees-for-2026";
@@ -20,6 +22,7 @@ const post: BlogPost = {
   published: "2026-11-11",
   updated: "2026-11-11",
   readMinutes: 8,
+  hero: { ...heroPhoto, alt: "Allée d’entrepôt aux hautes étagères remplies de cartons" },
   intro: (
     <>
       <p>
@@ -76,6 +79,14 @@ const post: BlogPost = {
             Les frais gardent trois tranches de prix : moins de 10 $, de 10 à 50 $ et plus de 50 $. Les
             articles vendus exactement 10 $ ou 50 $ paient le tarif de la tranche de 10 à 50 $.
           </p>
+
+          <FeeChangeFigure
+            lang="fr"
+            before={{ label: "2026", value: 2.49 }}
+            after={{ label: "2027", value: 2.72 }}
+            labels={{ title: "L’exemple d’Amazon : les frais FBA d’une coque de téléphone à moins de 10 $", perUnit: "par unité" }}
+            caption="Frais par unité avant et après le 15 janvier 2027. Source : Amazon."
+          />
 
           <h3>2. Moins de produits éligibles aux tarifs Low-Price FBA</h3>
           <p>
@@ -167,6 +178,7 @@ const post: BlogPost = {
       heading: "Comment mesurer l’effet des frais 2027 sur vos marges",
       body: (
         <>
+          <BlogPhotoFigure photo={{ ...calculatorPhoto, alt: "Calculatrice posée sur des graphiques imprimés, près d’un ordinateur portable" }} label="Photo" />
           <p>
             Amazon a créé deux outils pour cela. Utilisez-les avant le 15 janvier, tant que vous avez
             encore le temps d’ajuster vos prix ou vos stocks.

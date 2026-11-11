@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { localePath } from "@/i18n/config";
+import { BlogPhotoFigure, FeeChangeFigure } from "@/components/BlogFigures";
 import type { BlogPost } from "../types";
+import { calculatorPhoto, heroPhoto } from "./media";
 
 const AMAZON_2027 = "https://sellingpartners.aboutamazon.com/update-to-us-referral-and-fulfillment-by-amazon-fees-for-2027";
 const AMAZON_2026 = "https://sellingpartners.aboutamazon.com/update-to-u-s-referral-and-fulfillment-by-amazon-fees-for-2026";
@@ -20,6 +22,7 @@ const post: BlogPost = {
   published: "2026-11-11",
   updated: "2026-11-11",
   readMinutes: 8,
+  hero: { ...heroPhoto, alt: "Corridoio di un magazzino con scaffali alti pieni di scatole" },
   intro: (
     <>
       <p>
@@ -78,6 +81,14 @@ const post: BlogPost = {
             Le commissioni continuano a usare tre fasce di prezzo: sotto i 10 $, da 10 a 50 $ e sopra i
             50 $. Gli articoli che costano esattamente 10 $ o 50 $ pagano la tariffa da 10 a 50 $.
           </p>
+
+          <FeeChangeFigure
+            lang="it"
+            before={{ label: "2026", value: 2.49 }}
+            after={{ label: "2027", value: 2.72 }}
+            labels={{ title: "L’esempio di Amazon: la commissione FBA di una cover per telefono sotto i 10 $", perUnit: "per unità" }}
+            caption="Commissione per unità prima e dopo il 15 gennaio 2027. Fonte: Amazon."
+          />
 
           <h3>2. Meno prodotti con le tariffe Low-Price FBA</h3>
           <p>
@@ -168,6 +179,7 @@ const post: BlogPost = {
       heading: "Come capire cosa significano le commissioni 2027 per i tuoi margini",
       body: (
         <>
+          <BlogPhotoFigure photo={{ ...calculatorPhoto, alt: "Calcolatrice su grafici stampati accanto a un portatile" }} label="Foto" />
           <p>
             Amazon ha creato due strumenti apposta. Usali prima del 15 gennaio, finché hai ancora tempo
             per cambiare prezzi o scorte.

@@ -405,6 +405,7 @@ const fr: Dictionary = {
     articlesHeading: "Derniers articles",
     readPost: "Lire l’article sur",
     minRead: "min de lecture",
+    photo: "Photo",
     by: "Par",
     updated: "Mis à jour le",
     contents: "Dans ce guide",

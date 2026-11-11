@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { SearchTermsFigure } from "@/components/BlogFigures";
 import type { BlogPost } from "../types";
+import { heroPhoto } from "./media";
 
 const AMAZON_SEO_GUIDE = "https://sell.amazon.com/blog/amazon-seo";
 const PRODUCT_LISTINGS = "https://sell.amazon.com/blog/amazon-product-listings";
@@ -17,6 +19,7 @@ const post: BlogPost = {
   published: "2026-11-10",
   updated: "2026-11-10",
   readMinutes: 9,
+  hero: { ...heroPhoto, alt: "Magnifying glass held over a laptop keyboard" },
   intro: (
     <>
       <p>
@@ -208,10 +211,13 @@ const post: BlogPost = {
             <em>screw-top lid</em> and <em>charcoal</em>. Your backend keywords should cover what is
             left. A first draft might look like this:
           </p>
-          <p className="rounded-2xl bg-white p-5 font-mono text-base text-graphite">
-            insulated flask thermos canteen vacuum leakproof reusable travel gym hiking office kids
-            bpa free metal tumbler ounce black grey gray
-          </p>
+          <SearchTermsFigure
+            labels={{"title": "Already in the title", "field": "Search terms", "bytes": "bytes", "leftOut": "Left out on purpose"}}
+            titleWords={["24 oz", "stainless steel", "water bottle", "screw-top lid", "charcoal"]}
+            terms="insulated flask thermos canteen vacuum leakproof reusable travel gym hiking office kids bpa free metal tumbler ounce black grey gray"
+            leftOut={["brand names", "best", "new", "stainless steel"]}
+            caption="The worked example at a glance: the title already covers the first row, the search terms field adds new words, and the last row stays out."
+          />
           <p>
             Notice what is not there: no brand names, no “best”, no repeats of the title, and both
             “grey” and “gray” so that shoppers who spell it either way can find you. Then run a quick

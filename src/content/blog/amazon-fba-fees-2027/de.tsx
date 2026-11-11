@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { localePath } from "@/i18n/config";
+import { BlogPhotoFigure, FeeChangeFigure } from "@/components/BlogFigures";
 import type { BlogPost } from "../types";
+import { calculatorPhoto, heroPhoto } from "./media";
 
 const AMAZON_2027 = "https://sellingpartners.aboutamazon.com/update-to-us-referral-and-fulfillment-by-amazon-fees-for-2027";
 const AMAZON_2026 = "https://sellingpartners.aboutamazon.com/update-to-u-s-referral-and-fulfillment-by-amazon-fees-for-2026";
@@ -20,6 +22,7 @@ const post: BlogPost = {
   published: "2026-11-11",
   updated: "2026-11-11",
   readMinutes: 8,
+  hero: { ...heroPhoto, alt: "Lagergang mit hohen Regalen voller Kartons" },
   intro: (
     <>
       <p>
@@ -77,6 +80,14 @@ const post: BlogPost = {
             Die Gebühren nutzen weiterhin drei Preisstufen: unter 10 $, 10 bis 50 $ und über 50 $.
             Artikel, die genau 10 $ oder 50 $ kosten, zahlen den Satz für 10 bis 50 $.
           </p>
+
+          <FeeChangeFigure
+            lang="de"
+            before={{ label: "2026", value: 2.49 }}
+            after={{ label: "2027", value: 2.72 }}
+            labels={{ title: "Amazons Beispiel: die FBA-Gebühr für eine Handyhülle unter 10 $", perUnit: "pro Einheit" }}
+            caption="Gebühr pro Einheit vor und nach dem 15. Januar 2027. Quelle: Amazon."
+          />
 
           <h3>2. Weniger Produkte erhalten Low-Price-FBA-Tarife</h3>
           <p>
@@ -165,6 +176,7 @@ const post: BlogPost = {
       heading: "So prüfen Sie, was die Gebühren 2027 für Ihre Margen bedeuten",
       body: (
         <>
+          <BlogPhotoFigure photo={{ ...calculatorPhoto, alt: "Taschenrechner auf ausgedruckten Diagrammen neben einem Laptop" }} label="Foto" />
           <p>
             Amazon hat dafür zwei Tools gebaut. Nutzen Sie sie vor dem 15. Januar, solange Sie Preise
             oder Bestände noch anpassen können.

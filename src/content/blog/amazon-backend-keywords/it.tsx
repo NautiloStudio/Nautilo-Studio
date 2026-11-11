@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { localePath } from "@/i18n/config";
+import { SearchTermsFigure } from "@/components/BlogFigures";
 import type { BlogPost } from "../types";
+import { heroPhoto } from "./media";
 
 const AMAZON_SEO_GUIDE = "https://sell.amazon.com/blog/amazon-seo";
 const PRODUCT_LISTINGS = "https://sell.amazon.com/blog/amazon-product-listings";
@@ -19,6 +21,7 @@ const post: BlogPost = {
   published: "2026-11-10",
   updated: "2026-11-10",
   readMinutes: 9,
+  hero: { ...heroPhoto, alt: "Lente d’ingrandimento sulla tastiera di un portatile" },
   intro: (
     <>
       <p>
@@ -214,10 +217,13 @@ const post: BlogPost = {
             <em>charcoal</em>. Le parole chiave backend devono coprire il resto. Una prima bozza
             potrebbe essere:
           </p>
-          <p className="rounded-2xl bg-white p-5 font-mono text-base text-graphite">
-            insulated flask thermos canteen vacuum leakproof reusable travel gym hiking office kids
-            bpa free metal tumbler ounce black grey gray
-          </p>
+          <SearchTermsFigure
+            labels={{"title": "Già nel titolo", "field": "Search terms", "bytes": "byte", "leftOut": "Esclusi di proposito"}}
+            titleWords={["24 oz", "stainless steel", "water bottle", "screw-top lid", "charcoal"]}
+            terms="insulated flask thermos canteen vacuum leakproof reusable travel gym hiking office kids bpa free metal tumbler ounce black grey gray"
+            leftOut={["marchi", "best", "new", "stainless steel"]}
+            caption="L’esempio a colpo d’occhio: il titolo copre già la prima riga, il campo search terms aggiunge parole nuove e l’ultima riga resta fuori."
+          />
           <p>
             Nota cosa manca: nessun marchio, niente “best”, nessuna ripetizione del titolo, e ci sono
             sia “grey” sia “gray”, così ti trova chi lo scrive in entrambi i modi. Poi confronta con i

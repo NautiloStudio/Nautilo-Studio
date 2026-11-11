@@ -403,6 +403,7 @@ const it: Dictionary = {
     articlesHeading: "Ultimi articoli",
     readPost: "Leggi l’articolo su",
     minRead: "min di lettura",
+    photo: "Foto",
     by: "Di",
     updated: "Aggiornato il",
     contents: "In questa guida",

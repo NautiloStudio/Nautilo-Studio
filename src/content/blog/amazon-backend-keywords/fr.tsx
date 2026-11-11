@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { localePath } from "@/i18n/config";
+import { SearchTermsFigure } from "@/components/BlogFigures";
 import type { BlogPost } from "../types";
+import { heroPhoto } from "./media";
 
 const AMAZON_SEO_GUIDE = "https://sell.amazon.com/blog/amazon-seo";
 const PRODUCT_LISTINGS = "https://sell.amazon.com/blog/amazon-product-listings";
@@ -19,6 +21,7 @@ const post: BlogPost = {
   published: "2026-11-10",
   updated: "2026-11-10",
   readMinutes: 9,
+  hero: { ...heroPhoto, alt: "Loupe tenue au-dessus du clavier d’un ordinateur portable" },
   intro: (
     <>
       <p>
@@ -214,10 +217,13 @@ const post: BlogPost = {
             <em>screw-top lid</em> et <em>charcoal</em>. Vos mots-clés backend doivent couvrir le
             reste. Un premier jet pourrait ressembler à ceci :
           </p>
-          <p className="rounded-2xl bg-white p-5 font-mono text-base text-graphite">
-            insulated flask thermos canteen vacuum leakproof reusable travel gym hiking office kids
-            bpa free metal tumbler ounce black grey gray
-          </p>
+          <SearchTermsFigure
+            labels={{"title": "Déjà dans le titre", "field": "Search terms", "bytes": "octets", "leftOut": "Écartés exprès"}}
+            titleWords={["24 oz", "stainless steel", "water bottle", "screw-top lid", "charcoal"]}
+            terms="insulated flask thermos canteen vacuum leakproof reusable travel gym hiking office kids bpa free metal tumbler ounce black grey gray"
+            leftOut={["marques", "best", "new", "stainless steel"]}
+            caption="L’exemple en un coup d’œil : le titre couvre déjà la première ligne, le champ search terms ajoute des mots nouveaux et la dernière ligne reste dehors."
+          />
           <p>
             Remarquez ce qui n’y est pas : aucune marque, pas de « best », aucune répétition du titre,
             et « grey » comme « gray » pour que les acheteurs vous trouvent quelle que soit leur

@@ -1,7 +1,15 @@
+import type { StaticImageData } from "next/image";
 import type { ReactNode } from "react";
 
-// One blog post (English only). Its sections render as H2s; use <h3> inside a body for subsections.
+// One blog post in one language. Its sections render as H2s; use <h3> inside a body for subsections.
 export type BlogSection = { id: string; heading: string; body: ReactNode };
+
+// A photo with its photographer, for the opening image and photos inside the article.
+export type BlogPhoto = {
+  image: StaticImageData;
+  alt: string; // describes the photo in the post's language
+  credit: { name: string; url: string };
+};
 
 export type BlogPost = {
   slug: string;
@@ -15,6 +23,7 @@ export type BlogPost = {
   published: string; // ISO date
   updated: string; // ISO date
   readMinutes: number;
+  hero: BlogPhoto; // the opening photo, shown right after the title
   intro: ReactNode; // must use the primary keyword in its first 100 words
   sections: BlogSection[];
   faqs: { question: string; answer: string }[];
