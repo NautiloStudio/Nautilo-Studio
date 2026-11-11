@@ -20,7 +20,7 @@ type MenuItem = { href: string; label: string; current?: boolean };
 
 // The top bar on every page.
 // - Guide pages (pass `guide`): Home, the four service guides and the free review button.
-// - Every other page: Services (a list of the guides), How we work, About us and the free review button.
+// - Every other page: Services (a list of the guides), How we work, Blog, About us and the free review button.
 export default function SiteHeader({
   onHome = false,
   guide,
@@ -67,17 +67,18 @@ export default function SiteHeader({
     : [
         ...guides,
         { href: how, label: t.header.howWeWork },
+        // The blog is English only, so it always links to /blog.
+        { href: "/blog", label: t.header.blog, current: pathname.startsWith("/blog") },
         {
           href: href("/about"),
           label: t.header.aboutUs,
           current: pathname === "/about",
         },
-        // The blog is English only, so it always links to /blog.
-        { href: "/blog", label: t.header.blog, current: pathname.startsWith("/blog") },
       ];
   // Links that also sit in the bar, and the screen width from which they do (the list hides them there).
   const barLinks: Record<string, string> = {
     [t.header.howWeWork]: "md:hidden",
+    [t.header.blog]: "sm:hidden",
     [t.header.aboutUs]: "sm:hidden",
   };
 
@@ -183,6 +184,17 @@ export default function SiteHeader({
                 {toggle}
                 <Link href={how} className={`hidden md:inline ${textLink}`}>
                   {t.header.howWeWork}
+                </Link>
+                <Link
+                  href="/blog"
+                  aria-current={pathname.startsWith("/blog") ? "page" : undefined}
+                  className={`hidden sm:inline ${textLink} ${
+                    pathname.startsWith("/blog")
+                      ? "text-cyan underline decoration-2 underline-offset-8"
+                      : ""
+                  }`}
+                >
+                  {t.header.blog}
                 </Link>
                 <Link
                   href={href("/about")}

@@ -3,7 +3,7 @@
 import { useState, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, DownloadSimple } from "@phosphor-icons/react/dist/ssr";
+import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { withCounts } from "./withCounts";
 import { useLocale } from "@/i18n/LocaleProvider";
 
@@ -99,17 +99,6 @@ export default function GuideGallery({ exclude, heading, intro, id = "guides" }:
                         {t.gallery.read}
                         <ArrowUpRight size={16} weight="bold" aria-hidden />
                       </Link>
-                      <a
-                        href={`/guides/nautilo-${guide.slug}-guide.pdf`}
-                        download
-                        className="inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-3 font-display font-semibold text-offwhite ring-1 ring-white/30"
-                      >
-                        {t.gallery.download}
-                        {t.pdfLanguage && (
-                          <span className="text-offwhite/70">({t.pdfLanguage})</span>
-                        )}
-                        <DownloadSimple size={16} weight="bold" aria-hidden />
-                      </a>
                     </div>
                   </div>
                 </div>
