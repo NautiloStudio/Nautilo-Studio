@@ -17,8 +17,8 @@ const page: GuideCopy["page"] = {
     "B2B SEO for Amazon sellers, or Amazon SEO, is how you get your product in front of shoppers who search for it: Amazon shows the products that best match a search and that shoppers are most likely to buy. Put the words shoppers type into your title, bullets and backend search terms, then make the listing convincing enough to sell. Those sales, with good listing quality, push the product higher over time.",
   description,
   image: {
-    src: "/img/service-ads.jpg",
-    alt: "Magnifying glass leaning against a small parcel",
+    src: "/img/amazon-seo-dashboard.webp",
+    alt: "Laptop showing an Amazon SEO dashboard with keyword rankings and organic traffic",
     tile: "bg-cyan",
   },
   updated: "2026-11-11",

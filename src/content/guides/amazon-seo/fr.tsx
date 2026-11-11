@@ -20,8 +20,8 @@ const page: GuideCopy["page"] = {
     "Le SEO B2B pour vendeurs Amazon, ou SEO Amazon, consiste à placer votre produit devant ceux qui le cherchent. Amazon affiche les produits qui correspondent le mieux à une recherche et que les acheteurs ont le plus de chances d’acheter. Placez les mots que tapent les acheteurs dans votre titre, vos puces et vos termes de recherche cachés, puis rendez la fiche assez convaincante pour vendre. Ces ventes, avec une fiche de qualité, font monter le produit au fil du temps.",
   description,
   image: {
-    src: "/img/service-ads.jpg",
-    alt: "Loupe appuyée contre un petit colis",
+    src: "/img/amazon-seo-dashboard.webp",
+    alt: "Ordinateur portable affichant un tableau de bord SEO Amazon : positions des mots-clés et trafic organique",
     tile: "bg-cyan",
   },
   updated: "2026-11-11",

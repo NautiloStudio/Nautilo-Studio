@@ -184,7 +184,7 @@ export default function LandingPage({
               </div>
             </div>
             <div
-              className="rise on-dark mt-5 rounded-[2rem] bg-royal p-8 text-offwhite md:p-14"
+              className="rise glow-ring on-dark mt-5 rounded-[2rem] bg-royal p-8 text-offwhite md:p-14"
               style={{ "--i": 3 } as React.CSSProperties}
             >
               <p className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-cyan">
@@ -253,7 +253,7 @@ export default function LandingPage({
               {/* Case study teaser */}
               <Link
                 href={href("/#case-study")}
-                className="reveal group flex items-center justify-between gap-6 rounded-[2rem] bg-apricot p-6 sm:p-8"
+                className="reveal glow-ring group flex items-center justify-between gap-6 rounded-[2rem] bg-apricot p-6 sm:p-8"
               >
                 <span>
                   <span className="block font-display text-sm font-semibold uppercase tracking-[0.14em] text-graphite/70">
@@ -334,7 +334,7 @@ export default function LandingPage({
 
         {/* Free listing review */}
         <section id="review" className="on-dark mx-auto mt-28 max-w-7xl scroll-mt-24 px-4 sm:px-6 md:mt-36">
-          <div className="grid gap-12 rounded-[2rem] bg-graphite px-8 py-14 text-offwhite md:grid-cols-2 md:gap-16 md:px-16 md:py-24">
+          <div className="glow-ring grid gap-12 rounded-[2rem] bg-graphite px-8 py-14 text-offwhite md:grid-cols-2 md:gap-16 md:px-16 md:py-24">
             <div>
               <h2 className="font-display text-[clamp(2rem,4.4vw,4rem)] font-bold leading-[1.05] tracking-[-0.03em]">
                 {t.reviewHeading}

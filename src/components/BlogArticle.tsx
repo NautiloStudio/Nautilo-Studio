@@ -182,7 +182,7 @@ export default function BlogArticle({ post, lang, dict }: { post: BlogPost; lang
           ))}
 
           {/* Call to action: the landing page and the free review */}
-          <aside className="reveal on-dark mt-16 rounded-[2rem] bg-royal p-8 text-offwhite md:p-10">
+          <aside className="reveal glow-ring on-dark mt-16 rounded-[2rem] bg-royal p-8 text-offwhite md:p-10">
             <p className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-cyan">
               {t.nextStep}
             </p>
@@ -249,7 +249,7 @@ export default function BlogArticle({ post, lang, dict }: { post: BlogPost; lang
 
         {/* Free listing review */}
         <section id="review" className="on-dark mx-auto mt-24 max-w-7xl scroll-mt-24 px-4 sm:px-6 md:mt-32">
-          <div className="grid gap-12 rounded-[2rem] bg-graphite px-8 py-14 text-offwhite md:grid-cols-2 md:gap-16 md:px-16 md:py-24">
+          <div className="glow-ring grid gap-12 rounded-[2rem] bg-graphite px-8 py-14 text-offwhite md:grid-cols-2 md:gap-16 md:px-16 md:py-24">
             <div>
               <h2 className="font-display text-[clamp(2rem,4.4vw,4rem)] font-bold leading-[1.05] tracking-[-0.03em]">
                 {post.cta.formHeading}

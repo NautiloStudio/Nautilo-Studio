@@ -223,6 +223,44 @@ textarea {
   opacity: 0;
 }
 
+/* The same turning brand-gradient ring as .glow-card, drawn as a hollow outline around the box
+   itself, so it works on any box (sticky, animated, with its own background) without a wrapper.
+   The halo is an outer shadow, so nothing ever paints over the box's content. */
+.glow-ring {
+  position: relative;
+}
+.glow-ring::before,
+.glow-ring::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: calc(var(--glow-radius, 2rem) + 3px);
+  pointer-events: none;
+}
+.glow-ring::before {
+  padding: 3px;
+  background: conic-gradient(
+    from var(--ring-angle),
+    var(--color-cyan),
+    var(--color-royal),
+    var(--color-apricot),
+    var(--color-cyan)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.35;
+  animation: ring-turn 8s linear infinite;
+}
+.glow-ring::after {
+  box-shadow:
+    0 0 34px 2px rgb(51 214 255 / 0.32),
+    0 0 70px 6px rgb(28 47 214 / 0.18);
+  opacity: 0;
+}
+
 /* Looping product scenes inside the steps. */
 @keyframes demo-draw {
   0% {
@@ -405,6 +443,18 @@ textarea {
     animation-timeline: auto, view();
     animation-range: normal, cover 10% cover 90%;
   }
+  .glow-ring::before {
+    animation:
+      ring-turn 8s linear infinite,
+      ring-glow linear both;
+    animation-timeline: auto, view();
+    animation-range: normal, cover 10% cover 90%;
+  }
+  .glow-ring::after {
+    animation: ring-halo linear both;
+    animation-timeline: view();
+    animation-range: cover 10% cover 90%;
+  }
   .glow-card::after {
     animation:
       ring-turn 8s linear infinite,
@@ -429,7 +479,9 @@ textarea {
   .demo-up,
   .demo-down,
   .glow-card::before,
-  .glow-card::after {
+  .glow-card::after,
+  .glow-ring::before,
+  .glow-ring::after {
     animation: none;
   }
   .demo-layer-a {

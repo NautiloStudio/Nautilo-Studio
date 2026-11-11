@@ -10,7 +10,7 @@ import { useLocale } from "@/i18n/LocaleProvider";
 const guides = [
   {
     slug: "amazon-seo",
-    image: "/img/service-ads.jpg",
+    image: "/img/amazon-seo-dashboard.webp",
     tile: "bg-cyan",
   },
   {

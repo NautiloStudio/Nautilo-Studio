@@ -61,7 +61,7 @@ export default function CaseStudy({ t }: { t: Dictionary["caseStudy"] }) {
 
       <div className="mt-12 grid items-start gap-5 md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:items-center md:gap-6">
         {/* Before */}
-        <article className="reveal flex flex-col rounded-[2rem] bg-white p-6 sm:p-8">
+        <article className="reveal glow-ring flex flex-col rounded-[2rem] bg-white p-6 sm:p-8">
           <div className="flex items-center gap-3">
             <span className="rounded-full bg-sand px-3 py-1 font-display text-xs font-semibold uppercase tracking-[0.08em] text-slate">
               {t.before}
@@ -87,7 +87,7 @@ export default function CaseStudy({ t }: { t: Dictionary["caseStudy"] }) {
         </div>
 
         {/* After */}
-        <article className="reveal flex flex-col rounded-[2rem] bg-white p-6 shadow-[0_30px_80px_-30px_rgba(28,47,214,0.35)] ring-2 ring-royal sm:p-8">
+        <article className="reveal glow-ring flex flex-col rounded-[2rem] bg-white p-6 shadow-[0_30px_80px_-30px_rgba(28,47,214,0.35)] sm:p-8">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-3">
               <span className="rounded-full bg-royal px-3 py-1 font-display text-xs font-semibold uppercase tracking-[0.08em] text-offwhite">
