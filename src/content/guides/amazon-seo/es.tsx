@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { localePath } from "@/i18n/config";
 import type { GuideCopy } from "../types";
@@ -34,146 +35,105 @@ const page: GuideCopy["page"] = {
   sections: [
     {
       id: "how-ranking-works",
-      heading: "¿Cómo decide Amazon tu posición?",
+      heading: "Factores de ranking del SEO en Amazon: qué decide tu posición",
       body: (
-        <ul>
-          <li>
-            <strong>Relevancia.</strong> Las palabras de la búsqueda aparecen en tu título, viñetas,
-            descripción y términos de búsqueda ocultos.
-          </li>
-          <li>
-            <strong>Conversión.</strong> Los compradores hacen clic y compran. Influyen las imágenes,
-            el precio, las reseñas y la Oferta destacada.
-          </li>
-          <li>
-            <strong>Historial de ventas.</strong> Los productos que venden de forma constante suelen
-            mantener su posición.
-          </li>
-          <li>
-            <strong>Calidad de la ficha.</strong> Amazon explica que{" "}
+        <>
+          <p>
+            Cuando un comprador busca, Amazon tiene que elegir qué productos mostrar primero. Elige las fichas que mejor responden a las palabras escritas y que el comprador tiene más probabilidades de comprar. Por eso el SEO B2B para vendedores de Amazon empieza por la relevancia y termina en las ventas.
+          </p>
+          <p>
+            La relevancia sale de tu título, tus viñetas, tu descripción y tus términos de búsqueda ocultos: si una palabra no aparece en ninguno, el producto casi nunca sale para esa búsqueda. Después viene la conversión. Los compradores hacen clic y compran cuando les convencen las imágenes, el precio, las reseñas y la oferta destacada, y los productos que venden de forma constante suelen mantener su posición. Amazon también dice que{" "}
             <a href={AMAZON_SEO_GUIDE} target="_blank" rel="noopener noreferrer">
-              la calidad de la ficha y la salud de la cuenta pueden influir en el posicionamiento
+              la calidad de la ficha y la salud de la cuenta pueden influir en el ranking
             </a>
-            .
-          </li>
-        </ul>
+            , así que una ficha limpia y completa importa tanto como las palabras correctas.
+          </p>
+          <blockquote>La relevancia hace que tu producto aparezca. Las ventas lo mantienen arriba.</blockquote>
+        </>
       ),
     },
     {
       id: "find-keywords",
-      heading: "¿Cómo encuentras las palabras que usan los compradores?",
+      heading: "Búsqueda de palabras clave en Amazon: lo que escriben tus compradores",
       body: (
-        <ul>
-          <li>
-            <strong>La barra de búsqueda de Amazon.</strong> Escribe el nombre de tu producto y anota
-            lo que Amazon sugiere.
-          </li>
-          <li>
-            <strong>Product Opportunity Explorer.</strong> Una herramienta gratuita de Seller Central
-            con los términos de búsqueda principales de cada nicho.
-          </li>
-          <li>
-            <strong>Brand Analytics.</strong> Para marcas en el Registro de Marcas: qué búsquedas
-            generan clics y ventas.
-          </li>
-          <li>
-            <strong>Informe de términos de búsqueda.</strong> Las búsquedas reales que llevaron a los
-            compradores a tus anuncios de Sponsored Products.
-          </li>
-        </ul>
+        <>
+          <p>
+            Las buenas palabras clave salen de lo que los compradores escriben de verdad, no de suposiciones. El inicio más rápido es la barra de búsqueda de Amazon: escribe la palabra principal de tu producto y apunta las sugerencias, porque vienen de búsquedas reales.
+          </p>
+          <p>
+            Seller Central añade datos gratis. Product Opportunity Explorer muestra los principales términos de búsqueda de un nicho. Brand Analytics muestra qué búsquedas llevan a clics y ventas en las marcas registradas. El informe de términos de búsqueda de tus anuncios Sponsored Products recoge las búsquedas exactas que te trajeron compradores. Juntas son cuatro fuentes de búsquedas reales y una lista clara de por dónde empezar.
+          </p>
+        </>
       ),
     },
     {
       id: "where-to-put-keywords",
-      heading: "¿Dónde deben ir tus palabras clave?",
+      heading: "Dónde van tus palabras clave de Amazon: título, viñetas y términos ocultos",
       body: (
-        <ul>
-          <li>
-            <strong>Título.</strong> Primero, qué es el producto. La guía de Amazon fija{" "}
+        <>
+          <p>
+            El título es lo que más pesa, así que debe decir qué es el producto en las primeras palabras. La guía de Amazon fija{" "}
             <a href={AMAZON_SEO_GUIDE} target="_blank" rel="noopener noreferrer">
               un límite de 200 caracteres y recomienda 60 o menos
             </a>
             , y sus{" "}
             <a href={TITLE_RULES} target="_blank" rel="noopener noreferrer">
-              normas para títulos
+              reglas para títulos
             </a>{" "}
-            permiten repetir una palabra dos veces como máximo.
-          </li>
-          <li>
-            <strong>Viñetas.</strong> Un beneficio en cada una, con tus palabras clave secundarias
-            donde suenen naturales.
-          </li>
-          <li>
-            <strong>Descripción y contenido A+.</strong> Materiales, medidas, cuidados y qué incluye
-            la caja.
-          </li>
-          <li>
-            <strong>Términos de búsqueda ocultos.</strong> Sinónimos y errores ortográficos, sin
-            repeticiones, nombres de marca ni ASIN. Consulta el{" "}
+            permiten repetir una palabra como máximo dos veces.
+          </p>
+          <p>
+            Cada viñeta explica un beneficio y es el sitio natural para tus palabras clave secundarias. La descripción y el contenido A+ cubren materiales, tamaño, cuidados y qué incluye la caja. Los términos de búsqueda ocultos recogen sinónimos y errores ortográficos que no caben en otro sitio, sin repeticiones, marcas ni ASIN. Comprueba el{" "}
             <a href={SEARCH_TERMS_HELP} target="_blank" rel="noopener noreferrer">
               límite de longitud actual
             </a>
-            , y lee nuestra guía paso a paso para{" "}
+             y sigue nuestra guía paso a paso para{" "}
             <Link href={p("/blog/amazon-backend-keywords")}>rellenar las palabras clave ocultas de Amazon</Link>.
-          </li>
-        </ul>
-      ),
-    },
-    {
-      id: "b2b-seo-service",
-      heading: "Nuestro servicio de SEO B2B para vendedores de Amazon: qué incluye",
-      body: (
-        <>
-          <p>
-            Para una marca en Amazon, el SEO es el marketing B2B que sigue trayendo compradores cuando el trabajo ya está hecho. Nuestro servicio de SEO B2B incluye cuatro pasos:
-          </p>
-          <ul>
-            <li>
-              <strong>Investigación de palabras clave.</strong> Las búsquedas que de verdad escriben tus compradores, con las herramientas de Amazon.
-            </li>
-            <li>
-              <strong>Título y viñetas.</strong> Reescritos para que las palabras clave principales vayan primero y se lean bien.
-            </li>
-            <li>
-              <strong>Términos de búsqueda ocultos.</strong> Sinónimos y errores ortográficos, dentro de las reglas de Amazon.
-            </li>
-            <li>
-              <strong>Seguimiento.</strong> Revisamos posición y ventas tras cada cambio con nuestro
-              servicio de análisis de datos de Amazon.
-            </li>
-          </ul>
-          <p>
-            Lo hace nuestro equipo en Barcelona. <Link href={p("/about")}>Conoce al equipo de Nautilo Studio</Link>.
           </p>
         </>
       ),
     },
     {
       id: "common-mistakes",
-      heading: "¿Cuáles son los errores más comunes?",
+      heading: "Errores de SEO en Amazon que te cuestan posiciones",
       body: (
         <>
-          <ul>
-            <li>
-              <strong>Llenar el título de palabras clave.</strong> Se lee mal y puede incumplir las
-              normas de títulos de Amazon.
-            </li>
-            <li>
-              <strong>Marcas de la competencia.</strong> Usarlas en tu ficha o en tus términos de
-              búsqueda va contra las normas de Amazon.
-            </li>
-            <li>
-              <strong>Olvidarse del móvil.</strong> Los títulos largos se cortan, así que las palabras
-              clave van primero.
-            </li>
-            <li>
-              <strong>Cambiarlo todo a la vez.</strong> Así no sabes qué cambio ha funcionado.
-            </li>
-          </ul>
           <p>
-            El posicionamiento trae compradores. Nuestra{" "}
-            <Link href={p("/services/listing-optimization")}>guía de optimización de fichas</Link> explica
-            cómo convertir esas visitas en ventas.
+            El error más común es llenar el título de palabras clave: un título con todos los términos posibles se lee mal y puede incumplir las reglas de Amazon. Le sigue usar marcas de la competencia, que Amazon no permite ni en la ficha ni en los términos de búsqueda.
+          </p>
+          <p>
+            Hay dos errores más discretos que también restan. Los títulos largos se cortan en el móvil, así que las palabras clave deben ir primero. Y cambiarlo todo a la vez impide saber qué cambio funcionó. El ranking trae compradores, y nuestra{" "}
+            <Link href={p("/services/listing-optimization")}>guía de optimización de fichas</Link> explica cómo convertir esas visitas en ventas.
+          </p>
+        </>
+      ),
+    },
+    {
+      id: "b2b-seo-service",
+      heading: "Qué hace nuestra agencia de SEO B2B por los vendedores de Amazon",
+      body: (
+        <>
+          <p>
+            Piensa en ello como marketing B2B con SEO para tu marca en Amazon: una vez hecho el trabajo, sigue trayendo compradores. Nuestro servicio de SEO B2B sigue cuatro pasos, ficha por ficha.
+          </p>
+          <p>
+            Primero investigamos las búsquedas que de verdad escriben tus compradores, con las herramientas de Amazon. Después reescribimos tu título y tus viñetas para que las palabras clave principales vayan primero y se lean bien, y rellenamos los términos de búsqueda ocultos con sinónimos y errores ortográficos, dentro de las reglas de Amazon. Por último revisamos posición y ventas tras cada cambio con nuestro servicio de análisis de datos de Amazon.
+          </p>
+          <figure className="m-0">
+            <Image
+              src="/img/amazon-seo-dashboard.webp"
+              alt="Portátil con un panel de SEO B2B y publicidad en Amazon: posiciones de palabras clave, tráfico orgánico y ACOS por campaña"
+              width={1600}
+              height={899}
+              sizes="(min-width: 768px) 48rem, 100vw"
+              className="h-auto w-full rounded-[1.5rem]"
+            />
+            <figcaption className="mt-3 text-sm text-slate">
+              El tipo de panel con el que seguimos posición y ventas. Cifras de ejemplo, no resultados de un cliente.
+            </figcaption>
+          </figure>
+          <p>
+            Lo hace nuestro equipo en Barcelona. <Link href={p("/about")}>Conoce al equipo de Nautilo Studio</Link>.
           </p>
         </>
       ),
