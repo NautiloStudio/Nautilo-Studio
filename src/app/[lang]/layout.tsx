@@ -6,6 +6,7 @@ import PullToRefresh from "@/components/PullToRefresh";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
 import { SITE_URL, alternates, defaultLocale, hasLocale, localeTags, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { SHARE_IMAGE } from "@/lib/seo";
 import "../globals.css";
 
 const inter = Inter({
@@ -39,7 +40,9 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
       siteName: "Nautilo Studio",
       type: "website",
       locale: localeTags[lang].replace("-", "_"),
+      images: [SHARE_IMAGE],
     },
+    twitter: { card: "summary_large_image", images: [SHARE_IMAGE.url] },
   };
 }
 
