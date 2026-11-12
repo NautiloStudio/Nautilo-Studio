@@ -27,6 +27,9 @@ export async function POST(request: Request) {
   const email = clean(body.email, 200);
   const message = clean(body.message, 4000);
   const listing = clean(body.listing, 500);
+  // The page the form was sent from (funnel tracking). Only a plain site path is kept.
+  const pagePath = clean(body.page, 300);
+  const page = /^\/[A-Za-z0-9\-_/]*$/.test(pagePath) ? pagePath : null;
 
   const valid =
     variant &&
@@ -43,6 +46,7 @@ export async function POST(request: Request) {
     email,
     message: variant === "talk" ? message : null,
     listing: variant === "review" ? listing : null,
+    page,
   };
 
   const { error } = await getSupabase().from("leads").insert({
@@ -51,6 +55,7 @@ export async function POST(request: Request) {
     email: lead.email,
     message: lead.message,
     listing_url: lead.listing,
+    page: lead.page,
   });
   if (error) {
     console.error("Lead insert failed:", error);

@@ -3,6 +3,7 @@
 import { useState, useSyncExternalStore, type FormEvent } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { track } from "@vercel/analytics";
 import { useLocale } from "@/i18n/LocaleProvider";
 
 type Status = "idle" | "sending" | "sent" | "error";
@@ -28,6 +29,8 @@ export default function ContactForm({ variant = "talk" }: { variant?: Variant })
 
     // The server saves the lead and emails the team (see app/api/lead). On success the visitor
     // moves to a thank-you page, which Vercel Analytics counts as a conversion.
+    // `page` records where the form was sent from, so each lead shows which page brought it.
+    const page = window.location.pathname;
     try {
       const response = await fetch("/api/lead", {
         method: "POST",
@@ -40,11 +43,14 @@ export default function ContactForm({ variant = "talk" }: { variant?: Variant })
           message: data.get("message"),
           listing: data.get("listing"),
           website: data.get("website"),
+          page,
         }),
       });
       if (!response.ok) throw new Error(`Lead request failed: ${response.status}`);
       target.reset();
       setStatus("sent");
+      // Custom event for Vercel Web Analytics (shown on plans that include custom events).
+      track("Lead", { type: variant, page, lang });
       router.push(href(variant === "review" ? "/thanks/review" : "/thanks/message"));
     } catch (err) {
       console.error(err);

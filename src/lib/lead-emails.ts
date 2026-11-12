@@ -14,6 +14,7 @@ export type Lead = {
   email: string;
   message: string | null;
   listing: string | null;
+  page: string | null;
 };
 
 const TEAM_INBOX = "nautilostd@gmail.com";
@@ -114,6 +115,7 @@ export async function sendLeadEmails(lead: Lead) {
     `Email: ${lead.email}`,
     isReview ? `Listing: ${lead.listing}` : `Message:\n${lead.message}`,
     `Language: ${lead.lang}`,
+    `Sent from: ${lead.page ? `https://nautilostudio.com${lead.page}` : "unknown page"}`,
     "",
     "Reply to this email to answer them directly. The lead is also saved in the Supabase leads table.",
   ].join("\n");
