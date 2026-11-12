@@ -8,6 +8,7 @@ import SiteHeader from "@/components/SiteHeader";
 import TalkButton from "@/components/TalkButton";
 import { alternates, hasLocale, localePath, localeTags, pageUrl } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { SHARE_IMAGE } from "@/lib/seo";
 
 // The services hub (level 2): one row per service, each opening its own page (level 3).
 // Words come from the home page's service list so both pages always say the same thing.
@@ -34,6 +35,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/services">
       siteName: "Nautilo Studio",
       type: "website",
       locale: localeTags[lang].replace("-", "_"),
+      images: [SHARE_IMAGE],
     },
   };
 }
