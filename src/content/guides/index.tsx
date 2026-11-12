@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import LandingPage from "@/components/LandingPage";
-import { alternates, hasLocale, localeTags, type Locale } from "@/i18n/config";
+import { getPost } from "@/content/blog";
+import { alternates, hasLocale, localePath, localeTags, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { SHARE_IMAGE } from "@/lib/seo";
 import type { GuideCopy } from "./types";
 
 type Slug = "amazon-seo" | "listing-optimization" | "data-analysis" | "ai-automation";
+
+// The blog post a service page sends readers to, in the "From our blog" box (funnel: blog <-> service page).
+const relatedPosts: Partial<Record<Slug, string>> = {
+  "amazon-seo": "amazon-backend-keywords",
+};
 
 // Each guide has one file per language: src/content/guides/<slug>/<lang>.tsx
 const loaders: Record<Slug, Record<Locale, () => Promise<{ default: GuideCopy }>>> = {
@@ -66,6 +72,12 @@ export async function guideMetadata(slug: Slug, params: Promise<{ lang: string }
 export async function GuidePage({ slug, params }: { slug: Slug; params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  const [{ page }, dict] = await Promise.all([load(slug, lang), getDictionary(lang)]);
-  return <LandingPage page={page} lang={lang} dict={dict} />;
+  const related = relatedPosts[slug];
+  const [{ page }, dict, post] = await Promise.all([
+    load(slug, lang),
+    getDictionary(lang),
+    related ? getPost(related, lang) : undefined,
+  ]);
+  const relatedPost = post && { href: localePath(lang, `/blog/${post.slug}`), title: post.h1 };
+  return <LandingPage page={page} lang={lang} dict={dict} relatedPost={relatedPost} />;
 }
