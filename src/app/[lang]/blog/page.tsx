@@ -5,8 +5,9 @@ import { ArrowUpRight, DownloadSimple } from "@phosphor-icons/react/dist/ssr";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { getPosts } from "@/content/blog";
-import { alternates, hasLocale, localePath, localeTags, type Locale } from "@/i18n/config";
+import { SITE_URL, alternates, hasLocale, localePath, localeTags, pageUrl, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { SHARE_IMAGE } from "@/lib/seo";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/blog">): Promise<Metadata> {
   const { lang } = await params;
@@ -24,6 +25,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/blog">): P
       siteName: "Nautilo Studio",
       type: "website",
       locale: localeTags[lang].replace("-", "_"),
+      images: [SHARE_IMAGE],
     },
   };
 }
@@ -50,8 +52,32 @@ export default async function BlogIndex({ params }: PageProps<"/[lang]/blog">) {
   const posts = await getPosts(lang);
   const href = (path: string) => localePath(lang, path);
 
+  // The blog and its posts, for search engines and AI answer engines.
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: t.metaTitle,
+    description: t.metaDescription,
+    url: pageUrl(lang, "/blog"),
+    inLanguage: localeTags[lang],
+    publisher: { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: "Nautilo Studio", url: SITE_URL },
+    blogPost: posts.map((post) => ({
+      "@type": "BlogPosting",
+      headline: post.title,
+      description: post.description,
+      url: pageUrl(lang, `/blog/${post.slug}`),
+      datePublished: post.published,
+      dateModified: post.updated,
+      ...(post.author && { author: { "@type": "Person", name: post.author.name } }),
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
+      />
       <SiteHeader reviewHref={href("/#review")} />
       <main id="main" className="flex-1 overflow-x-clip">
         <section className="mx-auto max-w-5xl px-4 pt-32 sm:px-6 md:pt-40">
