@@ -94,10 +94,13 @@ export default function LandingPage({
   page,
   lang,
   dict,
+  relatedPost,
 }: {
   page: LandingContent;
   lang: Locale;
   dict: Dictionary;
+  /** A blog post on the same topic, shown with a button to the blog. */
+  relatedPost?: { href: string; title: string };
 }) {
   const t = dict.landing;
   const href = (path: string) => localePath(lang, path);
@@ -267,6 +270,36 @@ export default function LandingPage({
                   <ArrowUpRight size={20} weight="bold" aria-hidden />
                 </span>
               </Link>
+
+              {/* From our blog: keeps readers who are not ready to buy yet, and links the post they need */}
+              {relatedPost && (
+                <aside
+                  aria-labelledby="from-blog"
+                  className="reveal flex flex-col gap-6 rounded-[2rem] bg-white p-6 ring-1 ring-sand sm:p-8 md:flex-row md:items-center md:justify-between"
+                >
+                  <div className="max-w-2xl">
+                    <p id="from-blog" className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-royal">
+                      {t.blogLabel}
+                    </p>
+                    <p className="mt-2 font-display text-2xl font-semibold leading-snug tracking-[-0.01em]">{t.blogText}</p>
+                    <p className="mt-3 text-slate">
+                      {t.blogStart}{" "}
+                      <Link href={relatedPost.href} className="font-medium text-graphite underline decoration-royal/40 underline-offset-4 hover:text-royal">
+                        {relatedPost.title}
+                      </Link>
+                    </p>
+                  </div>
+                  <Link
+                    href={href("/blog")}
+                    className="group inline-flex shrink-0 items-center gap-3 self-start rounded-full bg-graphite py-2 pl-6 pr-2 font-display font-semibold text-offwhite transition-colors hover:bg-royal md:self-center"
+                  >
+                    {t.blogButton}
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 transition-transform duration-300 ease-(--ease-out-strong) group-hover:-translate-y-px group-hover:translate-x-0.5">
+                      <ArrowUpRight size={18} weight="bold" aria-hidden />
+                    </span>
+                  </Link>
+                </aside>
+              )}
 
               {/* FAQ */}
               <section id="faq" className="reveal scroll-mt-28">
