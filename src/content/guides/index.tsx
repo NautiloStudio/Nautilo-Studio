@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import LandingPage from "@/components/LandingPage";
 import { alternates, hasLocale, localeTags, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { SHARE_IMAGE } from "@/lib/seo";
 import type { GuideCopy } from "./types";
 
 type Slug = "amazon-seo" | "listing-optimization" | "data-analysis" | "ai-automation";
@@ -57,6 +58,7 @@ export async function guideMetadata(slug: Slug, params: Promise<{ lang: string }
       siteName: "Nautilo Studio",
       type: "article",
       locale: localeTags[lang].replace("-", "_"),
+      images: [SHARE_IMAGE],
     },
   };
 }

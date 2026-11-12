@@ -12,7 +12,7 @@ import StepDemo from "@/components/StepDemo";
 import TalkButton from "@/components/TalkButton";
 import SiteFooter from "@/components/SiteFooter";
 import { withCounts } from "@/components/withCounts";
-import { hasLocale, localePath } from "@/i18n/config";
+import { SITE_URL, hasLocale, localePath, localeTags, pageUrl } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { notFound } from "next/navigation";
 
@@ -39,8 +39,35 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   }));
   const steps = t.steps.map((step, index) => ({ ...step, demo: demos[index] }));
 
+  // Who we are and what this site is, for search engines and AI answer engines.
+  const organization = {
+    "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
+    name: "Nautilo Studio",
+    url: SITE_URL,
+    logo: `${SITE_URL}/icon.png`,
+    description: dict.meta.home.description,
+    areaServed: "US",
+    knowsAbout: ["Amazon SEO", "Amazon listing optimization", "Amazon data analysis", "AI automation"],
+  };
+  const structuredData = [
+    { "@context": "https://schema.org", ...organization },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Nautilo Studio",
+      url: pageUrl(lang, "/"),
+      inLanguage: localeTags[lang],
+      publisher: { "@id": organization["@id"] },
+    },
+  ];
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
+      />
       <SiteHeader onHome />
 
       <main id="main" className="flex-1 overflow-x-clip">
