@@ -8,6 +8,7 @@ import SiteFooter from "@/components/SiteFooter";
 import { SITE_URL, alternates, hasLocale, localeTags } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { team } from "@/lib/team";
+import { SHARE_IMAGE } from "@/lib/seo";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/about">): Promise<Metadata> {
   const { lang } = await params;
@@ -25,6 +26,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/about">): 
       siteName: "Nautilo Studio",
       type: "website",
       locale: localeTags[lang].replace("-", "_"),
+      images: [SHARE_IMAGE],
     },
   };
 }
