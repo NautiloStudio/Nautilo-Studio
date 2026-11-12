@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight, CaretDown } from "@phosphor-icons/react/dist/ssr";
 import { BlogPhotoFigure } from "@/components/BlogFigures";
 import ContactForm from "@/components/ContactForm";
-import LandingContents from "@/components/LandingContents";
+import LandingContents, { MobileContents } from "@/components/LandingContents";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import TalkButton from "@/components/TalkButton";
@@ -76,6 +76,11 @@ const h2 = "font-display text-[clamp(1.75rem,3.2vw,2.5rem)] font-bold leading-[1
 export default function BlogArticle({ post, lang, dict }: { post: BlogPost; lang: Locale; dict: Dictionary }) {
   const t = dict.blog;
   const href = (path: string) => localePath(lang, path);
+  const contentsItems = [
+    ...post.sections.map(({ id, heading }) => ({ id, heading })),
+    { id: "faq", heading: dict.landing.faq },
+  ];
+
   return (
     <>
       <script
@@ -88,13 +93,7 @@ export default function BlogArticle({ post, lang, dict }: { post: BlogPost; lang
         {/* Wide screens: the contents list stays beside the article while you read and marks the
             section you are in. Narrower screens keep the list above the first section. */}
         <article className="mx-auto grid max-w-6xl gap-12 px-4 pt-32 sm:px-6 md:pt-40 lg:grid-cols-[minmax(0,15rem)_minmax(0,1fr)] lg:gap-16">
-          <LandingContents
-            label={t.contents}
-            items={[
-              ...post.sections.map(({ id, heading }) => ({ id, heading })),
-              { id: "faq", heading: dict.landing.faq },
-            ]}
-          />
+          <LandingContents label={t.contents} items={contentsItems} />
           <div className="min-w-0 max-w-3xl">
           <nav aria-label={dict.landing.breadcrumb} className="text-sm text-slate">
             <ol className="m-0 flex flex-wrap list-none gap-2 p-0">
@@ -153,29 +152,11 @@ export default function BlogArticle({ post, lang, dict }: { post: BlogPost; lang
             {post.intro}
           </div>
 
-          {/* Contents */}
-          <nav aria-labelledby="contents" className="mt-10 rounded-[2rem] bg-white p-6 sm:p-8 lg:hidden">
-            <p id="contents" className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-royal">
-              {t.contents}
-            </p>
-            <ol className="m-0 mt-4 list-decimal space-y-2 pl-5 text-slate marker:font-display marker:text-royal">
-              {post.sections.map((section) => (
-                <li key={section.id}>
-                  <a href={`#${section.id}`} className="transition-colors hover:text-royal">
-                    {section.heading}
-                  </a>
-                </li>
-              ))}
-              <li>
-                <a href="#faq" className="transition-colors hover:text-royal">
-                  {dict.landing.faq}
-                </a>
-              </li>
-            </ol>
-          </nav>
+          {/* Contents on phones and tablets: a bar that follows you down the article */}
+          <MobileContents label={t.contents} items={contentsItems} />
 
           {post.sections.map((section) => (
-            <section key={section.id} id={section.id} className="reveal mt-16 scroll-mt-28">
+            <section key={section.id} id={section.id} className="reveal mt-16 scroll-mt-44 lg:scroll-mt-28">
               <h2 className={h2}>{section.heading}</h2>
               <div className={`mt-5 ${prose}`}>{section.body}</div>
             </section>
@@ -202,7 +183,7 @@ export default function BlogArticle({ post, lang, dict }: { post: BlogPost; lang
           </aside>
 
           {/* FAQ */}
-          <section id="faq" className="reveal mt-16 scroll-mt-28">
+          <section id="faq" className="reveal mt-16 scroll-mt-44 lg:scroll-mt-28">
             <h2 className={h2}>{dict.landing.faq}</h2>
             <div className="mt-6 divide-y divide-sand border-y border-sand">
               {post.faqs.map((faq) => (
