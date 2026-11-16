@@ -208,14 +208,14 @@ const fr: Dictionary = {
         title: "Optimisation des fiches",
         problem: "« On regarde, mais on n’achète pas. »",
         text: "Nous retravaillons vos titres, puces, contenu A+ et images, pour que plus de visiteurs choisissent d’acheter.",
-        alt: "Planche à découper en bambou avec une étiquette en papier vierge",
+        alt: "MacBook affichant la page produit Amazon d’une planche à découper en bambou, avec le titre, l’image principale, les puces et le contenu A+ modifiés et signalés",
         guide: "Lire notre guide d’optimisation des fiches",
       },
       {
         title: "Analyse de données",
         problem: "« Je ne sais pas quels chiffres comptent. »",
         text: "Nous transformons vos données de ventes, de trafic et de conversion en prochaines étapes claires.",
-        alt: "Colis en carton empilés en colonnes croissantes, comme un graphique en barres",
+        alt: "iMac affichant un tableau de bord d’une boutique Amazon : sessions, taux de conversion, Offre en vedette, ACOS et principales recherches",
         guide: "Lire notre guide d’analyse de données",
       },
       {

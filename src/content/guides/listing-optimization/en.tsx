@@ -18,8 +18,8 @@ const page: GuideCopy["page"] = {
     "Amazon listing optimization, the work of a conversion rate optimization agency, means improving your title, bullet points, images and A+ content so that shoppers who land on your page choose to buy. Start with clear images and a title that says exactly what the product is, then use your bullet points to answer the questions buyers have before they order. Test one change at a time and keep the version that sells better.",
   description,
   image: {
-    src: "/img/service-listing.jpg",
-    alt: "Bamboo cutting board with a blank paper tag",
+    src: "/img/amazon-listing-optimization.jpg",
+    alt: "MacBook showing an Amazon product page for a bamboo cutting board, with the edited title, main image, bullets and A+ content marked",
     tile: "bg-apricot",
   },
   updated: "2026-11-16",
@@ -114,11 +114,11 @@ const page: GuideCopy["page"] = {
       id: "cro-service",
       heading: "What our conversion rate optimization agency does for Amazon sellers",
       figure: {
-        src: "/img/service-listing.jpg",
-        alt: "Product photo of a bamboo cutting board on a plain background, the kind of clean main image Amazon listing optimization starts with",
-        width: 1024,
-        height: 1024,
-        caption: "One product, one clear photo: where listing work starts. Illustration, not a client listing.",
+        src: "/img/amazon-listing-optimization.jpg",
+        alt: "MacBook showing an Amazon listing with five marked edits to the title, main image, bullets, A+ content and search terms: the work of a conversion rate optimization agency",
+        width: 1600,
+        height: 900,
+        caption: "Example listing with our five changes marked on the page. Illustration, not a client listing. Photo: Kari Shea, Unsplash.",
       },
       body: (
         <>

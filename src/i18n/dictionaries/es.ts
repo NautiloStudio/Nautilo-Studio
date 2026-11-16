@@ -206,14 +206,14 @@ const es: Dictionary = {
         title: "Optimización de fichas",
         problem: "«Miran, pero no compran».",
         text: "Rehacemos tus títulos, viñetas, contenido A+ e imágenes para que más visitantes decidan comprar.",
-        alt: "Tabla de cortar de bambú con una etiqueta de papel en blanco",
+        alt: "MacBook con la página de producto de Amazon de una tabla de cortar de bambú, con el título, la imagen principal, las viñetas y el contenido A+ editados y marcados",
         guide: "Leer nuestra guía de optimización de fichas",
       },
       {
         title: "Análisis de datos",
         problem: "«No sé qué números importan».",
         text: "Convertimos tus datos de ventas, tráfico y conversión en próximos pasos claros.",
-        alt: "Paquetes de cartón apilados en columnas crecientes, como un gráfico de barras",
+        alt: "iMac con un panel de analítica de una tienda de Amazon: sesiones, tasa de conversión, Oferta destacada, ACOS y búsquedas principales",
         guide: "Leer nuestra guía de análisis de datos",
       },
       {

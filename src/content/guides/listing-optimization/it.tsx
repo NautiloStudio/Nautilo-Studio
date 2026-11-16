@@ -21,8 +21,8 @@ const page: GuideCopy["page"] = {
     "L’ottimizzazione delle schede Amazon, il lavoro di un’agenzia di ottimizzazione del tasso di conversione, significa migliorare titolo, punti elenco, immagini e contenuti A+ perché chi arriva sulla tua pagina scelga di comprare. Parti da immagini chiare e da un titolo che dica esattamente cos’è il prodotto, poi usa i punti elenco per rispondere ai dubbi che i clienti hanno prima di ordinare. Prova una modifica alla volta e tieni la versione che vende di più.",
   description,
   image: {
-    src: "/img/service-listing.jpg",
-    alt: "Tagliere di bambù con un’etichetta di carta vuota",
+    src: "/img/amazon-listing-optimization.jpg",
+    alt: "MacBook con la pagina prodotto Amazon di un tagliere di bambù, con titolo, immagine principale, punti elenco e contenuti A+ modificati e segnalati",
     tile: "bg-apricot",
   },
   updated: "2026-11-16",
@@ -121,11 +121,11 @@ const page: GuideCopy["page"] = {
       id: "cro-service",
       heading: "Cosa fa la nostra agenzia di ottimizzazione delle conversioni per i venditori Amazon",
       figure: {
-        src: "/img/service-listing.jpg",
-        alt: "Foto prodotto di un tagliere di bambù su sfondo neutro, l’immagine principale pulita da cui parte l’ottimizzazione di una scheda Amazon",
-        width: 1024,
-        height: 1024,
-        caption: "Un prodotto, una foto chiara: da qui parte il lavoro sulla scheda. Illustrazione, non è una scheda di un cliente.",
+        src: "/img/amazon-listing-optimization.jpg",
+        alt: "MacBook con una scheda Amazon e cinque modifiche segnalate a titolo, immagine principale, punti elenco, contenuti A+ e termini di ricerca: il lavoro di un’agenzia di ottimizzazione delle conversioni",
+        width: 1600,
+        height: 900,
+        caption: "Scheda di esempio con le nostre cinque modifiche segnalate. Illustrazione, non è una scheda di un cliente. Foto: Kari Shea, Unsplash.",
       },
       body: (
         <>

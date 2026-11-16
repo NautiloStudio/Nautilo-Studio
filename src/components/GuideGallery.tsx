@@ -15,12 +15,12 @@ const guides = [
   },
   {
     slug: "listing-optimization",
-    image: "/img/service-listing.jpg",
+    image: "/img/amazon-listing-optimization.jpg",
     tile: "bg-apricot",
   },
   {
     slug: "data-analysis",
-    image: "/img/service-data.jpg",
+    image: "/img/amazon-data-analysis.jpg",
     tile: "bg-royal",
   },
   {

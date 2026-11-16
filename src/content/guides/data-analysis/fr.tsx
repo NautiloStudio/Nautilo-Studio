@@ -20,8 +20,8 @@ const page: GuideCopy["page"] = {
     "L’analyse de données Amazon, telle que la pratique une agence d’analyse marketing, commence par quatre chiffres pour chaque produit : les sessions, le taux de conversion, la détention de l’Offre en vedette et votre coût publicitaire des ventes (ACOS). Ensemble, ils montrent si le problème vient du fait d’être trouvé, d’être choisi ou de trop dépenser en publicité. Vérifiez-les chaque semaine, comparez-les à la semaine précédente et ne changez qu’une chose à la fois.",
   description,
   image: {
-    src: "/img/service-data.jpg",
-    alt: "Colis en carton empilés en colonnes croissantes, comme un graphique en barres",
+    src: "/img/amazon-data-analysis.jpg",
+    alt: "iMac affichant un tableau de bord d’une boutique Amazon : sessions, taux de conversion, Offre en vedette, ACOS et principales recherches",
     tile: "bg-royal",
   },
   updated: "2026-11-16",
@@ -111,11 +111,11 @@ const page: GuideCopy["page"] = {
       id: "analytics-service",
       heading: "Ce que fait notre agence d’analyse marketing pour les vendeurs Amazon",
       figure: {
-        src: "/img/service-data.jpg",
-        alt: "Colis en carton empilés en colonnes croissantes comme un graphique en barres, une image de l’analyse de données Amazon semaine après semaine",
-        width: 1536,
-        height: 1024,
-        caption: "Les chiffres n’aident que comparés dans le temps. Illustration, pas des données client.",
+        src: "/img/amazon-data-analysis.jpg",
+        alt: "iMac affichant les chiffres Amazon hebdomadaires que suit une agence d’analyse marketing : sessions, conversion, Offre en vedette, ACOS, recherches et jours de stock",
+        width: 1600,
+        height: 900,
+        caption: "Données d’exemple, pas des chiffres de clients. Photo : Amy Hirschi, Unsplash.",
       },
       body: (
         <>

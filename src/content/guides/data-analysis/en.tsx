@@ -17,8 +17,8 @@ const page: GuideCopy["page"] = {
     "Amazon data analysis, the way a marketing analytics agency does it, starts with four numbers for each product: sessions, conversion rate, whether you hold the Featured Offer, and your advertising cost of sales (ACOS). Together they show whether a problem is about being found, being chosen or spending too much on ads. Check them every week, compare them with the week before, and change one thing at a time.",
   description,
   image: {
-    src: "/img/service-data.jpg",
-    alt: "Cardboard parcels stacked in rising columns like a bar chart",
+    src: "/img/amazon-data-analysis.jpg",
+    alt: "iMac showing an Amazon store analytics dashboard with sessions, conversion rate, Featured Offer, ACOS and top search terms",
     tile: "bg-royal",
   },
   updated: "2026-11-16",
@@ -105,11 +105,11 @@ const page: GuideCopy["page"] = {
       id: "analytics-service",
       heading: "What our marketing analytics agency does for Amazon sellers",
       figure: {
-        src: "/img/service-data.jpg",
-        alt: "Cardboard parcels stacked in rising columns like a bar chart, a picture of Amazon data analysis week by week",
-        width: 1536,
-        height: 1024,
-        caption: "Numbers only help when you compare them over time. Illustration, not client data.",
+        src: "/img/amazon-data-analysis.jpg",
+        alt: "iMac showing the weekly Amazon numbers a marketing analytics agency tracks: sessions, conversion rate, Featured Offer, ACOS, search terms and days of supply",
+        width: 1600,
+        height: 900,
+        caption: "Example data, not a client’s numbers. Photo: Amy Hirschi, Unsplash.",
       },
       body: (
         <>
