@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { localePath } from "@/i18n/config";
 import type { GuideCopy } from "../types";
 
 const SELLER_ASSISTANT =
@@ -7,23 +9,25 @@ const WORKFLOWS =
 const ENHANCE_MY_LISTING =
   "https://www.aboutamazon.com/news/innovation-at-amazon/amazon-generative-ai-seller-growth-shopping-experience";
 
-const title = "Automazione con l’IA per venditori Amazon | Nautilo Studio";
+const p = (path: string) => localePath("it", path);
+
+const title = "Automazione marketing Amazon con l’IA | Nautilo Studio";
 const description =
-  "L’IA fa risparmiare tempo ai venditori Amazon negli USA su schede, inventario e report. Cosa automatizzare e cosa lasciare alle persone. Revisione gratis.";
+  "Automazione del marketing su Amazon con l’IA per venditori USA: schede, inventario e report, e ogni modifica la approvi tu. Chiedi la revisione gratuita.";
 
 const page: GuideCopy["page"] = {
   slug: "ai-automation",
-  breadcrumb: "Automazione con l’IA",
-  question: "Come può l’automazione con l’IA aiutare i venditori Amazon?",
+  breadcrumb: "Automazione del marketing su Amazon",
+  question: "Automazione del marketing su Amazon con l’IA: cosa automatizzare prima",
   answer:
-    "L’automazione con l’IA si occupa del lavoro ripetitivo, come scrivere le bozze delle schede, tenere d’occhio l’inventario o riassumere i report. Amazon offre già strumenti per farlo, tra cui il suo Seller Assistant gratuito, che può monitorare il tuo account e agire con la tua approvazione. Le decisioni restano tue, quindi l’IA ti fa risparmiare tempo senza sostituire il tuo giudizio.",
+    "L’automazione del marketing su Amazon usa l’IA per occuparsi del lavoro ripetitivo, come scrivere le bozze delle schede, tenere d’occhio l’inventario o riassumere i report. Amazon offre già strumenti per farlo, tra cui il suo Seller Assistant gratuito, che può monitorare il tuo account e agire con la tua approvazione. Le decisioni restano tue, quindi l’IA ti fa risparmiare tempo senza sostituire il tuo giudizio.",
   description,
   image: {
     src: "/img/service-ai.jpg",
     alt: "Braccio robotico bianco che posa un pacco in fondo a una fila ordinata",
     tile: "bg-graphite",
   },
-  updated: "2026-11-07",
+  updated: "2026-11-16",
   facts: [
     { value: 4, label: "Attività che l’IA può svolgere" },
     { value: 3, label: "Strumenti di IA di Amazon da cui partire" },
@@ -33,97 +37,97 @@ const page: GuideCopy["page"] = {
   sections: [
     {
       id: "what-to-automate",
-      heading: "Quali attività su Amazon può automatizzare l’IA?",
+      heading: "Automazione del marketing su Amazon: i compiti che l’IA può prendersi",
       body: (
-        <ul>
-          <li>
-            <strong>Contenuti delle schede.</strong> L’IA propone titoli, attributi e descrizioni. Tu
-            controlli i fatti e il tono del marchio.
-          </li>
-          <li>
-            <strong>Inventario e stato dell’account.</strong> L’IA segnala le scorte che girano
-            lentamente e i problemi dell’account. Tu decidi cosa sistemare.
-          </li>
-          <li>
-            <strong>Idee per gli annunci.</strong> L’IA genera idee di annunci per i tuoi prodotti.
-            Tu scegli cosa pubblicare e fissi il budget.
-          </li>
-          <li>
-            <strong>Report.</strong> L’IA trasforma i report su vendite e traffico in brevi
-            riepiloghi. Tu decidi cosa significano i cambiamenti.
-          </li>
-        </ul>
+        <>
+          <p>
+            Gran parte del lavoro settimanale in un negozio Amazon si ripete, ed è lì che l’automazione del marketing su Amazon aiuta. L’IA può proporre titoli, attributi e descrizioni, mentre tu controlli i fatti e il tono del marchio. Può generare idee per gli annunci dei tuoi prodotti, mentre tu scegli cosa pubblicare e fissi il budget. E può trasformare i report di vendite e traffico in brevi riassunti, mentre tu decidi cosa significano i cambiamenti.
+          </p>
+          <p>
+            L’IA può anche segnalarti le scorte che girano lente e i problemi dell’account, e tu decidi cosa sistemare. Il livello delle scorte conta di più dal 2027, quando cambiano le commissioni di stoccaggio e di scorte basse di Amazon: leggi{" "}
+            <Link href={p("/blog/amazon-fba-fees-2027")}>cosa cambia nelle commissioni Amazon FBA per il 2027</Link>.
+          </p>
+          <blockquote>Lascia all’IA le ripetizioni. Tieni per te le decisioni.</blockquote>
+        </>
       ),
     },
     {
       id: "amazon-tools",
-      heading: "Quali strumenti di IA offre già Amazon?",
+      heading: "Gli strumenti di IA che Amazon offre già ai venditori",
       body: (
-        <ul>
-          <li>
-            <strong>
-              <a href={SELLER_ASSISTANT} target="_blank" rel="noopener noreferrer">
-                Seller Assistant
-              </a>
-              .
-            </strong>{" "}
-            Gratuito per i venditori dello store statunitense. Monitora il tuo account e può agire con
-            il tuo permesso.
-          </li>
-          <li>
-            <strong>
-              <a href={WORKFLOWS} target="_blank" rel="noopener noreferrer">
-                Workflows
-              </a>
-              .
-            </strong>{" "}
-            Automazioni personalizzate che restano attive. Scegli tu tra raccomandazioni e azioni.
-          </li>
-          <li>
-            <strong>
-              <a href={ENHANCE_MY_LISTING} target="_blank" rel="noopener noreferrer">
-                Enhance My Listing
-              </a>
-              .
-            </strong>{" "}
-            Suggerisce miglioramenti alle schede che puoi modificare o rifiutare. Verifica se il tuo
-            account ha accesso.
-          </li>
-        </ul>
+        <>
+          <p>
+            Per iniziare non ti serve un software esterno. Il{" "}
+            <a href={SELLER_ASSISTANT} target="_blank" rel="noopener noreferrer">
+              Seller Assistant
+            </a>{" "}
+            di Amazon è gratuito per i venditori del negozio USA: monitora il tuo account e può agire con il tuo permesso. I suoi{" "}
+            <a href={WORKFLOWS} target="_blank" rel="noopener noreferrer">
+              Workflows
+            </a>{" "}
+            sono automazioni su misura che restano attive, e scegli tu se devono solo consigliare o anche agire.
+          </p>
+          <p>
+            Per le schede,{" "}
+            <a href={ENHANCE_MY_LISTING} target="_blank" rel="noopener noreferrer">
+              Enhance My Listing
+            </a>{" "}
+            di Amazon suggerisce miglioramenti che puoi modificare o rifiutare. Non tutti gli account hanno ancora accesso a tutti gli strumenti, quindi controlla cosa è disponibile nel tuo prima di pianificare.
+          </p>
+        </>
       ),
     },
     {
       id: "keep-human",
-      heading: "Cosa dovrebbe restare nelle mani delle persone?",
+      heading: "Cosa deve restare nelle mani delle persone",
       body: (
-        <ul>
-          <li>
-            <strong>Le affermazioni sul prodotto.</strong> Tutto ciò che riguarda sicurezza,
-            materiali o risultati deve controllarlo una persona.
-          </li>
-          <li>
-            <strong>Il tuo marchio.</strong> Il tuo tono e ciò che rende diverso il tuo prodotto.
-          </li>
-          <li>
-            <strong>Le decisioni economiche.</strong> Prezzi, budget pubblicitari e strategia
-            generale.
-          </li>
-          <li>
-            <strong>L’approvazione finale.</strong> Qualsiasi modifica a una scheda o a una campagna
-            attiva.
-          </li>
-        </ul>
+        <>
+          <p>
+            Alcune decisioni non andrebbero mai automatizzate. Le affermazioni su sicurezza, materiali o risultati del prodotto devono essere controllate da una persona. Il tono del tuo marchio, e ciò che rende diverso il tuo prodotto, devono venire da te.
+          </p>
+          <p>
+            Anche le decisioni sui soldi restano alle persone: prezzi, budget pubblicitari e strategia generale. E ogni modifica a una scheda o a una campagna attiva richiede l’approvazione finale di qualcuno che conosce l’attività.
+          </p>
+        </>
       ),
     },
     {
       id: "how-to-start",
-      heading: "Come si inizia con l’automazione con l’IA?",
+      heading: "Come iniziare con l’automazione del marketing su Amazon",
       body: (
-        <ol>
-          <li>Scegli un’attività che ripeti ogni settimana.</li>
-          <li>Lascia che l’IA ti dia suggerimenti e rivedili prima che cambi qualcosa.</li>
-          <li>Affidale altro lavoro solo quando ti fidi dei risultati.</li>
-        </ol>
+        <>
+          <p>
+            Parti in piccolo. Scegli un compito che ripeti ogni settimana, lascia che l’IA consigli e rivedi i suoi suggerimenti prima che cambi qualcosa. Affidale altro solo quando ti fidi dei risultati.
+          </p>
+          <p>
+            I report sono spesso il primo compito più facile, perché un riassunto sbagliato non costa nulla finché nessuno agisce su di esso. Per sapere quali numeri dovrebbero mostrare i tuoi report, leggi la nostra{" "}
+            <Link href={p("/services/data-analysis")}>guida di marketing analytics per venditori Amazon</Link>.
+          </p>
+        </>
+      ),
+    },
+    {
+      id: "automation-service",
+      heading: "Cosa fa il nostro servizio di automazione del marketing su Amazon",
+      figure: {
+        src: "/img/service-ai.jpg",
+        alt: "Braccio robotico bianco che posa un pacco in fondo a una fila ordinata, un’immagine dell’automazione del marketing su Amazon che si occupa del lavoro ripetitivo",
+        width: 1536,
+        height: 1024,
+        caption: "L’automazione si prende il lavoro ripetitivo, le persone tengono le decisioni. Illustrazione, non è la configurazione di un cliente.",
+      },
+      body: (
+        <>
+          <p>
+            Pensala come automazione con l’IA per venditori Amazon, impostata un compito alla volta. Il nostro servizio di automazione del marketing su Amazon segue quattro passi.
+          </p>
+          <p>
+            Prima elenchiamo i compiti che ripeti ogni settimana e quanto tempo richiede ciascuno. Poi ne scegliamo uno e lo impostiamo con gli strumenti che Amazon offre già, in modalità solo suggerimento. Rivediamo i risultati con te ogni settimana e, solo quando ti fidi, lasciamo agire l’automazione o passiamo al compito successivo.
+          </p>
+          <p>
+            Il lavoro lo fa il nostro team a Barcellona. <Link href={p("/about")}>Conosci il team di Nautilo Studio</Link>.
+          </p>
+        </>
       ),
     },
   ],

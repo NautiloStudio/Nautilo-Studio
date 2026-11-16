@@ -20,9 +20,10 @@ const post: BlogPost = {
   excerpt:
     "Amazon ha annunciato le commissioni 2027 per gli USA il 5 novembre. Cosa cambia, quando e come capire l’effetto su ognuno dei tuoi prodotti.",
   published: "2026-11-11",
-  updated: "2026-11-11",
+  updated: "2026-11-16",
   readMinutes: 8,
-  hero: { ...heroPhoto, alt: "Corridoio di un magazzino con scaffali alti pieni di scatole" },
+  author: { name: "Veronika Matkovska", role: "Data Analysis Lead", href: "/about" },
+  hero: { ...heroPhoto, alt: "Corridoio di un magazzino pieno di scatole: le scorte a cui si applicano le commissioni Amazon FBA 2027" },
   intro: (
     <>
       <p>
@@ -65,7 +66,7 @@ const post: BlogPost = {
     },
     {
       id: "five-changes",
-      heading: "Le 5 novità chiave per chi vende negli USA",
+      heading: "Le 5 novità chiave nelle commissioni Amazon FBA per chi vende negli USA",
       body: (
         <>
           <h3>1. La commissione di logistica sale di 0,19 $ per unità in media</h3>
@@ -230,7 +231,7 @@ const post: BlogPost = {
             </li>
             <li>
               <strong>Pianifica 28 giorni di copertura.</strong> Imposta il riassortimento in modo che i
-              tuoi prodotti più venduti non scendano sotto le quattro settimane di scorte.
+              tuoi prodotti più venduti non scendano sotto le quattro settimane di scorte. L’<Link href={p("/services/ai-automation")}>automazione del marketing su Amazon con l’IA</Link> può tenere d’occhio le scorte per te.
             </li>
             <li>
               <strong>Ricontrolla gli articoli grandi.</strong> Con le nuove fasce e commissioni di
@@ -238,9 +239,8 @@ const post: BlogPost = {
             </li>
           </ul>
           <p>
-            Le commissioni sono solo una parte del profitto. Per vedere come si combinano sessioni,
-            conversione e pubblicità, leggi la nostra{" "}
-            <Link href={p("/services/data-analysis")}>guida ai numeri di Amazon che contano</Link>.
+            Le commissioni sono solo una parte del profitto: trasformare più visite in vendite aiuta anche. Scopri come lavora la nostra{" "}
+            <Link href={p("/services/listing-optimization")}>agenzia di ottimizzazione del tasso di conversione per le schede Amazon</Link>.
           </p>
         </>
       ),
@@ -291,7 +291,7 @@ const post: BlogPost = {
   ],
   cta: {
     text: "Le nuove commissioni cambiano i conti di ogni prodotto. Scopri quali numeri seguire ogni settimana, oppure facci dare un’occhiata gratuita a una delle tue schede.",
-    pillar: { href: "/services/data-analysis", label: "Leggi la nostra guida all’analisi dei dati" },
+    pillar: { href: "/services/data-analysis", label: "Scopri il nostro servizio di marketing analytics per Amazon" },
     formHeading: "Non sai cosa cambiano per te le commissioni 2027?",
     formText: "Mandaci una scheda e ti diremo, gratis, cosa controlleremmo per primo.",
   },

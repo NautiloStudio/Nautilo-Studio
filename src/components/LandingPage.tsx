@@ -5,7 +5,7 @@ import { ArrowUpRight, CaretDown } from "@phosphor-icons/react/dist/ssr";
 import ContactForm from "@/components/ContactForm";
 import CountUp from "@/components/CountUp";
 import GuideGallery from "@/components/GuideGallery";
-import LandingContents from "@/components/LandingContents";
+import LandingContents, { MobileContents } from "@/components/LandingContents";
 import SiteHeader from "@/components/SiteHeader";
 import StepDemo, { type DemoKind } from "@/components/StepDemo";
 import TalkButton from "@/components/TalkButton";
@@ -103,6 +103,7 @@ export default function LandingPage({
   relatedPost?: { href: string; title: string };
 }) {
   const t = dict.landing;
+  const contentsItems = page.sections.map(({ id, heading }) => ({ id, heading }));
   const href = (path: string) => localePath(lang, path);
 
   return (
@@ -215,13 +216,13 @@ export default function LandingPage({
               beside it on wide screens. Each section opens with its number and a brand-gradient rule. */}
           <div className="mx-auto mt-20 max-w-7xl px-4 sm:px-6 md:mt-28">
             <div className="grid gap-12 lg:grid-cols-[minmax(0,16rem)_minmax(0,1fr)] lg:gap-20">
-              <LandingContents
-                label={dict.blog.contents}
-                items={page.sections.map(({ id, heading }) => ({ id, heading }))}
-              />
-              <div className="max-w-3xl">
+              <LandingContents label={dict.blog.contents} items={contentsItems} />
+              <div className="min-w-0 max-w-3xl">
+                {/* Phones and tablets: the same list as a bar that follows you down the text, as on the blog */}
+                <MobileContents label={dict.blog.contents} items={contentsItems} />
+                <div className="mt-12 lg:mt-0">
                 {page.sections.map((section, index) => (
-                  <section key={section.id} id={section.id} className="reveal scroll-mt-28 [&+&]:mt-20 md:[&+&]:mt-24">
+                  <section key={section.id} id={section.id} className="reveal scroll-mt-44 lg:scroll-mt-28 [&+&]:mt-20 md:[&+&]:mt-24">
                     <p className="font-display text-sm font-semibold tabular-nums tracking-[0.14em] text-royal">
                       {String(index + 1).padStart(2, "0")}
                     </p>
@@ -248,6 +249,7 @@ export default function LandingPage({
                     )}
                   </section>
                 ))}
+                </div>
               </div>
             </div>
           </div>

@@ -8,23 +8,23 @@ const BOOST_LISTINGS = "https://sell.amazon.com/blog/how-to-boost-amazon-listing
 
 const p = (path: string) => localePath("fr", path);
 
-const title = "Analyse de données Amazon : quels chiffres | Nautilo Studio";
+const title = "Agence d’analyse marketing pour Amazon | Nautilo Studio";
 const description =
-  "Les chiffres Amazon que les vendeurs aux États-Unis devraient suivre chaque semaine, ce qu’ils révèlent et où les voir dans Seller Central. Audit offert.";
+  "Nautilo Studio, agence d’analyse marketing des vendeurs Amazon aux États-Unis : nous suivons les chiffres qui montrent où se perdent les ventes. Audit gratuit.";
 
 const page: GuideCopy["page"] = {
   slug: "data-analysis",
-  breadcrumb: "Analyse de données",
-  question: "Quels chiffres Amazon les vendeurs devraient-ils suivre ?",
+  breadcrumb: "Analyse de données Amazon",
+  question: "Agence d’analyse marketing pour Amazon : les chiffres qui comptent",
   answer:
-    "Commencez par quatre chiffres pour chaque produit : les sessions, le taux de conversion, la détention de l’Offre en vedette et votre coût publicitaire des ventes (ACOS). Ensemble, ils montrent si le problème vient du fait d’être trouvé, d’être choisi ou de trop dépenser en publicité. Vérifiez-les chaque semaine, comparez-les à la semaine précédente et ne changez qu’une chose à la fois.",
+    "L’analyse de données Amazon, telle que la pratique une agence d’analyse marketing, commence par quatre chiffres pour chaque produit : les sessions, le taux de conversion, la détention de l’Offre en vedette et votre coût publicitaire des ventes (ACOS). Ensemble, ils montrent si le problème vient du fait d’être trouvé, d’être choisi ou de trop dépenser en publicité. Vérifiez-les chaque semaine, comparez-les à la semaine précédente et ne changez qu’une chose à la fois.",
   description,
   image: {
     src: "/img/service-data.jpg",
     alt: "Colis en carton empilés en colonnes croissantes, comme un graphique en barres",
     tile: "bg-royal",
   },
-  updated: "2026-11-07",
+  updated: "2026-11-16",
   facts: [
     { value: 4, label: "Chiffres à suivre pour chaque produit" },
     {
@@ -38,104 +38,97 @@ const page: GuideCopy["page"] = {
   sections: [
     {
       id: "numbers",
-      heading: "Quels chiffres comptent le plus ?",
+      heading: "Analyse de données Amazon : les quatre chiffres qui comptent le plus",
       body: (
-        <ul>
-          <li>
-            <strong>Sessions.</strong> Le nombre d’acheteurs qui ont visité votre page produit. Elles
-            montrent si l’on vous trouve.
-          </li>
-          <li>
-            <strong>Taux de conversion.</strong> La part de ces visites qui se termine par une
-            commande. Il montre si la fiche convainc.
-          </li>
-          <li>
-            <strong>Offre en vedette.</strong> L’offre à côté du bouton d’achat. Amazon indique que le
-            prix, la disponibilité et la livraison comptent pour{" "}
+        <>
+          <p>
+            Seller Central regorge de rapports, mais une agence d’analyse marketing commence par quatre chiffres pour chaque produit. Les sessions indiquent combien d’acheteurs ont visité la page, donc si l’on vous trouve. Le taux de conversion est la part de ces visites qui ont abouti à une commande, donc si la fiche convainc.
+          </p>
+          <p>
+            L’Offre en vedette est l’offre placée à côté du bouton Acheter maintenant, et Amazon indique que le prix, la disponibilité et la livraison comptent pour{" "}
             <a href={BOOST_LISTINGS} target="_blank" rel="noopener noreferrer">
               remporter l’Offre en vedette
             </a>
-            , ce qui peut fortement augmenter les ventes.
-          </li>
-          <li>
-            <strong>ACOS.</strong> Les dépenses publicitaires divisées par le chiffre d’affaires
-            publicitaire. Amazon Ads explique que votre{" "}
+            , ce qui peut fortement augmenter les ventes. L’ACOS correspond aux dépenses publicitaires divisées par le chiffre d’affaires publicitaire, et Amazon Ads précise que votre{" "}
             <a href={ACOS} target="_blank" rel="noopener noreferrer">
               ACOS doit rester inférieur à votre marge
             </a>{" "}
             pour que la publicité reste rentable.
-          </li>
-        </ul>
+          </p>
+          <blockquote>Quatre chiffres, vérifiés chaque semaine, montrent où se perdent les ventes.</blockquote>
+        </>
       ),
     },
     {
       id: "what-they-mean",
-      heading: "Que vous disent les chiffres ?",
+      heading: "Ce que les chiffres disent à une agence d’analyse marketing",
       body: (
-        <ul>
-          <li>
-            <strong>Peu de sessions.</strong> Les acheteurs ne trouvent pas le produit. Revoyez vos
-            mots-clés avec notre <Link href={p("/services/amazon-seo")}>guide SEO Amazon</Link>.
-          </li>
-          <li>
-            <strong>Beaucoup de sessions, peu de conversion.</strong> Les acheteurs arrivent mais
-            n’achètent pas. Travaillez la fiche avec notre{" "}
-            <Link href={p("/services/listing-optimization")}>guide d’optimisation des fiches</Link>.
-          </li>
-          <li>
-            <strong>Offre en vedette perdue.</strong> Comparez votre prix, votre stock et votre
-            livraison avec les autres offres sur le même produit.
-          </li>
-          <li>
-            <strong>ACOS au-dessus de votre marge.</strong> La publicité perd de l’argent. Mettez en
-            pause les termes de recherche qui dépensent sans vendre avant d’augmenter un budget.
-          </li>
-        </ul>
+        <>
+          <p>
+            Lus ensemble, les quatre chiffres désignent un problème à la fois. Peu de sessions signifient que les acheteurs ne trouvent pas le produit : les mots-clés du titre, des puces et des termes de recherche passent en premier. Beaucoup de sessions et une conversion faible signifient qu’ils arrivent sans acheter, et notre{" "}
+            <Link href={p("/services/listing-optimization")}>service d’optimisation du taux de conversion des fiches Amazon</Link> est conçu pour ce cas.
+          </p>
+          <p>
+            Si vous perdez l’Offre en vedette, comparez votre prix, votre stock et votre livraison aux autres offres du même produit. Si votre ACOS dépasse votre marge, la publicité perd de l’argent : mettez en pause les termes de recherche qui dépensent sans vendre avant d’augmenter un budget.
+          </p>
+        </>
       ),
     },
     {
       id: "where-to-find",
-      heading: "Où trouver ces données ?",
+      heading: "Où trouver vos données Amazon dans Seller Central",
       body: (
-        <ul>
-          <li>
-            <strong>Rapports commerciaux.</strong> Dans Seller Central, rubrique Rapports. Ils
-            montrent sessions, pages vues et ventes pour chaque produit.
-          </li>
-          <li>
-            <strong>Brand Analytics.</strong> Pour les marques du Registre des marques. Son{" "}
+        <>
+          <p>
+            Les rapports d’activité, dans le menu Rapports de Seller Central, montrent sessions, pages vues et ventes pour chaque produit. Les marques inscrites au Brand Registry ont aussi Brand Analytics, dont le{" "}
             <a href={BRAND_ANALYTICS} target="_blank" rel="noopener noreferrer">
-              tableau de performance des requêtes de recherche
+              tableau Search Query Performance
             </a>{" "}
-            montre impressions, clics et ajouts au panier pour les recherches qui mènent à vos
-            produits.
-          </li>
-          <li>
-            <strong>Rapports publicitaires.</strong> Dans le gestionnaire de campagnes. Ils montrent
-            dépenses, ventes, clics et ACOS pour chaque campagne et terme de recherche.
-          </li>
-          <li>
-            <strong>Profit Analytics.</strong> Dans Seller Central. Il montre ce qu’Amazon vous facture
-            pour chaque produit. Les frais changent chaque année : voyez{" "}
-            <Link href={p("/blog/amazon-fba-fees-2027")}>ce qui change dans les frais Amazon FBA en 2027</Link>.
-          </li>
-          <li>
-            <strong>Votre propre tableau.</strong> Une ligne par semaine et par produit, pour voir
-            les tendances qu’un seul rapport cache.
-          </li>
-        </ul>
+            montre impressions, clics et ajouts au panier pour les recherches qui mènent à vos produits. Les rapports publicitaires, dans le gestionnaire de campagnes, montrent dépenses, ventes, clics et ACOS par campagne et par terme de recherche.
+          </p>
+          <p>
+            Profit Analytics, aussi dans Seller Central, montre ce qu’Amazon vous facture pour chaque produit. Les frais changent chaque année : lisez{" "}
+            <Link href={p("/blog/amazon-fba-fees-2027")}>ce qui change dans les frais Amazon FBA en 2027</Link> avant de fixer vos prix. Tenez enfin votre propre tableau, une ligne par semaine et par produit, pour voir les tendances qu’un seul rapport cache.
+          </p>
+        </>
       ),
     },
     {
       id: "weekly-routine",
-      heading: "Comment mettre en place une routine hebdomadaire ?",
+      heading: "Une routine hebdomadaire de suivi Amazon facile à tenir",
       body: (
-        <ol>
-          <li>Choisissez un jour par semaine et téléchargez toujours les mêmes rapports.</li>
-          <li>Comparez chaque chiffre à la semaine précédente et à la même semaine du mois dernier.</li>
-          <li>Notez ce que vous avez changé, comme le prix, les images ou les enchères, et quand.</li>
-          <li>Choisissez un problème à corriger cette semaine. Vérifiez le résultat la semaine suivante.</li>
-        </ol>
+        <>
+          <p>
+            L’analyse de données Amazon marche mieux comme une habitude. Choisissez un jour par semaine et sortez toujours les mêmes rapports, puis comparez chaque chiffre à la semaine précédente et à la même semaine le mois dernier.
+          </p>
+          <p>
+            Notez chaque changement, comme le prix, les images ou les enchères, et sa date. Choisissez ensuite un problème à régler cette semaine et vérifiez le résultat la semaine suivante. Une correction à la fois semble plus lent, mais c’est la seule façon de savoir ce qui a marché.
+          </p>
+        </>
+      ),
+    },
+    {
+      id: "analytics-service",
+      heading: "Ce que fait notre agence d’analyse marketing pour les vendeurs Amazon",
+      figure: {
+        src: "/img/service-data.jpg",
+        alt: "Colis en carton empilés en colonnes croissantes comme un graphique en barres, une image de l’analyse de données Amazon semaine après semaine",
+        width: 1536,
+        height: 1024,
+        caption: "Les chiffres n’aident que comparés dans le temps. Illustration, pas des données client.",
+      },
+      body: (
+        <>
+          <p>
+            Voyez-la comme une agence d’analyse web pour votre boutique Amazon : la même rigueur, appliquée aux rapports qu’Amazon vous donne. Notre service d’analyse marketing suit quatre étapes, un produit à la fois.
+          </p>
+          <p>
+            Nous sortons d’abord les quatre chiffres de chaque produit et préparons un tableau lisible en quelques minutes. Nous repérons ensuite où se perdent les ventes : être trouvé, être choisi ou dépenses publicitaires. Nous convenons d’une correction pour la semaine et, la semaine suivante, vérifions qu’elle a marché avant de continuer.
+          </p>
+          <p>
+            Le travail est fait par notre équipe à Barcelone. <Link href={p("/about")}>Découvrez l’équipe de Nautilo Studio</Link>.
+          </p>
+        </>
       ),
     },
   ],

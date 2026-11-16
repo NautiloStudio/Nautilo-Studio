@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { GuideCopy } from "../types";
 
 const SELLER_ASSISTANT =
@@ -9,12 +10,12 @@ const ENHANCE_MY_LISTING =
 
 const title = "Amazon Marketing Automation with AI | Nautilo Studio";
 const description =
-  "Amazon marketing automation with AI saves US sellers time on listings, inventory and reports. See what to automate and what to keep human. Free listing review.";
+  "Amazon marketing automation with AI for US sellers: listings, inventory and reports handled for you, with you approving each change. Get a free listing review.";
 
 const page: GuideCopy["page"] = {
   slug: "ai-automation",
-  breadcrumb: "AI automation",
-  question: "How can Amazon marketing automation with AI help sellers?",
+  breadcrumb: "Amazon marketing automation",
+  question: "Amazon marketing automation with AI: what to automate first",
   answer:
     "Amazon marketing automation uses AI to take over repetitive work like drafting listing content, watching inventory and summarizing reports. Amazon now offers tools for this, including its free Seller Assistant, which can monitor your account and act with your approval. You still make the decisions, so AI saves you time without replacing your judgment.",
   description,
@@ -23,7 +24,8 @@ const page: GuideCopy["page"] = {
     alt: "White robotic arm placing a parcel at the end of a neat row",
     tile: "bg-graphite",
   },
-  updated: "2026-11-05",
+  updated: "2026-11-16",
+  author: { name: "Carlo Ambrosini", role: "AI Automation Lead", href: "/about" },
   facts: [
     { value: 4, label: "Tasks AI can take over" },
     { value: 3, label: "Amazon AI tools to start with" },
@@ -33,95 +35,97 @@ const page: GuideCopy["page"] = {
   sections: [
     {
       id: "what-to-automate",
-      heading: "Which Amazon tasks can AI automate?",
+      heading: "Amazon marketing automation: which tasks AI can take over",
       body: (
-        <ul>
-          <li>
-            <strong>Listing content.</strong> AI suggests titles, attributes and descriptions. You
-            check the facts and the brand voice.
-          </li>
-          <li>
-            <strong>Inventory and account health.</strong> AI flags slow-moving stock and account
-            issues. You decide what to fix.
-          </li>
-          <li>
-            <strong>Ad concepts.</strong> AI generates ad ideas for your products. You choose what
-            runs and set the budget.
-          </li>
-          <li>
-            <strong>Reporting.</strong> AI turns sales and traffic reports into short summaries. You
-            decide what the changes mean.
-          </li>
-        </ul>
+        <>
+          <p>
+            Most of the weekly work on an Amazon store repeats itself, and that is where Amazon marketing automation helps. AI can suggest titles, attributes and descriptions, while you check the facts and the brand voice. It can generate ad ideas for your products, while you choose what runs and set the budget. And it can turn sales and traffic reports into short summaries, while you decide what the changes mean.
+          </p>
+          <p>
+            AI can also flag slow-moving stock and account issues, and you decide what to fix. Stock levels matter more from 2027, when Amazon’s low-inventory and storage fees change: see{" "}
+            <Link href="/blog/amazon-fba-fees-2027">what changes in Amazon FBA fees for 2027</Link>.
+          </p>
+          <blockquote>Let AI do the repeating. Keep the deciding.</blockquote>
+        </>
       ),
     },
     {
       id: "amazon-tools",
-      heading: "What AI tools does Amazon already offer?",
+      heading: "The AI tools Amazon already offers sellers",
       body: (
-        <ul>
-          <li>
-            <strong>
-              <a href={SELLER_ASSISTANT} target="_blank" rel="noopener noreferrer">
-                Seller Assistant
-              </a>
-              .
-            </strong>{" "}
-            Free for sellers in the US store. It monitors your account and can act with your
-            permission.
-          </li>
-          <li>
-            <strong>
-              <a href={WORKFLOWS} target="_blank" rel="noopener noreferrer">
-                Workflows
-              </a>
-              .
-            </strong>{" "}
-            Custom automations that keep running. You choose between recommendations and actions.
-          </li>
-          <li>
-            <strong>
-              <a href={ENHANCE_MY_LISTING} target="_blank" rel="noopener noreferrer">
-                Enhance My Listing
-              </a>
-              .
-            </strong>{" "}
-            Suggests listing improvements you can edit or decline. Check whether your account has
-            access.
-          </li>
-        </ul>
+        <>
+          <p>
+            You don’t need outside software to start. Amazon’s{" "}
+            <a href={SELLER_ASSISTANT} target="_blank" rel="noopener noreferrer">
+              Seller Assistant
+            </a>{" "}
+            is free for sellers in the US store: it monitors your account and can act with your permission. Its{" "}
+            <a href={WORKFLOWS} target="_blank" rel="noopener noreferrer">
+              Workflows
+            </a>{" "}
+            are custom automations that keep running, and you choose whether they only recommend or also act.
+          </p>
+          <p>
+            For listings, Amazon’s{" "}
+            <a href={ENHANCE_MY_LISTING} target="_blank" rel="noopener noreferrer">
+              Enhance My Listing
+            </a>{" "}
+            suggests improvements you can edit or decline. Not every account has access to every tool yet, so check what is available in yours before you plan around it.
+          </p>
+        </>
       ),
     },
     {
       id: "keep-human",
-      heading: "What should stay in human hands?",
+      heading: "What should stay in human hands",
       body: (
-        <ul>
-          <li>
-            <strong>Product claims.</strong> Anything about safety, materials or results needs a
-            person to check it.
-          </li>
-          <li>
-            <strong>Your brand.</strong> Your voice and what makes your product different.
-          </li>
-          <li>
-            <strong>Money decisions.</strong> Pricing, ad budgets and overall strategy.
-          </li>
-          <li>
-            <strong>Final approval.</strong> Any change to a live listing or campaign.
-          </li>
-        </ul>
+        <>
+          <p>
+            Some decisions should never be automated. Product claims about safety, materials or results need a person to check them. Your brand voice, and what makes your product different, should come from you.
+          </p>
+          <p>
+            Money decisions stay human too: pricing, ad budgets and overall strategy. And any change to a live listing or campaign needs a final approval from someone who knows the business.
+          </p>
+        </>
       ),
     },
     {
       id: "how-to-start",
-      heading: "How do you start with Amazon marketing automation?",
+      heading: "How to start with Amazon marketing automation",
       body: (
-        <ol>
-          <li>Pick one task you repeat every week.</li>
-          <li>Let AI recommend, and review what it suggests before anything changes.</li>
-          <li>Give it more to do only once you trust the results.</li>
-        </ol>
+        <>
+          <p>
+            Start small. Pick one task you repeat every week, let AI recommend, and review what it suggests before anything changes. Give it more to do only once you trust the results.
+          </p>
+          <p>
+            Reporting is often the easiest first task, because a wrong summary costs nothing until someone acts on it. To know which numbers your reports should show, read our{" "}
+            <Link href="/services/data-analysis">marketing analytics guide for Amazon sellers</Link>.
+          </p>
+        </>
+      ),
+    },
+    {
+      id: "automation-service",
+      heading: "What our Amazon marketing automation service does for sellers",
+      figure: {
+        src: "/img/service-ai.jpg",
+        alt: "White robotic arm placing a parcel at the end of a neat row, a picture of Amazon marketing automation taking over repetitive work",
+        width: 1536,
+        height: 1024,
+        caption: "Automation takes the repeating work, people keep the decisions. Illustration, not a client setup.",
+      },
+      body: (
+        <>
+          <p>
+            Think of it as AI automation for Amazon sellers, set up one task at a time. Our Amazon marketing automation service follows four steps.
+          </p>
+          <p>
+            First we list the tasks you repeat every week and how long each one takes. Then we pick one and set it up with the tools Amazon already offers, in recommend-only mode. We review the results with you every week, and only when you trust them do we let the automation act or move on to the next task.
+          </p>
+          <p>
+            The work is done by our team in Barcelona. <Link href="/about">Meet the team behind Nautilo Studio</Link>.
+          </p>
+        </>
       ),
     },
   ],

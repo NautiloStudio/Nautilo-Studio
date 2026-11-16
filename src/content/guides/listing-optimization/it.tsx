@@ -9,23 +9,23 @@ const BOOST_LISTINGS = "https://sell.amazon.com/blog/how-to-boost-amazon-listing
 
 const p = (path: string) => localePath("it", path);
 
-const title = "Ottimizzazione delle schede Amazon | Nautilo Studio";
+const title = "Agenzia ottimizzazione conversioni Amazon | Nautilo Studio";
 const description =
-  "Come ottimizzare una scheda Amazon perché più visitatori comprino: titolo, punti elenco, immagini, contenuti A+ e test. Guida PDF e revisione gratuita.";
+  "Nautilo Studio è l’agenzia di ottimizzazione del tasso di conversione per venditori Amazon USA: titoli, immagini e A+ che vendono. Revisione gratuita.";
 
 const page: GuideCopy["page"] = {
   slug: "listing-optimization",
-  breadcrumb: "Ottimizzazione delle schede",
-  question: "Come si ottimizza una scheda Amazon perché più clienti comprino?",
+  breadcrumb: "Ottimizzazione delle schede Amazon",
+  question: "Agenzia di ottimizzazione del tasso di conversione su Amazon: dalle visite alle vendite",
   answer:
-    "Ottimizzare una scheda significa migliorare titolo, punti elenco, immagini e contenuti A+ perché chi arriva sulla tua pagina scelga di comprare. Parti da immagini chiare e da un titolo che dica esattamente cos’è il prodotto, poi usa i punti elenco per rispondere ai dubbi che i clienti hanno prima di ordinare. Prova una modifica alla volta e tieni la versione che vende di più.",
+    "L’ottimizzazione delle schede Amazon, il lavoro di un’agenzia di ottimizzazione del tasso di conversione, significa migliorare titolo, punti elenco, immagini e contenuti A+ perché chi arriva sulla tua pagina scelga di comprare. Parti da immagini chiare e da un titolo che dica esattamente cos’è il prodotto, poi usa i punti elenco per rispondere ai dubbi che i clienti hanno prima di ordinare. Prova una modifica alla volta e tieni la versione che vende di più.",
   description,
   image: {
     src: "/img/service-listing.jpg",
     alt: "Tagliere di bambù con un’etichetta di carta vuota",
     tile: "bg-apricot",
   },
-  updated: "2026-11-07",
+  updated: "2026-11-16",
   facts: [
     { value: 9, label: "Foto che Amazon ti permette di caricare" },
     { value: 85, suffix: "%", label: "Dell’inquadratura che il prodotto dovrebbe occupare" },
@@ -40,117 +40,105 @@ const page: GuideCopy["page"] = {
   sections: [
     {
       id: "what-matters",
-      heading: "Quali parti di una scheda Amazon contano di più?",
+      heading: "Ottimizzazione delle schede Amazon: cosa fa comprare",
       body: (
-        <ul>
-          <li>
-            <strong>Titolo.</strong> Di’ cos’è il prodotto, poi il marchio e i dettagli che i
-            clienti confrontano, come misura o colore. La nostra{" "}
-            <Link href={p("/services/amazon-seo")}>guida alla SEO su Amazon</Link> spiega quali parole usare.
-          </li>
-          <li>
-            <strong>Immagini.</strong> Amazon ti permette di{" "}
+        <>
+          <p>
+            Quando un cliente arriva sulla tua pagina prodotto, quattro elementi decidono se compra: il titolo, le immagini, i punti elenco e i contenuti A+. Un’agenzia di ottimizzazione del tasso di conversione lavora su tutti e quattro, perché ognuno risponde a una domanda diversa del cliente.
+          </p>
+          <p>
+            Il titolo dice cos’è il prodotto, poi il marchio e i dettagli che si confrontano, come misura o colore. Le immagini fanno il lavoro del bancone di un negozio: Amazon ti permette di{" "}
             <a href={PRODUCT_LISTINGS} target="_blank" rel="noopener noreferrer">
               caricare fino a nove foto
             </a>
-            . I suoi consigli fotografici raccomandano uno sfondo bianco e un prodotto che{" "}
+            , e i suoi consigli raccomandano sfondo bianco e un prodotto che{" "}
             <a href={PRODUCT_PHOTOS} target="_blank" rel="noopener noreferrer">
-              occupi almeno l’85% dell’inquadratura
+              occupi l’85% o più dell’inquadratura
             </a>
-            .
-          </li>
-          <li>
-            <strong>Punti elenco.</strong> Ne hai fino a cinque. Dai a ognuno un solo vantaggio e
-            sostienilo con un fatto che il cliente può verificare.
-          </li>
-          <li>
-            <strong>Contenuti A+.</strong> Immagini e testi in più sotto la scheda, per i marchi
-            iscritti al Registro dei marchi. Amazon afferma che{" "}
+            . I cinque punti elenco danno un vantaggio ciascuno, sostenuto da un dato verificabile. I contenuti A+ aggiungono immagini e testo sotto la scheda per i marchi nel Brand Registry, e Amazon dice che{" "}
             <a href={A_PLUS} target="_blank" rel="noopener noreferrer">
-              i contenuti A+ di base possono aumentare le vendite fino all’8%
+              i contenuti A+ base possono aumentare le vendite fino all’8%
             </a>
             , secondo i suoi dati interni.
-          </li>
-        </ul>
+          </p>
+          <blockquote>Il cliente non può toccare il tuo prodotto. La tua scheda deve farlo al posto suo.</blockquote>
+        </>
       ),
     },
     {
       id: "signs",
-      heading: "Come capisci che una scheda va migliorata?",
+      heading: "Ottimizzazione delle conversioni: i segnali che la scheda va migliorata",
       body: (
         <>
           <p>
             Amazon fa un esempio semplice:{" "}
             <a href={BOOST_LISTINGS} target="_blank" rel="noopener noreferrer">
-              una scheda con molte visualizzazioni ma poche vendite
+              una scheda con molte visite ma poche vendite
             </a>{" "}
-            potrebbe aver bisogno di immagini o descrizioni migliori.
+            può avere bisogno di immagini o descrizioni migliori. Tante visite e pochi ordini vogliono dire che ti trovano ma non si convincono, quindi immagini, punti elenco e contenuti A+ vengono prima.
           </p>
-          <ul>
-            <li>
-              <strong>Tante visite, pochi ordini.</strong> I clienti ti trovano ma non si convincono.
-              Lavora su immagini, punti elenco e contenuti A+.
-            </li>
-            <li>
-              <strong>Poche visite.</strong> I clienti non trovano la scheda. Parti invece dalla{" "}
-              <Link href={p("/services/amazon-seo")}>SEO su Amazon</Link>.
-            </li>
-            <li>
-              <strong>Tornano sempre le stesse domande.</strong> Se recensioni e domande dei clienti
-              ripetono un dubbio, rispondi nei punti elenco o nelle immagini.
-            </li>
-            <li>
-              <strong>Resi per «non conforme alla descrizione».</strong> La scheda promette qualcosa
-              che il prodotto non mantiene. Correggi il testo prima di spendere di più in traffico.
-            </li>
-          </ul>
           <p>
-            Non sai quali numeri guardare? La nostra{" "}
-            <Link href={p("/services/data-analysis")}>guida all’analisi dei dati</Link> te li spiega.
+            Poche visite indicano un altro problema: i clienti non trovano proprio la scheda, e il nostro{" "}
+            <Link href={p("/services/amazon-seo")}>servizio SEO B2B per venditori Amazon</Link> è il punto di partenza migliore. Altri due segnali contano. Se recensioni e domande ripetono lo stesso dubbio, rispondi nei punti elenco o nelle immagini. E i resi per “non conforme alla descrizione” dicono che la scheda promette qualcosa che il prodotto non mantiene: correggi il testo prima di spendere di più in traffico.
           </p>
         </>
       ),
     },
     {
       id: "testing",
-      heading: "Come si capisce cosa funziona?",
+      heading: "Come un’agenzia di ottimizzazione delle conversioni testa cosa funziona",
       body: (
-        <ol>
-          <li>Scegli un elemento, come l’immagine principale o il titolo. Cambia solo quello.</li>
-          <li>
-            Se il tuo marchio è nel Registro dei marchi, usa{" "}
+        <>
+          <p>
+            Una buona ottimizzazione del tasso di conversione cambia una cosa alla volta. Scegli un elemento, come l’immagine principale o il titolo, e modifica solo quello, così sai cosa ha fatto la differenza.
+          </p>
+          <p>
+            Se il tuo marchio è nel Brand Registry,{" "}
             <a href={BOOST_LISTINGS} target="_blank" rel="noopener noreferrer">
-              Gestisci i tuoi esperimenti
+              Manage Your Experiments
             </a>{" "}
-            di Amazon per mostrare due versioni ai clienti e confrontare i risultati.
-          </li>
-          <li>Lascia durare il test abbastanza da raccogliere ordini veri, non solo pochi giorni.</li>
-          <li>Tieni la versione vincente, poi passa all’elemento successivo.</li>
-        </ol>
+            di Amazon mostra due versioni ai clienti e confronta i risultati. Lascia correre il test abbastanza a lungo da raccogliere ordini veri, non solo qualche giorno, poi tieni la versione vincente e passa all’elemento successivo.
+          </p>
+        </>
       ),
     },
     {
       id: "mistakes",
-      heading: "Quali errori bloccano l’acquisto?",
+      heading: "Gli errori nelle schede Amazon che bloccano l’acquisto",
       body: (
-        <ul>
-          <li>
-            <strong>Immagini sfocate o scure.</strong> Il cliente non può toccare il prodotto,
-            quindi devono farlo le foto al posto suo.
-          </li>
-          <li>
-            <strong>Caratteristiche senza vantaggi.</strong> «Acciaio inox» dice di più se spieghi
-            che tiene le bevande fresche.
-          </li>
-          <li>
-            <strong>Affermazioni che non puoi dimostrare.</strong> Portano a resi e recensioni
-            negative, e possono violare le regole di Amazon.
-          </li>
-          <li>
-            <strong>Dettagli che non coincidono.</strong> Titolo, punti elenco e immagini devono
-            descrivere la stessa misura, lo stesso colore e lo stesso contenuto.
-          </li>
-        </ul>
+        <>
+          <p>
+            Le immagini sfocate o scure sono l’errore più comune: il cliente non può toccare il prodotto, quindi devono farlo le foto. Subito dopo vengono le caratteristiche senza vantaggi. “Acciaio inox” dice di più se spieghi che tiene le bevande fresche.
+          </p>
+          <p>
+            Le promesse che non puoi dimostrare portano resi e recensioni negative, e possono violare le regole di Amazon. Anche i dettagli che non tornano fanno danni: titolo, punti elenco e immagini devono descrivere la stessa misura, lo stesso colore e lo stesso contenuto. Le parole che i clienti cercano vanno nel testo visibile e nei termini di ricerca nascosti, e la nostra guida passo passo per{" "}
+            <Link href={p("/blog/amazon-backend-keywords")}>compilare le parole chiave backend di Amazon</Link> spiega la seconda parte.
+          </p>
+        </>
+      ),
+    },
+    {
+      id: "cro-service",
+      heading: "Cosa fa la nostra agenzia di ottimizzazione delle conversioni per i venditori Amazon",
+      figure: {
+        src: "/img/service-listing.jpg",
+        alt: "Foto prodotto di un tagliere di bambù su sfondo neutro, l’immagine principale pulita da cui parte l’ottimizzazione di una scheda Amazon",
+        width: 1024,
+        height: 1024,
+        caption: "Un prodotto, una foto chiara: da qui parte il lavoro sulla scheda. Illustrazione, non è una scheda di un cliente.",
+      },
+      body: (
+        <>
+          <p>
+            Pensala come ottimizzazione delle schede Amazon con un test dietro ogni modifica. Il nostro servizio di ottimizzazione del tasso di conversione segue quattro passi, una scheda alla volta.
+          </p>
+          <p>
+            Prima leggiamo la tua scheda come farebbe un cliente e annotiamo cosa manca o non è chiaro. Poi riscriviamo titolo e punti elenco perché ognuno risponda a una domanda del cliente, e prepariamo il brief per nuove immagini e contenuti A+ dove servono di più. Infine testiamo una modifica alla volta e teniamo la versione che vende di più.
+          </p>
+          <p>
+            Il lavoro lo fa il nostro team a Barcellona. <Link href={p("/about")}>Conosci il team di Nautilo Studio</Link>.
+          </p>
+        </>
       ),
     },
   ],
