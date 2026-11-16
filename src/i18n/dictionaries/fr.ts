@@ -208,7 +208,7 @@ const fr: Dictionary = {
         title: "Optimisation des fiches",
         problem: "« On regarde, mais on n’achète pas. »",
         text: "Nous retravaillons vos titres, puces, contenu A+ et images, pour que plus de visiteurs choisissent d’acheter.",
-        alt: "MacBook affichant la page produit Amazon d’une planche à découper en bambou, avec le titre, l’image principale, les puces et le contenu A+ modifiés et signalés",
+        alt: "iMac sur un bureau affichant la page produit Amazon d’une planche à découper en bambou, avec le titre, l’image principale, les puces, le contenu A+ et les nouvelles images modifiés et signalés",
         guide: "Lire notre guide d’optimisation des fiches",
       },
       {

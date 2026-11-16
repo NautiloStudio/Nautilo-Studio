@@ -22,7 +22,7 @@ const page: GuideCopy["page"] = {
   description,
   image: {
     src: "/img/amazon-listing-optimization.jpg",
-    alt: "MacBook con la página de producto de Amazon de una tabla de cortar de bambú, con el título, la imagen principal, las viñetas y el contenido A+ editados y marcados",
+    alt: "iMac en un escritorio de oficina con la página de producto de Amazon de una tabla de cortar de bambú, con el título, la imagen principal, las viñetas, el contenido A+ y las nuevas imágenes editados y marcados",
     tile: "bg-apricot",
   },
   updated: "2026-11-16",
@@ -122,10 +122,10 @@ const page: GuideCopy["page"] = {
       heading: "Qué hace nuestra agencia de optimización de la conversión por los vendedores de Amazon",
       figure: {
         src: "/img/amazon-listing-optimization.jpg",
-        alt: "MacBook con una ficha de Amazon y cinco cambios marcados en título, imagen principal, viñetas, contenido A+ y términos de búsqueda: el trabajo de una agencia de optimización de la conversión",
+        alt: "iMac en un escritorio de oficina con una ficha de Amazon y cinco cambios marcados en título, imagen principal, viñetas, contenido A+ y términos de búsqueda: el trabajo de una agencia de optimización de la conversión",
         width: 1600,
         height: 900,
-        caption: "Ficha de ejemplo con nuestros cinco cambios marcados. Ilustración, no es una ficha de cliente. Foto: Kari Shea, Unsplash.",
+        caption: "Ficha de ejemplo con nuestros cinco cambios marcados. Ilustración, no es una ficha de cliente. Foto: Carl Heyerdahl, Unsplash.",
       },
       body: (
         <>

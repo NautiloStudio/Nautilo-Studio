@@ -211,7 +211,7 @@ const en = {
         title: "Listing optimisation",
         problem: "“People look, but they don’t buy.”",
         text: "We rework your titles, bullets, A+ content and images, so more visitors choose to buy.",
-        alt: "MacBook showing an Amazon product page for a bamboo cutting board, with the edited title, main image, bullets and A+ content marked",
+        alt: "iMac on an office desk showing an Amazon product page for a bamboo cutting board, with the edited title, main image, bullets, A+ content and new image set marked",
         guide: "Read our listing optimisation guide",
       },
       {

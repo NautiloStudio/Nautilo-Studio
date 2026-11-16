@@ -206,7 +206,7 @@ const it: Dictionary = {
         title: "Ottimizzazione delle schede",
         problem: "«Guardano, ma non comprano.»",
         text: "Rivediamo titoli, punti elenco, contenuti A+ e immagini, così più visitatori scelgono di comprare.",
-        alt: "MacBook con la pagina prodotto Amazon di un tagliere di bambù, con titolo, immagine principale, punti elenco e contenuti A+ modificati e segnalati",
+        alt: "iMac su una scrivania d’ufficio con la pagina prodotto Amazon di un tagliere di bambù, con titolo, immagine principale, punti elenco, contenuti A+ e nuove immagini modificati e segnalati",
         guide: "Leggi la nostra guida all’ottimizzazione delle schede",
       },
       {

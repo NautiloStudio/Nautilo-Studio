@@ -206,7 +206,7 @@ const es: Dictionary = {
         title: "Optimización de fichas",
         problem: "«Miran, pero no compran».",
         text: "Rehacemos tus títulos, viñetas, contenido A+ e imágenes para que más visitantes decidan comprar.",
-        alt: "MacBook con la página de producto de Amazon de una tabla de cortar de bambú, con el título, la imagen principal, las viñetas y el contenido A+ editados y marcados",
+        alt: "iMac en un escritorio de oficina con la página de producto de Amazon de una tabla de cortar de bambú, con el título, la imagen principal, las viñetas, el contenido A+ y las nuevas imágenes editados y marcados",
         guide: "Leer nuestra guía de optimización de fichas",
       },
       {

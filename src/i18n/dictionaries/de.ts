@@ -207,7 +207,7 @@ const de: Dictionary = {
         title: "Listing-Optimierung",
         problem: "„Viele schauen, wenige kaufen.“",
         text: "Wir überarbeiten Titel, Bullet Points, A+ Content und Bilder, damit sich mehr Besucher für den Kauf entscheiden.",
-        alt: "MacBook mit der Amazon-Produktseite eines Bambus-Schneidebretts, auf der Titel, Hauptbild, Bullet Points und A+ Content als geändert markiert sind",
+        alt: "iMac auf einem Büroschreibtisch mit der Amazon-Produktseite eines Bambus-Schneidebretts, auf der Titel, Hauptbild, Bullet Points, A+ Content und neue Bilder als geändert markiert sind",
         guide: "Unseren Leitfaden Listing-Optimierung lesen",
       },
       {
