@@ -9,23 +9,23 @@ const BOOST_LISTINGS = "https://sell.amazon.com/blog/how-to-boost-amazon-listing
 
 const p = (path: string) => localePath("de", path);
 
-const title = "Amazon-Listing-Optimierung für Händler | Nautilo Studio";
+const title = "Agentur für Conversion-Optimierung: Amazon | Nautilo Studio";
 const description =
-  "So optimieren Sie ein Amazon-Listing, damit mehr Besucher kaufen: Titel, Bullet Points, Bilder, A+ Content und Tests. Gratis PDF-Leitfaden und Listing-Check.";
+  "Nautilo Studio ist die Agentur für Conversion-Rate-Optimierung für Amazon-Händler in den USA: Titel, Bilder und A+ Content, die verkaufen. Gratis Listing-Check.";
 
 const page: GuideCopy["page"] = {
   slug: "listing-optimization",
-  breadcrumb: "Listing-Optimierung",
-  question: "Wie optimieren Sie ein Amazon-Listing, damit mehr Käufer kaufen?",
+  breadcrumb: "Amazon-Listing-Optimierung",
+  question: "Agentur für Conversion-Rate-Optimierung auf Amazon: aus Besuchen werden Verkäufe",
   answer:
-    "Listing-Optimierung heißt, Titel, Bullet Points, Bilder und A+ Content so zu verbessern, dass sich Käufer auf Ihrer Seite für den Kauf entscheiden. Beginnen Sie mit klaren Bildern und einem Titel, der genau sagt, was das Produkt ist, und beantworten Sie mit den Bullet Points die Fragen, die Käufer vor der Bestellung haben. Testen Sie eine Änderung nach der anderen und behalten Sie die Version, die besser verkauft.",
+    "Amazon-Listing-Optimierung, die Arbeit einer Agentur für Conversion-Rate-Optimierung, heißt, Titel, Bullet Points, Bilder und A+ Content so zu verbessern, dass sich Käufer auf Ihrer Seite für den Kauf entscheiden. Beginnen Sie mit klaren Bildern und einem Titel, der genau sagt, was das Produkt ist, und beantworten Sie mit den Bullet Points die Fragen, die Käufer vor der Bestellung haben. Testen Sie eine Änderung nach der anderen und behalten Sie die Version, die besser verkauft.",
   description,
   image: {
     src: "/img/service-listing.jpg",
     alt: "Bambus-Schneidebrett mit leerem Papieranhänger",
     tile: "bg-apricot",
   },
-  updated: "2026-11-07",
+  updated: "2026-11-16",
   facts: [
     { value: 9, label: "Fotos, die Amazon Sie hochladen lässt" },
     { value: 85, suffix: " %", label: "Des Bildes sollte das Produkt ausfüllen" },
@@ -40,44 +40,34 @@ const page: GuideCopy["page"] = {
   sections: [
     {
       id: "what-matters",
-      heading: "Welche Teile eines Amazon-Listings zählen am meisten?",
+      heading: "Amazon-Listing-Optimierung: was Käufer zum Kauf bringt",
       body: (
-        <ul>
-          <li>
-            <strong>Titel.</strong> Sagen Sie, was das Produkt ist, dann die Marke und die Details,
-            die Käufer vergleichen, etwa Größe oder Farbe. Unser{" "}
-            <Link href={p("/services/amazon-seo")}>Leitfaden zu Amazon-SEO</Link> zeigt, welche Wörter Sie
-            verwenden sollten.
-          </li>
-          <li>
-            <strong>Bilder.</strong> Amazon lässt Sie{" "}
+        <>
+          <p>
+            Sobald ein Käufer auf Ihrer Produktseite landet, entscheiden vier Dinge über den Kauf: der Titel, die Bilder, die Bullet Points und der A+ Content. Eine Agentur für Conversion-Rate-Optimierung arbeitet an allen vier, denn jedes beantwortet eine andere Frage des Käufers.
+          </p>
+          <p>
+            Der Titel sagt, was das Produkt ist, dann folgen Marke und die Details, die Käufer vergleichen, etwa Größe oder Farbe. Bilder übernehmen die Rolle der Ladentheke: Amazon lässt Sie{" "}
             <a href={PRODUCT_LISTINGS} target="_blank" rel="noopener noreferrer">
               bis zu neun Fotos hochladen
             </a>
-            . Die Fototipps empfehlen einen weißen Hintergrund und ein Produkt, das{" "}
+            , und die Foto-Tipps empfehlen einen weißen Hintergrund und ein Produkt, das{" "}
             <a href={PRODUCT_PHOTOS} target="_blank" rel="noopener noreferrer">
               85 % oder mehr des Bildes ausfüllt
             </a>
-            .
-          </li>
-          <li>
-            <strong>Bullet Points.</strong> Sie haben bis zu fünf. Geben Sie jedem einen einzigen
-            Vorteil und belegen Sie ihn mit einem Fakt, den Käufer prüfen können.
-          </li>
-          <li>
-            <strong>A+ Content.</strong> Zusätzliche Bilder und Texte unter dem Listing für Marken in
-            der Markenregistrierung. Laut Amazon{" "}
+            . Die fünf Bullet Points nennen je einen Vorteil, belegt durch einen prüfbaren Fakt. A+ Content ergänzt Bilder und Text unter dem Listing für Marken in der Markenregistrierung, und Amazon sagt, dass{" "}
             <a href={A_PLUS} target="_blank" rel="noopener noreferrer">
-              kann einfacher A+ Content den Umsatz um bis zu 8 % steigern
+              einfacher A+ Content den Umsatz um bis zu 8 % steigern kann
             </a>
-            , basierend auf internen Daten.
-          </li>
-        </ul>
+            , auf Basis interner Daten.
+          </p>
+          <blockquote>Käufer können Ihr Produkt nicht anfassen. Ihr Listing muss das für sie tun.</blockquote>
+        </>
       ),
     },
     {
       id: "signs",
-      heading: "Woran erkennen Sie, dass ein Listing Arbeit braucht?",
+      heading: "Conversion-Rate-Optimierung: Zeichen, dass Ihr Listing Arbeit braucht",
       body: (
         <>
           <p>
@@ -85,74 +75,70 @@ const page: GuideCopy["page"] = {
             <a href={BOOST_LISTINGS} target="_blank" rel="noopener noreferrer">
               ein Listing mit vielen Aufrufen, aber wenigen Verkäufen
             </a>{" "}
-            braucht vielleicht bessere Bilder oder Beschreibungen.
+            braucht womöglich bessere Bilder oder Beschreibungen. Viele Besuche und wenige Bestellungen heißen: Käufer finden Sie, sind aber nicht überzeugt. Bilder, Bullet Points und A+ Content kommen also zuerst.
           </p>
-          <ul>
-            <li>
-              <strong>Viele Besuche, wenige Bestellungen.</strong> Käufer finden Sie, sind aber
-              nicht überzeugt. Arbeiten Sie an Bildern, Bullet Points und A+ Content.
-            </li>
-            <li>
-              <strong>Wenige Besuche.</strong> Käufer finden das Listing nicht. Beginnen Sie stattdessen
-              mit <Link href={p("/services/amazon-seo")}>Amazon-SEO</Link>.
-            </li>
-            <li>
-              <strong>Immer wieder dieselben Fragen.</strong> Wenn Bewertungen und Kundenfragen
-              denselben Zweifel wiederholen, beantworten Sie ihn in Bullet Points oder Bildern.
-            </li>
-            <li>
-              <strong>Rücksendungen wegen „nicht wie beschrieben“.</strong> Das Listing verspricht
-              etwas, das das Produkt nicht hält. Korrigieren Sie den Text, bevor Sie mehr für Traffic
-              ausgeben.
-            </li>
-          </ul>
           <p>
-            Unsicher, welche Zahlen Sie ansehen sollten? Unser{" "}
-            <Link href={p("/services/data-analysis")}>Leitfaden zur Datenanalyse</Link> erklärt sie.
+            Wenige Besuche deuten auf ein anderes Problem hin: Käufer finden das Listing gar nicht, und unser{" "}
+            <Link href={p("/services/amazon-seo")}>B2B-SEO-Service für Amazon-Händler</Link> ist der bessere Startpunkt. Zwei weitere Zeichen lohnen den Blick. Wiederholen Bewertungen und Kundenfragen denselben Zweifel, beantworten Sie ihn in Bullet Points oder Bildern. Und Retouren wegen „entspricht nicht der Beschreibung“ zeigen, dass das Listing etwas verspricht, was das Produkt nicht hält: Korrigieren Sie den Text, bevor Sie mehr in Traffic investieren.
           </p>
         </>
       ),
     },
     {
       id: "testing",
-      heading: "Wie testen Sie, was funktioniert?",
+      heading: "Wie eine Agentur für Conversion-Optimierung testet, was wirkt",
       body: (
-        <ol>
-          <li>Wählen Sie ein Element, etwa das Hauptbild oder den Titel. Ändern Sie nur dieses.</li>
-          <li>
-            Ist Ihre Marke in der Markenregistrierung, nutzen Sie Amazons{" "}
+        <>
+          <p>
+            Gute Conversion-Rate-Optimierung ändert immer nur eine Sache. Wählen Sie ein Element, etwa das Hauptbild oder den Titel, und ändern Sie nur dieses, damit Sie wissen, was den Unterschied gemacht hat.
+          </p>
+          <p>
+            Ist Ihre Marke in der Markenregistrierung, zeigt Amazons{" "}
             <a href={BOOST_LISTINGS} target="_blank" rel="noopener noreferrer">
-              Meine Experimente verwalten
-            </a>
-            , um Käufern zwei Versionen zu zeigen und die Ergebnisse zu vergleichen.
-          </li>
-          <li>Lassen Sie den Test lange genug laufen, um echte Bestellungen zu sammeln, nicht nur ein paar Tage.</li>
-          <li>Behalten Sie die Gewinnerversion und gehen Sie zum nächsten Element.</li>
-        </ol>
+              Manage Your Experiments
+            </a>{" "}
+            Käufern zwei Versionen und vergleicht die Ergebnisse. Lassen Sie den Test lange genug laufen, um echte Bestellungen zu sammeln, nicht nur ein paar Tage. Behalten Sie dann die bessere Version und gehen Sie zum nächsten Element.
+          </p>
+        </>
       ),
     },
     {
       id: "mistakes",
-      heading: "Welche Fehler halten Käufer vom Kauf ab?",
+      heading: "Amazon-Listing-Fehler, die Käufer vom Kauf abhalten",
       body: (
-        <ul>
-          <li>
-            <strong>Unscharfe oder dunkle Bilder.</strong> Käufer können das Produkt nicht anfassen,
-            also müssen die Fotos diese Aufgabe übernehmen.
-          </li>
-          <li>
-            <strong>Merkmale ohne Nutzen.</strong> „Edelstahl“ sagt mehr, wenn Sie dazuschreiben,
-            dass Getränke kalt bleiben.
-          </li>
-          <li>
-            <strong>Aussagen, die Sie nicht belegen können.</strong> Sie führen zu Rücksendungen und
-            schlechten Bewertungen und können gegen Amazons Richtlinien verstoßen.
-          </li>
-          <li>
-            <strong>Angaben, die nicht zusammenpassen.</strong> Titel, Bullet Points und Bilder
-            sollten dieselbe Größe, Farbe und denselben Lieferumfang beschreiben.
-          </li>
-        </ul>
+        <>
+          <p>
+            Unscharfe oder dunkle Bilder sind der häufigste Fehler: Käufer können das Produkt nicht anfassen, also müssen die Fotos das übernehmen. Dicht dahinter folgen Merkmale ohne Nutzen. „Edelstahl“ sagt mehr, wenn Sie erklären, dass er Getränke kalt hält.
+          </p>
+          <p>
+            Versprechen, die Sie nicht belegen können, führen zu Retouren und schlechten Bewertungen und können gegen Amazons Regeln verstoßen. Auch Details, die nicht zusammenpassen, schaden: Titel, Bullet Points und Bilder sollten dieselbe Größe, Farbe und denselben Inhalt beschreiben. Die Wörter, nach denen Käufer suchen, gehören in den sichtbaren Text und in die versteckten Suchbegriffe, und unser Schritt-für-Schritt-Leitfaden zum{" "}
+            <Link href={p("/blog/amazon-backend-keywords")}>Ausfüllen der Amazon-Backend-Keywords</Link> erklärt den zweiten Teil.
+          </p>
+        </>
+      ),
+    },
+    {
+      id: "cro-service",
+      heading: "Was unsere Agentur für Conversion-Optimierung für Amazon-Händler tut",
+      figure: {
+        src: "/img/service-listing.jpg",
+        alt: "Produktfoto eines Bambus-Schneidebretts auf schlichtem Hintergrund, das klare Hauptbild, mit dem die Amazon-Listing-Optimierung beginnt",
+        width: 1024,
+        height: 1024,
+        caption: "Ein Produkt, ein klares Foto: Hier beginnt die Arbeit am Listing. Illustration, kein Kunden-Listing.",
+      },
+      body: (
+        <>
+          <p>
+            Sehen Sie es als Amazon-Listing-Optimierung mit einem Test hinter jeder Änderung. Unser Service für Conversion-Rate-Optimierung folgt vier Schritten, ein Listing nach dem anderen.
+          </p>
+          <p>
+            Zuerst lesen wir Ihr Listing wie ein Käufer und notieren, was fehlt oder unklar ist. Dann schreiben wir Titel und Bullet Points so um, dass jeder eine Käuferfrage beantwortet, und briefen neue Bilder und A+ Content dort, wo sie am meisten helfen. Zum Schluss testen wir eine Änderung nach der anderen und behalten die Version, die besser verkauft.
+          </p>
+          <p>
+            Die Arbeit macht unser Team in Barcelona. <Link href={p("/about")}>Lernen Sie das Team von Nautilo Studio kennen</Link>.
+          </p>
+        </>
       ),
     },
   ],

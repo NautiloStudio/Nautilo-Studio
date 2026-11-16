@@ -19,9 +19,10 @@ const post: BlogPost = {
   excerpt:
     "Amazon announced its 2027 US fees on November 5. Here is what changes, when, and how to check what it means for each of your products.",
   published: "2026-11-11",
-  updated: "2026-11-11",
+  updated: "2026-11-16",
   readMinutes: 8,
-  hero: { ...heroPhoto, alt: "Warehouse aisle with tall shelves full of cardboard boxes" },
+  author: { name: "Veronika Matkovska", role: "Data Analysis Lead", href: "/about" },
+  hero: { ...heroPhoto, alt: "Warehouse aisle full of cardboard boxes: the stock that Amazon FBA fees 2027 apply to" },
   intro: (
     <>
       <p>
@@ -61,7 +62,7 @@ const post: BlogPost = {
     },
     {
       id: "five-changes",
-      heading: "The 5 key changes for US sellers",
+      heading: "The 5 key changes in Amazon FBA fees for US sellers",
       body: (
         <>
           <h3>1. Fulfillment fees rise by $0.19 per unit on average</h3>
@@ -218,7 +219,7 @@ const post: BlogPost = {
             </li>
             <li>
               <strong>Plan for 28 days of supply.</strong> Set replenishment so your best sellers do
-              not fall below four weeks of stock.
+              not fall below four weeks of stock. <Link href="/services/ai-automation">Amazon marketing automation with AI</Link> can watch stock levels for you.
             </li>
             <li>
               <strong>Recheck large items.</strong> With new tiers and handling fees, a product’s
@@ -226,8 +227,8 @@ const post: BlogPost = {
             </li>
           </ul>
           <p>
-            Fees are only one part of profit. To see how sessions, conversion and advertising fit in,
-            read our <Link href="/services/data-analysis">guide to the Amazon numbers that matter</Link>.
+            Fees are only one part of profit: turning more visits into sales helps too. See how our{" "}
+            <Link href="/services/listing-optimization">conversion rate optimization agency for Amazon listings</Link> works.
           </p>
         </>
       ),
@@ -278,7 +279,7 @@ const post: BlogPost = {
   ],
   cta: {
     text: "New fees change the math on every product. See which numbers to watch each week, or let us take a free look at one of your listings.",
-    pillar: { href: "/services/data-analysis", label: "Read our Amazon data analysis guide" },
+    pillar: { href: "/services/data-analysis", label: "See our marketing analytics service for Amazon sellers" },
     formHeading: "Not sure what the 2027 fees mean for you?",
     formText: "Send one listing and we’ll tell you, for free, what we would check first.",
   },

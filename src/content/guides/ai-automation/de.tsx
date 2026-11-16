@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { localePath } from "@/i18n/config";
 import type { GuideCopy } from "../types";
 
 const SELLER_ASSISTANT =
@@ -7,23 +9,25 @@ const WORKFLOWS =
 const ENHANCE_MY_LISTING =
   "https://www.aboutamazon.com/news/innovation-at-amazon/amazon-generative-ai-seller-growth-shopping-experience";
 
-const title = "KI-Automatisierung für Amazon-Händler | Nautilo Studio";
+const p = (path: string) => localePath("de", path);
+
+const title = "Amazon-Marketing-Automatisierung mit KI | Nautilo Studio";
 const description =
-  "KI spart Amazon-Händlern in den USA Zeit bei Listings, Bestand und Berichten. Was Sie automatisieren und was beim Menschen bleibt. Gratis Listing-Check.";
+  "Amazon-Marketing-Automatisierung mit KI für Händler in den USA: Listings, Bestand und Berichte, jede Änderung geben Sie frei. Fordern Sie Ihren Gratis-Check an.";
 
 const page: GuideCopy["page"] = {
   slug: "ai-automation",
-  breadcrumb: "KI-Automatisierung",
-  question: "Wie kann KI-Automatisierung Amazon-Händlern helfen?",
+  breadcrumb: "Amazon-Marketing-Automatisierung",
+  question: "Amazon-Marketing-Automatisierung mit KI: was Sie zuerst automatisieren",
   answer:
-    "KI-Automatisierung übernimmt wiederkehrende Arbeit, etwa Listing-Texte entwerfen, den Bestand im Blick behalten oder Berichte zusammenfassen. Amazon bietet dafür bereits Tools an, darunter den kostenlosen Seller Assistant, der Ihr Konto überwachen und mit Ihrer Zustimmung handeln kann. Die Entscheidungen treffen weiterhin Sie, die KI spart also Zeit, ohne Ihr Urteil zu ersetzen.",
+    "Amazon-Marketing-Automatisierung nutzt KI für wiederkehrende Arbeit, etwa Listing-Texte entwerfen, den Bestand im Blick behalten oder Berichte zusammenfassen. Amazon bietet dafür bereits Tools an, darunter den kostenlosen Seller Assistant, der Ihr Konto überwachen und mit Ihrer Zustimmung handeln kann. Die Entscheidungen treffen weiterhin Sie, die KI spart also Zeit, ohne Ihr Urteil zu ersetzen.",
   description,
   image: {
     src: "/img/service-ai.jpg",
     alt: "Weißer Roboterarm, der ein Paket ans Ende einer ordentlichen Reihe stellt",
     tile: "bg-graphite",
   },
-  updated: "2026-11-07",
+  updated: "2026-11-16",
   facts: [
     { value: 4, label: "Aufgaben, die KI übernehmen kann" },
     { value: 3, label: "KI-Tools von Amazon für den Einstieg" },
@@ -33,98 +37,97 @@ const page: GuideCopy["page"] = {
   sections: [
     {
       id: "what-to-automate",
-      heading: "Welche Amazon-Aufgaben kann KI automatisieren?",
+      heading: "Amazon-Marketing-Automatisierung: welche Aufgaben KI übernehmen kann",
       body: (
-        <ul>
-          <li>
-            <strong>Listing-Inhalte.</strong> Die KI schlägt Titel, Attribute und Beschreibungen
-            vor. Sie prüfen die Fakten und die Markenstimme.
-          </li>
-          <li>
-            <strong>Bestand und Kontozustand.</strong> Die KI meldet langsam drehenden Bestand und
-            Kontoprobleme. Sie entscheiden, was behoben wird.
-          </li>
-          <li>
-            <strong>Anzeigenideen.</strong> Die KI entwirft Anzeigenideen für Ihre Produkte. Sie
-            wählen aus, was läuft, und legen das Budget fest.
-          </li>
-          <li>
-            <strong>Berichte.</strong> Die KI macht aus Umsatz- und Traffic-Berichten kurze
-            Zusammenfassungen. Sie entscheiden, was die Veränderungen bedeuten.
-          </li>
-        </ul>
+        <>
+          <p>
+            Ein Großteil der wöchentlichen Arbeit in einem Amazon-Shop wiederholt sich, und genau dort hilft Amazon-Marketing-Automatisierung. KI kann Titel, Attribute und Beschreibungen vorschlagen, während Sie Fakten und Markenstimme prüfen. Sie kann Werbeideen für Ihre Produkte erzeugen, während Sie entscheiden, was läuft, und das Budget festlegen. Und sie kann Verkaufs- und Traffic-Berichte in kurze Zusammenfassungen verwandeln, während Sie entscheiden, was die Veränderungen bedeuten.
+          </p>
+          <p>
+            KI kann außerdem langsam drehenden Bestand und Kontoprobleme melden, und Sie entscheiden, was behoben wird. Der Lagerbestand zählt ab 2027 mehr, wenn sich Amazons Lager- und Niedrigbestandsgebühren ändern: Lesen Sie,{" "}
+            <Link href={p("/blog/amazon-fba-fees-2027")}>was sich bei den Amazon FBA Gebühren 2027 ändert</Link>.
+          </p>
+          <blockquote>Lassen Sie die KI wiederholen. Behalten Sie das Entscheiden.</blockquote>
+        </>
       ),
     },
     {
       id: "amazon-tools",
-      heading: "Welche KI-Tools bietet Amazon bereits?",
+      heading: "Die KI-Tools, die Amazon Händlern schon anbietet",
       body: (
-        <ul>
-          <li>
-            <strong>
-              <a href={SELLER_ASSISTANT} target="_blank" rel="noopener noreferrer">
-                Seller Assistant
-              </a>
-              .
-            </strong>{" "}
-            Kostenlos für Händler im US-Store. Er überwacht Ihr Konto und kann mit Ihrer Erlaubnis
-            handeln.
-          </li>
-          <li>
-            <strong>
-              <a href={WORKFLOWS} target="_blank" rel="noopener noreferrer">
-                Workflows
-              </a>
-              .
-            </strong>{" "}
-            Eigene Automatisierungen, die dauerhaft laufen. Sie wählen zwischen Empfehlungen und
-            Aktionen.
-          </li>
-          <li>
-            <strong>
-              <a href={ENHANCE_MY_LISTING} target="_blank" rel="noopener noreferrer">
-                Enhance My Listing
-              </a>
-              .
-            </strong>{" "}
-            Schlägt Verbesserungen für Listings vor, die Sie bearbeiten oder ablehnen können. Prüfen
-            Sie, ob Ihr Konto Zugriff hat.
-          </li>
-        </ul>
+        <>
+          <p>
+            Für den Start brauchen Sie keine externe Software. Amazons{" "}
+            <a href={SELLER_ASSISTANT} target="_blank" rel="noopener noreferrer">
+              Seller Assistant
+            </a>{" "}
+            ist für Händler im US-Shop kostenlos: Er überwacht Ihr Konto und kann mit Ihrer Erlaubnis handeln. Seine{" "}
+            <a href={WORKFLOWS} target="_blank" rel="noopener noreferrer">
+              Workflows
+            </a>{" "}
+            sind eigene Automatisierungen, die dauerhaft laufen, und Sie wählen, ob sie nur empfehlen oder auch handeln.
+          </p>
+          <p>
+            Für Listings schlägt Amazons{" "}
+            <a href={ENHANCE_MY_LISTING} target="_blank" rel="noopener noreferrer">
+              Enhance My Listing
+            </a>{" "}
+            Verbesserungen vor, die Sie bearbeiten oder ablehnen können. Noch hat nicht jedes Konto Zugang zu jedem Tool, prüfen Sie also, was in Ihrem verfügbar ist, bevor Sie damit planen.
+          </p>
+        </>
       ),
     },
     {
       id: "keep-human",
-      heading: "Was sollte in Menschenhand bleiben?",
+      heading: "Was in menschlicher Hand bleiben sollte",
       body: (
-        <ul>
-          <li>
-            <strong>Produktaussagen.</strong> Alles zu Sicherheit, Material oder Wirkung muss ein
-            Mensch prüfen.
-          </li>
-          <li>
-            <strong>Ihre Marke.</strong> Ihre Stimme und das, was Ihr Produkt besonders macht.
-          </li>
-          <li>
-            <strong>Entscheidungen über Geld.</strong> Preise, Werbebudgets und die
-            Gesamtstrategie.
-          </li>
-          <li>
-            <strong>Die finale Freigabe.</strong> Jede Änderung an einem aktiven Listing oder einer
-            laufenden Kampagne.
-          </li>
-        </ul>
+        <>
+          <p>
+            Manche Entscheidungen sollte man nie automatisieren. Produktaussagen zu Sicherheit, Materialien oder Ergebnissen muss ein Mensch prüfen. Ihre Markenstimme und das, was Ihr Produkt besonders macht, sollten von Ihnen kommen.
+          </p>
+          <p>
+            Auch Geldentscheidungen bleiben beim Menschen: Preise, Werbebudgets und die Gesamtstrategie. Und jede Änderung an einem aktiven Listing oder einer laufenden Kampagne braucht die finale Freigabe von jemandem, der das Geschäft kennt.
+          </p>
+        </>
       ),
     },
     {
       id: "how-to-start",
-      heading: "Wie starten Sie mit KI-Automatisierung?",
+      heading: "So starten Sie mit Amazon-Marketing-Automatisierung",
       body: (
-        <ol>
-          <li>Wählen Sie eine Aufgabe, die Sie jede Woche wiederholen.</li>
-          <li>Lassen Sie die KI Empfehlungen geben, und prüfen Sie diese, bevor sich etwas ändert.</li>
-          <li>Geben Sie ihr erst mehr Aufgaben, wenn Sie den Ergebnissen vertrauen.</li>
-        </ol>
+        <>
+          <p>
+            Fangen Sie klein an. Wählen Sie eine Aufgabe, die Sie jede Woche wiederholen, lassen Sie die KI empfehlen und prüfen Sie ihre Vorschläge, bevor sich etwas ändert. Geben Sie ihr erst mehr zu tun, wenn Sie den Ergebnissen vertrauen.
+          </p>
+          <p>
+            Berichte sind oft die einfachste erste Aufgabe, denn eine falsche Zusammenfassung kostet nichts, solange niemand danach handelt. Welche Zahlen Ihre Berichte zeigen sollten, erklärt unser{" "}
+            <Link href={p("/services/data-analysis")}>Marketing-Analytics-Leitfaden für Amazon-Händler</Link>.
+          </p>
+        </>
+      ),
+    },
+    {
+      id: "automation-service",
+      heading: "Was unser Service für Amazon-Marketing-Automatisierung tut",
+      figure: {
+        src: "/img/service-ai.jpg",
+        alt: "Weißer Roboterarm, der ein Paket ans Ende einer ordentlichen Reihe setzt, ein Bild für Amazon-Marketing-Automatisierung, die wiederkehrende Arbeit übernimmt",
+        width: 1536,
+        height: 1024,
+        caption: "Automatisierung übernimmt das Wiederkehrende, Menschen behalten die Entscheidungen. Illustration, kein Kunden-Setup.",
+      },
+      body: (
+        <>
+          <p>
+            Sehen Sie es als KI-Automatisierung für Amazon-Händler, eingerichtet Aufgabe für Aufgabe. Unser Service für Amazon-Marketing-Automatisierung folgt vier Schritten.
+          </p>
+          <p>
+            Zuerst listen wir die Aufgaben auf, die Sie jede Woche wiederholen, und wie lange jede dauert. Dann wählen wir eine aus und richten sie mit den Tools ein, die Amazon schon anbietet, im Modus „nur empfehlen“. Wir prüfen die Ergebnisse jede Woche mit Ihnen, und erst wenn Sie ihnen vertrauen, lassen wir die Automatisierung handeln oder gehen zur nächsten Aufgabe.
+          </p>
+          <p>
+            Die Arbeit macht unser Team in Barcelona. <Link href={p("/about")}>Lernen Sie das Team von Nautilo Studio kennen</Link>.
+          </p>
+        </>
       ),
     },
   ],

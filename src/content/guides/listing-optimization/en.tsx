@@ -8,21 +8,22 @@ const BOOST_LISTINGS = "https://sell.amazon.com/blog/how-to-boost-amazon-listing
 
 const title = "Amazon Conversion Rate Optimization Agency | Nautilo Studio";
 const description =
-  "How a conversion rate optimization agency optimizes an Amazon listing so more visitors buy: titles, bullets, images, A+ content and tests. Free review.";
+  "Nautilo Studio is the conversion rate optimization agency for US Amazon sellers: better titles, images and A+ content so more visitors buy. Free listing review.";
 
 const page: GuideCopy["page"] = {
   slug: "listing-optimization",
-  breadcrumb: "Listing optimisation",
-  question: "How does a conversion rate optimization agency optimize an Amazon listing?",
+  breadcrumb: "Amazon listing optimization",
+  question: "Amazon conversion rate optimization agency: how to turn visits into sales",
   answer:
-    "Listing optimization is conversion rate optimization for Amazon: improving your title, bullet points, images and A+ content so that shoppers who land on your page choose to buy. Start with clear images and a title that says exactly what the product is, then use your bullet points to answer the questions buyers have before they order. Test one change at a time and keep the version that sells better.",
+    "Amazon listing optimization, the work of a conversion rate optimization agency, means improving your title, bullet points, images and A+ content so that shoppers who land on your page choose to buy. Start with clear images and a title that says exactly what the product is, then use your bullet points to answer the questions buyers have before they order. Test one change at a time and keep the version that sells better.",
   description,
   image: {
     src: "/img/service-listing.jpg",
     alt: "Bamboo cutting board with a blank paper tag",
     tile: "bg-apricot",
   },
-  updated: "2026-11-05",
+  updated: "2026-11-16",
+  author: { name: "Maria Giraldo", role: "Listing Optimisation Lead", href: "/about" },
   facts: [
     { value: 9, label: "Photos Amazon lets you upload" },
     { value: 85, suffix: "%", label: "Of the frame the product should fill" },
@@ -32,43 +33,34 @@ const page: GuideCopy["page"] = {
   sections: [
     {
       id: "what-matters",
-      heading: "Which parts of an Amazon listing matter most?",
+      heading: "Amazon listing optimization: the parts that make shoppers buy",
       body: (
-        <ul>
-          <li>
-            <strong>Title.</strong> Say what the product is, then the brand and the details
-            shoppers compare, such as size or colour. Our{" "}
-            <Link href="/services/amazon-seo">Amazon SEO guide</Link> covers which words to use.
-          </li>
-          <li>
-            <strong>Images.</strong> Amazon lets you{" "}
+        <>
+          <p>
+            Once a shopper lands on your product page, four things decide whether they buy: the title, the images, the bullet points and the A+ content. A conversion rate optimization agency works on all four, because each one answers a different question the shopper has.
+          </p>
+          <p>
+            The title says what the product is, then the brand and the details shoppers compare, such as size or colour. Images do the job a shop counter would do: Amazon lets you{" "}
             <a href={PRODUCT_LISTINGS} target="_blank" rel="noopener noreferrer">
               upload up to nine photos
             </a>
-            . Its photo tips recommend a white background and a product that{" "}
+            , and its photo tips recommend a white background with the product{" "}
             <a href={PRODUCT_PHOTOS} target="_blank" rel="noopener noreferrer">
-              fills 85% or more of the frame
+              filling 85% or more of the frame
             </a>
-            .
-          </li>
-          <li>
-            <strong>Bullet points.</strong> You get up to five. Give each one a single benefit and
-            back it up with a fact shoppers can check.
-          </li>
-          <li>
-            <strong>A+ content.</strong> Extra images and text below the listing for brands in
-            Brand Registry. Amazon says{" "}
+            . The five bullet points give one benefit each, backed by a fact shoppers can check. A+ content adds images and text below the listing for brands in Brand Registry, and Amazon says{" "}
             <a href={A_PLUS} target="_blank" rel="noopener noreferrer">
               basic A+ content can increase sales by up to 8%
             </a>
             , based on its internal data.
-          </li>
-        </ul>
+          </p>
+          <blockquote>Shoppers can’t touch your product. Your listing has to do it for them.</blockquote>
+        </>
       ),
     },
     {
       id: "signs",
-      heading: "How do you know a listing needs work?",
+      heading: "Conversion rate optimization: signs your listing needs work",
       body: (
         <>
           <p>
@@ -76,75 +68,70 @@ const page: GuideCopy["page"] = {
             <a href={BOOST_LISTINGS} target="_blank" rel="noopener noreferrer">
               a listing with high views but low sales
             </a>{" "}
-            may need better images or descriptions.
+            may need better images or descriptions. Many visits and few orders mean shoppers find you but aren’t convinced, so the images, bullet points and A+ content come first.
           </p>
-          <ul>
-            <li>
-              <strong>Many visits, few orders.</strong> Shoppers find you but aren’t convinced.
-              Work on images, bullet points and A+ content.
-            </li>
-            <li>
-              <strong>Few visits.</strong> Shoppers aren’t finding the listing. Start with{" "}
-              <Link href="/services/amazon-seo">Amazon SEO</Link> instead.
-            </li>
-            <li>
-              <strong>The same questions keep coming up.</strong> If reviews and customer
-              questions repeat a doubt, answer it in your bullets or images.
-            </li>
-            <li>
-              <strong>Returns for “not as described”.</strong> The listing promises something the
-              product doesn’t match. Fix the wording before you spend more on traffic.
-            </li>
-          </ul>
           <p>
-            Not sure which numbers to look at? Our{" "}
-            <Link href="/services/data-analysis">data analysis guide</Link> explains them.
+            Few visits point to a different problem: shoppers aren’t finding the listing at all, and our{" "}
+            <Link href="/services/amazon-seo">B2B SEO service for Amazon sellers</Link> is the better place to start. Two more signs are worth watching. If reviews and customer questions keep repeating the same doubt, answer it in your bullets or images. And returns marked “not as described” mean the listing promises something the product doesn’t match, so fix the wording before you spend more on traffic.
           </p>
         </>
       ),
     },
     {
       id: "testing",
-      heading: "How does a conversion rate optimization agency test what works?",
+      heading: "How a conversion rate optimization agency tests what works",
       body: (
-        <ol>
-          <li>
-            Pick one element, such as the main image or the title. Change only that.
-          </li>
-          <li>
-            If your brand is in Brand Registry, use Amazon’s{" "}
+        <>
+          <p>
+            Good conversion rate optimization changes one thing at a time. Pick one element, such as the main image or the title, and change only that, so you know what made the difference.
+          </p>
+          <p>
+            If your brand is in Brand Registry, Amazon’s{" "}
             <a href={BOOST_LISTINGS} target="_blank" rel="noopener noreferrer">
               Manage Your Experiments
             </a>{" "}
-            to show two versions to shoppers and compare the results.
-          </li>
-          <li>Let the test run long enough to collect real orders, not just a few days.</li>
-          <li>Keep the winning version, then move on to the next element.</li>
-        </ol>
+            shows two versions to shoppers and compares the results. Let the test run long enough to collect real orders, not just a few days, then keep the winning version and move on to the next element.
+          </p>
+        </>
       ),
     },
     {
       id: "mistakes",
-      heading: "What mistakes stop shoppers from buying?",
+      heading: "Amazon listing mistakes that stop shoppers from buying",
       body: (
-        <ul>
-          <li>
-            <strong>Blurry or dark images.</strong> Shoppers can’t touch the product, so the
-            photos have to do that job.
-          </li>
-          <li>
-            <strong>Features without benefits.</strong> “Stainless steel” means more when you say
-            it keeps drinks cold.
-          </li>
-          <li>
-            <strong>Claims you can’t back up.</strong> They lead to returns and bad reviews, and
-            can break Amazon’s rules.
-          </li>
-          <li>
-            <strong>Details that don’t match.</strong> The title, bullets and images should all
-            describe the same size, colour and contents.
-          </li>
-        </ul>
+        <>
+          <p>
+            Blurry or dark images are the most common mistake: shoppers can’t touch the product, so the photos have to do that job. Close behind are features without benefits. “Stainless steel” means more when you say it keeps drinks cold.
+          </p>
+          <p>
+            Claims you can’t back up lead to returns and bad reviews, and can break Amazon’s rules. Details that don’t match hurt too: the title, bullets and images should all describe the same size, colour and contents. The words shoppers search for belong in the visible text and in the hidden search terms, and our step-by-step guide to{" "}
+            <Link href="/blog/amazon-backend-keywords">filling in Amazon backend keywords</Link> covers the second.
+          </p>
+        </>
+      ),
+    },
+    {
+      id: "cro-service",
+      heading: "What our conversion rate optimization agency does for Amazon sellers",
+      figure: {
+        src: "/img/service-listing.jpg",
+        alt: "Product photo of a bamboo cutting board on a plain background, the kind of clean main image Amazon listing optimization starts with",
+        width: 1024,
+        height: 1024,
+        caption: "One product, one clear photo: where listing work starts. Illustration, not a client listing.",
+      },
+      body: (
+        <>
+          <p>
+            Think of it as Amazon listing optimization with a test behind every change. Our conversion rate optimization service follows four steps, one listing at a time.
+          </p>
+          <p>
+            First we read your listing the way a shopper does and list what is missing or unclear. Then we rewrite the title and bullet points so each one answers a buyer’s question, and we brief new images and A+ content where they would help most. Finally we test one change at a time and keep the version that sells better.
+          </p>
+          <p>
+            The work is done by our team in Barcelona. <Link href="/about">Meet the team behind Nautilo Studio</Link>.
+          </p>
+        </>
       ),
     },
   ],

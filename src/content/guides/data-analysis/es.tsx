@@ -8,23 +8,23 @@ const BOOST_LISTINGS = "https://sell.amazon.com/blog/how-to-boost-amazon-listing
 
 const p = (path: string) => localePath("es", path);
 
-const title = "Análisis de datos en Amazon: qué números | Nautilo Studio";
+const title = "Agencia de analítica de marketing Amazon | Nautilo Studio";
 const description =
-  "Los números de Amazon que los vendedores en EE. UU. deberían seguir cada semana, qué te dice cada uno y dónde verlo en Seller Central. Revisión gratis.";
+  "Nautilo Studio, agencia de analítica de marketing para vendedores de Amazon en EE. UU.: vemos los números que muestran dónde pierdes ventas. Revisión gratis.";
 
 const page: GuideCopy["page"] = {
   slug: "data-analysis",
-  breadcrumb: "Análisis de datos",
-  question: "¿Qué números de Amazon deberían seguir los vendedores?",
+  breadcrumb: "Análisis de datos de Amazon",
+  question: "Agencia de analítica de marketing para Amazon: los números que importan",
   answer:
-    "Empieza por cuatro números en cada producto: sesiones, tasa de conversión, si tienes la Oferta destacada y tu coste publicitario de ventas (ACOS). Juntos te dicen si el problema está en que te encuentren, en que te elijan o en que gastas demasiado en anuncios. Revísalos cada semana, compáralos con la semana anterior y cambia una sola cosa cada vez.",
+    "El análisis de datos de Amazon, tal como lo hace una agencia de analítica de marketing, empieza por cuatro números en cada producto: sesiones, tasa de conversión, si tienes la Oferta destacada y tu coste publicitario de ventas (ACOS). Juntos te dicen si el problema está en que te encuentren, en que te elijan o en que gastas demasiado en anuncios. Revísalos cada semana, compáralos con la semana anterior y cambia una sola cosa cada vez.",
   description,
   image: {
     src: "/img/service-data.jpg",
     alt: "Paquetes de cartón apilados en columnas crecientes, como un gráfico de barras",
     tile: "bg-royal",
   },
-  updated: "2026-11-07",
+  updated: "2026-11-16",
   facts: [
     { value: 4, label: "Números que seguir en cada producto" },
     {
@@ -38,104 +38,97 @@ const page: GuideCopy["page"] = {
   sections: [
     {
       id: "numbers",
-      heading: "¿Qué números importan más?",
+      heading: "Análisis de datos de Amazon: los cuatro números que más importan",
       body: (
-        <ul>
-          <li>
-            <strong>Sesiones.</strong> Cuántos compradores visitaron la página de tu producto. Te
-            dice si la gente te encuentra.
-          </li>
-          <li>
-            <strong>Tasa de conversión.</strong> La parte de esas visitas que acabó en pedido. Te
-            dice si la ficha convence.
-          </li>
-          <li>
-            <strong>Oferta destacada.</strong> La oferta junto al botón de compra. Amazon explica que
-            el precio, la disponibilidad y el envío influyen en{" "}
+        <>
+          <p>
+            Seller Central está lleno de informes, pero una agencia de analítica de marketing empieza por cuatro números en cada producto. Las sesiones dicen cuántos compradores visitaron la página, es decir, si te encuentran. La tasa de conversión es la parte de esas visitas que acabó en pedido, es decir, si la ficha convence.
+          </p>
+          <p>
+            La Oferta destacada es la oferta junto al botón Comprar ya, y Amazon dice que precio, disponibilidad y envío influyen en{" "}
             <a href={BOOST_LISTINGS} target="_blank" rel="noopener noreferrer">
               ganar la Oferta destacada
             </a>
-            , lo que puede traer grandes aumentos de ventas.
-          </li>
-          <li>
-            <strong>ACOS.</strong> Gasto en anuncios dividido entre los ingresos por anuncios. Amazon
-            Ads explica que tu{" "}
+            , lo que puede aumentar mucho las ventas. El ACOS es el gasto en anuncios dividido entre los ingresos por anuncios, y Amazon Ads dice que tu{" "}
             <a href={ACOS} target="_blank" rel="noopener noreferrer">
               ACOS tiene que ser menor que tu margen de beneficio
             </a>{" "}
             para que los anuncios sean rentables.
-          </li>
-        </ul>
+          </p>
+          <blockquote>Cuatro números, revisados cada semana, te enseñan dónde se pierden ventas.</blockquote>
+        </>
       ),
     },
     {
       id: "what-they-mean",
-      heading: "¿Qué te dicen los números?",
+      heading: "Qué le dicen los números a una agencia de analítica de marketing",
       body: (
-        <ul>
-          <li>
-            <strong>Pocas sesiones.</strong> Los compradores no encuentran el producto. Revisa tus
-            palabras clave con nuestra <Link href={p("/services/amazon-seo")}>guía de SEO en Amazon</Link>.
-          </li>
-          <li>
-            <strong>Muchas sesiones, poca conversión.</strong> Los compradores llegan pero no
-            compran. Trabaja la ficha con nuestra{" "}
-            <Link href={p("/services/listing-optimization")}>guía de optimización de fichas</Link>.
-          </li>
-          <li>
-            <strong>Oferta destacada perdida.</strong> Compara tu precio, tu stock y tu envío con las
-            demás ofertas del mismo producto.
-          </li>
-          <li>
-            <strong>ACOS por encima de tu margen.</strong> Los anuncios pierden dinero. Pausa los
-            términos de búsqueda que gastan sin vender antes de subir ningún presupuesto.
-          </li>
-        </ul>
+        <>
+          <p>
+            Leídos juntos, los cuatro números señalan un problema cada vez. Pocas sesiones significan que no encuentran el producto, así que primero van las palabras clave del título, las viñetas y los términos de búsqueda. Muchas sesiones con baja conversión significan que llegan pero no compran, y nuestro{" "}
+            <Link href={p("/services/listing-optimization")}>servicio de optimización de la tasa de conversión para fichas de Amazon</Link> está pensado para ese caso.
+          </p>
+          <p>
+            Si pierdes la Oferta destacada, compara tu precio, stock y envío con las demás ofertas del mismo producto. Si tu ACOS supera tu margen, los anuncios pierden dinero: pausa los términos de búsqueda que gastan sin vender antes de subir ningún presupuesto.
+          </p>
+        </>
       ),
     },
     {
       id: "where-to-find",
-      heading: "¿Dónde encuentras estos datos?",
+      heading: "Dónde encontrar tus datos de Amazon en Seller Central",
       body: (
-        <ul>
-          <li>
-            <strong>Informes empresariales.</strong> En Seller Central, en Informes. Muestran
-            sesiones, páginas vistas y ventas de cada producto.
-          </li>
-          <li>
-            <strong>Brand Analytics.</strong> Para marcas del Registro de Marcas. Su{" "}
+        <>
+          <p>
+            Los Informes de negocio, en Informes de Seller Central, muestran sesiones, páginas vistas y ventas de cada producto. Las marcas en Brand Registry tienen además Brand Analytics, cuyo{" "}
             <a href={BRAND_ANALYTICS} target="_blank" rel="noopener noreferrer">
-              panel de rendimiento de consultas de búsqueda
+              panel Search Query Performance
             </a>{" "}
-            muestra impresiones, clics y añadidos al carrito de las búsquedas que llevan a tus
-            productos.
-          </li>
-          <li>
-            <strong>Informes de publicidad.</strong> En el administrador de campañas. Muestran
-            gasto, ventas, clics y ACOS de cada campaña y término de búsqueda.
-          </li>
-          <li>
-            <strong>Profit Analytics.</strong> En Seller Central. Muestra lo que Amazon te cobra por
-            cada producto. Las tarifas cambian cada año: mira{" "}
-            <Link href={p("/blog/amazon-fba-fees-2027")}>qué cambia en las tarifas de Amazon FBA para 2027</Link>.
-          </li>
-          <li>
-            <strong>Tu propia hoja de cálculo.</strong> Una fila por semana y por producto, para ver
-            tendencias que un solo informe esconde.
-          </li>
-        </ul>
+            muestra impresiones, clics y añadidos al carrito de las búsquedas que llevan a tus productos. Los informes de publicidad, en el administrador de campañas, muestran gasto, ventas, clics y ACOS por campaña y término de búsqueda.
+          </p>
+          <p>
+            Profit Analytics, también en Seller Central, muestra lo que Amazon te cobra por cada producto. Las tarifas cambian cada año, así que lee{" "}
+            <Link href={p("/blog/amazon-fba-fees-2027")}>qué cambia en las tarifas de Amazon FBA para 2027</Link> antes de fijar precios. Y lleva tu propia hoja, con una fila por semana y por producto, para ver tendencias que un solo informe esconde.
+          </p>
+        </>
       ),
     },
     {
       id: "weekly-routine",
-      heading: "¿Cómo se crea una rutina semanal?",
+      heading: "Una rutina semanal de informes de Amazon que puedas mantener",
       body: (
-        <ol>
-          <li>Elige un día a la semana y descarga siempre los mismos informes.</li>
-          <li>Compara cada número con la semana anterior y con la misma semana del mes pasado.</li>
-          <li>Apunta lo que cambiaste, como el precio, las imágenes o las pujas, y cuándo.</li>
-          <li>Elige un problema que arreglar esta semana. Comprueba el resultado la siguiente.</li>
-        </ol>
+        <>
+          <p>
+            El análisis de datos de Amazon funciona mejor como hábito. Elige un día a la semana y saca siempre los mismos informes; luego compara cada número con la semana anterior y con la misma semana del mes pasado.
+          </p>
+          <p>
+            Apunta todo lo que cambies, como precio, imágenes o pujas, y cuándo. Después elige un problema que arreglar esta semana y comprueba el resultado la siguiente. Un arreglo cada vez parece más lento, pero es la única forma de saber qué funcionó.
+          </p>
+        </>
+      ),
+    },
+    {
+      id: "analytics-service",
+      heading: "Qué hace nuestra agencia de analítica de marketing por los vendedores de Amazon",
+      figure: {
+        src: "/img/service-data.jpg",
+        alt: "Paquetes de cartón apilados en columnas crecientes como un gráfico de barras, una imagen del análisis de datos de Amazon semana a semana",
+        width: 1536,
+        height: 1024,
+        caption: "Los números solo ayudan si los comparas en el tiempo. Ilustración, no son datos de clientes.",
+      },
+      body: (
+        <>
+          <p>
+            Piensa en ello como una agencia de analítica web para tu tienda de Amazon: la misma disciplina, aplicada a los informes que te da Amazon. Nuestro servicio de analítica de marketing sigue cuatro pasos, producto a producto.
+          </p>
+          <p>
+            Primero sacamos los cuatro números de cada producto y preparamos una hoja que puedas leer en minutos. Después vemos dónde se pierden ventas: en que te encuentren, en que te elijan o en el gasto en anuncios. Acordamos un arreglo para la semana y, a la siguiente, comprobamos si funcionó antes de seguir.
+          </p>
+          <p>
+            Lo hace nuestro equipo en Barcelona. <Link href={p("/about")}>Conoce al equipo de Nautilo Studio</Link>.
+          </p>
+        </>
       ),
     },
   ],

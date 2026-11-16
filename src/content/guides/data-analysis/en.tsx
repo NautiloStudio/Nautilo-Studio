@@ -5,23 +5,24 @@ const BRAND_ANALYTICS = "https://sell.amazon.com/blog/brand-analytics";
 const ACOS = "https://advertising.amazon.com/library/guides/acos-advertising-cost-of-sales";
 const BOOST_LISTINGS = "https://sell.amazon.com/blog/how-to-boost-amazon-listings";
 
-const title = "Amazon Data Analysis | Marketing Analytics Agency | Nautilo";
+const title = "Marketing Analytics Agency for Amazon | Nautilo Studio";
 const description =
-  "The Amazon numbers a marketing analytics agency tracks every week, what each one tells you and where to find it in Seller Central. Get a free listing review.";
+  "Nautilo Studio is the marketing analytics agency for US Amazon sellers: we track the numbers that show where sales leak. Get a free listing review today.";
 
 const page: GuideCopy["page"] = {
   slug: "data-analysis",
-  breadcrumb: "Data analysis",
-  question: "Which Amazon numbers does a marketing analytics agency track?",
+  breadcrumb: "Amazon data analysis",
+  question: "Marketing analytics agency for Amazon: the numbers that matter",
   answer:
-    "As a marketing analytics agency, we start with four numbers for each product: sessions, conversion rate, whether you hold the Featured Offer, and your advertising cost of sales (ACOS). Together they show whether a problem is about being found, being chosen or spending too much on ads. Check them every week, compare them with the week before, and change one thing at a time.",
+    "Amazon data analysis, the way a marketing analytics agency does it, starts with four numbers for each product: sessions, conversion rate, whether you hold the Featured Offer, and your advertising cost of sales (ACOS). Together they show whether a problem is about being found, being chosen or spending too much on ads. Check them every week, compare them with the week before, and change one thing at a time.",
   description,
   image: {
     src: "/img/service-data.jpg",
     alt: "Cardboard parcels stacked in rising columns like a bar chart",
     tile: "bg-royal",
   },
-  updated: "2026-11-05",
+  updated: "2026-11-16",
+  author: { name: "Veronika Matkovska", role: "Data Analysis Lead", href: "/about" },
   facts: [
     { value: 4, label: "Numbers to track for every product" },
     { value: 50, suffix: "%", label: "ACOS in Amazon’s example: $50 spent, $100 earned" },
@@ -31,102 +32,97 @@ const page: GuideCopy["page"] = {
   sections: [
     {
       id: "numbers",
-      heading: "Which numbers matter most?",
+      heading: "Amazon data analysis: the four numbers that matter most",
       body: (
-        <ul>
-          <li>
-            <strong>Sessions.</strong> How many shoppers visited your product page. It tells you
-            whether people can find you.
-          </li>
-          <li>
-            <strong>Conversion rate.</strong> The share of those visits that turned into an order.
-            It tells you whether the listing convinces them.
-          </li>
-          <li>
-            <strong>Featured Offer.</strong> The offer next to the Buy Now button. Amazon says
-            price, availability and shipping play into{" "}
+        <>
+          <p>
+            Seller Central is full of reports, but a marketing analytics agency starts with four numbers for each product. Sessions tell you how many shoppers visited the product page, so whether people can find you. Conversion rate is the share of those visits that turned into an order, so whether the listing convinces them.
+          </p>
+          <p>
+            The Featured Offer is the offer next to the Buy Now button, and Amazon says price, availability and shipping play into{" "}
             <a href={BOOST_LISTINGS} target="_blank" rel="noopener noreferrer">
               winning the Featured Offer
             </a>
-            , which can lead to large increases in sales.
-          </li>
-          <li>
-            <strong>ACOS.</strong> Ad spend divided by ad revenue. Amazon Ads says your{" "}
+            , which can lead to large increases in sales. ACOS is ad spend divided by ad revenue, and Amazon Ads says your{" "}
             <a href={ACOS} target="_blank" rel="noopener noreferrer">
               ACOS needs to be lower than your profit margin
             </a>{" "}
             for ads to stay profitable.
-          </li>
-        </ul>
+          </p>
+          <blockquote>Four numbers, checked every week, show you where sales leak.</blockquote>
+        </>
       ),
     },
     {
       id: "what-they-mean",
-      heading: "What do the numbers tell a marketing analytics agency?",
+      heading: "What the numbers tell a marketing analytics agency",
       body: (
-        <ul>
-          <li>
-            <strong>Few sessions.</strong> Shoppers aren’t finding the product. Look at your
-            keywords with our <Link href="/services/amazon-seo">Amazon SEO guide</Link>.
-          </li>
-          <li>
-            <strong>Many sessions, low conversion.</strong> Shoppers arrive but don’t buy. Work on
-            the listing with our{" "}
-            <Link href="/services/listing-optimization">listing optimisation guide</Link>.
-          </li>
-          <li>
-            <strong>Featured Offer lost.</strong> Check your price, stock and shipping against the
-            other offers on the same product.
-          </li>
-          <li>
-            <strong>ACOS above your margin.</strong> Ads are losing money. Pause the search terms
-            that spend without selling before you raise any budget.
-          </li>
-        </ul>
+        <>
+          <p>
+            Read together, the four numbers point to one problem at a time. Few sessions mean shoppers aren’t finding the product, so the keywords in your title, bullets and search terms come first. Many sessions with a low conversion rate mean shoppers arrive but don’t buy, and our{" "}
+            <Link href="/services/listing-optimization">conversion rate optimization service for Amazon listings</Link> is built for that case.
+          </p>
+          <p>
+            If you lose the Featured Offer, check your price, stock and shipping against the other offers on the same product. If your ACOS is above your margin, ads are losing money: pause the search terms that spend without selling before you raise any budget.
+          </p>
+        </>
       ),
     },
     {
       id: "where-to-find",
-      heading: "Where do you find this data?",
+      heading: "Where to find your Amazon data in Seller Central",
       body: (
-        <ul>
-          <li>
-            <strong>Business Reports.</strong> In Seller Central, under Reports. They show
-            sessions, page views and sales for each product.
-          </li>
-          <li>
-            <strong>Brand Analytics.</strong> For brands in Brand Registry. Its{" "}
+        <>
+          <p>
+            Business Reports, under Reports in Seller Central, show sessions, page views and sales for each product. Brands in Brand Registry also get Brand Analytics, whose{" "}
             <a href={BRAND_ANALYTICS} target="_blank" rel="noopener noreferrer">
               Search Query Performance dashboard
             </a>{" "}
-            shows impressions, clicks and cart adds for the searches that lead to your products.
-          </li>
-          <li>
-            <strong>Advertising reports.</strong> In the campaign manager. They show ad spend,
-            sales, clicks and ACOS for each campaign and search term.
-          </li>
-          <li>
-            <strong>Profit Analytics.</strong> In Seller Central. It shows what Amazon charges you
-            for each product. Fees change every year: see{" "}
-            <Link href="/blog/amazon-fba-fees-2027">what changes in Amazon FBA fees for 2027</Link>.
-          </li>
-          <li>
-            <strong>Your own sheet.</strong> One row per week and per product, so you can see
-            trends that a single report hides.
-          </li>
-        </ul>
+            shows impressions, clicks and cart adds for the searches that lead to your products. Advertising reports, in the campaign manager, show ad spend, sales, clicks and ACOS for each campaign and search term.
+          </p>
+          <p>
+            Profit Analytics, also in Seller Central, shows what Amazon charges you for each product. Fees change every year, so read{" "}
+            <Link href="/blog/amazon-fba-fees-2027">what changes in Amazon FBA fees for 2027</Link> before you plan prices. Then keep your own sheet, with one row per week and per product, to see trends that a single report hides.
+          </p>
+        </>
       ),
     },
     {
       id: "weekly-routine",
-      heading: "How do you build a weekly routine?",
+      heading: "A weekly Amazon reporting routine you can keep",
       body: (
-        <ol>
-          <li>Pick one day a week and pull the same reports each time.</li>
-          <li>Compare each number with the week before and the same week last month.</li>
-          <li>Write down anything you changed, such as price, images or bids, and when.</li>
-          <li>Choose one problem to fix this week. Check the result the next week.</li>
-        </ol>
+        <>
+          <p>
+            Amazon data analysis works best as a habit. Pick one day a week and pull the same reports each time, then compare each number with the week before and the same week last month.
+          </p>
+          <p>
+            Write down anything you changed, such as price, images or bids, and when. Then choose one problem to fix this week and check the result the next week. One fix at a time is slower on paper, but it is the only way to know what worked.
+          </p>
+        </>
+      ),
+    },
+    {
+      id: "analytics-service",
+      heading: "What our marketing analytics agency does for Amazon sellers",
+      figure: {
+        src: "/img/service-data.jpg",
+        alt: "Cardboard parcels stacked in rising columns like a bar chart, a picture of Amazon data analysis week by week",
+        width: 1536,
+        height: 1024,
+        caption: "Numbers only help when you compare them over time. Illustration, not client data.",
+      },
+      body: (
+        <>
+          <p>
+            Think of it as a web analytics agency for your Amazon store: the same discipline, applied to the reports Amazon gives you. Our marketing analytics service follows four steps, one product at a time.
+          </p>
+          <p>
+            First we pull the four numbers for each product and set up one sheet you can read in minutes. Then we find where sales leak, between being found, being chosen and ad spend. We agree on one fix for the week, and the next week we check whether it worked before moving on.
+          </p>
+          <p>
+            The work is done by our team in Barcelona. <Link href="/about">Meet the team behind Nautilo Studio</Link>.
+          </p>
+        </>
       ),
     },
   ],
@@ -142,12 +138,12 @@ const page: GuideCopy["page"] = {
         "Divide ad spend by ad revenue and multiply by 100. Amazon Ads gives the example of $50 spent on a campaign that earned $100, which is an ACOS of 50%.",
     },
     {
-      question: "Do I need Brand Registry to analyse my data?",
+      question: "Do I need Brand Registry to analyze my data?",
       answer:
         "Not for the basics. Business Reports and advertising reports are in Seller Central and the campaign manager. Brand Analytics, with search query data, needs a brand in Brand Registry.",
     },
     {
-      question: "Can Nautilo Studio analyse my numbers?",
+      question: "Can Nautilo Studio analyze my numbers?",
       answer:
         "Yes. We work as a marketing analytics agency for Amazon sellers, and data analysis is one of our services. Send us a listing for a free review, or talk to us about the reports you want to understand.",
     },

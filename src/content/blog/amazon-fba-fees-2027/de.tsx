@@ -20,9 +20,10 @@ const post: BlogPost = {
   excerpt:
     "Amazon hat am 5. November seine US-Gebühren für 2027 angekündigt. Was sich ändert, wann, und wie Sie die Folgen für jedes Produkt prüfen.",
   published: "2026-11-11",
-  updated: "2026-11-11",
+  updated: "2026-11-16",
   readMinutes: 8,
-  hero: { ...heroPhoto, alt: "Lagergang mit hohen Regalen voller Kartons" },
+  author: { name: "Veronika Matkovska", role: "Data Analysis Lead", href: "/about" },
+  hero: { ...heroPhoto, alt: "Lagergang voller Kartons: der Bestand, für den die Amazon FBA Gebühren 2027 gelten" },
   intro: (
     <>
       <p>
@@ -64,7 +65,7 @@ const post: BlogPost = {
     },
     {
       id: "five-changes",
-      heading: "Die 5 wichtigsten Änderungen für US-Händler",
+      heading: "Die 5 wichtigsten Änderungen der Amazon FBA Gebühren für US-Händler",
       body: (
         <>
           <h3>1. Versandgebühren steigen im Schnitt um 0,19 $ pro Einheit</h3>
@@ -226,7 +227,8 @@ const post: BlogPost = {
             </li>
             <li>
               <strong>Mit 28 Tagen Reichweite planen.</strong> Stellen Sie den Nachschub so ein, dass
-              Ihre Bestseller nicht unter vier Wochen Bestand fallen.
+              Ihre Bestseller nicht unter vier Wochen Bestand fallen.{" "}
+              <Link href={p("/services/ai-automation")}>Amazon-Marketing-Automatisierung mit KI</Link> kann den Bestand für Sie im Blick behalten.
             </li>
             <li>
               <strong>Große Artikel erneut prüfen.</strong> Mit den neuen Stufen und
@@ -234,9 +236,8 @@ const post: BlogPost = {
             </li>
           </ul>
           <p>
-            Gebühren sind nur ein Teil des Gewinns. Wie Sitzungen, Conversion und Werbung
-            zusammenspielen, zeigt unser{" "}
-            <Link href={p("/services/data-analysis")}>Ratgeber zu den Amazon-Zahlen, die zählen</Link>.
+            Gebühren sind nur ein Teil des Gewinns: Mehr Besuche in Verkäufe zu verwandeln, hilft ebenfalls. So arbeitet unsere{" "}
+            <Link href={p("/services/listing-optimization")}>Agentur für Conversion-Rate-Optimierung von Amazon-Listings</Link>.
           </p>
         </>
       ),
@@ -287,7 +288,7 @@ const post: BlogPost = {
   ],
   cta: {
     text: "Neue Gebühren verändern die Rechnung für jedes Produkt. Sehen Sie, welche Zahlen Sie jede Woche beobachten sollten, oder lassen Sie uns kostenlos eines Ihrer Listings ansehen.",
-    pillar: { href: "/services/data-analysis", label: "Unseren Ratgeber zur Datenanalyse lesen" },
+    pillar: { href: "/services/data-analysis", label: "Unseren Marketing-Analytics-Service für Amazon ansehen" },
     formHeading: "Unsicher, was die Gebühren 2027 für Sie bedeuten?",
     formText: "Senden Sie uns ein Listing, und wir sagen Ihnen kostenlos, was wir zuerst prüfen würden.",
   },

@@ -20,9 +20,10 @@ const post: BlogPost = {
   excerpt:
     "Amazon anunció sus tarifas de 2027 en EE. UU. el 5 de noviembre. Qué cambia, cuándo y cómo ver lo que supone para cada uno de tus productos.",
   published: "2026-11-11",
-  updated: "2026-11-11",
+  updated: "2026-11-16",
   readMinutes: 8,
-  hero: { ...heroPhoto, alt: "Pasillo de un almacén con estanterías altas llenas de cajas de cartón" },
+  author: { name: "Veronika Matkovska", role: "Data Analysis Lead", href: "/about" },
+  hero: { ...heroPhoto, alt: "Pasillo de un almacén lleno de cajas: el stock al que se aplican las tarifas de Amazon FBA 2027" },
   intro: (
     <>
       <p>
@@ -64,7 +65,7 @@ const post: BlogPost = {
     },
     {
       id: "five-changes",
-      heading: "Los 5 cambios clave para vendedores en EE. UU.",
+      heading: "Los 5 cambios clave en las tarifas de Amazon FBA para vendedores en EE. UU.",
       body: (
         <>
           <h3>1. La tarifa de logística sube 0,19 $ por unidad de media</h3>
@@ -228,7 +229,8 @@ const post: BlogPost = {
             </li>
             <li>
               <strong>Planifica 28 días de suministro.</strong> Ajusta la reposición para que tus
-              productos más vendidos no bajen de cuatro semanas de stock.
+              productos más vendidos no bajen de cuatro semanas de stock. La{" "}
+              <Link href={p("/services/ai-automation")}>automatización del marketing en Amazon con IA</Link> puede vigilar el stock por ti.
             </li>
             <li>
               <strong>Revisa los artículos grandes.</strong> Con los nuevos tramos y tarifas de
@@ -236,9 +238,8 @@ const post: BlogPost = {
             </li>
           </ul>
           <p>
-            Las tarifas son solo una parte del beneficio. Para ver cómo encajan sesiones, conversión y
-            publicidad, lee nuestra{" "}
-            <Link href={p("/services/data-analysis")}>guía de las cifras de Amazon que importan</Link>.
+            Las tarifas son solo una parte del beneficio: convertir más visitas en ventas también ayuda. Mira cómo trabaja nuestra{" "}
+            <Link href={p("/services/listing-optimization")}>agencia de optimización de la tasa de conversión para fichas de Amazon</Link>.
           </p>
         </>
       ),
@@ -289,7 +290,7 @@ const post: BlogPost = {
   ],
   cta: {
     text: "Las nuevas tarifas cambian las cuentas de cada producto. Mira qué cifras vigilar cada semana o deja que echemos un vistazo gratis a una de tus fichas.",
-    pillar: { href: "/services/data-analysis", label: "Leer nuestra guía de análisis de datos" },
+    pillar: { href: "/services/data-analysis", label: "Ver nuestro servicio de analítica de marketing para Amazon" },
     formHeading: "¿No sabes qué suponen para ti las tarifas de 2027?",
     formText: "Envíanos una ficha y te diremos, gratis, qué revisaríamos primero.",
   },

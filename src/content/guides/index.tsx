@@ -10,8 +10,11 @@ import type { GuideCopy } from "./types";
 type Slug = "amazon-seo" | "listing-optimization" | "data-analysis" | "ai-automation";
 
 // The blog post a service page sends readers to, in the "From our blog" box (funnel: blog <-> service page).
-const relatedPosts: Partial<Record<Slug, string>> = {
+const relatedPosts: Record<Slug, string> = {
   "amazon-seo": "amazon-backend-keywords",
+  "listing-optimization": "amazon-backend-keywords",
+  "data-analysis": "amazon-fba-fees-2027",
+  "ai-automation": "amazon-fba-fees-2027",
 };
 
 // Each guide has one file per language: src/content/guides/<slug>/<lang>.tsx

@@ -20,9 +20,10 @@ const post: BlogPost = {
   excerpt:
     "Amazon a annoncé ses frais 2027 aux États-Unis le 5 novembre. Ce qui change, quand, et comment mesurer l’effet sur chacun de vos produits.",
   published: "2026-11-11",
-  updated: "2026-11-11",
+  updated: "2026-11-16",
   readMinutes: 8,
-  hero: { ...heroPhoto, alt: "Allée d’entrepôt aux hautes étagères remplies de cartons" },
+  author: { name: "Veronika Matkovska", role: "Data Analysis Lead", href: "/about" },
+  hero: { ...heroPhoto, alt: "Allée d’entrepôt remplie de cartons : le stock auquel s’appliquent les frais Amazon FBA 2027" },
   intro: (
     <>
       <p>
@@ -63,7 +64,7 @@ const post: BlogPost = {
     },
     {
       id: "five-changes",
-      heading: "Les 5 changements clés pour les vendeurs aux États-Unis",
+      heading: "Les 5 changements clés des frais Amazon FBA pour les vendeurs aux États-Unis",
       body: (
         <>
           <h3>1. Les frais d’expédition augmentent de 0,19 $ par unité en moyenne</h3>
@@ -229,7 +230,7 @@ const post: BlogPost = {
             </li>
             <li>
               <strong>Prévoyez 28 jours de couverture.</strong> Réglez le réapprovisionnement pour que
-              vos meilleures ventes ne descendent pas sous quatre semaines de stock.
+              vos meilleures ventes ne descendent pas sous quatre semaines de stock. L’<Link href={p("/services/ai-automation")}>automatisation du marketing Amazon par l’IA</Link> peut surveiller vos stocks pour vous.
             </li>
             <li>
               <strong>Revérifiez les grands articles.</strong> Avec les nouvelles tranches et les frais
@@ -237,9 +238,8 @@ const post: BlogPost = {
             </li>
           </ul>
           <p>
-            Les frais ne sont qu’une partie du bénéfice. Pour voir comment sessions, conversion et
-            publicité s’articulent, lisez notre{" "}
-            <Link href={p("/services/data-analysis")}>guide des chiffres Amazon qui comptent</Link>.
+            Les frais ne sont qu’une partie du bénéfice : transformer plus de visites en ventes aide aussi. Découvrez comment travaille notre{" "}
+            <Link href={p("/services/listing-optimization")}>agence d’optimisation du taux de conversion des fiches Amazon</Link>.
           </p>
         </>
       ),
@@ -290,7 +290,7 @@ const post: BlogPost = {
   ],
   cta: {
     text: "Les nouveaux frais changent les calculs de chaque produit. Voyez quels chiffres suivre chaque semaine, ou laissez-nous jeter un œil gratuit à l’une de vos fiches.",
-    pillar: { href: "/services/data-analysis", label: "Lire notre guide de l’analyse de données" },
+    pillar: { href: "/services/data-analysis", label: "Voir notre service d’analyse marketing pour Amazon" },
     formHeading: "Vous ne savez pas ce que les frais 2027 changent pour vous ?",
     formText: "Envoyez-nous une fiche et nous vous dirons, gratuitement, ce que nous vérifierions en premier.",
   },

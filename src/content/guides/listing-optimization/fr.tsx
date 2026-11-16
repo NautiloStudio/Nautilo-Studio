@@ -9,23 +9,23 @@ const BOOST_LISTINGS = "https://sell.amazon.com/blog/how-to-boost-amazon-listing
 
 const p = (path: string) => localePath("fr", path);
 
-const title = "Optimisation de fiche produit Amazon | Nautilo Studio";
+const title = "Agence d’optimisation de conversion Amazon | Nautilo Studio";
 const description =
-  "Comment optimiser une fiche Amazon pour que plus de visiteurs achètent : titre, puces, images, contenu A+ et tests. Guide PDF gratuit et audit offert.";
+  "Nautilo Studio, agence d’optimisation du taux de conversion des vendeurs Amazon aux États-Unis : titres, images et A+ qui font acheter. Audit gratuit.";
 
 const page: GuideCopy["page"] = {
   slug: "listing-optimization",
-  breadcrumb: "Optimisation des fiches",
-  question: "Comment optimiser une fiche Amazon pour que plus d’acheteurs achètent ?",
+  breadcrumb: "Optimisation des fiches Amazon",
+  question: "Agence d’optimisation du taux de conversion Amazon : des visites aux ventes",
   answer:
-    "Optimiser une fiche, c’est améliorer le titre, les puces, les images et le contenu A+ pour que les acheteurs qui arrivent sur votre page choisissent d’acheter. Commencez par des images claires et un titre qui dit exactement ce qu’est le produit, puis servez-vous des puces pour répondre aux questions que les acheteurs se posent avant de commander. Testez un changement à la fois et gardez la version qui vend le mieux.",
+    "L’optimisation des fiches Amazon, le métier d’une agence d’optimisation du taux de conversion, consiste à améliorer le titre, les puces, les images et le contenu A+ pour que les acheteurs qui arrivent sur votre page choisissent d’acheter. Commencez par des images claires et un titre qui dit exactement ce qu’est le produit, puis servez-vous des puces pour répondre aux questions que les acheteurs se posent avant de commander. Testez un changement à la fois et gardez la version qui vend le mieux.",
   description,
   image: {
     src: "/img/service-listing.jpg",
     alt: "Planche à découper en bambou avec une étiquette en papier vierge",
     tile: "bg-apricot",
   },
-  updated: "2026-11-07",
+  updated: "2026-11-16",
   facts: [
     { value: 9, label: "Photos qu’Amazon vous permet d’ajouter" },
     { value: 85, suffix: " %", label: "Du cadre que le produit devrait remplir" },
@@ -40,118 +40,105 @@ const page: GuideCopy["page"] = {
   sections: [
     {
       id: "what-matters",
-      heading: "Quelles parties d’une fiche Amazon comptent le plus ?",
+      heading: "Optimisation des fiches Amazon : ce qui fait acheter",
       body: (
-        <ul>
-          <li>
-            <strong>Titre.</strong> Dites ce qu’est le produit, puis la marque et les détails que les
-            acheteurs comparent, comme la taille ou la couleur. Notre{" "}
-            <Link href={p("/services/amazon-seo")}>guide SEO Amazon</Link> explique quels mots utiliser.
-          </li>
-          <li>
-            <strong>Images.</strong> Amazon vous permet{" "}
+        <>
+          <p>
+            Quand un acheteur arrive sur votre page produit, quatre éléments décident s’il achète : le titre, les images, les puces et le contenu A+. Une agence d’optimisation du taux de conversion travaille sur les quatre, car chacun répond à une question différente de l’acheteur.
+          </p>
+          <p>
+            Le titre dit ce qu’est le produit, puis la marque et les détails que l’on compare, comme la taille ou la couleur. Les images font le travail d’un comptoir de magasin : Amazon vous permet de{" "}
             <a href={PRODUCT_LISTINGS} target="_blank" rel="noopener noreferrer">
-              d’ajouter jusqu’à neuf photos
+              publier jusqu’à neuf photos
             </a>
-            . Ses conseils photo recommandent un fond blanc et un produit qui{" "}
+            , et ses conseils recommandent un fond blanc avec un produit qui{" "}
             <a href={PRODUCT_PHOTOS} target="_blank" rel="noopener noreferrer">
-              remplit au moins 85 % du cadre
+              occupe 85 % ou plus du cadre
             </a>
-            .
-          </li>
-          <li>
-            <strong>Puces.</strong> Vous en avez jusqu’à cinq. Donnez à chacune un seul avantage,
-            appuyé par un fait que l’acheteur peut vérifier.
-          </li>
-          <li>
-            <strong>Contenu A+.</strong> Des images et du texte en plus sous la fiche, pour les
-            marques inscrites au Registre des marques. Amazon indique que{" "}
+            . Les cinq puces donnent chacune un bénéfice, appuyé par un fait vérifiable. Le contenu A+ ajoute images et texte sous la fiche pour les marques inscrites au Brand Registry, et Amazon indique que{" "}
             <a href={A_PLUS} target="_blank" rel="noopener noreferrer">
-              le contenu A+ de base peut augmenter les ventes jusqu’à 8 %
+              le contenu A+ de base peut augmenter les ventes jusqu’à 8 %
             </a>
             , d’après ses données internes.
-          </li>
-        </ul>
+          </p>
+          <blockquote>L’acheteur ne peut pas toucher votre produit. Votre fiche doit le faire à sa place.</blockquote>
+        </>
       ),
     },
     {
       id: "signs",
-      heading: "Comment savoir qu’une fiche doit être retravaillée ?",
+      heading: "Optimisation de la conversion : les signes qu’une fiche doit évoluer",
       body: (
         <>
           <p>
             Amazon donne un exemple simple :{" "}
             <a href={BOOST_LISTINGS} target="_blank" rel="noopener noreferrer">
-              une fiche très consultée mais qui vend peu
+              une fiche très vue mais peu vendue
             </a>{" "}
-            a peut-être besoin de meilleures images ou descriptions.
+            a sans doute besoin de meilleures images ou descriptions. Beaucoup de visites et peu de commandes signifient qu’on vous trouve sans être convaincu : les images, les puces et le contenu A+ passent en premier.
           </p>
-          <ul>
-            <li>
-              <strong>Beaucoup de visites, peu de commandes.</strong> Les acheteurs vous trouvent mais
-              ne sont pas convaincus. Travaillez les images, les puces et le contenu A+.
-            </li>
-            <li>
-              <strong>Peu de visites.</strong> Les acheteurs ne trouvent pas la fiche. Commencez plutôt
-              par le <Link href={p("/services/amazon-seo")}>SEO Amazon</Link>.
-            </li>
-            <li>
-              <strong>Les mêmes questions reviennent.</strong> Si les avis et les questions des clients
-              répètent un doute, répondez-y dans vos puces ou vos images.
-            </li>
-            <li>
-              <strong>Des retours pour « non conforme à la description ».</strong> La fiche
-              promet quelque chose que le produit ne tient pas. Corrigez le texte avant de dépenser
-              plus en trafic.
-            </li>
-          </ul>
           <p>
-            Vous ne savez pas quels chiffres regarder ? Notre{" "}
-            <Link href={p("/services/data-analysis")}>guide d’analyse de données</Link> les explique.
+            Peu de visites signalent un autre problème : les acheteurs ne trouvent pas la fiche, et notre{" "}
+            <Link href={p("/services/amazon-seo")}>service SEO B2B pour vendeurs Amazon</Link> est le meilleur point de départ. Deux autres signes comptent. Si les avis et les questions répètent le même doute, répondez-y dans les puces ou les images. Et les retours pour « non conforme à la description » montrent que la fiche promet ce que le produit ne tient pas : corrigez le texte avant de dépenser plus en trafic.
           </p>
         </>
       ),
     },
     {
       id: "testing",
-      heading: "Comment tester ce qui fonctionne ?",
+      heading: "Comment une agence d’optimisation de la conversion teste ce qui marche",
       body: (
-        <ol>
-          <li>Choisissez un élément, comme l’image principale ou le titre. Ne changez que lui.</li>
-          <li>
-            Si votre marque est inscrite au Registre des marques, utilisez{" "}
+        <>
+          <p>
+            Une bonne optimisation du taux de conversion ne change qu’une chose à la fois. Choisissez un élément, comme l’image principale ou le titre, et ne modifiez que lui, pour savoir ce qui a fait la différence.
+          </p>
+          <p>
+            Si votre marque est inscrite au Brand Registry, l’outil{" "}
             <a href={BOOST_LISTINGS} target="_blank" rel="noopener noreferrer">
-              Gérer vos expériences
+              Manage Your Experiments
             </a>{" "}
-            d’Amazon pour montrer deux versions aux acheteurs et comparer les résultats.
-          </li>
-          <li>Laissez le test durer assez longtemps pour réunir de vraies commandes, pas quelques jours.</li>
-          <li>Gardez la version gagnante, puis passez à l’élément suivant.</li>
-        </ol>
+            d’Amazon montre deux versions aux acheteurs et compare les résultats. Laissez le test tourner assez longtemps pour réunir de vraies commandes, pas seulement quelques jours, gardez la version gagnante et passez à l’élément suivant.
+          </p>
+        </>
       ),
     },
     {
       id: "mistakes",
-      heading: "Quelles erreurs empêchent les acheteurs d’acheter ?",
+      heading: "Les erreurs de fiche Amazon qui empêchent l’achat",
       body: (
-        <ul>
-          <li>
-            <strong>Des images floues ou sombres.</strong> L’acheteur ne peut pas toucher le
-            produit, alors les photos doivent le faire pour lui.
-          </li>
-          <li>
-            <strong>Des caractéristiques sans bénéfices.</strong> « Acier inoxydable » parle
-            davantage si vous dites que la boisson reste fraîche.
-          </li>
-          <li>
-            <strong>Des promesses que vous ne pouvez pas prouver.</strong> Elles entraînent des
-            retours et de mauvais avis, et peuvent enfreindre les règles d’Amazon.
-          </li>
-          <li>
-            <strong>Des détails qui ne concordent pas.</strong> Le titre, les puces et les images
-            doivent décrire la même taille, la même couleur et le même contenu.
-          </li>
-        </ul>
+        <>
+          <p>
+            Les images floues ou sombres sont l’erreur la plus fréquente : l’acheteur ne peut pas toucher le produit, les photos doivent donc le faire. Juste derrière viennent les caractéristiques sans bénéfice. « Acier inoxydable » parle davantage si vous dites qu’il garde les boissons au frais.
+          </p>
+          <p>
+            Les promesses impossibles à prouver entraînent retours et mauvais avis, et peuvent enfreindre les règles d’Amazon. Les détails incohérents nuisent aussi : titre, puces et images doivent décrire la même taille, la même couleur et le même contenu. Les mots que cherchent les acheteurs vont dans le texte visible et dans les termes de recherche cachés, et notre guide pas à pas pour{" "}
+            <Link href={p("/blog/amazon-backend-keywords")}>remplir les mots-clés backend Amazon</Link> couvre le second point.
+          </p>
+        </>
+      ),
+    },
+    {
+      id: "cro-service",
+      heading: "Ce que fait notre agence d’optimisation de la conversion pour les vendeurs Amazon",
+      figure: {
+        src: "/img/service-listing.jpg",
+        alt: "Photo produit d’une planche à découper en bambou sur fond uni, l’image principale nette par laquelle commence l’optimisation d’une fiche Amazon",
+        width: 1024,
+        height: 1024,
+        caption: "Un produit, une photo nette : c’est là que commence le travail sur la fiche. Illustration, pas une fiche client.",
+      },
+      body: (
+        <>
+          <p>
+            Voyez-le comme une optimisation des fiches Amazon avec un test derrière chaque changement. Notre service d’optimisation du taux de conversion suit quatre étapes, une fiche à la fois.
+          </p>
+          <p>
+            Nous lisons d’abord votre fiche comme un acheteur et notons ce qui manque ou n’est pas clair. Nous réécrivons ensuite le titre et les puces pour que chacune réponde à une question d’acheteur, et nous préparons le brief des nouvelles images et du contenu A+ là où ils aident le plus. Enfin, nous testons un changement à la fois et gardons la version qui vend le mieux.
+          </p>
+          <p>
+            Le travail est fait par notre équipe à Barcelone. <Link href={p("/about")}>Découvrez l’équipe de Nautilo Studio</Link>.
+          </p>
+        </>
       ),
     },
   ],
