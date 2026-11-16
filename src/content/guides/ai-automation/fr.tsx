@@ -23,8 +23,8 @@ const page: GuideCopy["page"] = {
     "L’automatisation du marketing Amazon utilise l’IA pour prendre en charge le travail répétitif, comme rédiger le contenu des fiches, surveiller les stocks ou résumer les rapports. Amazon propose déjà des outils pour cela, dont son Seller Assistant gratuit, qui peut surveiller votre compte et agir avec votre accord. Les décisions restent les vôtres : l’IA vous fait gagner du temps sans remplacer votre jugement.",
   description,
   image: {
-    src: "/img/service-ai.jpg",
-    alt: "Bras robotique blanc posant un colis au bout d’une rangée bien alignée",
+    src: "/img/amazon-ai-automation.jpg",
+    alt: "Ordinateur portable avec un tableau de bord vendeur Amazon et une puce d’IA reliée à des icônes de fiches, recherche, rapports et réglages",
     tile: "bg-graphite",
   },
   updated: "2026-11-16",
@@ -110,10 +110,10 @@ const page: GuideCopy["page"] = {
       id: "automation-service",
       heading: "Ce que fait notre service d’automatisation du marketing Amazon",
       figure: {
-        src: "/img/service-ai.jpg",
-        alt: "Bras robotique blanc posant un colis au bout d’une rangée bien alignée, une image de l’automatisation du marketing Amazon qui prend en charge le travail répétitif",
-        width: 1536,
-        height: 1024,
+        src: "/img/amazon-ai-automation.jpg",
+        alt: "Ordinateur portable avec un tableau de bord vendeur Amazon relié à une puce d’IA qui gère fiches, recherche, rapports et réglages : l’automatisation du marketing Amazon en action",
+        width: 1600,
+        height: 899,
         caption: "L’automatisation prend le travail répétitif, les personnes gardent les décisions. Illustration, pas une installation client.",
       },
       body: (

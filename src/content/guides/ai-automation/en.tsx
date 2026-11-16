@@ -20,8 +20,8 @@ const page: GuideCopy["page"] = {
     "Amazon marketing automation uses AI to take over repetitive work like drafting listing content, watching inventory and summarizing reports. Amazon now offers tools for this, including its free Seller Assistant, which can monitor your account and act with your approval. You still make the decisions, so AI saves you time without replacing your judgment.",
   description,
   image: {
-    src: "/img/service-ai.jpg",
-    alt: "White robotic arm placing a parcel at the end of a neat row",
+    src: "/img/amazon-ai-automation.jpg",
+    alt: "Laptop with an Amazon seller dashboard and an AI chip linked to listing, search, report and settings icons",
     tile: "bg-graphite",
   },
   updated: "2026-11-16",
@@ -108,10 +108,10 @@ const page: GuideCopy["page"] = {
       id: "automation-service",
       heading: "What our Amazon marketing automation service does for sellers",
       figure: {
-        src: "/img/service-ai.jpg",
-        alt: "White robotic arm placing a parcel at the end of a neat row, a picture of Amazon marketing automation taking over repetitive work",
-        width: 1536,
-        height: 1024,
+        src: "/img/amazon-ai-automation.jpg",
+        alt: "Laptop with an Amazon seller dashboard linked to an AI chip that handles listings, search, reports and settings: Amazon marketing automation at work",
+        width: 1600,
+        height: 899,
         caption: "Automation takes the repeating work, people keep the decisions. Illustration, not a client setup.",
       },
       body: (

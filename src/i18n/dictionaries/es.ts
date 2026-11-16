@@ -220,7 +220,7 @@ const es: Dictionary = {
         title: "Automatización con IA",
         problem: "«El trabajo repetitivo se come mi semana».",
         text: "Configuramos agentes de IA que se encargan de las tareas repetitivas de fichas e informes.",
-        alt: "Brazo robótico blanco colocando un paquete al final de una fila ordenada",
+        alt: "Portátil con un panel de vendedor de Amazon y un chip de IA conectado a iconos de fichas, búsqueda, informes y ajustes",
         guide: "Leer nuestra guía de automatización con IA",
       },
     ],

@@ -23,8 +23,8 @@ const page: GuideCopy["page"] = {
     "Amazon-Marketing-Automatisierung nutzt KI für wiederkehrende Arbeit, etwa Listing-Texte entwerfen, den Bestand im Blick behalten oder Berichte zusammenfassen. Amazon bietet dafür bereits Tools an, darunter den kostenlosen Seller Assistant, der Ihr Konto überwachen und mit Ihrer Zustimmung handeln kann. Die Entscheidungen treffen weiterhin Sie, die KI spart also Zeit, ohne Ihr Urteil zu ersetzen.",
   description,
   image: {
-    src: "/img/service-ai.jpg",
-    alt: "Weißer Roboterarm, der ein Paket ans Ende einer ordentlichen Reihe stellt",
+    src: "/img/amazon-ai-automation.jpg",
+    alt: "Laptop mit einem Amazon-Verkäufer-Dashboard und einem KI-Chip, verbunden mit Symbolen für Listings, Suche, Berichte und Einstellungen",
     tile: "bg-graphite",
   },
   updated: "2026-11-16",
@@ -110,10 +110,10 @@ const page: GuideCopy["page"] = {
       id: "automation-service",
       heading: "Was unser Service für Amazon-Marketing-Automatisierung tut",
       figure: {
-        src: "/img/service-ai.jpg",
-        alt: "Weißer Roboterarm, der ein Paket ans Ende einer ordentlichen Reihe setzt, ein Bild für Amazon-Marketing-Automatisierung, die wiederkehrende Arbeit übernimmt",
-        width: 1536,
-        height: 1024,
+        src: "/img/amazon-ai-automation.jpg",
+        alt: "Laptop mit einem Amazon-Verkäufer-Dashboard, verbunden mit einem KI-Chip für Listings, Suche, Berichte und Einstellungen: Amazon-Marketing-Automatisierung in Aktion",
+        width: 1600,
+        height: 899,
         caption: "Automatisierung übernimmt das Wiederkehrende, Menschen behalten die Entscheidungen. Illustration, kein Kunden-Setup.",
       },
       body: (

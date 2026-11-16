@@ -225,7 +225,7 @@ const en = {
         title: "Amazon marketing automation",
         problem: "“Repetitive work eats my week.”",
         text: "We set up AI agents that handle repetitive listing and reporting tasks for you.",
-        alt: "White robotic arm placing a parcel at the end of a neat row",
+        alt: "Laptop with an Amazon seller dashboard and an AI chip linked to listing, search, report and settings icons",
         guide: "Read our AI automation guide",
       },
     ],

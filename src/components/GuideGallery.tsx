@@ -25,7 +25,7 @@ const guides = [
   },
   {
     slug: "ai-automation",
-    image: "/img/service-ai.jpg",
+    image: "/img/amazon-ai-automation.jpg",
     tile: "bg-graphite",
   },
 ] as const;
