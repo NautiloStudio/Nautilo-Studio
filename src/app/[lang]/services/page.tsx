@@ -16,7 +16,7 @@ const media = [
   { slug: "amazon-seo", image: "/img/amazon-seo-dashboard.webp", fill: "bg-cyan", ink: "group-hover:text-graphite group-focus-visible:text-graphite", dot: "bg-cyan text-graphite group-hover:bg-graphite group-hover:text-offwhite" },
   { slug: "listing-optimization", image: "/img/service-listing.jpg", fill: "bg-apricot", ink: "group-hover:text-graphite group-focus-visible:text-graphite", dot: "bg-apricot text-graphite group-hover:bg-graphite group-hover:text-offwhite" },
   { slug: "data-analysis", image: "/img/service-data.jpg", fill: "bg-royal", ink: "group-hover:text-offwhite group-focus-visible:text-offwhite", dot: "bg-royal text-offwhite group-hover:bg-offwhite group-hover:text-royal" },
-  { slug: "ai-automation", image: "/img/service-ai.jpg", fill: "bg-graphite", ink: "group-hover:text-offwhite group-focus-visible:text-offwhite", dot: "bg-graphite text-offwhite group-hover:bg-offwhite group-hover:text-graphite" },
+  { slug: "ai-automation", image: "/img/amazon-ai-automation.jpg", fill: "bg-graphite", ink: "group-hover:text-offwhite group-focus-visible:text-offwhite", dot: "bg-graphite text-offwhite group-hover:bg-offwhite group-hover:text-graphite" },
 ];
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/services">): Promise<Metadata> {

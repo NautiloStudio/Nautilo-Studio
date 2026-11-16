@@ -220,7 +220,7 @@ const it: Dictionary = {
         title: "Automazione con l’IA",
         problem: "«Il lavoro ripetitivo mi mangia la settimana.»",
         text: "Configuriamo agenti di IA che si occupano delle attività ripetitive su schede e report.",
-        alt: "Braccio robotico bianco che posa un pacco in fondo a una fila ordinata",
+        alt: "Portatile con una dashboard venditore Amazon e un chip di IA collegato alle icone di schede, ricerca, report e impostazioni",
         guide: "Leggi la nostra guida all’automazione con l’IA",
       },
     ],

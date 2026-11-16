@@ -222,7 +222,7 @@ const fr: Dictionary = {
         title: "Automatisation IA",
         problem: "« Les tâches répétitives mangent ma semaine. »",
         text: "Nous mettons en place des agents IA qui gèrent les tâches répétitives sur les fiches et les rapports.",
-        alt: "Bras robotique blanc posant un colis au bout d’une rangée bien alignée",
+        alt: "Ordinateur portable avec un tableau de bord vendeur Amazon et une puce d’IA reliée à des icônes de fiches, recherche, rapports et réglages",
         guide: "Lire notre guide d’automatisation IA",
       },
     ],

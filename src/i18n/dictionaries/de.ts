@@ -221,7 +221,7 @@ const de: Dictionary = {
         title: "KI-Automatisierung",
         problem: "„Routinearbeit frisst meine Woche.“",
         text: "Wir richten KI-Agenten ein, die wiederkehrende Aufgaben bei Listings und Berichten erledigen.",
-        alt: "Weißer Roboterarm, der ein Paket ans Ende einer ordentlichen Reihe stellt",
+        alt: "Laptop mit einem Amazon-Verkäufer-Dashboard und einem KI-Chip, verbunden mit Symbolen für Listings, Suche, Berichte und Einstellungen",
         guide: "Unseren Leitfaden KI-Automatisierung lesen",
       },
     ],
