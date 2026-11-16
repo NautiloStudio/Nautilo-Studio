@@ -20,8 +20,8 @@ const page: GuideCopy["page"] = {
     "L’analisi dei dati Amazon, come la fa un’agenzia di marketing analytics, parte da quattro numeri per ogni prodotto: sessioni, tasso di conversione, se hai l’Offerta in evidenza e il costo pubblicitario sulle vendite (ACOS). Insieme ti dicono se il problema è farti trovare, farti scegliere o spendere troppo in pubblicità. Controllali ogni settimana, confrontali con la settimana precedente e cambia una cosa alla volta.",
   description,
   image: {
-    src: "/img/service-data.jpg",
-    alt: "Pacchi di cartone impilati in colonne crescenti, come un grafico a barre",
+    src: "/img/amazon-data-analysis.jpg",
+    alt: "iMac con una dashboard di analisi di un negozio Amazon: sessioni, tasso di conversione, Offerta in evidenza, ACOS e ricerche principali",
     tile: "bg-royal",
   },
   updated: "2026-11-16",
@@ -107,11 +107,11 @@ const page: GuideCopy["page"] = {
       id: "analytics-service",
       heading: "Cosa fa la nostra agenzia di marketing analytics per i venditori Amazon",
       figure: {
-        src: "/img/service-data.jpg",
-        alt: "Pacchi di cartone impilati in colonne crescenti come un grafico a barre, un’immagine dell’analisi dei dati Amazon settimana dopo settimana",
-        width: 1536,
-        height: 1024,
-        caption: "I numeri aiutano solo se li confronti nel tempo. Illustrazione, non sono dati di clienti.",
+        src: "/img/amazon-data-analysis.jpg",
+        alt: "iMac con i numeri settimanali di Amazon che segue un’agenzia di marketing analytics: sessioni, conversione, Offerta in evidenza, ACOS, ricerche e giorni di copertura",
+        width: 1600,
+        height: 900,
+        caption: "Dati di esempio, non sono numeri di clienti. Foto: Amy Hirschi, Unsplash.",
       },
       body: (
         <>

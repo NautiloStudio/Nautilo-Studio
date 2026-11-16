@@ -21,8 +21,8 @@ const page: GuideCopy["page"] = {
     "L’optimisation des fiches Amazon, le métier d’une agence d’optimisation du taux de conversion, consiste à améliorer le titre, les puces, les images et le contenu A+ pour que les acheteurs qui arrivent sur votre page choisissent d’acheter. Commencez par des images claires et un titre qui dit exactement ce qu’est le produit, puis servez-vous des puces pour répondre aux questions que les acheteurs se posent avant de commander. Testez un changement à la fois et gardez la version qui vend le mieux.",
   description,
   image: {
-    src: "/img/service-listing.jpg",
-    alt: "Planche à découper en bambou avec une étiquette en papier vierge",
+    src: "/img/amazon-listing-optimization.jpg",
+    alt: "MacBook affichant la page produit Amazon d’une planche à découper en bambou, avec le titre, l’image principale, les puces et le contenu A+ modifiés et signalés",
     tile: "bg-apricot",
   },
   updated: "2026-11-16",
@@ -121,11 +121,11 @@ const page: GuideCopy["page"] = {
       id: "cro-service",
       heading: "Ce que fait notre agence d’optimisation de la conversion pour les vendeurs Amazon",
       figure: {
-        src: "/img/service-listing.jpg",
-        alt: "Photo produit d’une planche à découper en bambou sur fond uni, l’image principale nette par laquelle commence l’optimisation d’une fiche Amazon",
-        width: 1024,
-        height: 1024,
-        caption: "Un produit, une photo nette : c’est là que commence le travail sur la fiche. Illustration, pas une fiche client.",
+        src: "/img/amazon-listing-optimization.jpg",
+        alt: "MacBook affichant une fiche Amazon avec cinq modifications signalées (titre, image principale, puces, contenu A+ et termes de recherche) : le travail d’une agence d’optimisation de la conversion",
+        width: 1600,
+        height: 900,
+        caption: "Fiche d’exemple avec nos cinq changements signalés. Illustration, pas une fiche client. Photo : Kari Shea, Unsplash.",
       },
       body: (
         <>

@@ -21,8 +21,8 @@ const page: GuideCopy["page"] = {
     "Amazon-Listing-Optimierung, die Arbeit einer Agentur für Conversion-Rate-Optimierung, heißt, Titel, Bullet Points, Bilder und A+ Content so zu verbessern, dass sich Käufer auf Ihrer Seite für den Kauf entscheiden. Beginnen Sie mit klaren Bildern und einem Titel, der genau sagt, was das Produkt ist, und beantworten Sie mit den Bullet Points die Fragen, die Käufer vor der Bestellung haben. Testen Sie eine Änderung nach der anderen und behalten Sie die Version, die besser verkauft.",
   description,
   image: {
-    src: "/img/service-listing.jpg",
-    alt: "Bambus-Schneidebrett mit leerem Papieranhänger",
+    src: "/img/amazon-listing-optimization.jpg",
+    alt: "MacBook mit der Amazon-Produktseite eines Bambus-Schneidebretts, auf der Titel, Hauptbild, Bullet Points und A+ Content als geändert markiert sind",
     tile: "bg-apricot",
   },
   updated: "2026-11-16",
@@ -121,11 +121,11 @@ const page: GuideCopy["page"] = {
       id: "cro-service",
       heading: "Was unsere Agentur für Conversion-Optimierung für Amazon-Händler tut",
       figure: {
-        src: "/img/service-listing.jpg",
-        alt: "Produktfoto eines Bambus-Schneidebretts auf schlichtem Hintergrund, das klare Hauptbild, mit dem die Amazon-Listing-Optimierung beginnt",
-        width: 1024,
-        height: 1024,
-        caption: "Ein Produkt, ein klares Foto: Hier beginnt die Arbeit am Listing. Illustration, kein Kunden-Listing.",
+        src: "/img/amazon-listing-optimization.jpg",
+        alt: "MacBook mit einem Amazon-Listing und fünf markierten Änderungen an Titel, Hauptbild, Bullet Points, A+ Content und Suchbegriffen: die Arbeit einer Agentur für Conversion-Optimierung",
+        width: 1600,
+        height: 900,
+        caption: "Beispiel-Listing mit unseren fünf markierten Änderungen. Illustration, kein Kunden-Listing. Foto: Kari Shea, Unsplash.",
       },
       body: (
         <>

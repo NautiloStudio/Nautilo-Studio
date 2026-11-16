@@ -206,14 +206,14 @@ const it: Dictionary = {
         title: "Ottimizzazione delle schede",
         problem: "«Guardano, ma non comprano.»",
         text: "Rivediamo titoli, punti elenco, contenuti A+ e immagini, così più visitatori scelgono di comprare.",
-        alt: "Tagliere di bambù con un’etichetta di carta vuota",
+        alt: "MacBook con la pagina prodotto Amazon di un tagliere di bambù, con titolo, immagine principale, punti elenco e contenuti A+ modificati e segnalati",
         guide: "Leggi la nostra guida all’ottimizzazione delle schede",
       },
       {
         title: "Analisi dei dati",
         problem: "«Non so quali numeri contano.»",
         text: "Trasformiamo i tuoi dati di vendite, traffico e conversione in passi successivi chiari.",
-        alt: "Pacchi di cartone impilati in colonne crescenti, come un grafico a barre",
+        alt: "iMac con una dashboard di analisi di un negozio Amazon: sessioni, tasso di conversione, Offerta in evidenza, ACOS e ricerche principali",
         guide: "Leggi la nostra guida all’analisi dei dati",
       },
       {

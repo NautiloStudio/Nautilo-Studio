@@ -21,8 +21,8 @@ const page: GuideCopy["page"] = {
     "La optimización de fichas de Amazon, el trabajo de una agencia de optimización de la tasa de conversión, consiste en mejorar el título, las viñetas, las imágenes y el contenido A+ para que quien llega a tu página decida comprar. Empieza por imágenes claras y un título que diga exactamente qué es el producto, y usa las viñetas para responder a las dudas que tiene el comprador antes de pedir. Prueba un cambio cada vez y quédate con la versión que vende más.",
   description,
   image: {
-    src: "/img/service-listing.jpg",
-    alt: "Tabla de cortar de bambú con una etiqueta de papel en blanco",
+    src: "/img/amazon-listing-optimization.jpg",
+    alt: "MacBook con la página de producto de Amazon de una tabla de cortar de bambú, con el título, la imagen principal, las viñetas y el contenido A+ editados y marcados",
     tile: "bg-apricot",
   },
   updated: "2026-11-16",
@@ -121,11 +121,11 @@ const page: GuideCopy["page"] = {
       id: "cro-service",
       heading: "Qué hace nuestra agencia de optimización de la conversión por los vendedores de Amazon",
       figure: {
-        src: "/img/service-listing.jpg",
-        alt: "Foto de producto de una tabla de cortar de bambú sobre fondo liso, la imagen principal limpia con la que empieza la optimización de una ficha de Amazon",
-        width: 1024,
-        height: 1024,
-        caption: "Un producto, una foto clara: ahí empieza el trabajo en la ficha. Ilustración, no es una ficha de cliente.",
+        src: "/img/amazon-listing-optimization.jpg",
+        alt: "MacBook con una ficha de Amazon y cinco cambios marcados en título, imagen principal, viñetas, contenido A+ y términos de búsqueda: el trabajo de una agencia de optimización de la conversión",
+        width: 1600,
+        height: 900,
+        caption: "Ficha de ejemplo con nuestros cinco cambios marcados. Ilustración, no es una ficha de cliente. Foto: Kari Shea, Unsplash.",
       },
       body: (
         <>

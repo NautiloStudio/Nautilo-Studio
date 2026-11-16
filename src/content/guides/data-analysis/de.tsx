@@ -20,8 +20,8 @@ const page: GuideCopy["page"] = {
     "Amazon-Datenanalyse, wie eine Marketing-Analytics-Agentur sie macht, beginnt mit vier Zahlen pro Produkt: Sitzungen, Conversion-Rate, ob Sie das Empfohlene Angebot halten, und Ihre Werbekosten im Verhältnis zum Umsatz (ACOS). Zusammen zeigen sie, ob das Problem beim Gefundenwerden, beim Ausgewähltwerden oder bei zu hohen Werbeausgaben liegt. Prüfen Sie sie jede Woche, vergleichen Sie mit der Vorwoche und ändern Sie immer nur eine Sache.",
   description,
   image: {
-    src: "/img/service-data.jpg",
-    alt: "Kartons, in steigenden Säulen gestapelt wie ein Balkendiagramm",
+    src: "/img/amazon-data-analysis.jpg",
+    alt: "iMac mit einem Analytics-Dashboard eines Amazon-Shops: Sitzungen, Conversion-Rate, Empfohlenes Angebot, ACOS und Top-Suchbegriffe",
     tile: "bg-royal",
   },
   updated: "2026-11-16",
@@ -111,11 +111,11 @@ const page: GuideCopy["page"] = {
       id: "analytics-service",
       heading: "Was unsere Marketing-Analytics-Agentur für Amazon-Händler tut",
       figure: {
-        src: "/img/service-data.jpg",
-        alt: "Kartons, in steigenden Säulen gestapelt wie ein Balkendiagramm, ein Bild für Amazon-Datenanalyse Woche für Woche",
-        width: 1536,
-        height: 1024,
-        caption: "Zahlen helfen nur im Vergleich über die Zeit. Illustration, keine Kundendaten.",
+        src: "/img/amazon-data-analysis.jpg",
+        alt: "iMac mit den wöchentlichen Amazon-Zahlen, die eine Marketing-Analytics-Agentur verfolgt: Sitzungen, Conversion, Empfohlenes Angebot, ACOS, Suchbegriffe und Lagerreichweite",
+        width: 1600,
+        height: 900,
+        caption: "Beispieldaten, keine Kundenzahlen. Foto: Amy Hirschi, Unsplash.",
       },
       body: (
         <>
