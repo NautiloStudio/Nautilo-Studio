@@ -211,14 +211,14 @@ const en = {
         title: "Listing optimisation",
         problem: "“People look, but they don’t buy.”",
         text: "We rework your titles, bullets, A+ content and images, so more visitors choose to buy.",
-        alt: "MacBook showing an Amazon product page for a bamboo cutting board, with the edited title, main image, bullets and A+ content marked",
+        alt: "iMac showing an Amazon product page for a bamboo cutting board, with the edited title, main image, bullets and A+ content marked",
         guide: "Read our listing optimisation guide",
       },
       {
         title: "Data analysis",
         problem: "“I don’t know which numbers matter.”",
         text: "We turn your sales, traffic and conversion data into clear next steps.",
-        alt: "iMac showing an Amazon store analytics dashboard with sessions, conversion rate, Featured Offer, ACOS and top search terms",
+        alt: "iMac showing an Amazon store analytics dashboard with sales, orders, conversion rate, ACOS, Featured Offer and ad campaigns",
         guide: "Read our data analysis guide",
       },
       {
