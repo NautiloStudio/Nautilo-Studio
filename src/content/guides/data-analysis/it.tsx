@@ -21,7 +21,7 @@ const page: GuideCopy["page"] = {
   description,
   image: {
     src: "/img/amazon-data-analysis.jpg",
-    alt: "iMac con una dashboard di analisi di un negozio Amazon: sessioni, tasso di conversione, Offerta in evidenza, ACOS e ricerche principali",
+    alt: "iMac con una dashboard di analisi di un negozio Amazon: vendite, ordini, tasso di conversione, ACOS, Offerta in evidenza e campagne pubblicitarie",
     tile: "bg-royal",
   },
   updated: "2026-11-16",
@@ -108,7 +108,7 @@ const page: GuideCopy["page"] = {
       heading: "Cosa fa la nostra agenzia di marketing analytics per i venditori Amazon",
       figure: {
         src: "/img/amazon-data-analysis.jpg",
-        alt: "iMac con i numeri settimanali di Amazon che segue un’agenzia di marketing analytics: sessioni, conversione, Offerta in evidenza, ACOS, ricerche e giorni di copertura",
+        alt: "iMac con i numeri settimanali di Amazon che segue un’agenzia di marketing analytics: vendite, conversione, ACOS, Offerta in evidenza, vendite per prodotto e campagne pubblicitarie",
         width: 1600,
         height: 900,
         caption: "Dati di esempio, non sono numeri di clienti. Foto: Amy Hirschi, Unsplash.",

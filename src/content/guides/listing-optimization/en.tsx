@@ -19,7 +19,7 @@ const page: GuideCopy["page"] = {
   description,
   image: {
     src: "/img/amazon-listing-optimization.jpg",
-    alt: "MacBook showing an Amazon product page for a bamboo cutting board, with the edited title, main image, bullets and A+ content marked",
+    alt: "iMac showing an Amazon product page for a bamboo cutting board, with the edited title, main image, bullets and A+ content marked",
     tile: "bg-apricot",
   },
   updated: "2026-11-16",
@@ -115,10 +115,10 @@ const page: GuideCopy["page"] = {
       heading: "What our conversion rate optimization agency does for Amazon sellers",
       figure: {
         src: "/img/amazon-listing-optimization.jpg",
-        alt: "MacBook showing an Amazon listing with five marked edits to the title, main image, bullets, A+ content and search terms: the work of a conversion rate optimization agency",
-        width: 1600,
-        height: 900,
-        caption: "Example listing with our five changes marked on the page. Illustration, not a client listing. Photo: Kari Shea, Unsplash.",
+        alt: "iMac showing an Amazon listing with five marked edits to the title, main image, bullets, A+ content and search terms: the work of a conversion rate optimization agency",
+        width: 986,
+        height: 889,
+        caption: "Example listing with our five changes marked on the page. Illustration, not a client listing.",
       },
       body: (
         <>

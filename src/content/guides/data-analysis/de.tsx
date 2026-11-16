@@ -21,7 +21,7 @@ const page: GuideCopy["page"] = {
   description,
   image: {
     src: "/img/amazon-data-analysis.jpg",
-    alt: "iMac mit einem Analytics-Dashboard eines Amazon-Shops: Sitzungen, Conversion-Rate, Empfohlenes Angebot, ACOS und Top-Suchbegriffe",
+    alt: "iMac mit einem Analytics-Dashboard eines Amazon-Shops: Umsatz, Bestellungen, Conversion-Rate, ACOS, Empfohlenes Angebot und Werbekampagnen",
     tile: "bg-royal",
   },
   updated: "2026-11-16",
@@ -112,7 +112,7 @@ const page: GuideCopy["page"] = {
       heading: "Was unsere Marketing-Analytics-Agentur für Amazon-Händler tut",
       figure: {
         src: "/img/amazon-data-analysis.jpg",
-        alt: "iMac mit den wöchentlichen Amazon-Zahlen, die eine Marketing-Analytics-Agentur verfolgt: Sitzungen, Conversion, Empfohlenes Angebot, ACOS, Suchbegriffe und Lagerreichweite",
+        alt: "iMac mit den wöchentlichen Amazon-Zahlen, die eine Marketing-Analytics-Agentur verfolgt: Umsatz, Conversion, ACOS, Empfohlenes Angebot, Umsatz pro Produkt und Werbekampagnen",
         width: 1600,
         height: 900,
         caption: "Beispieldaten, keine Kundenzahlen. Foto: Amy Hirschi, Unsplash.",

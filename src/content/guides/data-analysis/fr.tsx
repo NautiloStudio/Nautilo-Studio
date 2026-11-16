@@ -21,7 +21,7 @@ const page: GuideCopy["page"] = {
   description,
   image: {
     src: "/img/amazon-data-analysis.jpg",
-    alt: "iMac affichant un tableau de bord d’une boutique Amazon : sessions, taux de conversion, Offre en vedette, ACOS et principales recherches",
+    alt: "iMac affichant un tableau de bord d’une boutique Amazon : ventes, commandes, taux de conversion, ACOS, Offre en vedette et campagnes publicitaires",
     tile: "bg-royal",
   },
   updated: "2026-11-16",
@@ -112,7 +112,7 @@ const page: GuideCopy["page"] = {
       heading: "Ce que fait notre agence d’analyse marketing pour les vendeurs Amazon",
       figure: {
         src: "/img/amazon-data-analysis.jpg",
-        alt: "iMac affichant les chiffres Amazon hebdomadaires que suit une agence d’analyse marketing : sessions, conversion, Offre en vedette, ACOS, recherches et jours de stock",
+        alt: "iMac affichant les chiffres Amazon hebdomadaires que suit une agence d’analyse marketing : ventes, conversion, ACOS, Offre en vedette, ventes par produit et campagnes publicitaires",
         width: 1600,
         height: 900,
         caption: "Données d’exemple, pas des chiffres de clients. Photo : Amy Hirschi, Unsplash.",

@@ -18,7 +18,7 @@ const page: GuideCopy["page"] = {
   description,
   image: {
     src: "/img/amazon-data-analysis.jpg",
-    alt: "iMac showing an Amazon store analytics dashboard with sessions, conversion rate, Featured Offer, ACOS and top search terms",
+    alt: "iMac showing an Amazon store analytics dashboard with sales, orders, conversion rate, ACOS, Featured Offer and ad campaigns",
     tile: "bg-royal",
   },
   updated: "2026-11-16",
@@ -106,7 +106,7 @@ const page: GuideCopy["page"] = {
       heading: "What our marketing analytics agency does for Amazon sellers",
       figure: {
         src: "/img/amazon-data-analysis.jpg",
-        alt: "iMac showing the weekly Amazon numbers a marketing analytics agency tracks: sessions, conversion rate, Featured Offer, ACOS, search terms and days of supply",
+        alt: "iMac showing the weekly Amazon numbers a marketing analytics agency tracks: sales, conversion rate, ACOS, Featured Offer, sales by product and ad campaigns",
         width: 1600,
         height: 900,
         caption: "Example data, not a client’s numbers. Photo: Amy Hirschi, Unsplash.",

@@ -207,14 +207,14 @@ const de: Dictionary = {
         title: "Listing-Optimierung",
         problem: "„Viele schauen, wenige kaufen.“",
         text: "Wir überarbeiten Titel, Bullet Points, A+ Content und Bilder, damit sich mehr Besucher für den Kauf entscheiden.",
-        alt: "MacBook mit der Amazon-Produktseite eines Bambus-Schneidebretts, auf der Titel, Hauptbild, Bullet Points und A+ Content als geändert markiert sind",
+        alt: "iMac mit der Amazon-Produktseite eines Bambus-Schneidebretts, auf der Titel, Hauptbild, Bullet Points und A+ Content als geändert markiert sind",
         guide: "Unseren Leitfaden Listing-Optimierung lesen",
       },
       {
         title: "Datenanalyse",
         problem: "„Ich weiß nicht, welche Zahlen zählen.“",
         text: "Wir machen aus Ihren Umsatz-, Traffic- und Conversion-Daten klare nächste Schritte.",
-        alt: "iMac mit einem Analytics-Dashboard eines Amazon-Shops: Sitzungen, Conversion-Rate, Empfohlenes Angebot, ACOS und Top-Suchbegriffe",
+        alt: "iMac mit einem Analytics-Dashboard eines Amazon-Shops: Umsatz, Bestellungen, Conversion-Rate, ACOS, Empfohlenes Angebot und Werbekampagnen",
         guide: "Unseren Leitfaden Datenanalyse lesen",
       },
       {

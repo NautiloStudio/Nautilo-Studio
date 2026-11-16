@@ -21,7 +21,7 @@ const page: GuideCopy["page"] = {
   description,
   image: {
     src: "/img/amazon-data-analysis.jpg",
-    alt: "iMac con un panel de analítica de una tienda de Amazon: sesiones, tasa de conversión, Oferta destacada, ACOS y búsquedas principales",
+    alt: "iMac con un panel de analítica de una tienda de Amazon: ventas, pedidos, tasa de conversión, ACOS, Oferta destacada y campañas publicitarias",
     tile: "bg-royal",
   },
   updated: "2026-11-16",
@@ -112,7 +112,7 @@ const page: GuideCopy["page"] = {
       heading: "Qué hace nuestra agencia de analítica de marketing por los vendedores de Amazon",
       figure: {
         src: "/img/amazon-data-analysis.jpg",
-        alt: "iMac con los números semanales de Amazon que sigue una agencia de analítica de marketing: sesiones, conversión, Oferta destacada, ACOS, búsquedas y días de stock",
+        alt: "iMac con los números semanales de Amazon que sigue una agencia de analítica de marketing: ventas, conversión, ACOS, Oferta destacada, ventas por producto y campañas publicitarias",
         width: 1600,
         height: 900,
         caption: "Datos de ejemplo, no son números de clientes. Foto: Amy Hirschi, Unsplash.",
