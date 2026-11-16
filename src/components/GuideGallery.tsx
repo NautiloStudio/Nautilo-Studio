@@ -30,7 +30,7 @@ const guides = [
   },
 ] as const;
 
-// One guide is open at a time; the others stay as narrow photo strips you can click to open.
+// One guide is open at a time; the others stay as narrow blue strips you can click to open.
 type Props = { exclude?: string; heading?: ReactNode; intro?: string; id?: string };
 
 export default function GuideGallery({ exclude, heading, intro, id = "guides" }: Props) {
@@ -66,8 +66,10 @@ export default function GuideGallery({ exclude, heading, intro, id = "guides" }:
                 sizes="(min-width: 768px) 60vw, 100vw"
                 className={`object-cover transition-transform duration-700 ease-(--ease-out-strong) ${isOpen ? "scale-100" : "scale-110"}`}
               />
+              <div className="absolute inset-0 bg-graphite/55" />
+              {/* Closed strips show the Nautilo blue instead of a squeezed photo; it fades out when the guide opens. */}
               <div
-                className={`absolute inset-0 transition-colors duration-500 ${isOpen ? "bg-graphite/55" : "bg-graphite/35"}`}
+                className={`absolute inset-0 bg-[linear-gradient(160deg,#33d6ff_0%,#1c2fd6_48%,#0f1a7a_100%)] transition-opacity duration-500 ${isOpen ? "opacity-0" : "opacity-100"}`}
               />
 
               {!isOpen && (
