@@ -19,6 +19,20 @@ export type LandingFigure = { src: string; alt: string; width: number; height: n
 export type LandingSection = { id: string; heading: string; body: ReactNode; figure?: LandingFigure };
 export type LandingFaq = { question: string; answer: string };
 export type LandingFact = { value: number; prefix?: string; suffix?: string; label: string };
+// `source` is a 1-based index into `sources`, shown as a footnote link.
+export type LandingProof = { label: string; heading: string; note: string; items: { value: string; text: string; source: number }[] };
+export type LandingCaseStudy = {
+  label: string;
+  heading: string;
+  intro: string;
+  steps: { heading: string; text: string }[];
+  results: { value: string; label: string }[];
+  quote: { text: string; by: string };
+  takeaway: string;
+  note: string;
+  source: number;
+};
+export type LandingStory = { label: string; heading: string; steps: { heading: string; text: string }[]; link: { href: string; text: string } };
 
 export type LandingContent = {
   slug: string;
@@ -33,7 +47,23 @@ export type LandingContent = {
   facts: LandingFact[]; // real numbers from Amazon or the guide itself, never results
   sections: LandingSection[];
   faqs: LandingFaq[];
+  // Optional evidence blocks: market figures, a published third-party case study, our own story, and the sources behind them.
+  proof?: LandingProof;
+  caseStudy?: LandingCaseStudy;
+  story?: LandingStory;
+  sources?: { heading: string; items: { label: string; href: string }[] };
 };
+
+// Footnote link to the numbered source list at the end of the page.
+function SourceRef({ n, onDark }: { n: number; onDark?: boolean }) {
+  return (
+    <sup className="ml-0.5">
+      <a href={`#source-${n}`} className={`font-semibold no-underline hover:underline ${onDark ? "text-cyan" : "text-royal"}`} aria-label={`Source ${n}`}>
+        [{n}]
+      </a>
+    </sup>
+  );
+}
 
 // Article, FAQ and breadcrumb data for search engines and AI answer engines.
 function structuredData(page: LandingContent, lang: Locale, home: string, services: string) {
@@ -255,6 +285,88 @@ export default function LandingPage({
           </div>
 
           <div className="mx-auto mt-24 max-w-7xl space-y-16 px-4 sm:px-6 md:mt-32 md:space-y-24">
+              {/* Social proof from the market: published figures, each with its source */}
+              {page.proof && (
+                <section aria-labelledby="proof" className="reveal">
+                  <p className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-royal">{page.proof.label}</p>
+                  <h2 id="proof" className={`${h2} mt-3 max-w-4xl`}>{page.proof.heading}</h2>
+                  <ul className="m-0 mt-8 grid list-none gap-3 p-0 md:grid-cols-3">
+                    {page.proof.items.map((item) => (
+                      <li key={item.value} className="rounded-[1.5rem] bg-white p-6 ring-1 ring-sand sm:p-8">
+                        <p className="font-display text-[clamp(2.2rem,3.6vw,3.25rem)] font-bold leading-none tracking-[-0.03em] text-royal">
+                          {item.value}
+                        </p>
+                        <p className="mt-4 text-lg leading-relaxed text-slate">
+                          {item.text}
+                          <SourceRef n={item.source} />
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-4 text-sm text-slate">{page.proof.note}</p>
+                </section>
+              )}
+
+              {/* A published case study from a third party, told as challenge, approach, result */}
+              {page.caseStudy && (
+                <section aria-labelledby="case-study" className="reveal glow-ring on-dark rounded-[2rem] bg-graphite p-8 text-offwhite md:p-14">
+                  <p className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-cyan">{page.caseStudy.label}</p>
+                  <h2 id="case-study" className={`${h2} mt-3 max-w-4xl`}>{page.caseStudy.heading}</h2>
+                  <p className="mt-6 max-w-3xl text-lg leading-relaxed text-offwhite/80">{page.caseStudy.intro}</p>
+                  <ol className="m-0 mt-10 grid list-none gap-8 p-0 md:grid-cols-3">
+                    {page.caseStudy.steps.map((step, index) => (
+                      <li key={step.heading}>
+                        <p className="font-display text-sm font-semibold tabular-nums tracking-[0.14em] text-cyan">
+                          {String(index + 1).padStart(2, "0")} · {step.heading}
+                        </p>
+                        <p className="mt-3 leading-relaxed text-offwhite/80">{step.text}</p>
+                      </li>
+                    ))}
+                  </ol>
+                  <ul className="m-0 mt-10 grid list-none gap-3 p-0 sm:grid-cols-2 lg:grid-cols-4">
+                    {page.caseStudy.results.map((result) => (
+                      <li key={result.label} className="rounded-[1.5rem] bg-white/5 p-6 ring-1 ring-white/10">
+                        <p className="font-display text-[clamp(2.2rem,3.6vw,3rem)] font-bold leading-none tracking-[-0.03em] text-cyan">
+                          {result.value}
+                        </p>
+                        <p className="mt-3 text-offwhite/75">{result.label}</p>
+                      </li>
+                    ))}
+                  </ul>
+                  <blockquote className="m-0 mt-10 border-l-4 border-apricot pl-6">
+                    <p className="font-display text-[clamp(1.25rem,2.2vw,1.6rem)] font-medium leading-snug">“{page.caseStudy.quote.text}”</p>
+                    <footer className="mt-3 text-offwhite/70">{page.caseStudy.quote.by}</footer>
+                  </blockquote>
+                  <p className="mt-10 max-w-3xl text-lg leading-relaxed">{page.caseStudy.takeaway}</p>
+                  <p className="mt-6 text-sm text-offwhite/60">
+                    {page.caseStudy.note}
+                    <SourceRef n={page.caseStudy.source} onDark />
+                  </p>
+                </section>
+              )}
+
+              {/* Our story: why Nautilo Studio exists, as a short three-step arc */}
+              {page.story && (
+                <section aria-labelledby="our-story" className="reveal">
+                  <p className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-royal">{page.story.label}</p>
+                  <h2 id="our-story" className={`${h2} mt-3 max-w-4xl`}>{page.story.heading}</h2>
+                  <ol className="m-0 mt-8 grid list-none gap-3 p-0 md:grid-cols-3">
+                    {page.story.steps.map((step, index) => (
+                      <li key={step.heading} className="rounded-[1.5rem] bg-white p-6 ring-1 ring-sand sm:p-8">
+                        <p className="font-display text-sm font-semibold tabular-nums tracking-[0.14em] text-royal">
+                          {String(index + 1).padStart(2, "0")}
+                        </p>
+                        <h3 className="mt-3 font-display text-xl font-semibold">{step.heading}</h3>
+                        <p className="mt-3 text-lg leading-relaxed text-slate">{step.text}</p>
+                      </li>
+                    ))}
+                  </ol>
+                  <Link href={href(page.story.link.href)} className="mt-6 inline-block font-medium text-graphite underline decoration-royal/40 underline-offset-4 hover:text-royal">
+                    {page.story.link.text}
+                  </Link>
+                </section>
+              )}
+
               {/* Case study teaser */}
               <Link
                 href={href("/#case-study")}
@@ -356,6 +468,22 @@ export default function LandingPage({
                   </li>
                 </ul>
               </section>
+
+              {/* Sources for the figures and the case study above */}
+              {page.sources && (
+                <section aria-labelledby="sources" className="reveal">
+                  <h2 id="sources" className="font-display text-xl font-semibold">{page.sources.heading}</h2>
+                  <ol className="m-0 mt-4 max-w-4xl list-decimal space-y-2 pl-6 text-slate marker:font-semibold marker:text-royal">
+                    {page.sources.items.map((source, index) => (
+                      <li key={source.href} id={`source-${index + 1}`} className="scroll-mt-28 pl-1">
+                        <a href={source.href} target="_blank" rel="noopener noreferrer" className="underline decoration-royal/40 underline-offset-4 hover:text-royal">
+                          {source.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ol>
+                </section>
+              )}
           </div>
         </article>
 

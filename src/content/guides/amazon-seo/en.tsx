@@ -152,6 +152,92 @@ const page: GuideCopy["page"] = {
         "Yes. Send us one Amazon listing through the free review form on this page and we’ll email you what we would improve first.",
     },
   ],
+  proof: {
+    label: "Proof from the market",
+    heading: "Amazon search is where sellers like you win or lose.",
+    items: [
+      {
+        value: "More than half",
+        text: "of US consumers start their online product searches on Amazon, so that is where your product has to be found.",
+        source: 1,
+      },
+      {
+        value: "60%+",
+        text: "of sales in the Amazon store come from independent sellers, most of them small and medium-sized businesses.",
+        source: 2,
+      },
+      {
+        value: "11,000+",
+        text: "US-based independent sellers grew their sales by more than 10× in 2025.",
+        source: 2,
+      },
+    ],
+    note: "Figures published by Jungle Scout and Amazon. They describe the market, not Nautilo Studio clients.",
+  },
+  caseStudy: {
+    label: "Case study · published by Amazon Ads",
+    heading: "How an agency helped Bold Care grow ad sales by 69% in a crowded category",
+    intro:
+      "Bold Care, a men’s health and wellness brand founded in 2019, sells in a category full of established names. It worked with Adbrew, an Amazon Ads partner agency, and the work won Adbrew a Challenger Brand Partner Award.",
+    steps: [
+      {
+        heading: "The challenge",
+        text: "Bold Care had a low share of voice on high-intent searches and needed new customers, but its advertising cost of sales (ACOS) was too high to get there on its budget.",
+      },
+      {
+        heading: "The approach",
+        text: "The agency found the products most likely to win new customers, gave each one its own ACOS target, defended Bold Care’s brand searches and moved bids to the hours when shoppers bought most.",
+      },
+      {
+        heading: "The result",
+        text: "More visibility on generic searches, more new customers and more sales, while every advertising dollar worked harder.",
+      },
+    ],
+    results: [
+      { value: "+69.1%", label: "Growth in ad-attributed sales" },
+      { value: "76.3%", label: "Of customers from ads were new to the brand" },
+      { value: "+20%", label: "Share of voice on generic keywords" },
+      { value: "−17%", label: "Advertising cost of sales (ACOS)" },
+    ],
+    quote: {
+      text: "Adbrew’s insights helped boost our visibility, efficiency, ad-attributed sales, and new-to-brand growth.",
+      by: "Akshay Punjabi, Growth, Bold Care",
+    },
+    takeaway:
+      "The lesson for your store: win the generic searches your buyers type and spend only where they buy. That is where our B2B SEO service starts, on organic search and on Sponsored Products.",
+    note: "Bold Care is not a Nautilo Studio client. Results reported by Amazon Ads for Bold Care, India, 2024–2025.",
+    source: 3,
+  },
+  story: {
+    label: "Our story",
+    heading: "Why four students in Barcelona started an Amazon agency",
+    steps: [
+      {
+        heading: "What we saw",
+        text: "US sellers with a good product on Amazon and no one to market it. Agencies did the work for them and kept the know-how. Tools handed them data and left them alone.",
+      },
+      {
+        heading: "Our idea",
+        text: "Bring data, AI and hands-on work together, and do it with the seller, not for them. We start with one listing, show what changes and grow from there.",
+      },
+      {
+        heading: "Why a nautilus",
+        text: "A nautilus grows one chamber at a time along the golden spiral. We help stores grow the same way: one listing, one keyword, one report at a time.",
+      },
+    ],
+    link: { href: "/about", text: "Meet the four of us behind Nautilo Studio" },
+  },
+  sources: {
+    heading: "Sources",
+    items: [
+      { label: "Jungle Scout, Consumer Trends Report Q1 2024 (survey of 1,000 US consumers, February 2024)", href: "https://www.junglescout.com/resources/reports/consumer-trends-2024-q1/" },
+      { label: "Amazon, Amazon selling stats (Sell on Amazon)", href: "https://sell.amazon.com/blog/amazon-stats" },
+      { label: "Amazon Ads, “Adbrew helps Bold Care grow sales with Amazon Ads” (case study)", href: "https://advertising.amazon.com/library/case-studies/bold-care-adbrew" },
+      { label: "Amazon, Amazon SEO guide (Sell on Amazon)", href: AMAZON_SEO_GUIDE },
+      { label: "Amazon Seller Central, product title requirements", href: TITLE_RULES },
+      { label: "Amazon Seller Central, search terms help", href: SEARCH_TERMS_HELP },
+    ],
+  },
 };
 
 const copy: GuideCopy = { title, page };
