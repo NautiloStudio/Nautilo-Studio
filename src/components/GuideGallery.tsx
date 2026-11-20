@@ -75,13 +75,13 @@ export default function GuideGallery({ exclude, heading, intro, id = "guides" }:
               <div
                 className={`absolute inset-0 bg-graphite/55 transition-opacity duration-500 ${isOpen ? "opacity-100" : "opacity-0"}`}
               />
-              {/* Closed strips: the brand gradient multiplied over the photo, so the screen shows through in blue. */}
+              {/* Closed strips: a very soft brand-blue tint over the photo, so the original colours stay. */}
               <div
-                className={`absolute inset-0 bg-[linear-gradient(160deg,#33d6ff_0%,#1c2fd6_48%,#0f1a7a_100%)] mix-blend-multiply transition-opacity duration-500 ${isOpen ? "opacity-0" : "opacity-100"}`}
+                className={`absolute inset-0 bg-[linear-gradient(160deg,#33d6ff_0%,#1c2fd6_48%,#0f1a7a_100%)] mix-blend-multiply transition-opacity duration-500 ${isOpen ? "opacity-0" : "opacity-35"}`}
               />
               {/* Soft shade on the label edge (top on phones, left from md) so the strip name stays readable on light screens. */}
               <div
-                className={`absolute inset-0 bg-[linear-gradient(180deg,rgba(15,26,122,0.7)_0%,transparent_75%)] md:bg-[linear-gradient(90deg,rgba(15,26,122,0.75)_0%,transparent_60%)] transition-opacity duration-500 ${isOpen ? "opacity-0" : "opacity-100"}`}
+                className={`absolute inset-0 bg-[linear-gradient(180deg,rgba(15,26,122,0.6)_0%,transparent_70%)] md:bg-[linear-gradient(90deg,rgba(15,26,122,0.6)_0%,transparent_50%)] transition-opacity duration-500 ${isOpen ? "opacity-0" : "opacity-100"}`}
               />
 
               {!isOpen && (
@@ -91,7 +91,7 @@ export default function GuideGallery({ exclude, heading, intro, id = "guides" }:
                   aria-expanded={false}
                   className="absolute inset-0 z-10 flex items-start p-5 text-left font-display font-semibold text-offwhite md:p-6"
                 >
-                  <span className="md:[writing-mode:vertical-rl] md:rotate-180">{guide.name}</span>
+                  <span className="[text-shadow:0_1px_10px_rgba(15,26,122,0.7)] md:[writing-mode:vertical-rl] md:rotate-180">{guide.name}</span>
                 </button>
               )}
 
