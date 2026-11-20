@@ -349,40 +349,40 @@ export default function LandingPage({
                 </section>
               )}
 
-              {/* A published case study from a third party, told as challenge, approach, result. Royal blue, so it differs from the black review box. */}
+              {/* A published case study from a third party, told as challenge, approach, result. A soft royal tint on white, so it reads calmer than the black review box. */}
               {page.caseStudy && (
-                <section aria-labelledby="case-study" className="reveal glow-ring on-dark rounded-[2rem] bg-royal p-8 text-offwhite md:p-14">
-                  <p className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-apricot">{page.caseStudy.label}</p>
+                <section aria-labelledby="case-study" className="reveal glow-ring rounded-[2rem] bg-[color-mix(in_oklab,var(--color-royal)_5%,white)] p-8 text-graphite md:p-14">
+                  <p className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-royal">{page.caseStudy.label}</p>
                   <h2 id="case-study" className={`${h2} mt-3 max-w-4xl`}>{page.caseStudy.heading}</h2>
-                  <p className="mt-6 max-w-3xl text-lg leading-relaxed text-offwhite/85">{page.caseStudy.intro}</p>
+                  <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate">{page.caseStudy.intro}</p>
                   <ol className="m-0 mt-10 grid list-none gap-8 p-0 md:grid-cols-3">
                     {page.caseStudy.steps.map((step, index) => (
                       <li key={step.heading}>
-                        <p className="font-display text-sm font-semibold tabular-nums tracking-[0.14em] text-apricot">
+                        <p className="font-display text-sm font-semibold tabular-nums tracking-[0.14em] text-royal">
                           {String(index + 1).padStart(2, "0")} · {step.heading}
                         </p>
-                        <p className="mt-3 leading-relaxed text-offwhite/85">{step.text}</p>
+                        <p className="mt-3 leading-relaxed text-slate">{step.text}</p>
                       </li>
                     ))}
                   </ol>
                   <ul className="m-0 mt-10 grid list-none gap-3 p-0 sm:grid-cols-2 lg:grid-cols-4">
                     {page.caseStudy.results.map((result) => (
-                      <li key={result.label} className="rounded-[1.5rem] bg-white/10 p-6 ring-1 ring-white/15">
-                        <p className="font-display text-[clamp(2.2rem,3.6vw,3rem)] font-bold leading-none tracking-[-0.03em] text-cyan">
+                      <li key={result.label} className="rounded-[1.5rem] bg-white p-6 ring-1 ring-royal/10">
+                        <p className="font-display text-[clamp(2.2rem,3.6vw,3rem)] font-bold leading-none tracking-[-0.03em] text-royal">
                           {result.value}
                         </p>
-                        <p className="mt-3 text-offwhite/75">{result.label}</p>
+                        <p className="mt-3 text-slate">{result.label}</p>
                       </li>
                     ))}
                   </ul>
-                  <blockquote className="m-0 mt-10 border-l-4 border-cyan pl-6">
+                  <blockquote className="m-0 mt-10 border-l-4 border-apricot pl-6">
                     <p className="font-display text-[clamp(1.25rem,2.2vw,1.6rem)] font-medium leading-snug">“{page.caseStudy.quote.text}”</p>
-                    <footer className="mt-3 text-offwhite/70">{page.caseStudy.quote.by}</footer>
+                    <footer className="mt-3 text-slate">{page.caseStudy.quote.by}</footer>
                   </blockquote>
                   <p className="mt-10 max-w-3xl text-lg leading-relaxed">{page.caseStudy.takeaway}</p>
-                  <p className="mt-6 text-sm text-offwhite/70">
+                  <p className="mt-6 text-sm text-slate">
                     {page.caseStudy.note}
-                    <SourceRef n={page.caseStudy.source} onDark />
+                    <SourceRef n={page.caseStudy.source} />
                   </p>
                 </section>
               )}
@@ -430,95 +430,99 @@ export default function LandingPage({
                 </section>
               )}
 
-              {/* Case study teaser */}
-              <Link
-                href={href("/#case-study")}
-                className="reveal glow-ring group flex items-center justify-between gap-6 rounded-[2rem] bg-apricot p-6 sm:p-8"
-              >
-                <span>
-                  <span className="block font-display text-sm font-semibold uppercase tracking-[0.14em] text-graphite/70">
-                    {t.caseLabel}
-                  </span>
-                  <span className="mt-2 block font-display text-2xl font-semibold leading-snug tracking-[-0.01em]">
-                    {t.caseText}
-                  </span>
-                </span>
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-graphite text-offwhite transition-transform duration-300 ease-(--ease-out-strong) group-hover:-translate-y-px group-hover:translate-x-0.5">
-                  <ArrowUpRight size={20} weight="bold" aria-hidden />
-                </span>
-              </Link>
-
-              {/* From our blog: keeps readers who are not ready to buy yet, and links the post they need */}
-              {relatedPost && (
-                <aside
-                  aria-labelledby="from-blog"
-                  className="reveal flex flex-col gap-6 rounded-[2rem] bg-white p-6 ring-1 ring-sand sm:p-8 md:flex-row md:items-center md:justify-between"
+              {/* Closing block: next steps for readers who want more, kept close together
+                  so it reads as one group after the big sections above. */}
+              <div className="space-y-6 md:space-y-8">
+                {/* Case study teaser */}
+                <Link
+                  href={href("/#case-study")}
+                  className="reveal glow-ring group flex items-center justify-between gap-6 rounded-[2rem] bg-apricot p-6 sm:p-8"
                 >
-                  <div className="max-w-2xl">
-                    <p id="from-blog" className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-royal">
-                      {t.blogLabel}
-                    </p>
-                    <p className="mt-2 font-display text-2xl font-semibold leading-snug tracking-[-0.01em]">{t.blogText}</p>
-                    <p className="mt-3 text-slate">
-                      {t.blogStart}{" "}
-                      <Link href={relatedPost.href} className="font-medium text-graphite underline decoration-royal/40 underline-offset-4 hover:text-royal">
-                        {relatedPost.title}
-                      </Link>
-                    </p>
-                  </div>
-                  <Link
-                    href={href("/blog")}
-                    className="group inline-flex shrink-0 items-center gap-3 self-start rounded-full bg-graphite py-2 pl-6 pr-2 font-display font-semibold text-offwhite transition-colors hover:bg-royal md:self-center"
-                  >
-                    {t.blogButton}
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 transition-transform duration-300 ease-(--ease-out-strong) group-hover:-translate-y-px group-hover:translate-x-0.5">
-                      <ArrowUpRight size={18} weight="bold" aria-hidden />
+                  <span>
+                    <span className="block font-display text-sm font-semibold uppercase tracking-[0.14em] text-graphite/70">
+                      {t.caseLabel}
                     </span>
-                  </Link>
-                </aside>
-              )}
+                    <span className="mt-2 block font-display text-2xl font-semibold leading-snug tracking-[-0.01em]">
+                      {t.caseText}
+                    </span>
+                  </span>
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-graphite text-offwhite transition-transform duration-300 ease-(--ease-out-strong) group-hover:-translate-y-px group-hover:translate-x-0.5">
+                    <ArrowUpRight size={20} weight="bold" aria-hidden />
+                  </span>
+                </Link>
 
-              {/* Internal links */}
-              <section aria-labelledby="related" className="reveal">
-                <h2 id="related" className="font-display text-xl font-semibold">
-                  {t.more}
-                </h2>
-                <ul className="mt-4 flex flex-wrap gap-3 p-0">
-                  <li className="list-none">
+                {/* From our blog: keeps readers who are not ready to buy yet, and links the post they need */}
+                {relatedPost && (
+                  <aside
+                    aria-labelledby="from-blog"
+                    className="reveal flex flex-col gap-6 rounded-[2rem] bg-white p-6 ring-1 ring-sand sm:p-8 md:flex-row md:items-center md:justify-between"
+                  >
+                    <div className="max-w-2xl">
+                      <p id="from-blog" className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-royal">
+                        {t.blogLabel}
+                      </p>
+                      <p className="mt-2 font-display text-2xl font-semibold leading-snug tracking-[-0.01em]">{t.blogText}</p>
+                      <p className="mt-3 text-slate">
+                        {t.blogStart}{" "}
+                        <Link href={relatedPost.href} className="font-medium text-graphite underline decoration-royal/40 underline-offset-4 hover:text-royal">
+                          {relatedPost.title}
+                        </Link>
+                      </p>
+                    </div>
                     <Link
-                      href={href("/#services")}
-                      className="inline-block rounded-full bg-white px-4 py-2 ring-1 ring-sand transition-colors hover:ring-royal"
+                      href={href("/blog")}
+                      className="group inline-flex shrink-0 items-center gap-3 self-start rounded-full bg-graphite py-2 pl-6 pr-2 font-display font-semibold text-offwhite transition-colors hover:bg-royal md:self-center"
                     >
-                      {t.moreServices}
+                      {t.blogButton}
+                      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 transition-transform duration-300 ease-(--ease-out-strong) group-hover:-translate-y-px group-hover:translate-x-0.5">
+                        <ArrowUpRight size={18} weight="bold" aria-hidden />
+                      </span>
                     </Link>
-                  </li>
-                  <li className="list-none">
-                    <Link
-                      href={href("/#how")}
-                      className="inline-block rounded-full bg-white px-4 py-2 ring-1 ring-sand transition-colors hover:ring-royal"
-                    >
-                      {t.moreHow}
-                    </Link>
-                  </li>
-                  <li className="list-none">
-                    <Link
-                      href={href("/#contact")}
-                      className="inline-block rounded-full bg-white px-4 py-2 ring-1 ring-sand transition-colors hover:ring-royal"
-                    >
-                      {t.moreTalk}
-                    </Link>
-                  </li>
-                </ul>
-              </section>
+                  </aside>
+                )}
 
-              {/* Sources for the figures and the case study above, folded into one small line */}
-              {page.sources && <SourcesList heading={page.sources.heading} items={page.sources.items} />}
+                {/* Internal links */}
+                <section aria-labelledby="related" className="reveal">
+                  <h2 id="related" className="font-display text-xl font-semibold">
+                    {t.more}
+                  </h2>
+                  <ul className="mt-4 flex flex-wrap gap-3 p-0">
+                    <li className="list-none">
+                      <Link
+                        href={href("/#services")}
+                        className="inline-block rounded-full bg-white px-4 py-2 ring-1 ring-sand transition-colors hover:ring-royal"
+                      >
+                        {t.moreServices}
+                      </Link>
+                    </li>
+                    <li className="list-none">
+                      <Link
+                        href={href("/#how")}
+                        className="inline-block rounded-full bg-white px-4 py-2 ring-1 ring-sand transition-colors hover:ring-royal"
+                      >
+                        {t.moreHow}
+                      </Link>
+                    </li>
+                    <li className="list-none">
+                      <Link
+                        href={href("/#contact")}
+                        className="inline-block rounded-full bg-white px-4 py-2 ring-1 ring-sand transition-colors hover:ring-royal"
+                      >
+                        {t.moreTalk}
+                      </Link>
+                    </li>
+                  </ul>
+                </section>
 
+                {/* Sources for the figures and the case study above, folded into one small line */}
+                {page.sources && <SourcesList heading={page.sources.heading} items={page.sources.items} />}
+              </div>
           </div>
         </article>
 
         {/* The other guides, as an expanding gallery */}
         <GuideGallery
+          className="mt-20 md:mt-28"
           exclude={page.slug}
           id="more-guides"
           heading={withCounts(dict.common.gallery.moreHeading)}

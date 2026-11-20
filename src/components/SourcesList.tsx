@@ -30,7 +30,7 @@ export default function SourcesList({ heading, items }: Props) {
   }, []);
 
   return (
-    <details ref={ref} id="sources" className="group scroll-mt-28 border-t border-sand pt-4 text-sm text-slate">
+    <details ref={ref} id="sources" className="group scroll-mt-28 border-t border-sand/70 pt-5 text-sm text-slate">
       <summary className="inline-flex cursor-pointer list-none items-center gap-2 [&::-webkit-details-marker]:hidden">
         <h2 className="font-display text-sm font-semibold text-graphite">
           {heading} ({items.length})
