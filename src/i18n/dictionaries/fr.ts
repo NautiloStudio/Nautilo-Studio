@@ -31,10 +31,10 @@ const fr: Dictionary = {
         text: "Comment fonctionne la recherche Amazon, où placer vos mots-clés et comment remonter dans les résultats.",
       },
       "listing-optimization": {
-        menu: "Optimisation des fiches",
-        name: "Optimisation des fiches",
-        title: "Transformez plus de visites en commandes",
-        text: "Titres, images, puces et contenu A+ qui convainquent les acheteurs, et comment les tester.",
+        menu: "SEO et optimisation des fiches",
+        name: "SEO et optimisation des fiches",
+        title: "Être trouvé, puis être choisi",
+        text: "Mots-clés, titres, images, puces et contenu A+ pour bien classer votre produit et convaincre les acheteurs.",
       },
       "data-analysis": {
         menu: "Analyse de données",
@@ -50,10 +50,10 @@ const fr: Dictionary = {
       },
     },
     gallery: {
-      heading: "{4} guides gratuits. {40} pages d’idées à appliquer dès aujourd’hui.",
+      heading: "{3} guides gratuits. {30} pages d’idées à appliquer dès aujourd’hui.",
       intro:
         "Un guide par service, avec des exemples, des graphiques et une checklist. Gratuit, à lire et à télécharger.",
-      moreHeading: "Pour aller plus loin : {3} autres guides gratuits.",
+      moreHeading: "Pour aller plus loin : {2} autres guides gratuits.",
       moreIntro: "Chacun contient des exemples, des graphiques et une checklist à télécharger.",
       tenPage: "Guide de 10 pages",
       read: "Lire le guide : {name}",
@@ -121,14 +121,14 @@ const fr: Dictionary = {
           summary:
             "Pilote la façon dont les acheteurs trouvent vos produits : les mots qu’ils recherchent, la position de votre fiche et les campagnes Sponsored Products qui les amènent.",
           focus: ["SEO Amazon", "Sponsored Products", "Recherche de mots-clés"],
-          guide: "Lire le guide SEO Amazon",
+          guide: "Lire le guide SEO et optimisation des fiches",
         },
         "Maria Giraldo": {
           role: "Responsable optimisation des fiches",
           summary:
             "Pilote la façon dont votre fiche convainc les acheteurs qui arrivent : titres, puces, images et contenu A+ qui répondent à leurs questions avant l’achat.",
           focus: ["Titres et puces", "Images et contenu A+", "Tests A/B"],
-          guide: "Lire le guide d’optimisation des fiches",
+          guide: "Lire le guide SEO et optimisation des fiches",
         },
         "Veronika Matkovska": {
           role: "Responsable analyse de données",
@@ -152,7 +152,7 @@ const fr: Dictionary = {
     services: {
       title: "Services marketing Amazon pour vendeurs | Nautilo Studio",
       description:
-        "Quatre services marketing Amazon pour les vendeurs aux États-Unis : SEO, fiches produit, analyse de données et IA. Découvrez-les et demandez un audit gratuit.",
+        "Trois services marketing Amazon pour les vendeurs aux États-Unis : SEO et fiches produit, analyse de données et IA. Découvrez-les et demandez un audit gratuit.",
     },
     home: {
       title: "Agence marketing Amazon pour vendeurs | Nautilo Studio",
@@ -198,18 +198,11 @@ const fr: Dictionary = {
     servicesHeading: "Laquelle de ces phrases ressemble à votre boutique ?",
     services: [
       {
-        title: "Ads et SEO",
-        problem: "« Les acheteurs ne trouvent pas mon produit. »",
-        text: "Nous améliorons votre classement sur les mots-clés et gérons vos campagnes Sponsored Products, pour que plus d’acheteurs arrivent sur vos fiches.",
-        alt: "Loupe appuyée contre un petit colis",
-        guide: "Lire notre guide SEO Amazon",
-      },
-      {
-        title: "Optimisation des fiches",
-        problem: "« On regarde, mais on n’achète pas. »",
-        text: "Nous retravaillons vos titres, puces, contenu A+ et images, pour que plus de visiteurs choisissent d’acheter.",
-        alt: "iMac affichant la page produit Amazon d’une planche à découper en bambou, avec le titre, l’image principale, les puces et le contenu A+ modifiés et signalés",
-        guide: "Lire notre guide d’optimisation des fiches",
+        title: "SEO et optimisation des fiches",
+        problem: "« On ne trouve pas mon produit, ou on regarde sans acheter. »",
+        text: "Nous plaçons dans votre fiche les mots que vos acheteurs recherchent, puis retravaillons titres, puces, images et contenu A+ pour que plus de visiteurs achètent.",
+        alt: "iMac affichant une fiche Amazon optimisée à côté des résultats de recherche où elle arrive en première position, avec son classement par mot-clé",
+        guide: "Lire notre guide SEO et optimisation des fiches",
       },
       {
         title: "Analyse de données",
@@ -361,7 +354,7 @@ const fr: Dictionary = {
     title: "Quatre étudiants en master. Une équipe marketing pour votre boutique Amazon.",
     intro:
       "Nous nous sommes rencontrés à TBS Education à Barcelone, où nous préparons nos masters. Nautilo Studio est ce que nous avons construit ensemble : l’équipe marketing qui manque aux vendeurs Amazon aux États-Unis.",
-    facts: ["4 fondateurs", "4 services", "Basés à Barcelone", "Pour les vendeurs Amazon aux États-Unis"],
+    facts: ["4 fondateurs", "3 services", "Basés à Barcelone", "Pour les vendeurs Amazon aux États-Unis"],
     storyHeading: "Notre histoire",
     story: [
       {
@@ -408,7 +401,7 @@ const fr: Dictionary = {
     h1: "Le blog des vendeurs Amazon : ce qui change, et quoi faire.",
     intro: "Amazon change sans cesse le fonctionnement de sa recherche, ce que ses règles autorisent et les outils qu’il donne aux vendeurs dans Seller Central. Nous suivons ces changements pour vous et les transformons en articles courts et pratiques pour les vendeurs aux États-Unis : ce qui est nouveau, pourquoi c’est important et quoi modifier dans vos fiches.",
     introMore: "Ce blog est mis à jour en continu. De nouveaux articles paraissent au fil de l’actualité d’Amazon : ajoutez cette page à vos favoris et revenez souvent. Pour une vue d’ensemble, commencez par notre",
-    introLink: "guide du SEO sur Amazon",
+    introLink: "guide SEO et optimisation des fiches",
     tags: ["Mis à jour en continu", "L’actualité d’Amazon, expliquée", "Articles pratiques", "Guides PDF gratuits"],
     guidesHeading: "Guides PDF gratuits",
     guidesIntro: "Un guide de 10 pages pour chacun de nos services, avec des exemples, des graphiques et une checklist. Téléchargement gratuit.",

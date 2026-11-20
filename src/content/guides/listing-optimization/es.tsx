@@ -1,142 +1,158 @@
 import Link from "next/link";
+import ListingFieldMap from "@/components/ListingFieldMap";
 import { localePath } from "@/i18n/config";
 import type { GuideCopy } from "../types";
 
+const AMAZON_SEO_GUIDE = "https://sell.amazon.com/blog/amazon-seo";
+const TITLE_RULES = "https://sellercentral.amazon.com/gp/help/external/GYTR6SYGFA5E3EQC";
+const SEARCH_TERMS_HELP = "https://sellercentral.amazon.com/help/hub/reference/external/G23501";
 const PRODUCT_LISTINGS = "https://sell.amazon.com/blog/amazon-product-listings";
 const PRODUCT_PHOTOS = "https://sell.amazon.com/blog/product-photos";
 const A_PLUS = "https://sell.amazon.com/tools/a-content";
 const BOOST_LISTINGS = "https://sell.amazon.com/blog/how-to-boost-amazon-listings";
+const EXPERIMENTS = "https://sell.amazon.com/tools/manage-your-experiments";
 
 const p = (path: string) => localePath("es", path);
+const ext = { target: "_blank", rel: "noopener noreferrer" } as const;
 
-const title = "Agencia de optimización de conversión | Nautilo Studio";
+const title = "SEO en Amazon y optimización de fichas | Nautilo Studio";
 const description =
-  "Nautilo Studio es la agencia de optimización de la tasa de conversión para vendedores de Amazon en EE. UU.: títulos, imágenes y A+ que venden. Revisión gratis.";
+  "SEO en Amazon y optimización de fichas para vendedores en EE. UU.: que te encuentren por lo que buscan tus clientes y te elijan. Pide tu revisión gratis hoy.";
 
 const page: GuideCopy["page"] = {
   slug: "listing-optimization",
-  breadcrumb: "Optimización de fichas de Amazon",
-  question: "Agencia de optimización de la tasa de conversión en Amazon: de visitas a ventas",
+  breadcrumb: "SEO y optimización de fichas",
+  question: "SEO en Amazon y optimización de fichas: que te encuentren y te elijan",
   answer:
-    "La optimización de fichas de Amazon, el trabajo de una agencia de optimización de la tasa de conversión, consiste en mejorar el título, las viñetas, las imágenes y el contenido A+ para que quien llega a tu página decida comprar. Empieza por imágenes claras y un título que diga exactamente qué es el producto, y usa las viñetas para responder a las dudas que tiene el comprador antes de pedir. Prueba un cambio cada vez y quédate con la versión que vende más.",
+    "El SEO en Amazon hace que tu producto aparezca cuando los compradores buscan. La optimización de fichas hace que lo elijan cuando lo ven. En Amazon las dos cosas pasan en la misma página: el título, las viñetas, las imágenes, el contenido A+ y los términos de búsqueda ocultos deciden dónde apareces y si te compran. Pon las palabras que buscan tus clientes donde Amazon las lee, haz la ficha convincente y prueba un cambio cada vez. Las ventas que trae una ficha mejor también la ayudan a subir.",
   description,
   image: {
     src: "/img/amazon-listing-optimization.jpg",
-    alt: "iMac con la página de producto de Amazon de una tabla de cortar de bambú, con el título, la imagen principal, las viñetas y el contenido A+ editados y marcados",
+    alt: "iMac en un escritorio con una ficha de Amazon optimizada de una tabla de cortar de bambú, marcada como «elegir», junto a los resultados de búsqueda donde aparece en primer lugar y su posición por palabra clave, marcados como «encontrar»",
     tile: "bg-apricot",
   },
-  updated: "2026-11-16",
+  updated: "2026-11-20",
   facts: [
+    { value: 200, label: "Caracteres permitidos en un título, según la guía SEO de Amazon" },
+    { value: 60, label: "Caracteres que Amazon recomienda para un título" },
     { value: 9, label: "Fotos que Amazon te deja subir" },
-    { value: 85, suffix: " %", label: "Del encuadre que debería ocupar el producto" },
-    { value: 5, label: "Viñetas por ficha" },
-    {
-      value: 8,
-      prefix: "Hasta un ",
-      suffix: " %",
-      label: "Más ventas que Amazon atribuye al contenido A+ básico",
-    },
+    { value: 20, suffix: " %", label: "Aumento máximo de ventas que Amazon atribuye al contenido optimizado" },
   ],
   sections: [
     {
-      id: "what-matters",
-      heading: "Optimización de fichas de Amazon: lo que hace comprar",
+      id: "found-then-chosen",
+      heading: "Cómo funciona Amazon para los vendedores: que te encuentren y te elijan",
       body: (
         <>
+          <p>Antes de que una búsqueda se convierta en una venta tienen que pasar dos cosas. Amazon tiene que mostrar tu producto para las palabras que escribió el comprador, y el comprador tiene que elegirlo entre los demás resultados de la página. Lo primero es el SEO en Amazon. Lo segundo, la optimización de fichas. En Amazon las dos trabajan sobre la misma página, así que las tratamos como un solo trabajo.</p>
           <p>
-            Cuando un comprador llega a tu página de producto, cuatro cosas deciden si compra: el título, las imágenes, las viñetas y el contenido A+. Una agencia de optimización de la tasa de conversión trabaja en las cuatro, porque cada una responde a una pregunta distinta del comprador.
+            {"Que te encuentren empieza por la relevancia: si una palabra de búsqueda no aparece en el título, las viñetas, la descripción ni los términos de búsqueda ocultos, el producto casi nunca sale para ella. Que te elijan depende de lo que el comprador ve después: la imagen principal, el título, el precio, las reseñas y la Featured Offer. Las dos cosas se alimentan entre sí. La guía SEO de Amazon dice que "}
+            <a href={AMAZON_SEO_GUIDE} {...ext}>la calidad de la ficha y la salud de la cuenta pueden contribuir al posicionamiento</a>
+            {", y que mejores fotos y precios pueden ayudar a un producto a subir en los resultados de forma orgánica. Una ficha que vende sube, y una ficha que sube la ven más compradores."}
           </p>
-          <p>
-            El título dice qué es el producto y después la marca y los detalles que se comparan, como la talla o el color. Las imágenes hacen el trabajo de un mostrador: Amazon te deja{" "}
-            <a href={PRODUCT_LISTINGS} target="_blank" rel="noopener noreferrer">
-              subir hasta nueve fotos
-            </a>
-            , y sus consejos recomiendan fondo blanco y un producto que{" "}
-            <a href={PRODUCT_PHOTOS} target="_blank" rel="noopener noreferrer">
-              ocupe el 85 % o más del encuadre
-            </a>
-            . Las cinco viñetas dan un beneficio cada una, respaldado por un dato comprobable. El contenido A+ añade imágenes y texto bajo la ficha para las marcas en Brand Registry, y Amazon dice que{" "}
-            <a href={A_PLUS} target="_blank" rel="noopener noreferrer">
-              el contenido A+ básico puede aumentar las ventas hasta un 8 %
-            </a>
-            , según sus datos internos.
-          </p>
-          <blockquote>El comprador no puede tocar tu producto. Tu ficha tiene que hacerlo por él.</blockquote>
+          <ListingFieldMap
+            caption={"Tu ficha, campo por campo"}
+            labels={{ found: "Encontrar", chosen: "Elegir" }}
+            rows={[
+              { field: "Título", text: "Las palabras que Amazon más pesa y lo primero que lee el comprador.", effect: "both" },
+              { field: "Viñetas", text: "Palabras clave secundarias para la búsqueda y motivos de compra para el comprador.", effect: "both" },
+              { field: "Términos de búsqueda", text: "Sinónimos y errores de escritura que el comprador nunca ve.", effect: "found" },
+              { field: "Imágenes", text: "El mostrador de la tienda: forma, tamaño y el producto en uso.", effect: "chosen" },
+              { field: "Contenido A+", text: "Imágenes más grandes y comparativas debajo de la ficha.", effect: "chosen" },
+            ]}
+          />
+          <blockquote>La relevancia hace que te muestren. Las ventas hacen que sigas ahí.</blockquote>
         </>
       ),
     },
     {
-      id: "signs",
-      heading: "Optimización de la conversión: señales de que tu ficha necesita trabajo",
+      id: "keyword-research",
+      heading: "Investigación de palabras clave en Amazon: lo que escriben tus compradores",
+      body: (
+        <>
+          <p>Las buenas palabras clave salen de lo que los compradores escriben de verdad, no de suposiciones. Lo más rápido es la barra de búsqueda de Amazon: escribe la palabra principal de tu producto y apunta las sugerencias, porque vienen de búsquedas reales.</p>
+          <p>Seller Central añade datos gratuitos. Product Opportunity Explorer muestra los términos más buscados de un nicho. Brand Analytics muestra qué búsquedas llevan a clics y ventas en las marcas registradas. Si ya haces Sponsored Products, su informe de términos de búsqueda lista las búsquedas exactas que te trajeron compradores. Ordena lo que encuentres por lo bien que describe tu producto, no solo por volumen: una búsqueda precisa con menos compradores suele vender más que una amplia.</p>
+          <p>Esa lista alimenta luego cada campo del mapa de arriba. Las dos o tres búsquedas más importantes van en el título, las siguientes en las viñetas y los sinónimos que no caben en ningún otro sitio en los términos de búsqueda ocultos.</p>
+        </>
+      ),
+    },
+    {
+      id: "title",
+      heading: "El título en Amazon: donde se juntan el posicionamiento y los clics",
       body: (
         <>
           <p>
-            Amazon pone un ejemplo sencillo:{" "}
-            <a href={BOOST_LISTINGS} target="_blank" rel="noopener noreferrer">
-              una ficha con muchas visitas y pocas ventas
-            </a>{" "}
-            puede necesitar mejores imágenes o descripciones. Muchas visitas y pocos pedidos significan que te encuentran pero no les convences, así que imágenes, viñetas y contenido A+ van primero.
+            {"El título es el único campo que trabaja a fondo para la búsqueda y para el comprador, y por eso es tan fácil equivocarse. Amazon permite "}
+            <a href={AMAZON_SEO_GUIDE} {...ext}>hasta 200 caracteres y recomienda 60 o menos</a>
+            {", y sus "}
+            <a href={TITLE_RULES} {...ext}>normas para títulos</a>
+            {" permiten la misma palabra como máximo dos veces."}
+          </p>
+          <p>Un título lleno de palabras clave puede coincidir con más búsquedas, pero se lee como una lista y pierde el clic frente a un competidor más claro. Los móviles cortan los títulos largos, así que lo que es el producto tiene que ir en las primeras palabras, seguido de la marca y los datos que el comprador compara, como tamaño, material o cantidad. Escríbelo primero para el comprador y luego comprueba que tus búsquedas principales están dentro.</p>
+        </>
+      ),
+    },
+    {
+      id: "images-bullets-a-plus",
+      heading: "Imágenes, viñetas y contenido A+: convertir una visita en un pedido",
+      body: (
+        <>
+          <p>
+            {"Cuando un comprador abre tu página, el resto de la ficha tiene que responder a las preguntas que haría en una tienda. Amazon te deja "}
+            <a href={PRODUCT_LISTINGS} {...ext}>subir hasta nueve fotos</a>
+            {", y sus consejos de fotografía recomiendan un fondo blanco con el producto "}
+            <a href={PRODUCT_PHOTOS} {...ext}>ocupando el 85 % o más del encuadre</a>
+            {". Después de la imagen principal, muestra el producto desde otros ángulos, en uso y junto a algo que deje ver su tamaño."}
           </p>
           <p>
-            Pocas visitas indican otro problema: no encuentran la ficha, y nuestro{" "}
-            <Link href={p("/services/amazon-seo")}>servicio de SEO B2B para vendedores de Amazon</Link> es el mejor punto de partida. Hay dos señales más. Si las reseñas y las preguntas repiten la misma duda, respóndela en las viñetas o en las imágenes. Y las devoluciones por “no coincide con la descripción” indican que la ficha promete algo que el producto no cumple: corrige el texto antes de gastar más en tráfico.
+            {"Las cinco viñetas dan un beneficio cada una, respaldado por un dato que el comprador puede comprobar, y son el sitio natural para las palabras clave que no cupieron en el título. «Acero inoxidable» dice más si añades que mantiene la bebida fría todo el día. El contenido A+ añade imágenes y tablas comparativas debajo de la ficha para las marcas en Brand Registry, y Amazon dice que "}
+            <a href={A_PLUS} {...ext}>el contenido A+ básico puede aumentar las ventas hasta un 8 %</a>
+            {", según sus datos internos. Los términos de búsqueda ocultos recogen sinónimos y errores de escritura, sin repeticiones, marcas ni ASIN: consulta el "}
+            <a href={SEARCH_TERMS_HELP} {...ext}>límite de longitud actual</a>
+            {" y sigue nuestra guía para "}
+            <Link href={p("/blog/amazon-backend-keywords")}>rellenar las palabras clave ocultas de Amazon</Link>.
           </p>
         </>
       ),
     },
     {
-      id: "testing",
-      heading: "Cómo prueba una agencia de optimización de la conversión lo que funciona",
+      id: "warning-signs",
+      heading: "Señales de que tu ficha pierde posiciones, ventas o las dos cosas",
       body: (
         <>
           <p>
-            Una buena optimización de la tasa de conversión cambia una sola cosa cada vez. Elige un elemento, como la imagen principal o el título, y cambia solo ese, para saber qué marcó la diferencia.
+            {"Tus números te dicen qué mitad del trabajo necesita atención. Pocas impresiones y pocas visitas significan que no te encuentran: empieza por las palabras clave y el título. Muchas visitas y pocos pedidos significan que te encuentran pero no les convences. Amazon pone este mismo ejemplo: "}
+            <a href={BOOST_LISTINGS} {...ext}>una ficha con muchas visitas y pocas ventas</a>
+            {" puede necesitar mejores imágenes o descripciones."}
           </p>
-          <p>
-            Si tu marca está en Brand Registry,{" "}
-            <a href={BOOST_LISTINGS} target="_blank" rel="noopener noreferrer">
-              Manage Your Experiments
-            </a>{" "}
-            de Amazon muestra dos versiones a los compradores y compara los resultados. Deja que la prueba dure lo suficiente para reunir pedidos reales, no solo unos días; quédate con la versión ganadora y pasa al siguiente elemento.
-          </p>
+          <p>Algunas señales apuntan a las dos cosas. Reseñas y preguntas que repiten la misma duda indican que la ficha no la resuelve, y las devoluciones por «no coincide con la descripción» indican que la ficha promete algo que el producto no cumple. Corrige el texto antes de traer más tráfico.</p>
+          <p>Los errores habituales salen de los mismos sitios: llenar el título de palabras clave, usar marcas de la competencia (Amazon no lo permite ni en la ficha ni en los términos de búsqueda), un título, unas viñetas y unas imágenes que describen tamaños o contenidos distintos, y cambiarlo todo a la vez, de modo que nadie sabe qué cambio ayudó.</p>
         </>
       ),
     },
     {
-      id: "mistakes",
-      heading: "Errores en las fichas de Amazon que frenan la compra",
-      body: (
-        <>
-          <p>
-            Las imágenes borrosas u oscuras son el error más común: el comprador no puede tocar el producto, así que las fotos tienen que hacerlo. Justo detrás están las características sin beneficios. “Acero inoxidable” dice más si explicas que mantiene la bebida fría.
-          </p>
-          <p>
-            Las afirmaciones que no puedes demostrar traen devoluciones y malas reseñas, y pueden incumplir las normas de Amazon. Los detalles que no cuadran también restan: título, viñetas e imágenes deben describir la misma talla, color y contenido. Las palabras que buscan los compradores van en el texto visible y en los términos de búsqueda ocultos, y nuestra guía paso a paso para{" "}
-            <Link href={p("/blog/amazon-backend-keywords")}>rellenar las palabras clave ocultas de Amazon</Link> explica lo segundo.
-          </p>
-        </>
-      ),
-    },
-    {
-      id: "cro-service",
-      heading: "Qué hace nuestra agencia de optimización de la conversión por los vendedores de Amazon",
+      id: "seo-listing-service",
+      heading: "Qué incluye nuestro servicio de SEO en Amazon y optimización de fichas",
       figure: {
         src: "/img/amazon-listing-optimization.jpg",
-        alt: "iMac con una ficha de Amazon y cinco cambios marcados en título, imagen principal, viñetas, contenido A+ y términos de búsqueda: el trabajo de una agencia de optimización de la conversión",
+        alt: "iMac en un escritorio con una ficha de Amazon con cinco cambios marcados, los resultados de búsqueda de «bamboo cutting board» y las posiciones por palabra clave antes y después",
         width: 1600,
         height: 1000,
-        caption: "Ficha de ejemplo con nuestros cinco cambios marcados. Ilustración, no es una ficha de cliente.",
+        caption: "Ficha de ejemplo con nuestros cambios marcados, sus resultados de búsqueda y posiciones. Ilustración con datos de ejemplo, no es la ficha de un cliente. Foto: Amy Hirschi, Unsplash.",
       },
       body: (
         <>
+          <p>Trabajamos una ficha cada vez y la miramos dos veces: una como la mira el buscador de Amazon y otra como la mira un comprador.</p>
+          <p>Primero investigamos lo que de verdad buscan tus compradores con las herramientas de Amazon. Después reescribimos el título y las viñetas para que las palabras clave principales vayan delante y cada línea siga respondiendo a una duda del comprador, y rellenamos los términos de búsqueda ocultos dentro de las normas de Amazon. Luego preparamos el briefing de las nuevas imágenes y del contenido A+ donde más ayuden.</p>
           <p>
-            Piensa en ello como optimización de fichas de Amazon con una prueba detrás de cada cambio. Nuestro servicio de optimización de la tasa de conversión sigue cuatro pasos, ficha a ficha.
+            {"Por último, probamos. Si tu marca está en Brand Registry, "}
+            <a href={EXPERIMENTS} {...ext}>Manage Your Experiments</a>
+            {" de Amazon muestra dos versiones de un título, una imagen, las viñetas o el contenido A+ a los compradores y compara los resultados; Amazon dice que el contenido optimizado puede ayudar a aumentar las ventas hasta un 20 %. Cambiamos una cosa cada vez y seguimos posiciones y ventas con nuestro "}
+            <Link href={p("/services/data-analysis")}>servicio de análisis de datos de Amazon</Link>.
           </p>
           <p>
-            Primero leemos tu ficha como lo haría un comprador y anotamos lo que falta o no está claro. Después reescribimos el título y las viñetas para que cada una responda a una pregunta del comprador, y preparamos el encargo de nuevas imágenes y contenido A+ donde más ayuden. Por último probamos un cambio cada vez y nos quedamos con la versión que vende más.
-          </p>
-          <p>
-            Lo hace nuestro equipo en Barcelona. <Link href={p("/about")}>Conoce al equipo de Nautilo Studio</Link>.
+            {"El trabajo lo hace nuestro equipo en Barcelona. "}
+            <Link href={p("/about")}>Conoce al equipo de Nautilo Studio</Link>.
           </p>
         </>
       ),
@@ -144,24 +160,24 @@ const page: GuideCopy["page"] = {
   ],
   faqs: [
     {
-      question: "¿Cuántas imágenes debería tener una ficha de Amazon?",
+      question: "¿Por qué combinar el SEO en Amazon y la optimización de fichas?",
       answer:
-        "Amazon te deja subir hasta nueve fotos y dice que cuantas más, mejor. Empieza con una imagen principal limpia sobre fondo blanco y añade otros ángulos, el producto en uso y su tamaño.",
+        "Porque trabajan sobre los mismos campos y se alimentan entre sí. Las palabras clave traen compradores a la ficha, la ficha los convierte en pedidos y esas ventas ayudan al producto a posicionarse.",
     },
     {
-      question: "¿Vale la pena el contenido A+?",
+      question: "¿Cuánto tardan los cambios en notarse en posiciones y ventas?",
       answer:
-        "Normalmente sí, si puedes usarlo. Amazon afirma que el contenido A+ básico puede aumentar las ventas hasta un 8 %, según sus datos internos. Es gratis para las marcas que cumplen los requisitos del Registro de Marcas.",
+        "El posicionamiento sigue a las ventas, así que valora un cambio en varias semanas, no en unos días. Cambia una cosa cada vez para saber qué marcó la diferencia.",
     },
     {
-      question: "¿Qué diferencia hay entre optimizar la ficha y el SEO en Amazon?",
+      question: "¿Tengo que pagar anuncios para posicionarme en Amazon?",
       answer:
-        "El SEO en Amazon ayuda a que los compradores encuentren tu ficha. La optimización ayuda a que quienes llegan decidan comprar. Necesitas las dos, y las ventas de una ficha mejor también apoyan tu posicionamiento.",
+        "No. Amazon dice que Sponsored Products puede ayudar a que las ofertas suban en los resultados, pero primero va una ficha relevante y convincente, que además hace rendir mejor cualquier anuncio. Nosotros nos centramos en la ficha y la búsqueda orgánica, no en gestionar campañas de anuncios.",
     },
     {
       question: "¿Puede Nautilo Studio revisar mi ficha?",
       answer:
-        "Sí. Envíanos el enlace a una ficha de Amazon con el formulario de revisión gratuita de esta página y te escribiremos qué mejoraríamos primero.",
+        "Sí. Envíanos una ficha de Amazon con el formulario de revisión gratuita de esta página y te diremos por email qué mejoraríamos primero, para la búsqueda y para las ventas.",
     },
   ],
 };

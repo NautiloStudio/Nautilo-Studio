@@ -18,7 +18,6 @@ import { notFound } from "next/navigation";
 
 // Pictures and links for each service; the words come from the dictionary, in the same order.
 const serviceMedia = [
-  { image: "/img/amazon-seo-dashboard.webp", tile: "bg-cyan", chip: "bg-cyan text-graphite", href: "/services/amazon-seo" },
   { image: "/img/amazon-listing-optimization.jpg", tile: "bg-apricot", chip: "bg-apricot text-graphite", href: "/services/listing-optimization" },
   { image: "/img/amazon-data-analysis.jpg", tile: "bg-royal", chip: "bg-royal text-offwhite", href: "/services/data-analysis" },
   { image: "/img/amazon-ai-automation.jpg", tile: "bg-graphite", chip: "bg-graphite text-offwhite", href: "/services/ai-automation" },
@@ -31,12 +30,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   const dict = await getDictionary(lang);
   const t = dict.home;
   const href = (path: string) => localePath(lang, path);
-  // The SEO card shows the dashboard photo from the SEO page, described in the page's language.
-  const services = t.services.map((service, index) => ({
-    ...service,
-    ...serviceMedia[index],
-    alt: index === 0 ? dict.servicesPage.seoPhotoAlt : service.alt,
-  }));
+  const services = t.services.map((service, index) => ({ ...service, ...serviceMedia[index] }));
   const steps = t.steps.map((step, index) => ({ ...step, demo: demos[index] }));
 
   // Who we are and what this site is, for search engines and AI answer engines.

@@ -30,10 +30,10 @@ const es: Dictionary = {
         text: "Cómo funciona la búsqueda de Amazon, dónde van tus palabras clave y cómo subir en los resultados.",
       },
       "listing-optimization": {
-        menu: "Optimización de fichas",
-        name: "Optimización de fichas",
-        title: "Convierte más visitas en pedidos",
-        text: "Títulos, imágenes, viñetas y contenido A+ que convencen al comprador, y cómo ponerlos a prueba.",
+        menu: "SEO y optimización de fichas",
+        name: "SEO y optimización de fichas",
+        title: "Que te encuentren y te elijan",
+        text: "Palabras clave, títulos, imágenes, viñetas y contenido A+ para posicionar tu producto y convencer al comprador.",
       },
       "data-analysis": {
         menu: "Análisis de datos",
@@ -49,10 +49,10 @@ const es: Dictionary = {
       },
     },
     gallery: {
-      heading: "{4} guías gratuitas. {40} páginas de ideas que puedes usar hoy.",
+      heading: "{3} guías gratuitas. {30} páginas de ideas que puedes usar hoy.",
       intro:
         "Una guía por servicio, con ejemplos, gráficos y una lista de comprobación. Gratis para leer y descargar.",
-      moreHeading: "Sigue leyendo: {3} guías gratuitas más.",
+      moreHeading: "Sigue leyendo: {2} guías gratuitas más.",
       moreIntro: "Cada una incluye ejemplos, gráficos y una lista de comprobación descargable.",
       tenPage: "Guía de 10 páginas",
       read: "Leer la guía: {name}",
@@ -120,14 +120,14 @@ const es: Dictionary = {
           summary:
             "Se encarga de cómo te encuentran los compradores: las palabras que buscan, la posición de tu ficha y las campañas de Sponsored Products que los atraen.",
           focus: ["SEO en Amazon", "Sponsored Products", "Búsqueda de palabras clave"],
-          guide: "Leer la guía de SEO en Amazon",
+          guide: "Leer la guía de SEO y optimización de fichas",
         },
         "Maria Giraldo": {
           role: "Responsable de optimización de fichas",
           summary:
             "Se encarga de que tu ficha convenza a quien llega: títulos, viñetas, imágenes y contenido A+ que responden a sus dudas antes de comprar.",
           focus: ["Títulos y viñetas", "Imágenes y contenido A+", "Tests A/B"],
-          guide: "Leer la guía de optimización de fichas",
+          guide: "Leer la guía de SEO y optimización de fichas",
         },
         "Veronika Matkovska": {
           role: "Responsable de análisis de datos",
@@ -151,7 +151,7 @@ const es: Dictionary = {
     services: {
       title: "Servicios de marketing en Amazon en EE. UU. | Nautilo Studio",
       description:
-        "Cuatro servicios de marketing en Amazon para vendedores en EE. UU.: SEO, fichas, análisis de datos y automatización con IA. Conócelos y pide tu revisión gratis.",
+        "Tres servicios de marketing en Amazon para vendedores en EE. UU.: SEO y fichas, análisis de datos y automatización con IA. Conócelos y pide tu revisión gratis.",
     },
     home: {
       title: "Agencia de marketing Amazon para marcas | Nautilo Studio",
@@ -196,18 +196,11 @@ const es: Dictionary = {
     servicesHeading: "¿Cuál de estas frases describe tu tienda?",
     services: [
       {
-        title: "Ads y SEO",
-        problem: "«Los compradores no encuentran mi producto».",
-        text: "Mejoramos tu posición en las búsquedas y gestionamos campañas de Sponsored Products para que más compradores lleguen a tus fichas.",
-        alt: "Lupa apoyada en un paquete pequeño",
-        guide: "Leer nuestra guía de SEO en Amazon",
-      },
-      {
-        title: "Optimización de fichas",
-        problem: "«Miran, pero no compran».",
-        text: "Rehacemos tus títulos, viñetas, contenido A+ e imágenes para que más visitantes decidan comprar.",
-        alt: "iMac con la página de producto de Amazon de una tabla de cortar de bambú, con el título, la imagen principal, las viñetas y el contenido A+ editados y marcados",
-        guide: "Leer nuestra guía de optimización de fichas",
+        title: "SEO y optimización de fichas",
+        problem: "«No encuentran mi producto, o miran pero no compran».",
+        text: "Ponemos en tu ficha las palabras que buscan tus compradores y rehacemos títulos, viñetas, imágenes y contenido A+ para que más visitantes compren.",
+        alt: "iMac con una ficha de Amazon optimizada junto a los resultados de búsqueda donde aparece en primer lugar y su posición por palabra clave",
+        guide: "Leer nuestra guía de SEO y optimización de fichas",
       },
       {
         title: "Análisis de datos",
@@ -359,7 +352,7 @@ const es: Dictionary = {
     title: "Cuatro estudiantes de máster. Un equipo de marketing para tu tienda de Amazon.",
     intro:
       "Nos conocimos en TBS Education en Barcelona, donde estudiamos nuestros másteres. Nautilo Studio es lo que hemos creado juntos: el equipo de marketing que les falta a los vendedores de Amazon en EE. UU.",
-    facts: ["4 fundadores", "4 servicios", "Con sede en Barcelona", "Para vendedores de Amazon en EE. UU."],
+    facts: ["4 fundadores", "3 servicios", "Con sede en Barcelona", "Para vendedores de Amazon en EE. UU."],
     storyHeading: "Nuestra historia",
     story: [
       {
@@ -406,7 +399,7 @@ const es: Dictionary = {
     h1: "El blog para vendedores de Amazon: qué ha cambiado y qué hacer.",
     intro: "Amazon cambia sin parar cómo funciona su buscador, qué permiten sus normas y qué herramientas da a los vendedores en Seller Central. Seguimos esos cambios por ti y los convertimos en artículos breves y prácticos para vendedores en EE. UU.: qué hay de nuevo, por qué importa y qué cambiar en tus fichas.",
     introMore: "Este blog se actualiza de forma continua. Publicamos nuevos artículos a medida que pasan cosas en Amazon, así que guarda esta página y vuelve pronto. Para tener la visión completa, empieza por nuestra",
-    introLink: "guía de SEO en Amazon",
+    introLink: "guía de SEO y optimización de fichas",
     tags: ["Actualizado de forma continua", "Noticias de Amazon, explicadas", "Artículos prácticos", "Guías PDF gratis"],
     guidesHeading: "Guías PDF gratis",
     guidesIntro: "Una guía de 10 páginas para cada uno de nuestros servicios, con ejemplos, gráficos y una lista de comprobación. Descarga gratuita.",

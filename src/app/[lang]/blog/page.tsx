@@ -95,7 +95,7 @@ export default async function BlogIndex({ params }: PageProps<"/[lang]/blog">) {
             <p>{t.intro}</p>
             <p>
               {t.introMore}{" "}
-              <Link href={href("/services/amazon-seo")} className="text-graphite underline decoration-royal/40 underline-offset-4 hover:text-royal">
+              <Link href={href("/services/listing-optimization")} className="text-graphite underline decoration-royal/40 underline-offset-4 hover:text-royal">
                 {t.introLink}
               </Link>
               .

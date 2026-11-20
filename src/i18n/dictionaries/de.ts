@@ -31,10 +31,10 @@ const de: Dictionary = {
         text: "Wie die Amazon-Suche funktioniert, wohin Ihre Keywords gehören und wie Sie in den Ergebnissen aufsteigen.",
       },
       "listing-optimization": {
-        menu: "Listing-Optimierung",
-        name: "Listing-Optimierung",
-        title: "Mehr Besuche in Bestellungen verwandeln",
-        text: "Titel, Bilder, Bullet Points und A+ Content, die Käufer überzeugen, und wie Sie sie testen.",
+        menu: "SEO und Listing-Optimierung",
+        name: "SEO und Listing-Optimierung",
+        title: "Gefunden werden, dann gewählt werden",
+        text: "Keywords, Titel, Bilder, Bullet Points und A+ Content, die Ihr Produkt nach oben bringen und Käufer überzeugen.",
       },
       "data-analysis": {
         menu: "Datenanalyse",
@@ -50,10 +50,10 @@ const de: Dictionary = {
       },
     },
     gallery: {
-      heading: "{4} kostenlose Leitfäden. {40} Seiten Ideen, die Sie sofort nutzen können.",
+      heading: "{3} kostenlose Leitfäden. {30} Seiten Ideen, die Sie sofort nutzen können.",
       intro:
         "Ein Leitfaden pro Leistung, mit Beispielen, Diagrammen und einer Checkliste. Kostenlos zum Lesen und Herunterladen.",
-      moreHeading: "Weiterlesen: {3} weitere kostenlose Leitfäden.",
+      moreHeading: "Weiterlesen: {2} weitere kostenlose Leitfäden.",
       moreIntro: "Jeder enthält Beispiele, Diagramme und eine Checkliste zum Herunterladen.",
       tenPage: "Leitfaden mit 10 Seiten",
       read: "Leitfaden lesen: {name}",
@@ -121,14 +121,14 @@ const de: Dictionary = {
           summary:
             "Verantwortet, wie Käufer Ihre Produkte finden: die Suchbegriffe, die Position Ihres Listings und die Sponsored-Products-Kampagnen, die sie zu Ihnen bringen.",
           focus: ["Amazon-SEO", "Sponsored Products", "Keyword-Recherche"],
-          guide: "Leitfaden Amazon-SEO lesen",
+          guide: "Leitfaden SEO und Listing-Optimierung lesen",
         },
         "Maria Giraldo": {
           role: "Lead Listing-Optimierung",
           summary:
             "Verantwortet, wie Ihr Listing die Besucher überzeugt: Titel, Bullet Points, Bilder und A+ Content, die ihre Fragen vor dem Kauf beantworten.",
           focus: ["Titel und Bullet Points", "Bilder und A+ Content", "A/B-Tests"],
-          guide: "Leitfaden Listing-Optimierung lesen",
+          guide: "Leitfaden SEO und Listing-Optimierung lesen",
         },
         "Veronika Matkovska": {
           role: "Lead Datenanalyse",
@@ -152,7 +152,7 @@ const de: Dictionary = {
     services: {
       title: "Amazon-Marketing-Services für Händler | Nautilo Studio",
       description:
-        "Vier Amazon-Marketing-Services für Händler in den USA: SEO, Listing-Optimierung, Datenanalyse und KI-Automatisierung. Lernen Sie sie kennen, Check gratis.",
+        "Drei Amazon-Marketing-Services für Händler in den USA: SEO und Listing-Optimierung, Datenanalyse und KI-Automatisierung. Lernen Sie sie kennen, Check gratis.",
     },
     home: {
       title: "Amazon-Marketingagentur für Händler | Nautilo Studio",
@@ -197,18 +197,11 @@ const de: Dictionary = {
     servicesHeading: "Welcher dieser Sätze passt zu Ihrem Shop?",
     services: [
       {
-        title: "Ads & SEO",
-        problem: "„Käufer finden mein Produkt nicht.“",
-        text: "Wir verbessern Ihr Keyword-Ranking und betreuen Sponsored-Products-Kampagnen, damit mehr Käufer Ihre Listings erreichen.",
-        alt: "Lupe, an ein kleines Paket gelehnt",
-        guide: "Unseren Leitfaden Amazon-SEO lesen",
-      },
-      {
-        title: "Listing-Optimierung",
-        problem: "„Viele schauen, wenige kaufen.“",
-        text: "Wir überarbeiten Titel, Bullet Points, A+ Content und Bilder, damit sich mehr Besucher für den Kauf entscheiden.",
-        alt: "iMac mit der Amazon-Produktseite eines Bambus-Schneidebretts, auf der Titel, Hauptbild, Bullet Points und A+ Content als geändert markiert sind",
-        guide: "Unseren Leitfaden Listing-Optimierung lesen",
+        title: "SEO und Listing-Optimierung",
+        problem: "„Käufer finden mein Produkt nicht, oder sie schauen und kaufen nicht.“",
+        text: "Wir bringen die Wörter, nach denen Ihre Käufer suchen, in Ihr Listing und überarbeiten Titel, Bullet Points, Bilder und A+ Content, damit mehr Besucher kaufen.",
+        alt: "iMac mit einem optimierten Amazon-Listing neben den Suchergebnissen, in denen es auf Platz eins steht, und seinen Keyword-Rankings",
+        guide: "Unseren Leitfaden SEO und Listing-Optimierung lesen",
       },
       {
         title: "Datenanalyse",
@@ -361,7 +354,7 @@ const de: Dictionary = {
     title: "Vier Masterstudierende. Ein Marketingteam für Ihren Amazon-Shop.",
     intro:
       "Wir haben uns an der TBS Education in Barcelona kennengelernt, wo wir unseren Master machen. Nautilo Studio haben wir gemeinsam aufgebaut: das Marketingteam, das Amazon-Händlern in den USA fehlt.",
-    facts: ["4 Gründer", "4 Leistungen", "Sitz in Barcelona", "Für Amazon-Händler in den USA"],
+    facts: ["4 Gründer", "3 Leistungen", "Sitz in Barcelona", "Für Amazon-Händler in den USA"],
     storyHeading: "Unsere Geschichte",
     story: [
       {
@@ -408,7 +401,7 @@ const de: Dictionary = {
     h1: "Der Blog für Amazon-Händler: was sich ändert und was zu tun ist.",
     intro: "Amazon ändert ständig, wie die Suche funktioniert, was die Regeln erlauben und welche Tools Händler in Seller Central bekommen. Wir verfolgen diese Änderungen für Sie und machen daraus kurze, praktische Artikel für Händler in den USA: was neu ist, warum es zählt und was Sie an Ihren Listings ändern sollten.",
     introMore: "Dieser Blog wird laufend aktualisiert. Neue Artikel erscheinen, sobald sich bei Amazon etwas tut. Speichern Sie diese Seite also und schauen Sie wieder vorbei. Den Gesamtüberblick gibt unser",
-    introLink: "Ratgeber zu Amazon SEO",
+    introLink: "Ratgeber zu SEO und Listing-Optimierung",
     tags: ["Laufend aktualisiert", "Amazon-News, erklärt", "Praxis-Artikel", "Kostenlose PDF-Guides"],
     guidesHeading: "Kostenlose PDF-Guides",
     guidesIntro: "Ein 10-seitiger Guide für jeden unserer Services, mit Beispielen, Grafiken und einer Checkliste. Kostenlos zum Download.",

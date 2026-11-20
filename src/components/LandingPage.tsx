@@ -108,7 +108,6 @@ function structuredData(page: LandingContent, lang: Locale, home: string, servic
 
 // The looping scene shown in each guide's hero.
 const scenes: Record<string, DemoKind> = {
-  "amazon-seo": "search",
   "listing-optimization": "optimise",
   "data-analysis": "analyse",
   "ai-automation": "automate",

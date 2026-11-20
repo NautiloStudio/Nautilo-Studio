@@ -35,7 +35,7 @@ const post: BlogPost = {
       <p>
         Ce guide explique ce qu’est ce champ, pourquoi il compte encore, comment trouver les bons mots
         et comment les écrire, avec un exemple concret à la fin. Si le sujet est nouveau pour vous,
-        commencez par notre page <Link href={p("/services/amazon-seo")}>SEO B2B pour vendeurs Amazon</Link>, qui montre
+        commencez par notre page <Link href={p("/services/listing-optimization")}>SEO et optimisation des fiches Amazon</Link>, qui montre
         comment Amazon classe les produits.
       </p>
     </>
@@ -340,7 +340,7 @@ const post: BlogPost = {
   ],
   cta: {
     text: "Les mots-clés backend sont une partie du SEO sur Amazon. Voyez comment titre, puces et ventes s’articulent, ou laissez-nous auditer votre fiche gratuitement.",
-    pillar: { href: "/services/amazon-seo", label: "Voir notre service SEO B2B pour vendeurs Amazon" },
+    pillar: { href: "/services/listing-optimization", label: "Voir notre service SEO et optimisation des fiches Amazon" },
     formHeading: "Vous voulez que nous vérifiions vos mots-clés backend ?",
     formText: "Envoyez-nous une fiche et nous vous dirons, gratuitement, ce que nous changerions en premier.",
   },

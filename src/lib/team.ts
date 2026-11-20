@@ -20,7 +20,7 @@ export const team: TeamMember[] = [
     summary:
       "Leads how shoppers find your products: the words they search for, where your listing ranks and the Sponsored Products campaigns that bring them in.",
     focus: ["Amazon SEO", "Sponsored Products", "Keyword research"],
-    guide: { href: "/services/amazon-seo", label: "Read the Amazon SEO guide" },
+    guide: { href: "/services/listing-optimization", label: "Read the SEO and listing optimisation guide" },
     linkedin: "https://www.linkedin.com/in/filippoverace/",
     photo: "/team/filippo.jpg",
     frame: { position: "50% 28%", zoom: 1 },

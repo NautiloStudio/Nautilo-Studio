@@ -34,7 +34,7 @@ const post: BlogPost = {
       <p>
         Dieser Ratgeber erklärt, was das Feld ist, warum es weiterhin zählt, wie Sie die richtigen
         Wörter finden und wie Sie sie eintragen, mit einem Beispiel am Ende. Wenn das Thema neu für
-        Sie ist, beginnen Sie mit unserer Seite zu <Link href={p("/services/amazon-seo")}>B2B-SEO für Amazon-Händler</Link>,
+        Sie ist, beginnen Sie mit unserer Seite zu <Link href={p("/services/listing-optimization")}>Amazon-SEO und Listing-Optimierung</Link>,
         die zeigt, wie Amazon Produkte reiht.
       </p>
     </>
@@ -337,7 +337,7 @@ const post: BlogPost = {
   ],
   cta: {
     text: "Backend Keywords sind ein Teil von Amazon SEO. Sehen Sie, wie Titel, Bullet Points und Verkäufe zusammenspielen, oder lassen Sie uns Ihr Listing kostenlos prüfen.",
-    pillar: { href: "/services/amazon-seo", label: "Unseren B2B-SEO-Service für Amazon-Händler ansehen" },
+    pillar: { href: "/services/listing-optimization", label: "Unseren Service für Amazon-SEO und Listing-Optimierung ansehen" },
     formHeading: "Sollen wir Ihre Backend Keywords prüfen?",
     formText: "Senden Sie uns ein Listing, und wir sagen Ihnen kostenlos, was wir zuerst ändern würden.",
   },

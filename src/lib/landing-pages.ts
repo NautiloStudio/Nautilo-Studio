@@ -11,16 +11,10 @@ export type LandingPageLink = {
 
 export const landingPages: LandingPageLink[] = [
   {
-    slug: "amazon-seo",
-    label: "Amazon SEO: how to rank higher",
-    menu: "SEO",
-    updated: "2026-11-11",
-  },
-  {
     slug: "listing-optimization",
-    label: "Listing optimisation: turn visits into sales",
-    menu: "Listing optimisation",
-    updated: "2026-11-05",
+    label: "Amazon SEO and listing optimisation: get found, then get chosen",
+    menu: "SEO and listing optimisation",
+    updated: "2026-11-20",
   },
   {
     slug: "data-analysis",

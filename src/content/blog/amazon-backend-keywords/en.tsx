@@ -32,7 +32,7 @@ const post: BlogPost = {
       <p>
         This guide explains what the field is, why it still matters, how to find the right words and
         exactly how to write them, with a worked example at the end. If you are new to the topic,
-        start with our page on <Link href="/services/amazon-seo">B2B SEO for Amazon sellers</Link>, which covers the bigger
+        start with our page on <Link href="/services/listing-optimization">Amazon SEO and listing optimisation</Link>, which covers the bigger
         picture of how Amazon ranks products.
       </p>
     </>
@@ -336,7 +336,7 @@ const post: BlogPost = {
   ],
   cta: {
     text: "Backend keywords are one part of Amazon SEO. See how titles, bullets and sales fit together, or let us check your listing for free.",
-    pillar: { href: "/services/amazon-seo", label: "See our B2B SEO service for Amazon sellers" },
+    pillar: { href: "/services/listing-optimization", label: "See our Amazon SEO and listing optimisation service" },
     formHeading: "Want us to check your backend keywords?",
     formText: "Send one listing and we’ll tell you, for free, what we would change first.",
   },
