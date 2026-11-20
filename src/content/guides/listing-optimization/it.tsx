@@ -28,7 +28,7 @@ const page: GuideCopy["page"] = {
   description,
   image: {
     src: "/img/amazon-listing-optimization.jpg",
-    alt: "iMac su una scrivania con una scheda Amazon ottimizzata di un tagliere di bambù, segnata come «farti scegliere», accanto ai risultati di ricerca in cui compare al primo posto e al suo posizionamento per parola chiave, segnati come «farti trovare»",
+    alt: "Schermo con una scheda Amazon ottimizzata di un tagliere di bambù, segnata come «farti scegliere», accanto ai risultati di ricerca in cui compare al primo posto e al suo posizionamento per parola chiave, segnati come «farti trovare»",
     tile: "bg-apricot",
   },
   updated: "2026-11-20",
@@ -135,10 +135,10 @@ const page: GuideCopy["page"] = {
       heading: "Cosa include il nostro servizio di SEO su Amazon e ottimizzazione delle schede",
       figure: {
         src: "/img/amazon-listing-optimization.jpg",
-        alt: "iMac su una scrivania con una scheda Amazon con cinque modifiche segnalate, i risultati di ricerca per «bamboo cutting board» e il posizionamento per parola chiave prima e dopo",
+        alt: "Schermo con una scheda Amazon con cinque modifiche segnalate, i risultati di ricerca per «bamboo cutting board» e il posizionamento per parola chiave prima e dopo",
         width: 1600,
         height: 1000,
-        caption: "Scheda di esempio con le nostre modifiche segnalate, i suoi risultati di ricerca e il posizionamento. Illustrazione con dati di esempio, non la scheda di un cliente. Foto: Amy Hirschi, Unsplash.",
+        caption: "Scheda di esempio con le nostre modifiche segnalate, i suoi risultati di ricerca e il posizionamento. Illustrazione con dati di esempio, non la scheda di un cliente.",
       },
       body: (
         <>
