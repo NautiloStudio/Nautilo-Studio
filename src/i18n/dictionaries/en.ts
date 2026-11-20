@@ -300,9 +300,9 @@ const en = {
   caseStudy: {
     label: "Case study",
     heading: "From a 30-minute draft to an 88/100 listing in 8 minutes.",
-    text: "The vendor gave us the facts. AI organised them into a listing that passes Amazon’s rules check, ready for the vendor’s final review.",
+    text: "The seller gave us the facts. AI organised them into a listing that passes Amazon’s rules check, ready for the seller’s final review.",
     before: "Before",
-    beforeTitle: "Vendor draft",
+    beforeTitle: "Seller draft",
     connector: "AI organises your supplied facts",
     after: "After",
     afterTitle: "Suggested listing",

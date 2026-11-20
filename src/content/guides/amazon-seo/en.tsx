@@ -154,7 +154,7 @@ const page: GuideCopy["page"] = {
   ],
   proof: {
     label: "Proof from the market",
-    heading: "Amazon search is where vendors like you win or lose.",
+    heading: "Amazon search is where sellers like you win or lose.",
     items: [
       {
         value: "More than half",
@@ -214,11 +214,11 @@ const page: GuideCopy["page"] = {
     steps: [
       {
         heading: "What we saw",
-        text: "US vendors with a good product on Amazon and no one to market it. Agencies did the work for them and kept the know-how. Tools handed them data and left them alone.",
+        text: "US sellers with a good product on Amazon and no one to market it. Agencies did the work for them and kept the know-how. Tools handed them data and left them alone.",
       },
       {
         heading: "Our idea",
-        text: "Bring data, AI and hands-on work together, and do it with the vendor, not for them. We start with one listing, show what changes and grow from there.",
+        text: "Bring data, AI and hands-on work together, and do it with the seller, not for them. We start with one listing, show what changes and grow from there.",
       },
       {
         heading: "Why a nautilus",
