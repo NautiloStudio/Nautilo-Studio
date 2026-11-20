@@ -7,7 +7,7 @@ import { DownloadSimple } from "@phosphor-icons/react";
 import { useLocale } from "@/i18n/LocaleProvider";
 
 // A short form in front of each PDF guide: name, work email, company, role and whether the
-// visitor sells on Amazon. The answers go to the leads table (source "guide") for lead analysis,
+// visitor sells on Amazon. The answers go to the leads table (message starting "Guide download") for lead analysis,
 // then the download starts. A visitor who already filled it in on this browser downloads directly.
 const SEEN = "nautilo-guide-lead";
 const subscribeNever = () => () => {};

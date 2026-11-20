@@ -71,8 +71,9 @@ export async function POST(request: Request) {
 
 const GUIDES = ["listing-optimization", "data-analysis", "ai-automation"];
 
-// Guide downloads: name, email, company, role and whether the visitor sells on Amazon. Stored in the
-// same `leads` table and columns (source "guide"); the extra answers go in `message` as one line.
+// Guide downloads: name, email, company, role and whether the visitor sells on Amazon. The leads
+// table only accepts its existing `source` values (check constraint, schema left as it is), so these
+// rows use source "talk" and a message that starts with "Guide download |" to filter them.
 async function saveGuideLead(body: Record<string, unknown>) {
   const lang = clean(body.lang, 5);
   const guide = clean(body.guide, 60);
@@ -89,6 +90,7 @@ async function saveGuideLead(body: Record<string, unknown>) {
   if (!valid) return NextResponse.json({ error: "invalid" }, { status: 400 });
 
   const message = [
+    "Guide download",
     `Guide: ${guide}`,
     `Company: ${company || "-"}`,
     `Role: ${role}`,
@@ -98,7 +100,7 @@ async function saveGuideLead(body: Record<string, unknown>) {
   ].join(" | ");
 
   const { error } = await getSupabase().from("leads").insert({
-    source: "guide",
+    source: "talk",
     name,
     email,
     message,
