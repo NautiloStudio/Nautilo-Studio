@@ -11,26 +11,31 @@ const guides = [
   {
     slug: "amazon-seo",
     image: "/img/amazon-seo-dashboard.webp",
+    focus: "68% 30%", // SEO line chart, above the laptop keyboard
     tile: "bg-cyan",
   },
   {
     slug: "listing-optimization",
     image: "/img/amazon-listing-optimization.jpg",
+    focus: "30% 40%", // cutting board on the listing
     tile: "bg-apricot",
   },
   {
     slug: "data-analysis",
     image: "/img/amazon-data-analysis.jpg",
+    focus: "70% 30%", // KPIs and marketplace donut
     tile: "bg-royal",
   },
   {
     slug: "ai-automation",
     image: "/img/amazon-ai-automation.jpg",
+    focus: "58% 32%", // AI chip and workflow icons
     tile: "bg-graphite",
   },
 ] as const;
 
-// One guide is open at a time; the others stay as narrow blue strips you can click to open.
+// One guide is open at a time. Closed strips zoom into the screen (focus) so the device frame and
+// logo fall outside the strip, and a multiplied brand gradient tints the photo blue but keeps it visible.
 type Props = { exclude?: string; heading?: ReactNode; intro?: string; id?: string };
 
 export default function GuideGallery({ exclude, heading, intro, id = "guides" }: Props) {
@@ -64,12 +69,19 @@ export default function GuideGallery({ exclude, heading, intro, id = "guides" }:
                 alt=""
                 fill
                 sizes="(min-width: 768px) 60vw, 100vw"
-                className={`object-cover transition-transform duration-700 ease-(--ease-out-strong) ${isOpen ? "scale-100" : "scale-110"}`}
+                style={{ objectPosition: guide.focus, transformOrigin: guide.focus }}
+                className={`object-cover transition-transform duration-700 ease-(--ease-out-strong) ${isOpen ? "scale-100" : "scale-[1.8]"}`}
               />
-              <div className="absolute inset-0 bg-graphite/55" />
-              {/* Closed strips show the Nautilo blue instead of a squeezed photo; it fades out when the guide opens. */}
               <div
-                className={`absolute inset-0 bg-[linear-gradient(160deg,#33d6ff_0%,#1c2fd6_48%,#0f1a7a_100%)] transition-opacity duration-500 ${isOpen ? "opacity-0" : "opacity-100"}`}
+                className={`absolute inset-0 bg-graphite/55 transition-opacity duration-500 ${isOpen ? "opacity-100" : "opacity-0"}`}
+              />
+              {/* Closed strips: a very soft brand-blue tint over the photo, so the original colours stay. */}
+              <div
+                className={`absolute inset-0 bg-[linear-gradient(160deg,#33d6ff_0%,#1c2fd6_48%,#0f1a7a_100%)] mix-blend-multiply transition-opacity duration-500 ${isOpen ? "opacity-0" : "opacity-35"}`}
+              />
+              {/* Soft shade on the label edge (top on phones, left from md) so the strip name stays readable on light screens. */}
+              <div
+                className={`absolute inset-0 bg-[linear-gradient(180deg,rgba(15,26,122,0.6)_0%,transparent_70%)] md:bg-[linear-gradient(90deg,rgba(15,26,122,0.6)_0%,transparent_50%)] transition-opacity duration-500 ${isOpen ? "opacity-0" : "opacity-100"}`}
               />
 
               {!isOpen && (
@@ -79,7 +91,7 @@ export default function GuideGallery({ exclude, heading, intro, id = "guides" }:
                   aria-expanded={false}
                   className="absolute inset-0 z-10 flex items-start p-5 text-left font-display font-semibold text-offwhite md:p-6"
                 >
-                  <span className="md:[writing-mode:vertical-rl] md:rotate-180">{guide.name}</span>
+                  <span className="[text-shadow:0_1px_10px_rgba(15,26,122,0.7)] md:[writing-mode:vertical-rl] md:rotate-180">{guide.name}</span>
                 </button>
               )}
 
