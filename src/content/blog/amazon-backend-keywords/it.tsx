@@ -35,7 +35,7 @@ const post: BlogPost = {
       <p>
         Questa guida spiega cos’è quel campo, perché conta ancora, come trovare le parole giuste e
         come scriverle, con un esempio pratico alla fine. Se l’argomento è nuovo per te, parti dalla
-        nostra pagina sulla <Link href={p("/services/amazon-seo")}>SEO B2B per venditori Amazon</Link>, che spiega come Amazon
+        nostra pagina sulla <Link href={p("/services/listing-optimization")}>SEO e ottimizzazione delle schede Amazon</Link>, che spiega come Amazon
         ordina i prodotti.
       </p>
     </>
@@ -340,7 +340,7 @@ const post: BlogPost = {
   ],
   cta: {
     text: "Le parole chiave backend sono una parte della SEO su Amazon. Scopri come titolo, punti elenco e vendite lavorano insieme, oppure facci controllare la tua scheda gratis.",
-    pillar: { href: "/services/amazon-seo", label: "Scopri il nostro servizio SEO B2B per venditori Amazon" },
+    pillar: { href: "/services/listing-optimization", label: "Scopri il nostro servizio di SEO e ottimizzazione delle schede Amazon" },
     formHeading: "Vuoi che controlliamo le tue parole chiave backend?",
     formText: "Mandaci una scheda e ti diremo, gratis, cosa cambieremmo per primo.",
   },

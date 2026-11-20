@@ -1,4 +1,4 @@
-// The site's languages. English lives at the root (/services/amazon-seo); the others get a prefix (/es/services/amazon-seo).
+// The site's languages. English lives at the root (/services/data-analysis); the others get a prefix (/es/services/data-analysis).
 export const locales = ["en", "es", "fr", "de", "it"] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "en";
@@ -25,7 +25,7 @@ export const localeTags: Record<Locale, string> = {
 export const hasLocale = (value: string): value is Locale =>
   (locales as readonly string[]).includes(value);
 
-// "/services/amazon-seo" or "/#contact" in the given language: "/es/services/amazon-seo", "/es#contact".
+// "/services/data-analysis" or "/#contact" in the given language: "/es/services/data-analysis", "/es#contact".
 export function localePath(lang: Locale, path: string): string {
   if (lang === defaultLocale) return path;
   if (path === "/") return `/${lang}`;
@@ -33,7 +33,7 @@ export function localePath(lang: Locale, path: string): string {
   return `/${lang}${path}`;
 }
 
-// The same page without its language prefix: "/es/services/amazon-seo" -> "/services/amazon-seo".
+// The same page without its language prefix: "/es/services/data-analysis" -> "/services/data-analysis".
 export function stripLocale(pathname: string): string {
   const [, first, ...rest] = pathname.split("/");
   if (first && hasLocale(first)) return `/${rest.join("/")}`;

@@ -30,10 +30,10 @@ const it: Dictionary = {
         text: "Come funziona la ricerca di Amazon, dove vanno le tue parole chiave e come salire nei risultati.",
       },
       "listing-optimization": {
-        menu: "Ottimizzazione schede",
-        name: "Ottimizzazione delle schede",
-        title: "Trasforma più visite in ordini",
-        text: "Titoli, immagini, punti elenco e contenuti A+ che convincono i clienti, e come metterli alla prova.",
+        menu: "SEO e ottimizzazione schede",
+        name: "SEO e ottimizzazione delle schede",
+        title: "Farti trovare, poi farti scegliere",
+        text: "Parole chiave, titoli, immagini, punti elenco e contenuti A+ per posizionare il prodotto e convincere i clienti.",
       },
       "data-analysis": {
         menu: "Analisi dei dati",
@@ -49,10 +49,10 @@ const it: Dictionary = {
       },
     },
     gallery: {
-      heading: "{4} guide gratuite. {40} pagine di idee da usare subito.",
+      heading: "{3} guide gratuite. {30} pagine di idee da usare subito.",
       intro:
         "Una guida per ogni servizio, con esempi, grafici e una checklist. Gratis da leggere e da scaricare.",
-      moreHeading: "Continua a leggere: altre {3} guide gratuite.",
+      moreHeading: "Continua a leggere: altre {2} guide gratuite.",
       moreIntro: "Ognuna include esempi, grafici e una checklist da scaricare.",
       tenPage: "Guida di 10 pagine",
       read: "Leggi la guida: {name}",
@@ -120,14 +120,14 @@ const it: Dictionary = {
           summary:
             "Si occupa di come i clienti trovano i tuoi prodotti: le parole che cercano, la posizione della tua scheda e le campagne Sponsored Products che li portano da te.",
           focus: ["SEO su Amazon", "Sponsored Products", "Ricerca delle parole chiave"],
-          guide: "Leggi la guida alla SEO su Amazon",
+          guide: "Leggi la guida a SEO e ottimizzazione delle schede",
         },
         "Maria Giraldo": {
           role: "Responsabile ottimizzazione schede",
           summary:
             "Si occupa di come la tua scheda convince chi arriva: titoli, punti elenco, immagini e contenuti A+ che rispondono alle loro domande prima dell’acquisto.",
           focus: ["Titoli e punti elenco", "Immagini e contenuti A+", "Test A/B"],
-          guide: "Leggi la guida all’ottimizzazione delle schede",
+          guide: "Leggi la guida a SEO e ottimizzazione delle schede",
         },
         "Veronika Matkovska": {
           role: "Responsabile analisi dei dati",
@@ -151,7 +151,7 @@ const it: Dictionary = {
     services: {
       title: "Servizi di marketing su Amazon per vendere | Nautilo Studio",
       description:
-        "Quattro servizi di marketing su Amazon per venditori negli USA: SEO, schede prodotto, analisi dei dati e automazione con l’IA. Scoprili e chiedi una revisione.",
+        "Tre servizi di marketing su Amazon per venditori negli USA: SEO e schede, analisi dei dati e automazione con l’IA. Scoprili e chiedi una revisione gratis.",
     },
     home: {
       title: "Agenzia di marketing per venditori Amazon | Nautilo Studio",
@@ -196,18 +196,11 @@ const it: Dictionary = {
     servicesHeading: "Quale di queste frasi descrive il tuo negozio?",
     services: [
       {
-        title: "Ads e SEO",
-        problem: "«I clienti non trovano il mio prodotto.»",
-        text: "Miglioriamo il posizionamento per le tue parole chiave e gestiamo campagne Sponsored Products, così più clienti arrivano alle tue schede.",
-        alt: "Lente d’ingrandimento appoggiata a un piccolo pacco",
-        guide: "Leggi la nostra guida alla SEO su Amazon",
-      },
-      {
-        title: "Ottimizzazione delle schede",
-        problem: "«Guardano, ma non comprano.»",
-        text: "Rivediamo titoli, punti elenco, contenuti A+ e immagini, così più visitatori scelgono di comprare.",
-        alt: "iMac con la pagina prodotto Amazon di un tagliere di bambù, con titolo, immagine principale, punti elenco e contenuti A+ modificati e segnalati",
-        guide: "Leggi la nostra guida all’ottimizzazione delle schede",
+        title: "SEO e ottimizzazione delle schede",
+        problem: "«Non trovano il mio prodotto, oppure guardano ma non comprano.»",
+        text: "Mettiamo nella tua scheda le parole che cercano i tuoi clienti, poi rivediamo titoli, punti elenco, immagini e contenuti A+ perché più visitatori comprino.",
+        alt: "iMac con una scheda Amazon ottimizzata accanto ai risultati di ricerca in cui compare al primo posto e al suo posizionamento per parola chiave",
+        guide: "Leggi la nostra guida a SEO e ottimizzazione delle schede",
       },
       {
         title: "Analisi dei dati",
@@ -359,7 +352,7 @@ const it: Dictionary = {
     title: "Quattro studenti di master. Un team di marketing per il tuo negozio Amazon.",
     intro:
       "Ci siamo conosciuti alla TBS Education di Barcellona, dove frequentiamo i nostri master. Nautilo Studio è ciò che abbiamo costruito insieme: il team di marketing che manca ai venditori Amazon negli Stati Uniti.",
-    facts: ["4 fondatori", "4 servizi", "Con sede a Barcellona", "Per i venditori Amazon negli USA"],
+    facts: ["4 fondatori", "3 servizi", "Con sede a Barcellona", "Per i venditori Amazon negli USA"],
     storyHeading: "La nostra storia",
     story: [
       {
@@ -406,7 +399,7 @@ const it: Dictionary = {
     h1: "Il blog per venditori Amazon: cosa è cambiato e cosa fare.",
     intro: "Amazon cambia di continuo come funziona la ricerca, cosa permettono le sue regole e quali strumenti dà ai venditori in Seller Central. Seguiamo questi cambiamenti al posto tuo e li trasformiamo in articoli brevi e pratici per chi vende negli USA: cosa c’è di nuovo, perché conta e cosa cambiare nelle tue schede.",
     introMore: "Questo blog è aggiornato di continuo. Pubblichiamo nuovi articoli man mano che succedono cose su Amazon, quindi salva questa pagina e torna a trovarci. Per il quadro completo, parti dalla nostra",
-    introLink: "guida alla SEO su Amazon",
+    introLink: "guida a SEO e ottimizzazione delle schede",
     tags: ["Aggiornato di continuo", "Le novità di Amazon, spiegate", "Articoli pratici", "Guide PDF gratuite"],
     guidesHeading: "Guide PDF gratuite",
     guidesIntro: "Una guida di 10 pagine per ognuno dei nostri servizi, con esempi, grafici e una checklist. Scaricabili gratis.",

@@ -33,10 +33,10 @@ const en = {
         text: "How Amazon search works, where your keywords belong and how to climb the results.",
       },
       "listing-optimization": {
-        menu: "Listing optimisation",
-        name: "Listing optimisation",
-        title: "Turn more visits into orders",
-        text: "Titles, images, bullets and A+ content that convince shoppers, and how to test them.",
+        menu: "SEO and listing optimisation",
+        name: "SEO and listing optimisation",
+        title: "Get found, then get chosen",
+        text: "Keywords, titles, images, bullets and A+ content that rank your product and convince shoppers.",
       },
       "data-analysis": {
         menu: "Data analysis",
@@ -52,10 +52,10 @@ const en = {
       },
     },
     gallery: {
-      heading: "{4} free guides. {40} pages of ideas you can use today.",
+      heading: "{3} free guides. {30} pages of ideas you can use today.",
       intro:
         "One guide for each service, with examples, charts and a checklist. Free to read and download.",
-      moreHeading: "Keep reading: {3} more free guides.",
+      moreHeading: "Keep reading: {2} more free guides.",
       moreIntro: "Each one comes with examples, charts and a checklist you can download.",
       tenPage: "10-page guide",
       read: "Read the guide: {name}",
@@ -124,14 +124,14 @@ const en = {
           summary:
             "Leads how shoppers find your products: the words they search for, where your listing ranks and the Sponsored Products campaigns that bring them in.",
           focus: ["Amazon SEO", "Sponsored Products", "Keyword research"],
-          guide: "Read the Amazon SEO guide",
+          guide: "Read the SEO and listing optimisation guide",
         },
         "Maria Giraldo": {
           role: "Listing Optimisation Lead",
           summary:
             "Leads how your listing convinces the shoppers who arrive: titles, bullet points, images and A+ content that answer their questions before they buy.",
           focus: ["Titles and bullet points", "Images and A+ content", "A/B tests"],
-          guide: "Read the listing optimisation guide",
+          guide: "Read the SEO and listing optimisation guide",
         },
         "Veronika Matkovska": {
           role: "Data Analysis Lead",
@@ -156,7 +156,7 @@ const en = {
     services: {
       title: "Amazon Marketing Services for US Sellers | Nautilo Studio",
       description:
-        "Four Amazon marketing services for US sellers: SEO, listing optimization, data analysis and AI automation. See what each one does and get a free listing review.",
+        "Three Amazon marketing services for US sellers: SEO and listing optimisation, data analysis and AI automation. See what each one does and get a free review.",
     },
     home: {
       title: "Amazon Marketing Agency for US Sellers | Nautilo Studio",
@@ -201,18 +201,11 @@ const en = {
     servicesHeading: "Amazon marketing agency services: which sounds like your store?",
     services: [
       {
-        title: "Ads & SEO",
-        problem: "“Shoppers can’t find my product.”",
-        text: "We improve your keyword ranking and run Sponsored Products campaigns, so more shoppers reach your listings.",
-        alt: "Magnifying glass leaning against a small parcel",
-        guide: "Read our Amazon SEO guide",
-      },
-      {
-        title: "Listing optimisation",
-        problem: "“People look, but they don’t buy.”",
-        text: "We rework your titles, bullets, A+ content and images, so more visitors choose to buy.",
-        alt: "iMac showing an Amazon product page for a bamboo cutting board, with the edited title, main image, bullets and A+ content marked",
-        guide: "Read our listing optimisation guide",
+        title: "SEO and listing optimisation",
+        problem: "“Shoppers can’t find my product, or they look but don’t buy.”",
+        text: "We put the words your buyers search for into your listing, then rework titles, bullets, images and A+ content so more visitors buy.",
+        alt: "iMac showing an optimised Amazon listing next to the search results where it ranks first and its keyword ranks",
+        guide: "Read our SEO and listing optimisation guide",
       },
       {
         title: "Data analysis",
@@ -362,7 +355,7 @@ const en = {
     title: "Four master’s students. One marketing team for your Amazon store.",
     intro:
       "We met at TBS Education in Barcelona, where we are studying for our master’s degrees. Nautilo Studio is what we built together: the marketing team that US Amazon sellers don’t have.",
-    facts: ["4 founders", "4 services", "Based in Barcelona", "Built for US Amazon sellers"],
+    facts: ["4 founders", "3 services", "Based in Barcelona", "Built for US Amazon sellers"],
     storyHeading: "Our story",
     story: [
       {
@@ -409,7 +402,7 @@ const en = {
     h1: "The Amazon seller blog: what changed, and what to do about it.",
     intro: "Amazon keeps changing how search works, what its rules allow and which tools sellers get in Seller Central. We follow those changes for you and turn them into short, practical articles for US sellers: what is new, why it matters and what to change in your listings.",
     introMore: "This blog is updated continuously. New articles go up as new things happen on Amazon, so bookmark this page and check back. For the full picture, start with our",
-    introLink: "Amazon SEO guide",
+    introLink: "SEO and listing optimisation guide",
     tags: ["Updated continuously", "Amazon news, explained", "How-to articles", "Free PDF guides"],
     guidesHeading: "Free PDF guides",
     guidesIntro: "One 10-page guide for each of our services, with examples, charts and a checklist. Free to download.",

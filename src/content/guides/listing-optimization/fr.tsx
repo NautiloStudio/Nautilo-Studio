@@ -1,142 +1,158 @@
 import Link from "next/link";
+import ListingFieldMap from "@/components/ListingFieldMap";
 import { localePath } from "@/i18n/config";
 import type { GuideCopy } from "../types";
 
+const AMAZON_SEO_GUIDE = "https://sell.amazon.com/blog/amazon-seo";
+const TITLE_RULES = "https://sellercentral.amazon.com/gp/help/external/GYTR6SYGFA5E3EQC";
+const SEARCH_TERMS_HELP = "https://sellercentral.amazon.com/help/hub/reference/external/G23501";
 const PRODUCT_LISTINGS = "https://sell.amazon.com/blog/amazon-product-listings";
 const PRODUCT_PHOTOS = "https://sell.amazon.com/blog/product-photos";
 const A_PLUS = "https://sell.amazon.com/tools/a-content";
 const BOOST_LISTINGS = "https://sell.amazon.com/blog/how-to-boost-amazon-listings";
+const EXPERIMENTS = "https://sell.amazon.com/tools/manage-your-experiments";
 
 const p = (path: string) => localePath("fr", path);
+const ext = { target: "_blank", rel: "noopener noreferrer" } as const;
 
-const title = "Agence d’optimisation de conversion Amazon | Nautilo Studio";
+const title = "SEO Amazon et optimisation des fiches | Nautilo Studio";
 const description =
-  "Nautilo Studio, agence d’optimisation du taux de conversion des vendeurs Amazon aux États-Unis : titres, images et A+ qui font acheter. Audit gratuit.";
+  "SEO Amazon et optimisation des fiches pour les vendeurs aux États-Unis : être trouvé sur les recherches de vos clients, puis choisi. Demandez un audit gratuit.";
 
 const page: GuideCopy["page"] = {
   slug: "listing-optimization",
-  breadcrumb: "Optimisation des fiches Amazon",
-  question: "Agence d’optimisation du taux de conversion Amazon : des visites aux ventes",
+  breadcrumb: "SEO et optimisation des fiches",
+  question: "SEO Amazon et optimisation des fiches : être trouvé, puis être choisi",
   answer:
-    "L’optimisation des fiches Amazon, le métier d’une agence d’optimisation du taux de conversion, consiste à améliorer le titre, les puces, les images et le contenu A+ pour que les acheteurs qui arrivent sur votre page choisissent d’acheter. Commencez par des images claires et un titre qui dit exactement ce qu’est le produit, puis servez-vous des puces pour répondre aux questions que les acheteurs se posent avant de commander. Testez un changement à la fois et gardez la version qui vend le mieux.",
+    "Le SEO Amazon fait apparaître votre produit quand les acheteurs cherchent. L’optimisation des fiches les pousse à le choisir quand ils le voient. Sur Amazon, les deux se jouent sur la même page : le titre, les puces, les images, le contenu A+ et les termes de recherche cachés décident de votre classement et de l’achat. Placez les mots que tapent vos acheteurs là où Amazon les lit, rendez la fiche convaincante, puis testez un changement à la fois. Les ventes qu’apporte une meilleure fiche l’aident aussi à monter.",
   description,
   image: {
     src: "/img/amazon-listing-optimization.jpg",
-    alt: "iMac affichant la page produit Amazon d’une planche à découper en bambou, avec le titre, l’image principale, les puces et le contenu A+ modifiés et signalés",
+    alt: "iMac sur un bureau affichant une fiche Amazon optimisée d’une planche à découper en bambou, marquée « être choisi », à côté des résultats de recherche où elle arrive en première position et de son classement par mot-clé, marqués « être trouvé »",
     tile: "bg-apricot",
   },
-  updated: "2026-11-16",
+  updated: "2026-11-20",
   facts: [
-    { value: 9, label: "Photos qu’Amazon vous permet d’ajouter" },
-    { value: 85, suffix: " %", label: "Du cadre que le produit devrait remplir" },
-    { value: 5, label: "Puces par fiche" },
-    {
-      value: 8,
-      prefix: "Jusqu’à ",
-      suffix: " %",
-      label: "De ventes en plus qu’Amazon attribue au contenu A+ de base",
-    },
+    { value: 200, label: "Caractères autorisés dans un titre, selon le guide SEO d’Amazon" },
+    { value: 60, label: "Caractères qu’Amazon recommande pour un titre" },
+    { value: 9, label: "Photos qu’Amazon vous laisse ajouter" },
+    { value: 20, suffix: " %", label: "Hausse des ventes maximale qu’Amazon attribue au contenu optimisé" },
   ],
   sections: [
     {
-      id: "what-matters",
-      heading: "Optimisation des fiches Amazon : ce qui fait acheter",
+      id: "found-then-chosen",
+      heading: "Comment Amazon fonctionne pour les vendeurs : être trouvé, puis être choisi",
       body: (
         <>
+          <p>Deux choses doivent se produire avant qu’une recherche devienne une vente. Amazon doit afficher votre produit pour les mots tapés par l’acheteur, et l’acheteur doit le préférer aux autres résultats de la page. La première, c’est le SEO Amazon. La seconde, l’optimisation des fiches. Sur Amazon, elles portent sur la même page, alors nous les traitons comme un seul travail.</p>
           <p>
-            Quand un acheteur arrive sur votre page produit, quatre éléments décident s’il achète : le titre, les images, les puces et le contenu A+. Une agence d’optimisation du taux de conversion travaille sur les quatre, car chacun répond à une question différente de l’acheteur.
+            {"Être trouvé commence par la pertinence : si un mot recherché n’apparaît ni dans votre titre, ni dans vos puces, ni dans la description, ni dans les termes de recherche cachés, le produit s’affiche rarement pour lui. Être choisi dépend de ce que l’acheteur voit ensuite : l’image principale, le titre, le prix, les avis et la Featured Offer. Les deux se nourrissent. Le guide SEO d’Amazon indique que "}
+            <a href={AMAZON_SEO_GUIDE} {...ext}>la qualité de la fiche et la santé du compte peuvent contribuer au classement</a>
+            {", et que de meilleures photos et de meilleurs prix peuvent aider un produit à monter dans les résultats de façon organique. Une fiche qui vend monte, et une fiche qui monte est vue par plus d’acheteurs."}
           </p>
-          <p>
-            Le titre dit ce qu’est le produit, puis la marque et les détails que l’on compare, comme la taille ou la couleur. Les images font le travail d’un comptoir de magasin : Amazon vous permet de{" "}
-            <a href={PRODUCT_LISTINGS} target="_blank" rel="noopener noreferrer">
-              publier jusqu’à neuf photos
-            </a>
-            , et ses conseils recommandent un fond blanc avec un produit qui{" "}
-            <a href={PRODUCT_PHOTOS} target="_blank" rel="noopener noreferrer">
-              occupe 85 % ou plus du cadre
-            </a>
-            . Les cinq puces donnent chacune un bénéfice, appuyé par un fait vérifiable. Le contenu A+ ajoute images et texte sous la fiche pour les marques inscrites au Brand Registry, et Amazon indique que{" "}
-            <a href={A_PLUS} target="_blank" rel="noopener noreferrer">
-              le contenu A+ de base peut augmenter les ventes jusqu’à 8 %
-            </a>
-            , d’après ses données internes.
-          </p>
-          <blockquote>L’acheteur ne peut pas toucher votre produit. Votre fiche doit le faire à sa place.</blockquote>
+          <ListingFieldMap
+            caption={"Votre fiche, champ par champ"}
+            labels={{ found: "Être trouvé", chosen: "Être choisi" }}
+            rows={[
+              { field: "Titre", text: "Les mots qu’Amazon pèse le plus, et la première chose que lit l’acheteur.", effect: "both" },
+              { field: "Puces", text: "Des mots-clés secondaires pour la recherche, et des raisons d’acheter pour l’acheteur.", effect: "both" },
+              { field: "Termes de recherche", text: "Synonymes et fautes de frappe que l’acheteur ne voit jamais.", effect: "found" },
+              { field: "Images", text: "Le comptoir du magasin : forme, taille et produit en situation.", effect: "chosen" },
+              { field: "Contenu A+", text: "Des images plus grandes et des comparatifs sous la fiche.", effect: "chosen" },
+            ]}
+          />
+          <blockquote>La pertinence vous fait apparaître. Les ventes vous y maintiennent.</blockquote>
         </>
       ),
     },
     {
-      id: "signs",
-      heading: "Optimisation de la conversion : les signes qu’une fiche doit évoluer",
+      id: "keyword-research",
+      heading: "Recherche de mots-clés Amazon : les mots que tapent vos acheteurs",
+      body: (
+        <>
+          <p>Les bons mots-clés viennent de ce que les acheteurs tapent vraiment, pas de suppositions. Le plus rapide est la barre de recherche d’Amazon : tapez le mot principal de votre produit et notez les suggestions, car elles viennent de vraies recherches.</p>
+          <p>Seller Central ajoute des données gratuites. Product Opportunity Explorer montre les termes les plus recherchés d’une niche. Brand Analytics montre quelles recherches mènent à des clics et à des ventes pour les marques enregistrées. Si vous faites déjà du Sponsored Products, son rapport des termes de recherche liste les recherches exactes qui vous ont amené des acheteurs. Triez ce que vous trouvez selon la précision avec laquelle il décrit votre produit, pas seulement selon le volume : une recherche précise avec moins d’acheteurs vend souvent mieux qu’une recherche large.</p>
+          <p>Cette liste nourrit ensuite chaque champ de la carte ci-dessus. Les deux ou trois recherches les plus importantes vont dans le titre, les suivantes dans les puces, et les synonymes qui ne trouvent pas d’autre place dans les termes de recherche cachés.</p>
+        </>
+      ),
+    },
+    {
+      id: "title",
+      heading: "Le titre Amazon : là où se rencontrent le classement et les clics",
       body: (
         <>
           <p>
-            Amazon donne un exemple simple :{" "}
-            <a href={BOOST_LISTINGS} target="_blank" rel="noopener noreferrer">
-              une fiche très vue mais peu vendue
-            </a>{" "}
-            a sans doute besoin de meilleures images ou descriptions. Beaucoup de visites et peu de commandes signifient qu’on vous trouve sans être convaincu : les images, les puces et le contenu A+ passent en premier.
+            {"Le titre est le seul champ qui travaille autant pour la recherche que pour l’acheteur, et c’est pourquoi il est si facile de se tromper. Amazon autorise "}
+            <a href={AMAZON_SEO_GUIDE} {...ext}>jusqu’à 200 caractères et en recommande 60 ou moins</a>
+            {", et ses "}
+            <a href={TITLE_RULES} {...ext}>règles sur les titres</a>
+            {" autorisent le même mot deux fois au maximum."}
+          </p>
+          <p>Un titre bourré de mots-clés peut correspondre à plus de recherches, mais il se lit comme une liste et perd le clic face à un concurrent plus clair. Les téléphones coupent les titres longs : ce qu’est le produit doit donc venir dans les premiers mots, suivi de la marque et des détails que les acheteurs comparent, comme la taille, la matière ou la quantité. Écrivez-le d’abord pour l’acheteur, puis vérifiez que vos recherches principales y sont.</p>
+        </>
+      ),
+    },
+    {
+      id: "images-bullets-a-plus",
+      heading: "Images, puces et contenu A+ : transformer une visite en commande",
+      body: (
+        <>
+          <p>
+            {"Quand un acheteur ouvre votre page, le reste de la fiche doit répondre aux questions qu’il poserait en magasin. Amazon vous laisse "}
+            <a href={PRODUCT_LISTINGS} {...ext}>ajouter jusqu’à neuf photos</a>
+            {", et ses conseils photo recommandent un fond blanc avec le produit "}
+            <a href={PRODUCT_PHOTOS} {...ext}>occupant 85 % du cadre ou plus</a>
+            {". Après l’image principale, montrez le produit sous d’autres angles, en situation et à côté d’un objet qui donne sa taille."}
           </p>
           <p>
-            Peu de visites signalent un autre problème : les acheteurs ne trouvent pas la fiche, et notre{" "}
-            <Link href={p("/services/amazon-seo")}>service SEO B2B pour vendeurs Amazon</Link> est le meilleur point de départ. Deux autres signes comptent. Si les avis et les questions répètent le même doute, répondez-y dans les puces ou les images. Et les retours pour « non conforme à la description » montrent que la fiche promet ce que le produit ne tient pas : corrigez le texte avant de dépenser plus en trafic.
+            {"Les cinq puces donnent chacune un bénéfice, appuyé par un fait vérifiable, et accueillent naturellement les mots-clés qui n’entraient pas dans le titre. « Acier inoxydable » parle davantage quand vous ajoutez qu’il garde la boisson fraîche toute la journée. Le contenu A+ ajoute des images et des tableaux comparatifs sous la fiche pour les marques inscrites au Brand Registry, et Amazon indique que "}
+            <a href={A_PLUS} {...ext}>le contenu A+ de base peut augmenter les ventes jusqu’à 8 %</a>
+            {", selon ses données internes. Les termes de recherche cachés rassemblent synonymes et fautes de frappe, sans répétitions, noms de marque ni ASIN : vérifiez la "}
+            <a href={SEARCH_TERMS_HELP} {...ext}>limite de longueur actuelle</a>
+            {" et suivez notre guide pour "}
+            <Link href={p("/blog/amazon-backend-keywords")}>remplir les mots-clés cachés d’Amazon</Link>.
           </p>
         </>
       ),
     },
     {
-      id: "testing",
-      heading: "Comment une agence d’optimisation de la conversion teste ce qui marche",
+      id: "warning-signs",
+      heading: "Les signes que votre fiche perd des places, des ventes ou les deux",
       body: (
         <>
           <p>
-            Une bonne optimisation du taux de conversion ne change qu’une chose à la fois. Choisissez un élément, comme l’image principale ou le titre, et ne modifiez que lui, pour savoir ce qui a fait la différence.
+            {"Vos chiffres vous disent quelle moitié du travail demande de l’attention. Peu d’impressions et peu de visites : les acheteurs ne vous trouvent pas, commencez par les mots-clés et le titre. Beaucoup de visites et peu de commandes : ils vous trouvent mais ne sont pas convaincus. Amazon donne lui-même cet exemple : "}
+            <a href={BOOST_LISTINGS} {...ext}>une fiche très vue mais peu vendue</a>
+            {" peut avoir besoin de meilleures images ou descriptions."}
           </p>
-          <p>
-            Si votre marque est inscrite au Brand Registry, l’outil{" "}
-            <a href={BOOST_LISTINGS} target="_blank" rel="noopener noreferrer">
-              Manage Your Experiments
-            </a>{" "}
-            d’Amazon montre deux versions aux acheteurs et compare les résultats. Laissez le test tourner assez longtemps pour réunir de vraies commandes, pas seulement quelques jours, gardez la version gagnante et passez à l’élément suivant.
-          </p>
+          <p>Certains signes concernent les deux. Des avis et des questions qui répètent le même doute montrent que la fiche n’y répond pas, et des retours « non conforme à la description » montrent que la fiche promet ce que le produit ne tient pas. Corrigez le texte avant d’amener plus de trafic.</p>
+          <p>Les erreurs courantes viennent des mêmes endroits : un titre bourré de mots-clés, des marques concurrentes (Amazon ne les autorise ni dans la fiche ni dans les termes de recherche), un titre, des puces et des images qui décrivent des tailles ou des contenus différents, et tout changer d’un coup, si bien que personne ne sait quel changement a aidé.</p>
         </>
       ),
     },
     {
-      id: "mistakes",
-      heading: "Les erreurs de fiche Amazon qui empêchent l’achat",
-      body: (
-        <>
-          <p>
-            Les images floues ou sombres sont l’erreur la plus fréquente : l’acheteur ne peut pas toucher le produit, les photos doivent donc le faire. Juste derrière viennent les caractéristiques sans bénéfice. « Acier inoxydable » parle davantage si vous dites qu’il garde les boissons au frais.
-          </p>
-          <p>
-            Les promesses impossibles à prouver entraînent retours et mauvais avis, et peuvent enfreindre les règles d’Amazon. Les détails incohérents nuisent aussi : titre, puces et images doivent décrire la même taille, la même couleur et le même contenu. Les mots que cherchent les acheteurs vont dans le texte visible et dans les termes de recherche cachés, et notre guide pas à pas pour{" "}
-            <Link href={p("/blog/amazon-backend-keywords")}>remplir les mots-clés backend Amazon</Link> couvre le second point.
-          </p>
-        </>
-      ),
-    },
-    {
-      id: "cro-service",
-      heading: "Ce que fait notre agence d’optimisation de la conversion pour les vendeurs Amazon",
+      id: "seo-listing-service",
+      heading: "Ce que comprend notre service SEO Amazon et optimisation des fiches",
       figure: {
         src: "/img/amazon-listing-optimization.jpg",
-        alt: "iMac affichant une fiche Amazon avec cinq modifications signalées (titre, image principale, puces, contenu A+ et termes de recherche) : le travail d’une agence d’optimisation de la conversion",
+        alt: "iMac sur un bureau affichant une fiche Amazon avec cinq modifications signalées, les résultats de recherche pour « bamboo cutting board » et le classement par mot-clé avant et après",
         width: 1600,
         height: 1000,
-        caption: "Fiche d’exemple avec nos cinq changements signalés. Illustration, pas une fiche client.",
+        caption: "Fiche d’exemple avec nos modifications signalées, ses résultats de recherche et son classement. Illustration avec des données d’exemple, pas la fiche d’un client. Photo : Amy Hirschi, Unsplash.",
       },
       body: (
         <>
+          <p>Nous travaillons une fiche à la fois et la regardons deux fois : une fois comme la recherche d’Amazon, une fois comme un acheteur.</p>
+          <p>D’abord, nous cherchons ce que vos acheteurs tapent vraiment, avec les outils d’Amazon. Ensuite, nous réécrivons le titre et les puces pour que les mots-clés principaux arrivent en premier et que chaque ligne réponde encore à une question d’acheteur, et nous remplissons les termes de recherche cachés dans le respect des règles d’Amazon. Puis nous préparons le brief des nouvelles images et du contenu A+ là où ils aident le plus.</p>
           <p>
-            Voyez-le comme une optimisation des fiches Amazon avec un test derrière chaque changement. Notre service d’optimisation du taux de conversion suit quatre étapes, une fiche à la fois.
+            {"Enfin, nous testons. Si votre marque est inscrite au Brand Registry, "}
+            <a href={EXPERIMENTS} {...ext}>Manage Your Experiments</a>
+            {" d’Amazon montre deux versions d’un titre, d’une image, des puces ou du contenu A+ aux acheteurs et compare les résultats ; Amazon indique que le contenu optimisé peut aider à augmenter les ventes jusqu’à 20 %. Nous changeons une chose à la fois et suivons classement et ventes avec notre "}
+            <Link href={p("/services/data-analysis")}>service d’analyse de données Amazon</Link>.
           </p>
           <p>
-            Nous lisons d’abord votre fiche comme un acheteur et notons ce qui manque ou n’est pas clair. Nous réécrivons ensuite le titre et les puces pour que chacune réponde à une question d’acheteur, et nous préparons le brief des nouvelles images et du contenu A+ là où ils aident le plus. Enfin, nous testons un changement à la fois et gardons la version qui vend le mieux.
-          </p>
-          <p>
-            Le travail est fait par notre équipe à Barcelone. <Link href={p("/about")}>Découvrez l’équipe de Nautilo Studio</Link>.
+            {"Le travail est fait par notre équipe à Barcelone. "}
+            <Link href={p("/about")}>Découvrez l’équipe de Nautilo Studio</Link>.
           </p>
         </>
       ),
@@ -144,24 +160,24 @@ const page: GuideCopy["page"] = {
   ],
   faqs: [
     {
-      question: "Combien d’images une fiche Amazon devrait-elle avoir ?",
+      question: "Pourquoi associer SEO Amazon et optimisation des fiches ?",
       answer:
-        "Amazon vous permet d’ajouter jusqu’à neuf photos et dit que plus il y en a, mieux c’est. Commencez par une image principale nette sur fond blanc, puis ajoutez d’autres angles, le produit en situation et sa taille.",
+        "Parce qu’ils portent sur les mêmes champs et se nourrissent. Les mots-clés amènent les acheteurs sur la fiche, la fiche les transforme en commandes, et ces ventes aident le produit à se classer.",
     },
     {
-      question: "Le contenu A+ vaut-il la peine ?",
+      question: "Combien de temps avant de voir l’effet sur le classement et les ventes ?",
       answer:
-        "En général oui, si vous y avez accès. Amazon indique que le contenu A+ de base peut augmenter les ventes jusqu’à 8 %, d’après ses données internes. Il est gratuit pour les marques éligibles inscrites au Registre des marques.",
+        "Le classement suit les ventes : jugez un changement sur plusieurs semaines plutôt que sur quelques jours. Changez une chose à la fois pour savoir ce qui a fait la différence.",
     },
     {
-      question: "Quelle différence entre l’optimisation des fiches et le SEO Amazon ?",
+      question: "Faut-il payer des publicités pour se classer sur Amazon ?",
       answer:
-        "Le SEO Amazon aide les acheteurs à trouver votre fiche. L’optimisation aide ceux qui arrivent à décider d’acheter. Il vous faut les deux, et les ventes d’une meilleure fiche soutiennent aussi votre classement.",
+        "Non. Amazon indique que Sponsored Products peut aider les offres à monter dans les résultats, mais une fiche pertinente et convaincante passe avant, et elle rend chaque publicité plus efficace. Nous nous concentrons sur la fiche et la recherche organique, pas sur la gestion de campagnes publicitaires.",
     },
     {
-      question: "Nautilo Studio peut-il vérifier ma fiche ?",
+      question: "Nautilo Studio peut-il auditer ma fiche ?",
       answer:
-        "Oui. Envoyez-nous le lien d’une fiche Amazon via le formulaire d’audit gratuit de cette page et nous vous écrirons ce que nous améliorerions en premier.",
+        "Oui. Envoyez-nous une fiche Amazon via le formulaire d’audit gratuit de cette page et nous vous dirons par e-mail ce que nous améliorerions en premier, pour la recherche et pour les ventes.",
     },
   ],
 };

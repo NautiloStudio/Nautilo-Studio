@@ -13,7 +13,6 @@ import { SHARE_IMAGE } from "@/lib/seo";
 // The services hub (level 2): one row per service, each opening its own page (level 3).
 // Words come from the home page's service list so both pages always say the same thing.
 const media = [
-  { slug: "amazon-seo", image: "/img/amazon-seo-dashboard.webp", fill: "bg-cyan", ink: "group-hover:text-graphite group-focus-visible:text-graphite", dot: "bg-cyan text-graphite group-hover:bg-graphite group-hover:text-offwhite" },
   { slug: "listing-optimization", image: "/img/amazon-listing-optimization.jpg", fill: "bg-apricot", ink: "group-hover:text-graphite group-focus-visible:text-graphite", dot: "bg-apricot text-graphite group-hover:bg-graphite group-hover:text-offwhite" },
   { slug: "data-analysis", image: "/img/amazon-data-analysis.jpg", fill: "bg-royal", ink: "group-hover:text-offwhite group-focus-visible:text-offwhite", dot: "bg-royal text-offwhite group-hover:bg-offwhite group-hover:text-royal" },
   { slug: "ai-automation", image: "/img/amazon-ai-automation.jpg", fill: "bg-graphite", ink: "group-hover:text-offwhite group-focus-visible:text-offwhite", dot: "bg-graphite text-offwhite group-hover:bg-offwhite group-hover:text-graphite" },
@@ -46,12 +45,7 @@ export default async function ServicesPage({ params }: PageProps<"/[lang]/servic
   const dict = await getDictionary(lang);
   const t = dict.servicesPage;
   const href = (path: string) => localePath(lang, path);
-  // The SEO row shows the dashboard photo from the SEO page, so it needs its own description.
-  const services = dict.home.services.map((service, index) => ({
-    ...service,
-    ...media[index],
-    alt: index === 0 ? t.seoPhotoAlt : service.alt,
-  }));
+  const services = dict.home.services.map((service, index) => ({ ...service, ...media[index] }));
 
   // The list of services and where this page sits, for search engines.
   const structuredData = [

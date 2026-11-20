@@ -9,12 +9,6 @@ import { useLocale } from "@/i18n/LocaleProvider";
 
 const guides = [
   {
-    slug: "amazon-seo",
-    image: "/img/amazon-seo-dashboard.webp",
-    focus: "68% 30%", // SEO line chart, above the laptop keyboard
-    tile: "bg-cyan",
-  },
-  {
     slug: "listing-optimization",
     image: "/img/amazon-listing-optimization.jpg",
     focus: "30% 40%", // cutting board on the listing
