@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { Inter, Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import PullToRefresh from "@/components/PullToRefresh";
+import ScrollToHash from "@/components/ScrollToHash";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
 import { SITE_URL, alternates, defaultLocale, hasLocale, localeTags, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
@@ -69,6 +70,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
         <LocaleProvider lang={lang} t={dict.common}>
           {children}
           <PullToRefresh />
+          <ScrollToHash />
         </LocaleProvider>
         {/* Cookieless page-view counts in Vercel (Analytics tab). Conversions show up as visits to /thanks/... */}
         <Suspense fallback={null}>

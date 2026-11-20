@@ -60,7 +60,7 @@ const page: GuideCopy["page"] = {
         <>
           <p>
             Read together, the four numbers point to one problem at a time. Few sessions mean shoppers aren’t finding the product, so the keywords in your title, bullets and search terms come first. Many sessions with a low conversion rate mean shoppers arrive but don’t buy, and our{" "}
-            <Link href="/services/listing-optimization">conversion rate optimization service for Amazon listings</Link> is built for that case.
+            <Link href="/services/listing-optimization">Amazon SEO and listing optimisation service</Link> is built for that case.
           </p>
           <p>
             If you lose the Featured Offer, check your price, stock and shipping against the other offers on the same product. If your ACOS is above your margin, ads are losing money: pause the search terms that spend without selling before you raise any budget.

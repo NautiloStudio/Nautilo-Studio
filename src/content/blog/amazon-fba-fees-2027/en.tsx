@@ -228,7 +228,7 @@ const post: BlogPost = {
           </ul>
           <p>
             Fees are only one part of profit: turning more visits into sales helps too. See how our{" "}
-            <Link href="/services/listing-optimization">conversion rate optimization agency for Amazon listings</Link> works.
+            <Link href="/services/listing-optimization">Amazon SEO and listing optimisation service</Link> works.
           </p>
         </>
       ),

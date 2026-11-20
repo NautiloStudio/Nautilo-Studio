@@ -21,7 +21,7 @@ const post: BlogPost = {
   published: "2026-11-10",
   updated: "2026-11-11",
   readMinutes: 9,
-  author: { name: "Filippo Verace", role: "SEO & Ads Lead", href: "/about" },
+  author: { name: "Filippo Verace", role: "Responsabile SEO su Amazon", href: "/about" },
   hero: { ...heroPhoto, alt: "Lente d’ingrandimento sulla tastiera di un portatile" },
   intro: (
     <>

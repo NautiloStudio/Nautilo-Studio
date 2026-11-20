@@ -28,7 +28,7 @@ const page: GuideCopy["page"] = {
     tile: "bg-apricot",
   },
   updated: "2026-11-20",
-  author: { name: "Filippo Verace", role: "SEO & Ads Lead", href: "/about" },
+  author: { name: "Filippo Verace", role: "Amazon SEO Lead", href: "/about" },
   facts: [
     { value: 200, label: "Characters allowed in a title, per Amazon’s SEO guide" },
     { value: 60, label: "Characters Amazon recommends for a title" },

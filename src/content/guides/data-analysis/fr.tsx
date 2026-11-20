@@ -66,7 +66,7 @@ const page: GuideCopy["page"] = {
         <>
           <p>
             Lus ensemble, les quatre chiffres désignent un problème à la fois. Peu de sessions signifient que les acheteurs ne trouvent pas le produit : les mots-clés du titre, des puces et des termes de recherche passent en premier. Beaucoup de sessions et une conversion faible signifient qu’ils arrivent sans acheter, et notre{" "}
-            <Link href={p("/services/listing-optimization")}>service d’optimisation du taux de conversion des fiches Amazon</Link> est conçu pour ce cas.
+            <Link href={p("/services/listing-optimization")}>service SEO et optimisation des fiches Amazon</Link> est conçu pour ce cas.
           </p>
           <p>
             Si vous perdez l’Offre en vedette, comparez votre prix, votre stock et votre livraison aux autres offres du même produit. Si votre ACOS dépasse votre marge, la publicité perd de l’argent : mettez en pause les termes de recherche qui dépensent sans vendre avant d’augmenter un budget.

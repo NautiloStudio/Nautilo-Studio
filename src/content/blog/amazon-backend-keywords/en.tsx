@@ -19,7 +19,7 @@ const post: BlogPost = {
   published: "2026-11-10",
   updated: "2026-11-11",
   readMinutes: 9,
-  author: { name: "Filippo Verace", role: "SEO & Ads Lead", href: "/about" },
+  author: { name: "Filippo Verace", role: "Amazon SEO Lead", href: "/about" },
   hero: { ...heroPhoto, alt: "Magnifying glass held over a laptop keyboard, searching for the right Amazon backend keywords" },
   intro: (
     <>

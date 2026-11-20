@@ -125,7 +125,7 @@ export default async function BlogIndex({ params }: PageProps<"/[lang]/blog">) {
             {pdfGuides.map((guide) => {
               const copy = dict.common.guides[guide.slug];
               return (
-                <li key={guide.slug} className="reveal">
+                <li key={guide.slug} id={`guide-${guide.slug}`} className="reveal scroll-mt-28">
                   <a
                     href={`/guides/nautilo-${guide.slug}-guide.pdf`}
                     download

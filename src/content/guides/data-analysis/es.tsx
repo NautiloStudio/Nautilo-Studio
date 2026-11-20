@@ -66,7 +66,7 @@ const page: GuideCopy["page"] = {
         <>
           <p>
             Leídos juntos, los cuatro números señalan un problema cada vez. Pocas sesiones significan que no encuentran el producto, así que primero van las palabras clave del título, las viñetas y los términos de búsqueda. Muchas sesiones con baja conversión significan que llegan pero no compran, y nuestro{" "}
-            <Link href={p("/services/listing-optimization")}>servicio de optimización de la tasa de conversión para fichas de Amazon</Link> está pensado para ese caso.
+            <Link href={p("/services/listing-optimization")}>servicio de SEO y optimización de fichas de Amazon</Link> está pensado para ese caso.
           </p>
           <p>
             Si pierdes la Oferta destacada, compara tu precio, stock y envío con las demás ofertas del mismo producto. Si tu ACOS supera tu margen, los anuncios pierden dinero: pausa los términos de búsqueda que gastan sin vender antes de subir ningún presupuesto.

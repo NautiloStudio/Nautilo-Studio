@@ -30,9 +30,25 @@ const guides = [
 
 // One guide is open at a time. Closed strips zoom into the screen (focus) so the device frame and
 // logo fall outside the strip, and a multiplied brand gradient tints the photo blue but keeps it visible.
-type Props = { exclude?: string; heading?: ReactNode; intro?: string; id?: string; className?: string };
+// linkTo "blog" sends each open guide to its free PDF card in the blog's guides section (used on the
+// home page); "service" (default) sends it to the service page.
+type Props = {
+  exclude?: string;
+  heading?: ReactNode;
+  intro?: string;
+  id?: string;
+  className?: string;
+  linkTo?: "service" | "blog";
+};
 
-export default function GuideGallery({ exclude, heading, intro, id = "guides", className = "mt-28 md:mt-44" }: Props) {
+export default function GuideGallery({
+  exclude,
+  heading,
+  intro,
+  id = "guides",
+  className = "mt-28 md:mt-44",
+  linkTo = "service",
+}: Props) {
   const [open, setOpen] = useState(0);
   const { t, href } = useLocale();
   const shown = guides
@@ -101,7 +117,7 @@ export default function GuideGallery({ exclude, heading, intro, id = "guides", c
                     <p className="mt-3 text-lg leading-relaxed text-offwhite/85">{guide.text}</p>
                     <div className="mt-6 flex flex-wrap items-center gap-3">
                       <Link
-                        href={href(`/services/${guide.slug}`)}
+                        href={href(linkTo === "blog" ? `/blog#guide-${guide.slug}` : `/services/${guide.slug}`)}
                         className="inline-flex items-center gap-2 rounded-full bg-cyan px-5 py-3 font-display font-semibold text-graphite"
                       >
                         {t.gallery.read.replace("{name}", guide.name)}

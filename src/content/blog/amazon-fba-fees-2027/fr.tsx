@@ -239,7 +239,7 @@ const post: BlogPost = {
           </ul>
           <p>
             Les frais ne sont qu’une partie du bénéfice : transformer plus de visites en ventes aide aussi. Découvrez comment travaille notre{" "}
-            <Link href={p("/services/listing-optimization")}>agence d’optimisation du taux de conversion des fiches Amazon</Link>.
+            <Link href={p("/services/listing-optimization")}>service SEO et optimisation des fiches Amazon</Link>.
           </p>
         </>
       ),
