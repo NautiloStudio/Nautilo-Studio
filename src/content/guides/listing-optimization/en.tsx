@@ -11,20 +11,20 @@ const A_PLUS = "https://sell.amazon.com/tools/a-content";
 const BOOST_LISTINGS = "https://sell.amazon.com/blog/how-to-boost-amazon-listings";
 const EXPERIMENTS = "https://sell.amazon.com/tools/manage-your-experiments";
 
-const title = "Amazon SEO Services & Listing Optimisation | Nautilo Studio";
+const title = "Amazon SEO and Listing Optimisation | Nautilo Studio";
 const description =
-  "Amazon SEO services and listing optimisation for US sellers: get found for the searches your buyers type, then chosen over the rest. Get a free listing review.";
+  "Amazon SEO and listing optimisation for US sellers: get found for the searches your buyers type, then chosen over the rest. Get a free listing review today.";
 
 const page: GuideCopy["page"] = {
   slug: "listing-optimization",
   breadcrumb: "SEO and listing optimisation",
-  question: "Amazon SEO services and listing optimisation: get found, then get chosen",
+  question: "Amazon SEO and listing optimisation: get found, then get chosen",
   answer:
     "Amazon SEO gets your product shown when shoppers search. Listing optimisation makes them pick it once they see it. On Amazon both happen on the same page: the title, bullets, images, A+ content and backend search terms decide where you rank and whether shoppers buy. Put the words buyers type where Amazon reads them, make the listing convincing, then test one change at a time. The sales a better listing brings also help it rank.",
   description,
   image: {
     src: "/img/amazon-listing-optimization.jpg",
-    alt: "iMac showing an optimised Amazon listing for a bamboo cutting board, next to Amazon search results where it ranks first and a table of organic keyword ranks",
+    alt: "iMac screen with an optimised Amazon listing for a bamboo cutting board, tagged get chosen, next to Amazon search results where it ranks first and its organic keyword ranks, tagged get found",
     tile: "bg-apricot",
   },
   updated: "2026-11-20",
@@ -159,13 +159,13 @@ const page: GuideCopy["page"] = {
     },
     {
       id: "seo-listing-service",
-      heading: "What our Amazon SEO services and listing optimisation include",
+      heading: "What our Amazon SEO and listing optimisation service includes",
       figure: {
         src: "/img/amazon-listing-optimization.jpg",
         alt: "iMac showing an Amazon listing with five marked edits, the search results for bamboo cutting board and the keyword ranks before and after the update",
-        width: 1200,
-        height: 1200,
-        caption: "Example listing with our changes marked, its search results and keyword ranks. Illustration with example data, not a client listing.",
+        width: 1600,
+        height: 1000,
+        caption: "Example listing with our changes marked, its search results and keyword ranks. Illustration with example data, not a client listing. Photo: Amy Hirschi, Unsplash.",
       },
       body: (
         <>

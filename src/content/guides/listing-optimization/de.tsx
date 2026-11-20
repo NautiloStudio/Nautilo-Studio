@@ -123,8 +123,8 @@ const page: GuideCopy["page"] = {
       figure: {
         src: "/img/amazon-listing-optimization.jpg",
         alt: "iMac mit einem Amazon-Listing und fünf markierten Änderungen an Titel, Hauptbild, Bullet Points, A+ Content und Suchbegriffen: die Arbeit einer Agentur für Conversion-Optimierung",
-        width: 1200,
-        height: 1200,
+        width: 1600,
+        height: 1000,
         caption: "Beispiel-Listing mit unseren fünf markierten Änderungen. Illustration, kein Kunden-Listing.",
       },
       body: (
