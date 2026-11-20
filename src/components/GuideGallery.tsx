@@ -36,9 +36,9 @@ const guides = [
 
 // One guide is open at a time. Closed strips zoom into the screen (focus) so the device frame and
 // logo fall outside the strip, and a multiplied brand gradient tints the photo blue but keeps it visible.
-type Props = { exclude?: string; heading?: ReactNode; intro?: string; id?: string };
+type Props = { exclude?: string; heading?: ReactNode; intro?: string; id?: string; className?: string };
 
-export default function GuideGallery({ exclude, heading, intro, id = "guides" }: Props) {
+export default function GuideGallery({ exclude, heading, intro, id = "guides", className = "mt-28 md:mt-44" }: Props) {
   const [open, setOpen] = useState(0);
   const { t, href } = useLocale();
   const shown = guides
@@ -46,7 +46,7 @@ export default function GuideGallery({ exclude, heading, intro, id = "guides" }:
     .map((guide) => ({ ...guide, ...t.guides[guide.slug] }));
 
   return (
-    <section id={id} className="mx-auto mt-28 max-w-7xl px-4 sm:px-6 md:mt-44">
+    <section id={id} className={`mx-auto max-w-7xl px-4 sm:px-6 ${className}`}>
       <h2 className="reveal max-w-4xl font-display text-[clamp(2rem,4.4vw,4rem)] font-bold leading-[1.05] tracking-[-0.03em]">
         {heading ?? withCounts(t.gallery.heading)}
       </h2>

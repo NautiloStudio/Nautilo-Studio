@@ -343,7 +343,7 @@ const en = {
     pdfLabel: "Free PDF guide · 10 pages",
     pdfText: "Download the full guide, with examples, charts and a checklist.",
     caseLabel: "Case study",
-    caseText: "See a seller draft next to the listing we suggested.",
+    caseText: "See a brand’s draft next to the listing we suggested.",
     faq: "Frequently asked questions",
     more: "More from Nautilo Studio",
     moreServices: "Our services for Amazon sellers",
