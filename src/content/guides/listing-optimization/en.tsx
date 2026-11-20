@@ -24,7 +24,7 @@ const page: GuideCopy["page"] = {
   description,
   image: {
     src: "/img/amazon-listing-optimization.jpg",
-    alt: "iMac screen with an optimised Amazon listing for a bamboo cutting board, tagged get chosen, next to Amazon search results where it ranks first and its organic keyword ranks, tagged get found",
+    alt: "iMac on a desk showing an optimised Amazon listing for a bamboo cutting board, tagged get chosen, next to Amazon search results where it ranks first and its organic keyword ranks, tagged get found",
     tile: "bg-apricot",
   },
   updated: "2026-11-20",
