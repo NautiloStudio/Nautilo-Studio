@@ -201,7 +201,7 @@ const fr: Dictionary = {
         title: "SEO et optimisation des fiches",
         problem: "« On ne trouve pas mon produit, ou on regarde sans acheter. »",
         text: "Nous plaçons dans votre fiche les mots que vos acheteurs recherchent, puis retravaillons titres, puces, images et contenu A+ pour que plus de visiteurs achètent.",
-        alt: "iMac affichant une fiche Amazon optimisée à côté des résultats de recherche où elle arrive en première position, avec son classement par mot-clé",
+        alt: "Écran affichant une fiche Amazon optimisée à côté des résultats de recherche où elle arrive en première position, avec son classement par mot-clé",
         guide: "Lire notre guide SEO et optimisation des fiches",
       },
       {

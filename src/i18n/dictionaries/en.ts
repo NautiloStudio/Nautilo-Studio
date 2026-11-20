@@ -204,7 +204,7 @@ const en = {
         title: "SEO and listing optimisation",
         problem: "“Shoppers can’t find my product, or they look but don’t buy.”",
         text: "We put the words your buyers search for into your listing, then rework titles, bullets, images and A+ content so more visitors buy.",
-        alt: "iMac showing an optimised Amazon listing next to the search results where it ranks first and its keyword ranks",
+        alt: "Screen showing an optimised Amazon listing next to the search results where it ranks first and its keyword ranks",
         guide: "Read our SEO and listing optimisation guide",
       },
       {

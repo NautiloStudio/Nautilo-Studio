@@ -24,7 +24,7 @@ const page: GuideCopy["page"] = {
   description,
   image: {
     src: "/img/amazon-listing-optimization.jpg",
-    alt: "iMac on a desk showing an optimised Amazon listing for a bamboo cutting board, tagged get chosen, next to Amazon search results where it ranks first and its organic keyword ranks, tagged get found",
+    alt: "Screen showing an optimised Amazon listing for a bamboo cutting board, tagged get chosen, next to Amazon search results where it ranks first and its organic keyword ranks, tagged get found",
     tile: "bg-apricot",
   },
   updated: "2026-11-20",
@@ -162,10 +162,10 @@ const page: GuideCopy["page"] = {
       heading: "What our Amazon SEO and listing optimisation service includes",
       figure: {
         src: "/img/amazon-listing-optimization.jpg",
-        alt: "iMac showing an Amazon listing with five marked edits, the search results for bamboo cutting board and the keyword ranks before and after the update",
+        alt: "Screen showing an Amazon listing with five marked edits, the search results for bamboo cutting board and the keyword ranks before and after the update",
         width: 1600,
         height: 1000,
-        caption: "Example listing with our changes marked, its search results and keyword ranks. Illustration with example data, not a client listing. Photo: Amy Hirschi, Unsplash.",
+        caption: "Example listing with our changes marked, its search results and keyword ranks. Illustration with example data, not a client listing.",
       },
       body: (
         <>

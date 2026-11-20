@@ -200,7 +200,7 @@ const de: Dictionary = {
         title: "SEO und Listing-Optimierung",
         problem: "„Käufer finden mein Produkt nicht, oder sie schauen und kaufen nicht.“",
         text: "Wir bringen die Wörter, nach denen Ihre Käufer suchen, in Ihr Listing und überarbeiten Titel, Bullet Points, Bilder und A+ Content, damit mehr Besucher kaufen.",
-        alt: "iMac mit einem optimierten Amazon-Listing neben den Suchergebnissen, in denen es auf Platz eins steht, und seinen Keyword-Rankings",
+        alt: "Bildschirm mit einem optimierten Amazon-Listing neben den Suchergebnissen, in denen es auf Platz eins steht, und seinen Keyword-Rankings",
         guide: "Unseren Leitfaden SEO und Listing-Optimierung lesen",
       },
       {

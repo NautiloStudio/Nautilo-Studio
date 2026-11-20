@@ -199,7 +199,7 @@ const it: Dictionary = {
         title: "SEO e ottimizzazione delle schede",
         problem: "«Non trovano il mio prodotto, oppure guardano ma non comprano.»",
         text: "Mettiamo nella tua scheda le parole che cercano i tuoi clienti, poi rivediamo titoli, punti elenco, immagini e contenuti A+ perché più visitatori comprino.",
-        alt: "iMac con una scheda Amazon ottimizzata accanto ai risultati di ricerca in cui compare al primo posto e al suo posizionamento per parola chiave",
+        alt: "Schermo con una scheda Amazon ottimizzata accanto ai risultati di ricerca in cui compare al primo posto e al suo posizionamento per parola chiave",
         guide: "Leggi la nostra guida a SEO e ottimizzazione delle schede",
       },
       {

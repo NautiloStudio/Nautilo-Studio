@@ -199,7 +199,7 @@ const es: Dictionary = {
         title: "SEO y optimización de fichas",
         problem: "«No encuentran mi producto, o miran pero no compran».",
         text: "Ponemos en tu ficha las palabras que buscan tus compradores y rehacemos títulos, viñetas, imágenes y contenido A+ para que más visitantes compren.",
-        alt: "iMac con una ficha de Amazon optimizada junto a los resultados de búsqueda donde aparece en primer lugar y su posición por palabra clave",
+        alt: "Pantalla con una ficha de Amazon optimizada junto a los resultados de búsqueda donde aparece en primer lugar y su posición por palabra clave",
         guide: "Leer nuestra guía de SEO y optimización de fichas",
       },
       {

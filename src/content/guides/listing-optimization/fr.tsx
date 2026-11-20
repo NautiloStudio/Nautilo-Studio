@@ -28,7 +28,7 @@ const page: GuideCopy["page"] = {
   description,
   image: {
     src: "/img/amazon-listing-optimization.jpg",
-    alt: "iMac sur un bureau affichant une fiche Amazon optimisée d’une planche à découper en bambou, marquée « être choisi », à côté des résultats de recherche où elle arrive en première position et de son classement par mot-clé, marqués « être trouvé »",
+    alt: "Écran affichant une fiche Amazon optimisée d’une planche à découper en bambou, marquée « être choisi », à côté des résultats de recherche où elle arrive en première position et de son classement par mot-clé, marqués « être trouvé »",
     tile: "bg-apricot",
   },
   updated: "2026-11-20",
@@ -135,10 +135,10 @@ const page: GuideCopy["page"] = {
       heading: "Ce que comprend notre service SEO Amazon et optimisation des fiches",
       figure: {
         src: "/img/amazon-listing-optimization.jpg",
-        alt: "iMac sur un bureau affichant une fiche Amazon avec cinq modifications signalées, les résultats de recherche pour « bamboo cutting board » et le classement par mot-clé avant et après",
+        alt: "Écran affichant une fiche Amazon avec cinq modifications signalées, les résultats de recherche pour « bamboo cutting board » et le classement par mot-clé avant et après",
         width: 1600,
         height: 1000,
-        caption: "Fiche d’exemple avec nos modifications signalées, ses résultats de recherche et son classement. Illustration avec des données d’exemple, pas la fiche d’un client. Photo : Amy Hirschi, Unsplash.",
+        caption: "Fiche d’exemple avec nos modifications signalées, ses résultats de recherche et son classement. Illustration avec des données d’exemple, pas la fiche d’un client.",
       },
       body: (
         <>
