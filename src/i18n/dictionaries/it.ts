@@ -23,12 +23,6 @@ const it: Dictionary = {
       language: "Lingua",
     },
     guides: {
-      "amazon-seo": {
-        menu: "SEO",
-        name: "SEO su Amazon",
-        title: "Fatti trovare da più clienti su Amazon",
-        text: "Come funziona la ricerca di Amazon, dove vanno le tue parole chiave e come salire nei risultati.",
-      },
       "listing-optimization": {
         menu: "SEO e ottimizzazione schede",
         name: "SEO e ottimizzazione delle schede",
@@ -59,6 +53,27 @@ const it: Dictionary = {
       download: "Scarica il PDF",
     },
     pdfLanguage: "in inglese",
+    // The short form before a PDF guide download (blog). Answers go to the leads table.
+    guideForm: {
+      title: "Ricevi la guida gratuita",
+      intro: "Raccontaci qualcosa di te e il download parte subito.",
+      name: "Nome",
+      email: "Email di lavoro",
+      company: "Azienda o marchio",
+      optional: "facoltativo",
+      role: "Il tuo ruolo",
+      choose: "Scegli",
+      roles: ["Fondatore o titolare", "Responsabile e-commerce o marketplace", "Marketing", "Agenzia o consulente", "Altro"],
+      amazon: "Vendi su Amazon?",
+      amazonOptions: ["Sì, negli USA", "Sì, su altri marketplace", "Non ancora"],
+      consent: "Nautilo Studio può scrivermi riguardo a questa guida e ai suoi servizi. Posso disiscrivermi in qualsiasi momento.",
+      submit: "Scarica il PDF",
+      sending: "Preparazione della guida...",
+      error: "Qualcosa è andato storto. Riprova.",
+      done: "Grazie! Il download è partito.",
+      again: "Scaricala di nuovo",
+      cancel: "Annulla",
+    },
     form: {
       name: "Nome",
       email: "Email",
@@ -388,7 +403,7 @@ const it: Dictionary = {
       title: "Grazie. Abbiamo ricevuto il tuo messaggio.",
       text: "Uno di noi ti risponderà all’indirizzo email che ci hai indicato. Controlla la tua casella di posta e, per sicurezza, anche lo spam.",
     },
-    guidesHeading: "Nel frattempo: {4} guide gratuite.",
+    guidesHeading: "Nel frattempo: {3} guide gratuite.",
     guidesIntro: "Una guida per ogni servizio, con esempi, grafici e una checklist.",
   },
 
@@ -427,6 +442,7 @@ const it: Dictionary = {
     paragraphs: [
       "Nautilo Studio è un progetto di studenti della TBS Education Barcelona, gestito da Carlo Ambrosini, Maria Giraldo, Veronika Matkovska e Filippo Verace.",
       "Quando usi uno dei nostri moduli raccogliamo il tuo nome, il tuo indirizzo email e il tuo messaggio o il link alla tua scheda. Li usiamo solo per risponderti.",
+      "Quando scarichi una delle nostre guide PDF ti chiediamo anche azienda, ruolo e se vendi su Amazon. Li usiamo per capire chi legge le nostre guide e, se sei d’accordo, per scriverti sulla guida e sui nostri servizi.",
       "Il tuo messaggio viene salvato nel nostro database Supabase, ospitato nell’Unione europea. Questo sito non usa cookie pubblicitari.",
     ],
     contact: "Per vedere o cancellare i tuoi dati, scrivi a",

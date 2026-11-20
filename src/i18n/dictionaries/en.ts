@@ -26,12 +26,6 @@ const en = {
       language: "Language",
     },
     guides: {
-      "amazon-seo": {
-        menu: "SEO",
-        name: "Amazon SEO",
-        title: "Get found by more shoppers on Amazon",
-        text: "How Amazon search works, where your keywords belong and how to climb the results.",
-      },
       "listing-optimization": {
         menu: "SEO and listing optimisation",
         name: "SEO and listing optimisation",
@@ -63,6 +57,27 @@ const en = {
     },
     // Shown next to PDF links in languages other than English, since the PDFs are in English.
     pdfLanguage: "",
+    // The short form before a PDF guide download (blog). Answers go to the leads table.
+    guideForm: {
+      title: "Get the free guide",
+      intro: "Tell us a little about you and the download starts right away.",
+      name: "Name",
+      email: "Work email",
+      company: "Company or brand",
+      optional: "optional",
+      role: "Your role",
+      choose: "Choose one",
+      roles: ["Founder or owner", "E-commerce or marketplace manager", "Marketing", "Agency or consultant", "Other"],
+      amazon: "Do you sell on Amazon?",
+      amazonOptions: ["Yes, in the US", "Yes, in other marketplaces", "Not yet"],
+      consent: "Nautilo Studio may email me about this guide and its services. I can unsubscribe at any time.",
+      submit: "Download the PDF",
+      sending: "Preparing your guide...",
+      error: "Something went wrong. Please try again.",
+      done: "Thanks! Your download has started.",
+      again: "Download it again",
+      cancel: "Cancel",
+    },
     form: {
       name: "Name",
       email: "Email",
@@ -391,7 +406,7 @@ const en = {
       title: "Thanks. We have your message.",
       text: "One of us will reply to the email address you gave us. Check your inbox, and your spam folder just in case.",
     },
-    guidesHeading: "While you wait: {4} free guides.",
+    guidesHeading: "While you wait: {3} free guides.",
     guidesIntro: "One guide for each service, with examples, charts and a checklist.",
   },
 
@@ -430,6 +445,7 @@ const en = {
     paragraphs: [
       "Nautilo Studio is a student project at TBS Education Barcelona, run by Carlo Ambrosini, Maria Giraldo, Veronika Matkovska and Filippo Verace.",
       "When you use one of our forms we collect your name, your email address and your message or listing link. We use them only to reply to you.",
+      "When you download one of our PDF guides we also ask for your company, your role and whether you sell on Amazon. We use them to understand who reads our guides and, if you agree, to email you about the guide and our services.",
       "Your message is stored in our Supabase database, hosted in the European Union. This site sets no advertising cookies.",
     ],
     contact: "To see or delete your details, write to",
