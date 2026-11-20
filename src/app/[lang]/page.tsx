@@ -238,7 +238,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         <CaseStudy t={dict.caseStudy} />
 
         {/* Free guides */}
-        <GuideGallery heading={withCounts(dict.common.gallery.heading)} />
+        <GuideGallery heading={withCounts(dict.common.gallery.heading)} linkTo="blog" />
 
         {/* Free listing review */}
         <section

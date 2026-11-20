@@ -236,8 +236,8 @@ const post: BlogPost = {
             </li>
           </ul>
           <p>
-            Gebühren sind nur ein Teil des Gewinns: Mehr Besuche in Verkäufe zu verwandeln, hilft ebenfalls. So arbeitet unsere{" "}
-            <Link href={p("/services/listing-optimization")}>Agentur für Conversion-Rate-Optimierung von Amazon-Listings</Link>.
+            Gebühren sind nur ein Teil des Gewinns: Mehr Besuche in Verkäufe zu verwandeln, hilft ebenfalls. So arbeitet unser{" "}
+            <Link href={p("/services/listing-optimization")}>Service für Amazon-SEO und Listing-Optimierung</Link>.
           </p>
         </>
       ),

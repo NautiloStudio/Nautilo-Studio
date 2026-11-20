@@ -62,7 +62,7 @@ const page: GuideCopy["page"] = {
         <>
           <p>
             Letti insieme, i quattro numeri indicano un problema alla volta. Poche sessioni vogliono dire che i clienti non trovano il prodotto, quindi vengono prima le parole chiave di titolo, punti elenco e termini di ricerca. Tante sessioni con una conversione bassa vogliono dire che arrivano ma non comprano, e il nostro{" "}
-            <Link href={p("/services/listing-optimization")}>servizio di ottimizzazione del tasso di conversione per le schede Amazon</Link> è pensato per questo caso.
+            <Link href={p("/services/listing-optimization")}>servizio di SEO e ottimizzazione delle schede Amazon</Link> è pensato per questo caso.
           </p>
           <p>
             Se perdi l’Offerta in evidenza, confronta prezzo, scorte e spedizione con le altre offerte dello stesso prodotto. Se il tuo ACOS supera il margine, la pubblicità perde soldi: metti in pausa i termini di ricerca che spendono senza vendere prima di alzare qualsiasi budget.

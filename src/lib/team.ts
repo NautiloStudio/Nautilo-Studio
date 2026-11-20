@@ -16,10 +16,10 @@ export type TeamMember = {
 export const team: TeamMember[] = [
   {
     name: "Filippo Verace",
-    role: "SEO & Ads Lead",
+    role: "Amazon SEO Lead",
     summary:
-      "Leads how shoppers find your products: the words they search for, where your listing ranks and the Sponsored Products campaigns that bring them in.",
-    focus: ["Amazon SEO", "Sponsored Products", "Keyword research"],
+      "Leads how shoppers find your products: the words they search for, where those words go in your listing and how it ranks after each change.",
+    focus: ["Amazon SEO", "Keyword research", "Backend search terms"],
     guide: { href: "/services/listing-optimization", label: "Read the SEO and listing optimisation guide" },
     linkedin: "https://www.linkedin.com/in/filippoverace/",
     photo: "/team/filippo.jpg",

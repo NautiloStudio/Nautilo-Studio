@@ -21,7 +21,7 @@ const post: BlogPost = {
   published: "2026-11-10",
   updated: "2026-11-11",
   readMinutes: 9,
-  author: { name: "Filippo Verace", role: "SEO & Ads Lead", href: "/about" },
+  author: { name: "Filippo Verace", role: "Lead Amazon-SEO", href: "/about" },
   hero: { ...heroPhoto, alt: "Lupe über der Tastatur eines Laptops" },
   intro: (
     <>

@@ -238,8 +238,8 @@ const post: BlogPost = {
             </li>
           </ul>
           <p>
-            Las tarifas son solo una parte del beneficio: convertir más visitas en ventas también ayuda. Mira cómo trabaja nuestra{" "}
-            <Link href={p("/services/listing-optimization")}>agencia de optimización de la tasa de conversión para fichas de Amazon</Link>.
+            Las tarifas son solo una parte del beneficio: convertir más visitas en ventas también ayuda. Mira cómo trabaja nuestro{" "}
+            <Link href={p("/services/listing-optimization")}>servicio de SEO y optimización de fichas de Amazon</Link>.
           </p>
         </>
       ),

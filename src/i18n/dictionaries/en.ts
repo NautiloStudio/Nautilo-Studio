@@ -120,10 +120,10 @@ const en = {
       hint: "Pick a person to read their profile.",
       members: {
         "Filippo Verace": {
-          role: "SEO & Ads Lead",
+          role: "Amazon SEO Lead",
           summary:
-            "Leads how shoppers find your products: the words they search for, where your listing ranks and the Sponsored Products campaigns that bring them in.",
-          focus: ["Amazon SEO", "Sponsored Products", "Keyword research"],
+            "Leads how shoppers find your products: the words they search for, where those words go in your listing and how it ranks after each change.",
+          focus: ["Amazon SEO", "Keyword research", "Backend search terms"],
           guide: "Read the SEO and listing optimisation guide",
         },
         "Maria Giraldo": {
@@ -169,8 +169,8 @@ const en = {
         "Nautilo Studio is four master's students at TBS Education in Barcelona, building the marketing team that US Amazon sellers don't have. Meet the whole team.",
     },
     privacy: {
-      title: "Privacy note | Nautilo Studio",
-      description: "What Nautilo Studio does with the details you send through our forms.",
+      title: "Privacy Note: What We Do With Your Data | Nautilo Studio",
+      description: "Nautilo Studio collects your name, email and message or listing link only to reply to you, keeps them in the EU and sets no ad cookies. Ask us to delete them.",
     },
   },
 
@@ -232,7 +232,7 @@ const en = {
       },
       {
         word: "Optimise.",
-        text: "We work on titles, bullets, A+ content and images, then on keywords and Sponsored Products campaigns.",
+        text: "We work on keywords, titles, bullets, A+ content and images, one change at a time.",
       },
       { word: "Automate.", text: "AI agents take over the repetitive listing and reporting tasks." },
     ],

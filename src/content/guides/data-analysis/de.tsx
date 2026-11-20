@@ -66,7 +66,7 @@ const page: GuideCopy["page"] = {
         <>
           <p>
             Zusammen gelesen, zeigen die vier Zahlen jeweils ein Problem. Wenige Sitzungen heißen, dass Käufer das Produkt nicht finden, also kommen die Keywords in Titel, Bullet Points und Suchbegriffen zuerst. Viele Sitzungen bei niedriger Conversion heißen, dass Käufer kommen, aber nicht kaufen, und unser{" "}
-            <Link href={p("/services/listing-optimization")}>Service für Conversion-Rate-Optimierung von Amazon-Listings</Link> ist genau dafür gemacht.
+            <Link href={p("/services/listing-optimization")}>Service für Amazon-SEO und Listing-Optimierung</Link> ist genau dafür gemacht.
           </p>
           <p>
             Verlieren Sie das Empfohlene Angebot, vergleichen Sie Preis, Bestand und Versand mit den anderen Angeboten zum selben Produkt. Liegt Ihr ACOS über Ihrer Marge, verliert die Werbung Geld: Pausieren Sie Suchbegriffe, die Geld kosten, ohne zu verkaufen, bevor Sie ein Budget erhöhen.

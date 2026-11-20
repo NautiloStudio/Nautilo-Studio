@@ -239,8 +239,8 @@ const post: BlogPost = {
             </li>
           </ul>
           <p>
-            Le commissioni sono solo una parte del profitto: trasformare più visite in vendite aiuta anche. Scopri come lavora la nostra{" "}
-            <Link href={p("/services/listing-optimization")}>agenzia di ottimizzazione del tasso di conversione per le schede Amazon</Link>.
+            Le commissioni sono solo una parte del profitto: trasformare più visite in vendite aiuta anche. Scopri come lavora il nostro{" "}
+            <Link href={p("/services/listing-optimization")}>servizio di SEO e ottimizzazione delle schede Amazon</Link>.
           </p>
         </>
       ),

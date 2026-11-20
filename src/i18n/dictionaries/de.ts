@@ -117,10 +117,10 @@ const de: Dictionary = {
       hint: "Wählen Sie eine Person, um ihr Profil zu lesen.",
       members: {
         "Filippo Verace": {
-          role: "Lead SEO & Ads",
+          role: "Lead Amazon-SEO",
           summary:
-            "Verantwortet, wie Käufer Ihre Produkte finden: die Suchbegriffe, die Position Ihres Listings und die Sponsored-Products-Kampagnen, die sie zu Ihnen bringen.",
-          focus: ["Amazon-SEO", "Sponsored Products", "Keyword-Recherche"],
+            "Verantwortet, wie Käufer Ihre Produkte finden: die Suchbegriffe, wo sie im Listing stehen und wie sich das Ranking nach jeder Änderung entwickelt.",
+          focus: ["Amazon-SEO", "Keyword-Recherche", "Versteckte Suchbegriffe"],
           guide: "Leitfaden SEO und Listing-Optimierung lesen",
         },
         "Maria Giraldo": {
@@ -165,8 +165,8 @@ const de: Dictionary = {
         "Nautilo Studio sind vier Masterstudierende der TBS Education in Barcelona. Wir bauen das Marketingteam, das Amazon-Händlern fehlt. Lernen Sie uns kennen.",
     },
     privacy: {
-      title: "Datenschutzhinweis | Nautilo Studio",
-      description: "Was Nautilo Studio mit den Daten macht, die Sie über unsere Formulare senden.",
+      title: "Datenschutz: Was wir mit Ihren Daten tun | Nautilo Studio",
+      description: "Nautilo Studio nutzt Name, E-Mail und Nachricht oder Listing-Link nur zum Antworten, speichert sie in der EU und setzt keine Werbe-Cookies. Löschung jederzeit.",
     },
   },
 
@@ -228,7 +228,7 @@ const de: Dictionary = {
       },
       {
         word: "Optimieren.",
-        text: "Wir arbeiten an Titeln, Bullet Points, A+ Content und Bildern, danach an Keywords und Sponsored-Products-Kampagnen.",
+        text: "Wir arbeiten an Keywords, Titeln, Bullet Points, A+ Content und Bildern, eine Änderung nach der anderen.",
       },
       {
         word: "Automatisieren.",

@@ -116,10 +116,10 @@ const es: Dictionary = {
       hint: "Elige a una persona para leer su perfil.",
       members: {
         "Filippo Verace": {
-          role: "Responsable de SEO y Ads",
+          role: "Responsable de SEO en Amazon",
           summary:
-            "Se encarga de cómo te encuentran los compradores: las palabras que buscan, la posición de tu ficha y las campañas de Sponsored Products que los atraen.",
-          focus: ["SEO en Amazon", "Sponsored Products", "Búsqueda de palabras clave"],
+            "Se encarga de cómo te encuentran los compradores: las palabras que buscan, dónde van en tu ficha y cómo cambia su posición tras cada cambio.",
+          focus: ["SEO en Amazon", "Búsqueda de palabras clave", "Términos de búsqueda"],
           guide: "Leer la guía de SEO y optimización de fichas",
         },
         "Maria Giraldo": {
@@ -164,8 +164,8 @@ const es: Dictionary = {
         "Nautilo Studio son cuatro estudiantes de máster de TBS Education en Barcelona que crean el equipo de marketing que les falta a los vendedores de Amazon.",
     },
     privacy: {
-      title: "Nota de privacidad | Nautilo Studio",
-      description: "Qué hace Nautilo Studio con los datos que nos envías a través de nuestros formularios.",
+      title: "Privacidad: qué hacemos con tus datos | Nautilo Studio",
+      description: "Nautilo Studio recoge tu nombre, email y mensaje o enlace solo para responderte, los guarda en la UE y no usa cookies publicitarias. Pide que los borremos.",
     },
   },
 
@@ -227,7 +227,7 @@ const es: Dictionary = {
       },
       {
         word: "Optimiza.",
-        text: "Trabajamos títulos, viñetas, contenido A+ e imágenes, y después palabras clave y campañas de Sponsored Products.",
+        text: "Trabajamos palabras clave, títulos, viñetas, contenido A+ e imágenes, un cambio cada vez.",
       },
       {
         word: "Automatiza.",
