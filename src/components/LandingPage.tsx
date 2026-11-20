@@ -10,6 +10,7 @@ import SiteHeader from "@/components/SiteHeader";
 import StepDemo, { type DemoKind } from "@/components/StepDemo";
 import TalkButton from "@/components/TalkButton";
 import SiteFooter from "@/components/SiteFooter";
+import SourcesList from "@/components/SourcesList";
 import { withCounts } from "@/components/withCounts";
 import { team } from "@/lib/team";
 import { SITE_URL, localePath, localeTags, pageUrl, type Locale } from "@/i18n/config";
@@ -59,7 +60,7 @@ export type LandingContent = {
 function SourceRef({ n, onDark }: { n: number; onDark?: boolean }) {
   return (
     <sup className="ml-0.5">
-      <a href={`#source-${n}`} className={`font-semibold no-underline hover:underline ${onDark ? "text-cyan" : "text-royal"}`} aria-label={`Source ${n}`}>
+      <a href={`#source-${n}`} className={`font-semibold no-underline hover:underline ${onDark ? "text-apricot" : "text-royal"}`} aria-label={`Source ${n}`}>
         [{n}]
       </a>
     </sup>
@@ -348,25 +349,25 @@ export default function LandingPage({
                 </section>
               )}
 
-              {/* A published case study from a third party, told as challenge, approach, result */}
+              {/* A published case study from a third party, told as challenge, approach, result. Royal blue, so it differs from the black review box. */}
               {page.caseStudy && (
-                <section aria-labelledby="case-study" className="reveal glow-ring on-dark rounded-[2rem] bg-graphite p-8 text-offwhite md:p-14">
-                  <p className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-cyan">{page.caseStudy.label}</p>
+                <section aria-labelledby="case-study" className="reveal glow-ring on-dark rounded-[2rem] bg-royal p-8 text-offwhite md:p-14">
+                  <p className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-apricot">{page.caseStudy.label}</p>
                   <h2 id="case-study" className={`${h2} mt-3 max-w-4xl`}>{page.caseStudy.heading}</h2>
-                  <p className="mt-6 max-w-3xl text-lg leading-relaxed text-offwhite/80">{page.caseStudy.intro}</p>
+                  <p className="mt-6 max-w-3xl text-lg leading-relaxed text-offwhite/85">{page.caseStudy.intro}</p>
                   <ol className="m-0 mt-10 grid list-none gap-8 p-0 md:grid-cols-3">
                     {page.caseStudy.steps.map((step, index) => (
                       <li key={step.heading}>
-                        <p className="font-display text-sm font-semibold tabular-nums tracking-[0.14em] text-cyan">
+                        <p className="font-display text-sm font-semibold tabular-nums tracking-[0.14em] text-apricot">
                           {String(index + 1).padStart(2, "0")} · {step.heading}
                         </p>
-                        <p className="mt-3 leading-relaxed text-offwhite/80">{step.text}</p>
+                        <p className="mt-3 leading-relaxed text-offwhite/85">{step.text}</p>
                       </li>
                     ))}
                   </ol>
                   <ul className="m-0 mt-10 grid list-none gap-3 p-0 sm:grid-cols-2 lg:grid-cols-4">
                     {page.caseStudy.results.map((result) => (
-                      <li key={result.label} className="rounded-[1.5rem] bg-white/5 p-6 ring-1 ring-white/10">
+                      <li key={result.label} className="rounded-[1.5rem] bg-white/10 p-6 ring-1 ring-white/15">
                         <p className="font-display text-[clamp(2.2rem,3.6vw,3rem)] font-bold leading-none tracking-[-0.03em] text-cyan">
                           {result.value}
                         </p>
@@ -374,17 +375,38 @@ export default function LandingPage({
                       </li>
                     ))}
                   </ul>
-                  <blockquote className="m-0 mt-10 border-l-4 border-apricot pl-6">
+                  <blockquote className="m-0 mt-10 border-l-4 border-cyan pl-6">
                     <p className="font-display text-[clamp(1.25rem,2.2vw,1.6rem)] font-medium leading-snug">“{page.caseStudy.quote.text}”</p>
                     <footer className="mt-3 text-offwhite/70">{page.caseStudy.quote.by}</footer>
                   </blockquote>
                   <p className="mt-10 max-w-3xl text-lg leading-relaxed">{page.caseStudy.takeaway}</p>
-                  <p className="mt-6 text-sm text-offwhite/60">
+                  <p className="mt-6 text-sm text-offwhite/70">
                     {page.caseStudy.note}
                     <SourceRef n={page.caseStudy.source} onDark />
                   </p>
                 </section>
               )}
+
+              {/* FAQ */}
+              <section id="faq" className="reveal scroll-mt-28">
+                <h2 className={h2}>{t.faq}</h2>
+                <div className="mt-6 max-w-4xl divide-y divide-sand border-y border-sand">
+                  {page.faqs.map((faq) => (
+                    <details key={faq.question} className="group py-5">
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-6 font-display text-lg font-semibold [&::-webkit-details-marker]:hidden">
+                        <h3 className="text-lg font-semibold">{faq.question}</h3>
+                        <CaretDown
+                          size={20}
+                          weight="bold"
+                          aria-hidden
+                          className="shrink-0 text-royal transition-transform duration-200 group-open:rotate-180"
+                        />
+                      </summary>
+                      <p className="mt-3 text-lg leading-relaxed text-slate">{faq.answer}</p>
+                    </details>
+                  ))}
+                </div>
+              </section>
 
               {/* Our story: why Nautilo Studio exists, as a short three-step arc */}
               {page.story && (
@@ -456,27 +478,6 @@ export default function LandingPage({
                 </aside>
               )}
 
-              {/* FAQ */}
-              <section id="faq" className="reveal scroll-mt-28">
-                <h2 className={h2}>{t.faq}</h2>
-                <div className="mt-6 max-w-4xl divide-y divide-sand border-y border-sand">
-                  {page.faqs.map((faq) => (
-                    <details key={faq.question} className="group py-5">
-                      <summary className="flex cursor-pointer list-none items-center justify-between gap-6 font-display text-lg font-semibold [&::-webkit-details-marker]:hidden">
-                        <h3 className="text-lg font-semibold">{faq.question}</h3>
-                        <CaretDown
-                          size={20}
-                          weight="bold"
-                          aria-hidden
-                          className="shrink-0 text-royal transition-transform duration-200 group-open:rotate-180"
-                        />
-                      </summary>
-                      <p className="mt-3 text-lg leading-relaxed text-slate">{faq.answer}</p>
-                    </details>
-                  ))}
-                </div>
-              </section>
-
               {/* Internal links */}
               <section aria-labelledby="related" className="reveal">
                 <h2 id="related" className="font-display text-xl font-semibold">
@@ -510,21 +511,9 @@ export default function LandingPage({
                 </ul>
               </section>
 
-              {/* Sources for the figures and the case study above */}
-              {page.sources && (
-                <section aria-labelledby="sources" className="reveal">
-                  <h2 id="sources" className="font-display text-xl font-semibold">{page.sources.heading}</h2>
-                  <ol className="m-0 mt-4 max-w-4xl list-decimal space-y-2 pl-6 text-slate marker:font-semibold marker:text-royal">
-                    {page.sources.items.map((source, index) => (
-                      <li key={source.href} id={`source-${index + 1}`} className="scroll-mt-28 pl-1">
-                        <a href={source.href} target="_blank" rel="noopener noreferrer" className="underline decoration-royal/40 underline-offset-4 hover:text-royal">
-                          {source.label}
-                        </a>
-                      </li>
-                    ))}
-                  </ol>
-                </section>
-              )}
+              {/* Sources for the figures and the case study above, folded into one small line */}
+              {page.sources && <SourcesList heading={page.sources.heading} items={page.sources.items} />}
+
           </div>
         </article>
 
