@@ -11,6 +11,7 @@ import StepDemo, { type DemoKind } from "@/components/StepDemo";
 import TalkButton from "@/components/TalkButton";
 import SiteFooter from "@/components/SiteFooter";
 import { withCounts } from "@/components/withCounts";
+import { team } from "@/lib/team";
 import { SITE_URL, localePath, localeTags, pageUrl, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 
@@ -149,9 +150,9 @@ export default function LandingPage({
 
       <main id="main" className="flex-1 overflow-x-clip">
         <article>
-          {/* Question and direct answer */}
-          <div className="mx-auto max-w-7xl px-4 pt-32 sm:px-6 md:pt-40">
-            <div className="grid items-center gap-10 md:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] md:gap-14">
+          {/* First screen, in reading order: title, key numbers, example, the team, then the short answer */}
+          <div className="mx-auto max-w-7xl px-4 pt-24 sm:px-6 md:pt-28">
+            <div className="grid items-center gap-8 md:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] md:gap-12">
               <div>
                 <nav aria-label={t.breadcrumb} className="text-sm text-slate">
                   <ol className="m-0 flex list-none gap-2 p-0">
@@ -173,13 +174,13 @@ export default function LandingPage({
                   </ol>
                 </nav>
                 <h1
-                  className="rise mt-6 font-display text-[clamp(2.4rem,5.2vw,4.5rem)] font-bold leading-[1.03] tracking-[-0.04em]"
+                  className="rise mt-4 font-display text-[clamp(2rem,3.6vw,3.25rem)] font-bold leading-[1.05] tracking-[-0.035em]"
                   style={{ "--i": 0 } as React.CSSProperties}
                 >
                   {page.question}
                 </h1>
                 {page.author && (
-                  <p className="rise mt-5 text-sm text-slate" style={{ "--i": 1 } as React.CSSProperties}>
+                  <p className="rise mt-3 text-sm text-slate" style={{ "--i": 1 } as React.CSSProperties}>
                     {dict.blog.by}{" "}
                     <Link href={href(page.author.href)} className="font-medium text-graphite underline decoration-sand underline-offset-4 hover:decoration-royal">
                       {page.author.name}
@@ -194,9 +195,25 @@ export default function LandingPage({
                     </time>
                   </p>
                 )}
-                <div
-                  className="rise mt-8 flex flex-wrap items-center gap-x-7 gap-y-4"
+
+                {/* Numbers that count up: facts from Amazon or this guide, not client results */}
+                <ul
+                  className="rise m-0 mt-5 grid list-none grid-cols-2 gap-2 p-0 sm:grid-cols-4"
                   style={{ "--i": 1 } as React.CSSProperties}
+                >
+                  {page.facts.map((fact) => (
+                    <li key={fact.label} className="rounded-2xl bg-white p-4">
+                      <p className="font-display text-[clamp(1.6rem,2.4vw,2.1rem)] font-bold leading-none tracking-[-0.03em] text-royal">
+                        <CountUp to={fact.value} prefix={fact.prefix} suffix={fact.suffix} />
+                      </p>
+                      <p className="mt-2 text-xs leading-snug text-slate">{fact.label}</p>
+                    </li>
+                  ))}
+                </ul>
+
+                <div
+                  className="rise mt-5 flex flex-wrap items-center gap-x-7 gap-y-3"
+                  style={{ "--i": 2 } as React.CSSProperties}
                 >
                   <TalkButton href="#review" label={t.getReview} />
                   <Link
@@ -209,7 +226,7 @@ export default function LandingPage({
               </div>
               <div className="rise glow-card rounded-[2rem]" style={{ "--i": 2 } as React.CSSProperties}>
                 <div
-                  className={`flex min-h-[20rem] items-center justify-center rounded-[2rem] p-6 md:aspect-[4/3] md:p-10 ${page.image.tile}`}
+                  className={`flex min-h-[16rem] items-center justify-center rounded-[2rem] p-6 md:min-h-[20rem] md:p-8 ${page.image.tile}`}
                 >
                   <div className="w-full max-w-md">
                     <StepDemo kind={scenes[page.slug] ?? "optimise"} t={dict.demo} />
@@ -217,29 +234,53 @@ export default function LandingPage({
                 </div>
               </div>
             </div>
-            <div
-              className="rise glow-ring on-dark mt-5 rounded-[2rem] bg-royal p-8 text-offwhite md:p-14"
+
+            {/* The people behind the work: one pill each, with photo, name and role */}
+            <ul
+              aria-label={dict.common.team.label}
+              className="rise m-0 mt-4 flex list-none flex-wrap gap-2 p-0"
               style={{ "--i": 3 } as React.CSSProperties}
+            >
+              {team.map((person) => (
+                <li key={person.name}>
+                  <Link
+                    href={href("/about")}
+                    className="flex items-center gap-3 rounded-full bg-white py-1.5 pl-1.5 pr-5 ring-1 ring-sand transition-shadow hover:ring-royal"
+                  >
+                    <span className={`relative h-10 w-10 shrink-0 overflow-hidden rounded-full ${person.tile}`}>
+                      {person.photo && (
+                        <Image
+                          src={person.photo}
+                          alt=""
+                          fill
+                          sizes="40px"
+                          className="object-cover"
+                          style={{ objectPosition: person.frame?.position ?? "50% 30%" }}
+                        />
+                      )}
+                    </span>
+                    <span className="leading-tight">
+                      <span className="block text-sm font-semibold text-graphite">{person.name}</span>
+                      <span className="block text-xs text-slate">
+                        {dict.common.team.members[person.name as keyof typeof dict.common.team.members]?.role ?? person.role}
+                      </span>
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <div
+              className="rise glow-ring on-dark mt-4 rounded-[2rem] bg-royal p-7 text-offwhite md:px-10 md:py-8"
+              style={{ "--i": 4 } as React.CSSProperties}
             >
               <p className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-cyan">
                 {t.shortAnswer}
               </p>
-              <p className="mt-4 max-w-4xl font-display text-[clamp(1.25rem,2.3vw,1.75rem)] font-medium leading-[1.35] tracking-[-0.01em]">
+              <p className="mt-3 max-w-4xl font-display text-[clamp(1.1rem,1.8vw,1.4rem)] font-medium leading-[1.4] tracking-[-0.01em]">
                 {page.answer}
               </p>
             </div>
-
-            {/* Numbers that count up: facts from Amazon or this guide, not client results */}
-            <ul className="m-0 mt-5 grid list-none gap-3 p-0 sm:grid-cols-2 lg:grid-cols-4">
-              {page.facts.map((fact) => (
-                <li key={fact.label} className="reveal rounded-[1.5rem] bg-white p-6">
-                  <p className="font-display text-[clamp(2.4rem,4vw,3.5rem)] font-bold leading-none tracking-[-0.03em] text-royal">
-                    <CountUp to={fact.value} prefix={fact.prefix} suffix={fact.suffix} />
-                  </p>
-                  <p className="mt-3 text-slate">{fact.label}</p>
-                </li>
-              ))}
-            </ul>
           </div>
 
           {/* Body: classic article text in paragraphs, with a numbered contents list that stays
