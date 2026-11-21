@@ -151,7 +151,7 @@ export default function LandingPage({
       <main id="main" className="flex-1 overflow-x-clip">
         <article>
           {/* First screen, in reading order: title, key numbers, example, the team, then the short answer */}
-          <div className="mx-auto max-w-7xl px-4 pt-24 sm:px-6 md:pt-28">
+          <div className="mx-auto max-w-7xl px-4 pt-24 sm:px-6">
             <div className="grid items-center gap-8 md:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] md:gap-12">
               <div>
                 <nav aria-label={t.breadcrumb} className="text-sm text-slate">
@@ -174,36 +174,20 @@ export default function LandingPage({
                   </ol>
                 </nav>
                 <h1
-                  className="rise mt-4 font-display text-[clamp(2rem,3.6vw,3.25rem)] font-bold leading-[1.05] tracking-[-0.035em]"
+                  className="rise mt-3 font-display text-[clamp(2rem,3.3vw,2.85rem)] font-bold leading-[1.05] tracking-[-0.035em]"
                   style={{ "--i": 0 } as React.CSSProperties}
                 >
                   {page.question}
                 </h1>
-                {page.author && (
-                  <p className="rise mt-3 text-sm text-slate" style={{ "--i": 1 } as React.CSSProperties}>
-                    {dict.blog.by}{" "}
-                    <Link href={href(page.author.href)} className="font-medium text-graphite underline decoration-sand underline-offset-4 hover:decoration-royal">
-                      {page.author.name}
-                    </Link>
-                    , {page.author.role} · {dict.blog.updated}{" "}
-                    <time dateTime={page.updated}>
-                      {new Date(`${page.updated}T12:00:00Z`).toLocaleDateString(localeTags[lang], {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })}
-                    </time>
-                  </p>
-                )}
 
                 {/* Numbers that count up: facts from Amazon or this guide, not client results */}
                 <ul
-                  className="rise m-0 mt-5 grid list-none grid-cols-2 gap-2 p-0 sm:grid-cols-4"
+                  className="rise m-0 mt-4 grid list-none grid-cols-2 gap-2 p-0 sm:grid-cols-4"
                   style={{ "--i": 1 } as React.CSSProperties}
                 >
                   {page.facts.map((fact) => (
-                    <li key={fact.label} className="rounded-2xl bg-white p-4">
-                      <p className="font-display text-[clamp(1.6rem,2.4vw,2.1rem)] font-bold leading-none tracking-[-0.03em] text-royal">
+                    <li key={fact.label} className="rounded-2xl bg-white px-4 py-3">
+                      <p className="font-display text-[clamp(1.5rem,2.2vw,1.9rem)] font-bold leading-none tracking-[-0.03em] text-royal">
                         <CountUp to={fact.value} prefix={fact.prefix} suffix={fact.suffix} />
                       </p>
                       <p className="mt-2 text-xs leading-snug text-slate">{fact.label}</p>
@@ -211,25 +195,60 @@ export default function LandingPage({
                   ))}
                 </ul>
 
-                <div
-                  className="rise mt-5 flex flex-wrap items-center gap-x-7 gap-y-3"
-                  style={{ "--i": 2 } as React.CSSProperties}
-                >
-                  <TalkButton href="#review" label={t.getReview} />
-                  <Link
-                    href={href("/#contact")}
-                    className="py-3 font-display font-semibold text-graphite underline decoration-sand decoration-2 underline-offset-8 transition-colors hover:decoration-royal"
-                  >
-                    {t.talk}
-                  </Link>
+                {/* Unique value + call to action (inspired by conversionlab.no): a timer badge that fills,
+                    the promise, and a hand-drawn arrow that bounces towards the main button. */}
+                <div className="rise mt-4" style={{ "--i": 2 } as React.CSSProperties}>
+                  <div className="flex items-end gap-3">
+                    <span
+                      aria-hidden
+                      className="relative flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-full bg-cyan font-display leading-none text-graphite"
+                    >
+                      <svg className="absolute inset-0 h-full w-full -rotate-90" viewBox="0 0 56 56" fill="none">
+                        <circle
+                          className="qw-ring"
+                          cx="28"
+                          cy="28"
+                          r="25.5"
+                          stroke="var(--color-royal)"
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                          pathLength="100"
+                          strokeDasharray="100"
+                        />
+                      </svg>
+                      <span className="text-xl font-bold tracking-[-0.04em]">10</span>
+                      <span className="text-[0.58rem] font-semibold uppercase tracking-[0.12em]">min</span>
+                    </span>
+                    <p className="max-w-[17rem] pb-1 font-display text-[clamp(1.1rem,1.6vw,1.3rem)] font-bold leading-tight text-royal">
+                      {t.quickWin.title}
+                    </p>
+                    <svg aria-hidden className="qw-arrow hidden h-14 w-16 shrink-0 text-royal sm:block" viewBox="0 0 64 56" fill="none">
+                      <path d="M58 6C52 28 36 42 12 46" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+                      <path d="M21 37l-9 9 12 3" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                  <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-3">
+                    <span className="cta-glow relative inline-flex rounded-full">
+                      <TalkButton href="#review" label={t.getReview} shine />
+                    </span>
+                    <Link
+                      href={href("/#contact")}
+                      className="rounded-full px-6 py-3 font-display font-semibold text-graphite ring-2 ring-royal/25 transition-shadow hover:ring-royal"
+                    >
+                      {t.talk}
+                    </Link>
+                  </div>
+                  <p className="mt-2.5 pl-6 text-xs font-medium text-slate">{t.ctaNote}</p>
                 </div>
               </div>
-              <div className="rise glow-card rounded-[2rem]" style={{ "--i": 2 } as React.CSSProperties}>
-                <div
-                  className={`flex min-h-[16rem] items-center justify-center rounded-[2rem] p-6 md:min-h-[20rem] md:p-8 ${page.image.tile}`}
-                >
-                  <div className="w-full max-w-md">
-                    <StepDemo kind={scenes[page.slug] ?? "optimise"} t={dict.demo} />
+              <div className="rise" style={{ "--i": 2 } as React.CSSProperties}>
+                <div className="glow-card rounded-[2rem]">
+                  <div
+                    className={`flex min-h-[16rem] items-center justify-center rounded-[2rem] p-6 md:min-h-[20rem] md:p-8 ${page.image.tile}`}
+                  >
+                    <div className="w-full max-w-md">
+                      <StepDemo kind={scenes[page.slug] ?? "optimise"} t={dict.demo} />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -271,13 +290,13 @@ export default function LandingPage({
             </ul>
 
             <div
-              className="rise glow-ring on-dark mt-4 rounded-[2rem] bg-royal p-7 text-offwhite md:px-10 md:py-8"
+              className="rise glow-ring on-dark mt-4 rounded-[2rem] bg-royal p-7 text-offwhite md:px-10 md:py-6"
               style={{ "--i": 4 } as React.CSSProperties}
             >
               <p className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-cyan">
                 {t.shortAnswer}
               </p>
-              <p className="mt-3 max-w-4xl font-display text-[clamp(1.1rem,1.8vw,1.4rem)] font-medium leading-[1.4] tracking-[-0.01em]">
+              <p className="mt-2 max-w-6xl font-display text-[clamp(1.05rem,1.6vw,1.25rem)] font-medium leading-[1.45] tracking-[-0.01em]">
                 {page.answer}
               </p>
             </div>

@@ -213,6 +213,16 @@ const en = {
       "Running an Amazon store takes enough time. Improving every listing shouldn’t be on you alone.",
     statementText:
       "You already sell a good product on Amazon. Most digital marketing firms do the work for you and tools leave you on your own, so we work on it with you.",
+    // Home: free PDF guides and the latest blog posts (ResourcesSection).
+    resources: {
+      heading: "Free guides and articles for Amazon sellers.",
+      intro: "Download a 10-page PDF guide, or read our latest articles on what changes on Amazon and what to do about it.",
+      guidesLabel: "Free PDF guides",
+      guideMeta: "PDF · 10 pages",
+      guideCta: "Get the free PDF",
+      blogLabel: "Latest from the blog",
+      blogCta: "Read all articles",
+    },
     servicesHeading: "Amazon marketing agency services: which sounds like your store?",
     services: [
       {
@@ -342,9 +352,13 @@ const en = {
   },
 
   landing: {
+    // The box under the hero visual on service pages; it jumps to the free review form.
+    quickWin: { title: "Improve your listing in 10 minutes!", text: "Send us one listing and get your first fixes, free." },
     breadcrumb: "Breadcrumb",
     home: "Home",
-    getReview: "Get a free listing review",
+    getReview: "Get my free listing review",
+    // Under the main button on service pages, as a short reassurance line.
+    ctaNote: "Free · No commitment · First fixes by email",
     downloadPdf: "Download the free PDF guide",
     talk: "Talk to us",
     shortAnswer: "Short answer",

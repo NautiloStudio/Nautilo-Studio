@@ -210,6 +210,16 @@ const fr: Dictionary = {
       "Gérer une boutique Amazon prend déjà assez de temps. Améliorer chaque fiche ne devrait pas reposer sur vous seul.",
     statementText:
       "Vous vendez déjà un bon produit sur Amazon. Les agences le font à votre place et les outils vous laissent seul. Nous, nous le faisons avec vous.",
+    // Home: free PDF guides and the latest blog posts (ResourcesSection).
+    resources: {
+      heading: "Guides et articles gratuits pour les vendeurs Amazon.",
+      intro: "Téléchargez un guide PDF de 10 pages, ou lisez nos derniers articles sur ce qui change sur Amazon et quoi faire.",
+      guidesLabel: "Guides PDF gratuits",
+      guideMeta: "PDF · 10 pages",
+      guideCta: "Recevoir le PDF gratuit",
+      blogLabel: "Les derniers articles du blog",
+      blogCta: "Lire tous les articles",
+    },
     servicesHeading: "Laquelle de ces phrases ressemble à votre boutique ?",
     services: [
       {
@@ -341,9 +351,13 @@ const fr: Dictionary = {
   },
 
   landing: {
+    // The box under the hero visual on service pages; it jumps to the free review form.
+    quickWin: { title: "Améliorez votre fiche en 10 minutes !", text: "Envoyez-nous une fiche et recevez vos premières corrections, gratuitement." },
     breadcrumb: "Fil d’Ariane",
     home: "Accueil",
-    getReview: "Audit gratuit de votre fiche",
+    getReview: "Obtenir mon audit gratuit",
+    // Under the main button on service pages, as a short reassurance line.
+    ctaNote: "Gratuit · Sans engagement · Premières corrections par e-mail",
     downloadPdf: "Télécharger le guide PDF gratuit",
     talk: "Parlons-en",
     shortAnswer: "Réponse courte",
