@@ -12,6 +12,7 @@ import TalkButton from "@/components/TalkButton";
 import SiteFooter from "@/components/SiteFooter";
 import SourcesList from "@/components/SourcesList";
 import { withCounts } from "@/components/withCounts";
+import StorySteps from "@/components/StorySteps";
 import { team } from "@/lib/team";
 import { SITE_URL, localePath, localeTags, pageUrl, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
@@ -427,17 +428,7 @@ export default function LandingPage({
                 <section aria-labelledby="our-story" className="reveal">
                   <p className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-royal">{page.story.label}</p>
                   <h2 id="our-story" className={`${h2} mt-3 max-w-4xl`}>{page.story.heading}</h2>
-                  <ol className="m-0 mt-8 grid list-none gap-3 p-0 md:grid-cols-3">
-                    {page.story.steps.map((step, index) => (
-                      <li key={step.heading} className="rounded-[1.5rem] bg-white p-6 ring-1 ring-sand sm:p-8">
-                        <p className="font-display text-sm font-semibold tabular-nums tracking-[0.14em] text-royal">
-                          {String(index + 1).padStart(2, "0")}
-                        </p>
-                        <h3 className="mt-3 font-display text-xl font-semibold">{step.heading}</h3>
-                        <p className="mt-3 text-lg leading-relaxed text-slate">{step.text}</p>
-                      </li>
-                    ))}
-                  </ol>
+                  <StorySteps steps={page.story.steps} className="mt-8" />
                   <Link href={href(page.story.link.href)} className="mt-6 inline-block font-medium text-graphite underline decoration-royal/40 underline-offset-4 hover:text-royal">
                     {page.story.link.text}
                   </Link>

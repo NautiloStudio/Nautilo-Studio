@@ -687,3 +687,95 @@ textarea {
     transform: translateX(460%) skewX(-18deg);
   }
 }
+
+/* "Our story" cards (StorySteps): the pictures loop on their own (one 4 s beat for the shell and its
+   +1s, shorter ones for the lines). With reduced motion everything rests in its final state.
+   The arrow between two cards sits at the middle of the picture panel (16:7, inside 0.75rem padding). */
+.story-card {
+  container-type: inline-size;
+}
+.story-link {
+  top: calc(0.75rem + 100cqw * 7 / 32 - 18px);
+}
+.story-run {
+  opacity: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .story-drift {
+    animation: story-drift 1.4s linear infinite;
+  }
+  .story-run {
+    animation: story-run 2.4s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+  }
+  .story-chamber {
+    animation: story-chamber 4s var(--ease-out-strong) infinite both;
+  }
+  .story-plus {
+    animation: story-plus 4s var(--ease-out-strong) infinite both;
+  }
+  .story-pop {
+    animation: story-pop 2.8s var(--ease-out-strong) infinite;
+  }
+}
+@keyframes story-drift {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+@keyframes story-run {
+  0% {
+    opacity: 1;
+    stroke-dashoffset: 14;
+  }
+  70% {
+    opacity: 1;
+    stroke-dashoffset: -86;
+  }
+  71%,
+  100% {
+    opacity: 0;
+    stroke-dashoffset: -86;
+  }
+}
+/* Each chamber (delayed by its place on the spiral) lights up, holds, then dims for the next round. */
+@keyframes story-chamber {
+  0% {
+    opacity: 0.12;
+  }
+  12%,
+  78% {
+    opacity: 1;
+  }
+  92%,
+  100% {
+    opacity: 0.12;
+  }
+}
+@keyframes story-plus {
+  0% {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  10%,
+  62% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  72%,
+  100% {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+}
+@keyframes story-pop {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  12% {
+    transform: scale(1.08);
+  }
+  26% {
+    transform: scale(1);
+  }
+}
