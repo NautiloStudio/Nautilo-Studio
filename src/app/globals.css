@@ -687,3 +687,66 @@ textarea {
     transform: translateX(460%) skewX(-18deg);
   }
 }
+
+/* "Our story" cards (StorySteps): still pictures that play on hover. The arrow between two cards
+   sits at the middle of the picture panel (16:7, inside the card's 0.75rem padding). */
+.story-card {
+  container-type: inline-size;
+}
+.story-link {
+  top: calc(0.75rem + 100cqw * 7 / 32 - 18px);
+}
+.story-run {
+  opacity: 0;
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .story-card:hover .story-drift {
+    animation: story-drift 1.1s linear infinite;
+  }
+  .story-card:hover .story-run {
+    animation: story-run 1.8s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+  }
+  .story-card:hover .story-chamber {
+    animation: story-chamber 0.5s var(--ease-out-strong) both;
+  }
+  .story-card:hover .story-plus {
+    animation: story-plus 0.45s var(--ease-out-strong) both;
+  }
+  .story-card:hover .story-pop {
+    animation: story-pop 0.6s var(--ease-out-strong);
+  }
+}
+@keyframes story-drift {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+@keyframes story-run {
+  0% {
+    opacity: 1;
+    stroke-dashoffset: 14;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    stroke-dashoffset: -86;
+  }
+}
+@keyframes story-chamber {
+  from {
+    opacity: 0.12;
+  }
+}
+@keyframes story-plus {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+}
+@keyframes story-pop {
+  40% {
+    transform: scale(1.08);
+  }
+}

@@ -7,6 +7,7 @@ import TeamGallery from "@/components/TeamGallery";
 import SiteFooter from "@/components/SiteFooter";
 import { SITE_URL, alternates, hasLocale, localeTags } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import StorySteps from "@/components/StorySteps";
 import { team } from "@/lib/team";
 import { SHARE_IMAGE } from "@/lib/seo";
 
@@ -109,17 +110,7 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
           <h2 id="story" className="sr-only">
             {t.storyHeading}
           </h2>
-          <ol className="m-0 grid list-none gap-5 p-0 md:grid-cols-3">
-            {t.story.map((item, index) => (
-              <li key={item.heading} className="reveal rounded-[2rem] bg-white p-8">
-                <p className="font-display text-sm font-semibold text-royal">0{index + 1}</p>
-                <h3 className="mt-3 font-display text-2xl font-semibold tracking-[-0.01em]">
-                  {item.heading}
-                </h3>
-                <p className="mt-3 text-lg leading-relaxed text-slate">{item.text}</p>
-              </li>
-            ))}
-          </ol>
+          <StorySteps steps={t.story} className="reveal" />
         </section>
 
         {/* Team */}
