@@ -18,8 +18,8 @@ import { NAUTILUS_CHAMBERS, NAUTILUS_OUTLINE, NAUTILUS_VIEW_BOX } from "./nautil
 
 // "Our story" as three illustrated cards (about page and service pages). Each card opens with a
 // small wordless picture, so it works in every language: the seller left alone, data + AI + hands-on
-// work flowing into one listing, and the shell growing one chamber at a time. The pictures are still;
-// on hover (pointer devices, motion allowed) they play once or loop gently (see .story-* in globals.css).
+// work flowing into one listing, and the shell growing one chamber at a time. The pictures loop gently
+// on their own and rest when the visitor asks for reduced motion (see .story-* in globals.css).
 
 type Step = { heading: string; text: string };
 
@@ -39,7 +39,7 @@ export default function StorySteps({ steps, className = "" }: { steps: Step[]; c
         return (
           <li
             key={step.heading}
-            className="story-card group relative flex flex-col rounded-[2rem] bg-white p-3 ring-1 ring-sand transition-shadow duration-300 hover:shadow-[0_24px_50px_-28px_rgba(28,47,214,0.45)] md:max-lg:grid md:max-lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] md:max-lg:items-center"
+            className="story-card group relative flex flex-col rounded-[2rem] bg-white p-3 ring-1 ring-sand shadow-[0_24px_50px_-32px_rgba(28,47,214,0.35)] md:max-lg:grid md:max-lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] md:max-lg:items-center"
           >
             {pictures[index % pictures.length]}
             <div className="px-3 pb-4 pt-5 sm:px-5 md:max-lg:py-3">
@@ -91,7 +91,7 @@ function Chip({ x, y, size = 40, className = "", children }: { x: number; y: num
 }
 
 // 01 What we saw: the seller's shop alone in the middle; the agency keeps the know-how (lock), the
-// tools hand over data (chart). Both links stop halfway; on hover the dashes drift away from the shop.
+// tools hand over data (chart). Both links stop halfway and their dashes drift away from the shop.
 function Alone() {
   return (
     <Panel tone="bg-[linear-gradient(160deg,#ffe6d3,var(--color-apricot))]">
@@ -115,7 +115,7 @@ function Alone() {
   );
 }
 
-// 02 Our idea: data, AI and hands-on work flow into one listing. On hover a light runs down each line.
+// 02 Our idea: data, AI and hands-on work flow into one listing. A light keeps running down each line.
 const flows = ["M62 28 C140 28 150 70 200 70", "M62 70 L200 70", "M62 112 C140 112 150 70 200 70"];
 
 function Together() {
@@ -165,7 +165,7 @@ function Together() {
 }
 
 // 03 Why a nautilus: the Nautilo shell on a dark panel, with +1 listing, +1 keyword, +1 report.
-// On hover the chambers light up again from the centre out, one at a time, then the +1s follow.
+// The chambers light up from the centre out, one at a time, then the +1s follow, every 4 s.
 function Grow() {
   return (
     <Panel tone="bg-[radial-gradient(circle_at_30%_55%,#1f2a6b,var(--color-graphite)_70%)]">

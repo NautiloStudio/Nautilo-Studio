@@ -688,8 +688,9 @@ textarea {
   }
 }
 
-/* "Our story" cards (StorySteps): still pictures that play on hover. The arrow between two cards
-   sits at the middle of the picture panel (16:7, inside the card's 0.75rem padding). */
+/* "Our story" cards (StorySteps): the pictures loop on their own (one 4 s beat for the shell and its
+   +1s, shorter ones for the lines). With reduced motion everything rests in its final state.
+   The arrow between two cards sits at the middle of the picture panel (16:7, inside 0.75rem padding). */
 .story-card {
   container-type: inline-size;
 }
@@ -699,21 +700,21 @@ textarea {
 .story-run {
   opacity: 0;
 }
-@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  .story-card:hover .story-drift {
-    animation: story-drift 1.1s linear infinite;
+@media (prefers-reduced-motion: no-preference) {
+  .story-drift {
+    animation: story-drift 1.4s linear infinite;
   }
-  .story-card:hover .story-run {
-    animation: story-run 1.8s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+  .story-run {
+    animation: story-run 2.4s cubic-bezier(0.77, 0, 0.175, 1) infinite;
   }
-  .story-card:hover .story-chamber {
-    animation: story-chamber 0.5s var(--ease-out-strong) both;
+  .story-chamber {
+    animation: story-chamber 4s var(--ease-out-strong) infinite both;
   }
-  .story-card:hover .story-plus {
-    animation: story-plus 0.45s var(--ease-out-strong) both;
+  .story-plus {
+    animation: story-plus 4s var(--ease-out-strong) infinite both;
   }
-  .story-card:hover .story-pop {
-    animation: story-pop 0.6s var(--ease-out-strong);
+  .story-pop {
+    animation: story-pop 2.8s var(--ease-out-strong) infinite;
   }
 }
 @keyframes story-drift {
@@ -726,27 +727,55 @@ textarea {
     opacity: 1;
     stroke-dashoffset: 14;
   }
-  85% {
+  70% {
     opacity: 1;
+    stroke-dashoffset: -86;
   }
+  71%,
   100% {
     opacity: 0;
     stroke-dashoffset: -86;
   }
 }
+/* Each chamber (delayed by its place on the spiral) lights up, holds, then dims for the next round. */
 @keyframes story-chamber {
-  from {
+  0% {
+    opacity: 0.12;
+  }
+  12%,
+  78% {
+    opacity: 1;
+  }
+  92%,
+  100% {
     opacity: 0.12;
   }
 }
 @keyframes story-plus {
-  from {
+  0% {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  10%,
+  62% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  72%,
+  100% {
     opacity: 0;
     transform: translateX(10px);
   }
 }
 @keyframes story-pop {
-  40% {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  12% {
     transform: scale(1.08);
+  }
+  26% {
+    transform: scale(1);
   }
 }
