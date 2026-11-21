@@ -12,7 +12,6 @@ import SiteHeader from "@/components/SiteHeader";
 import StepDemo from "@/components/StepDemo";
 import TalkButton from "@/components/TalkButton";
 import SiteFooter from "@/components/SiteFooter";
-import { withCounts } from "@/components/withCounts";
 import { SITE_URL, hasLocale, localePath, localeTags, pageUrl } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { notFound } from "next/navigation";

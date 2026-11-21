@@ -37,9 +37,18 @@ export default function GuideDownload({ slug, file }: { slug: string; file: stri
     }
   };
 
-  // Arriving from the home page on /blog#guide-<slug> opens this guide's form straight away.
+  // Arriving from the home page on /blog#guide-<slug> (or following such a link while already on
+  // the blog) opens this guide's form. The first check runs a tick after mount, not inside the effect.
   useEffect(() => {
-    if (window.location.hash === `#guide-${slug}` && !known()) setStatus("open");
+    const check = () => {
+      if (window.location.hash === `#guide-${slug}` && !known()) setStatus("open");
+    };
+    const timer = window.setTimeout(check, 0);
+    window.addEventListener("hashchange", check);
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener("hashchange", check);
+    };
   }, [slug]);
 
   function open() {
