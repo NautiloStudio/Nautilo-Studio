@@ -5,7 +5,8 @@ type Props = {
   label?: string;
   tone?: "royal" | "cyan";
   size?: "md" | "sm";
-  // A light that sweeps across the button every few seconds (main CTA on service pages).
+  // Main CTA on service pages: a brighter royal-to-cyan fill, a light that sweeps across it and an
+  // arrow that hops on the same beat as the pulse ring around it (see .cta-glow in globals.css).
   shine?: boolean;
 };
 
@@ -28,13 +29,17 @@ export default function TalkButton({
 }: Props) {
   const sizing =
     size === "md"
-      ? "gap-3 py-2 pl-6 pr-2 text-base"
+      ? `gap-3 py-2 pr-2 ${shine ? "pl-7 text-[1.05rem]" : "pl-6 text-base"}`
       : "gap-2 py-2 pl-4 pr-2 text-sm";
+  const fill =
+    shine && tone === "royal"
+      ? "bg-[linear-gradient(110deg,var(--color-royal)_35%,color-mix(in_oklab,var(--color-royal),var(--color-cyan)_45%))] text-offwhite"
+      : tones[tone];
 
   return (
     <a
       href={href}
-      className={`group ${shine ? "relative overflow-hidden" : ""} inline-flex items-center rounded-full text-left font-display font-semibold sm:whitespace-nowrap transition-transform duration-150 ease-out active:scale-[0.97] ${tones[tone]} ${sizing}`}
+      className={`group ${shine ? "relative overflow-hidden" : ""} inline-flex items-center rounded-full text-left font-display font-semibold sm:whitespace-nowrap transition-transform duration-150 ease-out active:scale-[0.97] ${fill} ${sizing}`}
     >
       {shine && (
         <span
@@ -44,7 +49,7 @@ export default function TalkButton({
       )}
       {label}
       <span
-        className={`flex shrink-0 items-center justify-center rounded-full transition-transform duration-300 ease-(--ease-out-strong) group-hover:translate-x-0.5 group-hover:-translate-y-px ${circles[tone]} ${
+        className={`${shine ? "cta-hop " : ""}flex shrink-0 items-center justify-center rounded-full transition-transform duration-300 ease-(--ease-out-strong) group-hover:translate-x-0.5 group-hover:-translate-y-px ${circles[tone]} ${
           size === "md" ? "h-9 w-9" : "h-7 w-7"
         }`}
       >

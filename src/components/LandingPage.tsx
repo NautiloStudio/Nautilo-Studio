@@ -222,13 +222,9 @@ export default function LandingPage({
                     <p className="max-w-[17rem] pb-1 font-display text-[clamp(1.1rem,1.6vw,1.3rem)] font-bold leading-tight text-royal">
                       {t.quickWin.title}
                     </p>
-                    <svg aria-hidden className="qw-arrow hidden h-14 w-16 shrink-0 text-royal sm:block" viewBox="0 0 64 56" fill="none">
-                      <path d="M58 6C52 28 36 42 12 46" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-                      <path d="M21 37l-9 9 12 3" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
                   </div>
                   <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-3">
-                    <span className="cta-glow relative inline-flex rounded-full">
+                    <span className="cta-glow relative inline-flex rounded-full transition-transform duration-200 ease-(--ease-out-strong) hover:-translate-y-0.5">
                       <TalkButton href="#review" label={t.getReview} shine />
                     </span>
                     <Link
