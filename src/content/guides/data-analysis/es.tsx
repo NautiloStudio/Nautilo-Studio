@@ -25,10 +25,6 @@ const page: GuideCopy["page"] = {
     tile: "bg-royal",
   },
   updated: "2026-11-16",
-  quickWin: {
-    title: "Descubre dónde se pierden ventas",
-    link: { href: "#numbers", text: "Los cuatro números que seguir" },
-  },
   facts: [
     { value: 4, label: "Números que seguir en cada producto" },
     {

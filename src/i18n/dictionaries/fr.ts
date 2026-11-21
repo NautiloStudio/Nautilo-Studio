@@ -351,6 +351,8 @@ const fr: Dictionary = {
   },
 
   landing: {
+    // The box under the hero visual on service pages; it jumps to the free review form.
+    quickWin: { title: "Améliorez votre fiche en 10 minutes !", text: "Envoyez-nous une fiche et recevez vos premières corrections, gratuitement." },
     breadcrumb: "Fil d’Ariane",
     home: "Accueil",
     getReview: "Audit gratuit de votre fiche",

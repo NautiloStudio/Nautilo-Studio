@@ -32,10 +32,6 @@ const page: GuideCopy["page"] = {
     tile: "bg-apricot",
   },
   updated: "2026-11-20",
-  quickWin: {
-    title: "Verbessern Sie Ihr Listing",
-    link: { href: "#title", text: "So schreiben Sie den Titel" },
-  },
   facts: [
     { value: 200, label: "Zeichen, die ein Titel laut Amazons SEO-Leitfaden haben darf" },
     { value: 60, label: "Zeichen, die Amazon für einen Titel empfiehlt" },

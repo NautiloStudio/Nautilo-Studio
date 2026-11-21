@@ -29,10 +29,6 @@ const page: GuideCopy["page"] = {
   },
   updated: "2026-11-20",
   author: { name: "Filippo Verace", role: "Amazon SEO Lead", href: "/about" },
-  quickWin: {
-    title: "Improve your listing",
-    link: { href: "#title", text: "How to write the title" },
-  },
   facts: [
     { value: 200, label: "Characters allowed in a title, per Amazon’s SEO guide" },
     { value: 60, label: "Characters Amazon recommends for a title" },

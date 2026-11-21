@@ -25,10 +25,6 @@ const page: GuideCopy["page"] = {
     tile: "bg-royal",
   },
   updated: "2026-11-16",
-  quickWin: {
-    title: "Repérez où fuient vos ventes",
-    link: { href: "#numbers", text: "Les quatre chiffres à suivre" },
-  },
   facts: [
     { value: 4, label: "Chiffres à suivre pour chaque produit" },
     {

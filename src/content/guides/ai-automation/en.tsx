@@ -26,10 +26,6 @@ const page: GuideCopy["page"] = {
   },
   updated: "2026-11-16",
   author: { name: "Carlo Ambrosini", role: "AI Automation Lead", href: "/about" },
-  quickWin: {
-    title: "Pick your first AI task",
-    link: { href: "#how-to-start", text: "How to start" },
-  },
   facts: [
     { value: 4, label: "Tasks AI can take over" },
     { value: 3, label: "Amazon AI tools to start with" },

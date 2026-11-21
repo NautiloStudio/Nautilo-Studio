@@ -25,10 +25,6 @@ const page: GuideCopy["page"] = {
     tile: "bg-royal",
   },
   updated: "2026-11-16",
-  quickWin: {
-    title: "Scopri dove perdi vendite",
-    link: { href: "#numbers", text: "I quattro numeri da seguire" },
-  },
   facts: [
     { value: 4, label: "Numeri da seguire per ogni prodotto" },
     { value: 50, suffix: "%", label: "ACOS nell’esempio di Amazon: 50 $ spesi, 100 $ incassati" },

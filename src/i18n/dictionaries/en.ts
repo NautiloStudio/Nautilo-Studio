@@ -352,6 +352,8 @@ const en = {
   },
 
   landing: {
+    // The box under the hero visual on service pages; it jumps to the free review form.
+    quickWin: { title: "Improve your listing in 10 minutes!", text: "Send us one listing and get your first fixes, free." },
     breadcrumb: "Breadcrumb",
     home: "Home",
     getReview: "Get a free listing review",

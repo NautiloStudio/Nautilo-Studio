@@ -351,6 +351,8 @@ const de: Dictionary = {
   },
 
   landing: {
+    // The box under the hero visual on service pages; it jumps to the free review form.
+    quickWin: { title: "Verbessern Sie Ihr Listing in 10 Minuten!", text: "Senden Sie uns ein Listing und erhalten Sie die ersten Verbesserungen gratis." },
     breadcrumb: "Brotkrumennavigation",
     home: "Start",
     getReview: "Kostenloser Listing-Check",

@@ -349,6 +349,8 @@ const es: Dictionary = {
   },
 
   landing: {
+    // The box under the hero visual on service pages; it jumps to the free review form.
+    quickWin: { title: "¡Mejora tu ficha en 10 minutos!", text: "Envíanos una ficha y recibe tus primeras mejoras gratis." },
     breadcrumb: "Ruta de navegación",
     home: "Inicio",
     getReview: "Revisión gratis de tu ficha",

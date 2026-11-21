@@ -349,6 +349,8 @@ const it: Dictionary = {
   },
 
   landing: {
+    // The box under the hero visual on service pages; it jumps to the free review form.
+    quickWin: { title: "Migliora la tua scheda in 10 minuti!", text: "Inviaci una scheda e ricevi gratis le prime correzioni." },
     breadcrumb: "Percorso di navigazione",
     home: "Home",
     getReview: "Revisione gratuita della scheda",

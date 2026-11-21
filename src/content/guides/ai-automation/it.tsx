@@ -28,10 +28,6 @@ const page: GuideCopy["page"] = {
     tile: "bg-graphite",
   },
   updated: "2026-11-16",
-  quickWin: {
-    title: "Scegli il primo compito per l’IA",
-    link: { href: "#how-to-start", text: "Come iniziare" },
-  },
   facts: [
     { value: 4, label: "Attività che l’IA può svolgere" },
     { value: 3, label: "Strumenti di IA di Amazon da cui partire" },

@@ -25,10 +25,6 @@ const page: GuideCopy["page"] = {
     tile: "bg-royal",
   },
   updated: "2026-11-16",
-  quickWin: {
-    title: "Finden Sie, wo Umsatz verloren geht",
-    link: { href: "#numbers", text: "Die vier Zahlen, die zählen" },
-  },
   facts: [
     { value: 4, label: "Kennzahlen für jedes Produkt" },
     {

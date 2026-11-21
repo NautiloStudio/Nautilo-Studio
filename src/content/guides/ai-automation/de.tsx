@@ -28,10 +28,6 @@ const page: GuideCopy["page"] = {
     tile: "bg-graphite",
   },
   updated: "2026-11-16",
-  quickWin: {
-    title: "Wählen Sie Ihre erste KI-Aufgabe",
-    link: { href: "#how-to-start", text: "So fangen Sie an" },
-  },
   facts: [
     { value: 4, label: "Aufgaben, die KI übernehmen kann" },
     { value: 3, label: "KI-Tools von Amazon für den Einstieg" },

@@ -23,10 +23,6 @@ const page: GuideCopy["page"] = {
   },
   updated: "2026-11-16",
   author: { name: "Veronika Matkovska", role: "Data Analysis Lead", href: "/about" },
-  quickWin: {
-    title: "Find where sales leak",
-    link: { href: "#numbers", text: "The four numbers to track" },
-  },
   facts: [
     { value: 4, label: "Numbers to track for every product" },
     { value: 50, suffix: "%", label: "ACOS in Amazon’s example: $50 spent, $100 earned" },
