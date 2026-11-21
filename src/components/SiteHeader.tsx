@@ -139,7 +139,7 @@ export default function SiteHeader({
   return (
     <>
       <LanguageCorner className="hidden lg:block" />
-      <header className="on-dark fixed inset-x-0 top-4 z-20 flex justify-center px-4">
+      <header className="on-dark fixed inset-x-0 top-4 z-20 flex justify-center px-4 max-[359px]:px-3">
         <nav
           ref={navRef}
           aria-label={t.header.main}
@@ -168,7 +168,7 @@ export default function SiteHeader({
             />
           </Link>
 
-          <div className="flex items-center gap-3 text-sm text-offwhite/85 sm:gap-6">
+          <div className="flex items-center gap-3 text-sm text-offwhite/85 max-[359px]:gap-2 sm:gap-6">
             <div className="md:hidden">{toggle}</div>
             <Link
               href={href("/services")}

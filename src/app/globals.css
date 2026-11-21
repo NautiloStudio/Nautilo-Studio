@@ -95,10 +95,11 @@ textarea {
       animation-range: entry 0% entry 45%;
     }
 
-    /* Each word of the statement darkens as it scrolls through the viewport. */
+    /* Each word of the statement darkens as it scrolls through the viewport. It starts as a warm
+       grey with 3.5:1 contrast (enough for large text), not the pale sand it used to start from. */
     @keyframes ink {
       from {
-        color: var(--color-sand);
+        color: color-mix(in srgb, var(--color-graphite) 45%, var(--color-sand));
       }
     }
 
