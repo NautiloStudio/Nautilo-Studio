@@ -223,33 +223,18 @@ export default function LandingPage({
                       {t.quickWin.title}
                     </p>
                   </div>
-                  {/* The arrow hangs off the main button, so it can only point at it; the secondary
-                      link sits at the far end of the row, behind the arrow's tail. */}
-                  <div className="mt-4 flex flex-wrap items-start gap-x-24 gap-y-4">
-                    <div>
-                    <div className="relative inline-flex">
-                      <span className="cta-glow relative inline-flex rounded-full">
-                        <TalkButton href="#review" label={t.getReview} shine />
-                      </span>
-                      <svg
-                        aria-hidden
-                        className="qw-arrow absolute left-[calc(100%+4px)] top-[calc(50%-46px)] hidden h-14 w-16 text-royal sm:block"
-                        viewBox="0 0 64 56"
-                        fill="none"
-                      >
-                        <path d="M58 6C52 28 36 42 12 46" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-                        <path d="M21 37l-9 9 12 3" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </div>
-                    <p className="mt-2.5 pl-6 text-xs font-medium text-slate">{t.ctaNote}</p>
-                    </div>
+                  <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-3">
+                    <span className="cta-glow relative inline-flex rounded-full transition-transform duration-200 ease-(--ease-out-strong) hover:-translate-y-0.5">
+                      <TalkButton href="#review" label={t.getReview} shine />
+                    </span>
                     <Link
                       href={href("/#contact")}
-                      className="inline-flex pl-6 sm:ml-auto sm:mt-4 sm:pl-0 font-display text-sm font-semibold text-graphite underline decoration-royal/30 decoration-2 underline-offset-4 transition-colors hover:decoration-royal"
+                      className="rounded-full px-6 py-3 font-display font-semibold text-graphite ring-2 ring-royal/25 transition-shadow hover:ring-royal"
                     >
                       {t.talk}
                     </Link>
                   </div>
+                  <p className="mt-2.5 pl-6 text-xs font-medium text-slate">{t.ctaNote}</p>
                 </div>
               </div>
               <div className="rise" style={{ "--i": 2 } as React.CSSProperties}>

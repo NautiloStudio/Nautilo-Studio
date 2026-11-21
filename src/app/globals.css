@@ -596,23 +596,48 @@ textarea {
   content: attr(data-value) / "";
 }
 
-/* Main call to action on service pages: a soft cyan ring that swells and fades every few seconds,
-   so the eye lands on "Get a free listing review". Transform and opacity only; off for reduced motion. */
+/* Main call to action on service pages: a steady cyan halo plus two cyan rings that swell and fade
+   on one 2.8 s beat, with the button's arrow hopping and a light sweeping across on the same beat,
+   so the eye lands on "Get my free listing review". Transform and opacity only; with reduced motion
+   only the steady halo stays. */
 .cta-glow {
-  box-shadow: 0 14px 34px -14px rgba(28, 47, 214, 0.75);
+  box-shadow:
+    0 0 0 4px rgba(51, 214, 255, 0.22),
+    0 16px 38px -12px rgba(28, 47, 214, 0.85);
 }
-.cta-glow::before {
+.cta-glow::before,
+.cta-glow::after {
   content: "";
   position: absolute;
-  inset: -5px;
+  inset: -6px;
   border-radius: 9999px;
   border: 2px solid var(--color-cyan);
   opacity: 0;
   pointer-events: none;
 }
+.cta-shine {
+  opacity: 0;
+  transform: translateX(0) skewX(-18deg);
+}
+.qw-ring {
+  stroke-dashoffset: 0;
+}
 @media (prefers-reduced-motion: no-preference) {
   .cta-glow::before {
     animation: cta-pulse 2.8s var(--ease-out-strong) 1.2s infinite;
+  }
+  .cta-glow::after {
+    animation: cta-pulse 2.8s var(--ease-out-strong) 1.5s infinite;
+  }
+  .cta-hop {
+    animation: cta-hop 2.8s var(--ease-out-strong) 1.2s infinite;
+  }
+  .cta-shine {
+    animation: cta-shine 2.8s var(--ease-out-strong) 1.2s infinite;
+  }
+  /* The "10 min" badge above the buttons fills like a clock. */
+  .qw-ring {
+    animation: qw-ring 3.6s linear infinite;
   }
 }
 @keyframes cta-pulse {
@@ -620,35 +645,22 @@ textarea {
     transform: scale(0.97);
     opacity: 0.9;
   }
-  55% {
-    transform: scale(1.1);
-    opacity: 0;
-  }
+  60%,
   100% {
-    transform: scale(1.1);
+    transform: scale(1.14);
     opacity: 0;
   }
 }
-
-/* Unique value next to the main CTA: the timer ring fills like a clock, the hand-drawn arrow nudges
-   towards the button, and a light sweeps across it. Transform/opacity (and a small SVG stroke) only;
-   with reduced motion the ring shows full and nothing moves. */
-.qw-ring {
-  stroke-dashoffset: 0;
-}
-.cta-shine {
-  opacity: 0;
-  transform: translateX(0) skewX(-18deg);
-}
-@media (prefers-reduced-motion: no-preference) {
-  .qw-ring {
-    animation: qw-ring 3.6s linear infinite;
+@keyframes cta-hop {
+  0%,
+  100% {
+    transform: translate(0, 0);
   }
-  .qw-arrow {
-    animation: qw-nudge 1.6s ease-in-out infinite;
+  10% {
+    transform: translate(3px, -3px);
   }
-  .cta-shine {
-    animation: cta-shine 3.6s var(--ease-out-strong) 1.4s infinite;
+  22% {
+    transform: translate(0, 0);
   }
 }
 @keyframes qw-ring {
@@ -658,15 +670,6 @@ textarea {
   75%,
   100% {
     stroke-dashoffset: 0;
-  }
-}
-@keyframes qw-nudge {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(-4px, 4px);
   }
 }
 @keyframes cta-shine {
