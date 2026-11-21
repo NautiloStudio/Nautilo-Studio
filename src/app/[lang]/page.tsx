@@ -3,8 +3,9 @@ import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 import CaseStudy from "@/components/CaseStudy";
 import ContactForm from "@/components/ContactForm";
-import GuideGallery from "@/components/GuideGallery";
 import ListingCompare from "@/components/ListingCompare";
+import ResourcesSection from "@/components/ResourcesSection";
+import { getPosts } from "@/content/blog";
 import Nautilus from "@/components/Nautilus";
 import SellerMarquee from "@/components/SellerMarquee";
 import SiteHeader from "@/components/SiteHeader";
@@ -29,6 +30,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   if (!hasLocale(lang)) notFound();
   const dict = await getDictionary(lang);
   const t = dict.home;
+  const posts = await getPosts(lang);
   const href = (path: string) => localePath(lang, path);
   const services = t.services.map((service, index) => ({ ...service, ...serviceMedia[index] }));
   const steps = t.steps.map((step, index) => ({ ...step, demo: demos[index] }));
@@ -237,8 +239,8 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         {/* Case study */}
         <CaseStudy t={dict.caseStudy} />
 
-        {/* Free guides */}
-        <GuideGallery heading={withCounts(dict.common.gallery.heading)} linkTo="blog" />
+        {/* Free PDF guides and the latest blog posts */}
+        <ResourcesSection lang={lang} dict={dict} posts={posts} />
 
         {/* Free listing review */}
         <section

@@ -32,6 +32,12 @@ const page: GuideCopy["page"] = {
     tile: "bg-apricot",
   },
   updated: "2026-11-20",
+  quickWin: {
+    label: "Vérification en 10 minutes",
+    title: "Améliorez votre fiche en 10 minutes",
+    steps: ["Placez le mot-clé principal dans les premiers mots du titre", "Supprimez tout mot répété plus de deux fois", "Utilisez une image principale sur fond blanc où le produit occupe 85 % du cadre"],
+    link: { href: "#title", text: "Comment écrire le titre" },
+  },
   facts: [
     { value: 200, label: "Caractères autorisés dans un titre, selon le guide SEO d’Amazon" },
     { value: 60, label: "Caractères qu’Amazon recommande pour un titre" },

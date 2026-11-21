@@ -25,6 +25,12 @@ const page: GuideCopy["page"] = {
     tile: "bg-royal",
   },
   updated: "2026-11-16",
+  quickWin: {
+    label: "10-Minuten-Check",
+    title: "Finden Sie in 10 Minuten, wo Umsatz verloren geht",
+    steps: ["Öffnen Sie die Geschäftsberichte in Seller Central", "Notieren Sie Sitzungen und Conversion-Rate Ihres wichtigsten Produkts", "Vergleichen Sie beides mit der Vorwoche"],
+    link: { href: "#numbers", text: "Die vier Zahlen, die zählen" },
+  },
   facts: [
     { value: 4, label: "Kennzahlen für jedes Produkt" },
     {

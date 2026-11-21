@@ -32,6 +32,12 @@ const page: GuideCopy["page"] = {
     tile: "bg-apricot",
   },
   updated: "2026-11-20",
+  quickWin: {
+    label: "Controllo in 10 minuti",
+    title: "Migliora la tua scheda in 10 minuti",
+    steps: ["Metti la parola chiave principale all’inizio del titolo", "Togli ogni parola ripetuta più di due volte", "Usa un’immagine principale su fondo bianco in cui il prodotto occupi l’85% dell’inquadratura"],
+    link: { href: "#title", text: "Come scrivere il titolo" },
+  },
   facts: [
     { value: 200, label: "Caratteri ammessi in un titolo, secondo la guida SEO di Amazon" },
     { value: 60, label: "Caratteri che Amazon consiglia per un titolo" },

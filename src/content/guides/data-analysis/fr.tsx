@@ -25,6 +25,12 @@ const page: GuideCopy["page"] = {
     tile: "bg-royal",
   },
   updated: "2026-11-16",
+  quickWin: {
+    label: "Vérification en 10 minutes",
+    title: "Repérez où fuient vos ventes en 10 minutes",
+    steps: ["Ouvrez les Rapports d’activité dans Seller Central", "Notez les sessions et le taux de conversion de votre produit principal", "Comparez-les avec la semaine précédente"],
+    link: { href: "#numbers", text: "Les quatre chiffres à suivre" },
+  },
   facts: [
     { value: 4, label: "Chiffres à suivre pour chaque produit" },
     {

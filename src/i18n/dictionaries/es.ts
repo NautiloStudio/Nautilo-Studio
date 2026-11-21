@@ -208,6 +208,16 @@ const es: Dictionary = {
       "Llevar una tienda en Amazon ya te quita bastante tiempo. Mejorar cada ficha no debería depender solo de ti.",
     statementText:
       "Ya vendes un buen producto en Amazon. Las agencias lo hacen por ti y las herramientas te dejan solo, así que nosotros trabajamos contigo.",
+    // Home: free PDF guides and the latest blog posts (ResourcesSection).
+    resources: {
+      heading: "Guías y artículos gratis para vendedores de Amazon.",
+      intro: "Descarga una guía en PDF de 10 páginas o lee nuestros últimos artículos sobre lo que cambia en Amazon y qué hacer al respecto.",
+      guidesLabel: "Guías PDF gratis",
+      guideMeta: "PDF · 10 páginas",
+      guideCta: "Consigue el PDF gratis",
+      blogLabel: "Lo último del blog",
+      blogCta: "Leer todos los artículos",
+    },
     servicesHeading: "¿Cuál de estas frases describe tu tienda?",
     services: [
       {

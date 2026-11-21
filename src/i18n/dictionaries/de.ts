@@ -209,6 +209,16 @@ const de: Dictionary = {
       "Ein Amazon-Shop kostet genug Zeit. Jedes Listing zu verbessern, sollte nicht allein an Ihnen hängen.",
     statementText:
       "Sie verkaufen bereits ein gutes Produkt auf Amazon. Agenturen machen es für Sie, Tools lassen Sie allein. Wir arbeiten mit Ihnen daran.",
+    // Home: free PDF guides and the latest blog posts (ResourcesSection).
+    resources: {
+      heading: "Kostenlose Guides und Artikel für Amazon-Händler.",
+      intro: "Laden Sie einen 10-seitigen PDF-Guide herunter oder lesen Sie unsere neuesten Artikel darüber, was sich auf Amazon ändert und was zu tun ist.",
+      guidesLabel: "Kostenlose PDF-Guides",
+      guideMeta: "PDF · 10 Seiten",
+      guideCta: "Kostenloses PDF erhalten",
+      blogLabel: "Neu im Blog",
+      blogCta: "Alle Artikel lesen",
+    },
     servicesHeading: "Welcher dieser Sätze passt zu Ihrem Shop?",
     services: [
       {

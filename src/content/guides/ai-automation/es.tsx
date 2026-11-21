@@ -28,6 +28,12 @@ const page: GuideCopy["page"] = {
     tile: "bg-graphite",
   },
   updated: "2026-11-16",
+  quickWin: {
+    label: "Revisión de 10 minutos",
+    title: "Elige tu primera tarea para la IA en 10 minutos",
+    steps: ["Haz una lista de las tareas que repites cada semana", "Elige una en la que un borrador erróneo no cueste nada, como un informe", "Deja que la IA proponga y revisa antes de cambiar nada"],
+    link: { href: "#how-to-start", text: "Cómo empezar" },
+  },
   facts: [
     { value: 4, label: "Tareas que la IA puede asumir" },
     { value: 3, label: "Herramientas de IA de Amazon para empezar" },
