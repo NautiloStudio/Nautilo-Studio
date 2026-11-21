@@ -353,7 +353,7 @@ const it: Dictionary = {
     quickWin: { title: "Migliora la tua scheda in 10 minuti!", text: "Inviaci una scheda e ricevi gratis le prime correzioni." },
     breadcrumb: "Percorso di navigazione",
     home: "Home",
-    getReview: "Voglio la mia revisione gratuita",
+    getReview: "Voglio la mia revisione gratis",
     // Under the main button on service pages, as a short reassurance line.
     ctaNote: "Gratis · Senza impegno · Prime correzioni via email",
     downloadPdf: "Scarica la guida gratuita in PDF",

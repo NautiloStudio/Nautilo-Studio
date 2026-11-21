@@ -29,8 +29,9 @@ export default function TalkButton({
 }: Props) {
   const sizing =
     size === "md"
-      ? `gap-3 py-2 pr-2 ${shine ? "pl-7 text-[1.05rem]" : "pl-6 text-base"}`
-      : "gap-2 py-2 pl-4 pr-2 text-sm";
+      ? `gap-3 py-2 pr-2 ${shine ? "pl-6 text-base sm:pl-7 sm:text-[1.05rem]" : "pl-6 text-base"}`
+      : // Header button: always one line; under 400px the arrow circle hides so it fits beside the logo.
+        "gap-2 py-2 pl-4 pr-2 text-sm whitespace-nowrap max-[399px]:pr-4 max-[359px]:pl-3 max-[359px]:pr-3 max-[359px]:text-[0.8rem]";
   const fill =
     shine && tone === "royal"
       ? "bg-[linear-gradient(110deg,var(--color-royal)_35%,color-mix(in_oklab,var(--color-royal),var(--color-cyan)_45%))] text-offwhite"
@@ -50,7 +51,7 @@ export default function TalkButton({
       {label}
       <span
         className={`${shine ? "cta-hop " : ""}flex shrink-0 items-center justify-center rounded-full transition-transform duration-300 ease-(--ease-out-strong) group-hover:translate-x-0.5 group-hover:-translate-y-px ${circles[tone]} ${
-          size === "md" ? "h-9 w-9" : "h-7 w-7"
+          size === "md" ? "h-9 w-9" : "h-7 w-7 max-[399px]:hidden"
         }`}
       >
         <ArrowUpRight size={size === "md" ? 18 : 14} weight="bold" aria-hidden />

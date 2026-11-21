@@ -44,7 +44,7 @@ function ContentsList({ items, active, onPick }: { items: ContentsItem[]; active
                 current ? "border-royal font-semibold text-graphite" : "border-transparent text-slate hover:text-graphite"
               }`}
             >
-              <span className={`font-display tabular-nums ${current ? "text-royal" : "text-slate/70"}`}>
+              <span className={`font-display tabular-nums ${current ? "text-royal" : "text-slate"}`}>
                 {String(index + 1).padStart(2, "0")}
               </span>
               <span>{item.heading}</span>
@@ -110,10 +110,10 @@ export function MobileContents({ label, items }: { label: string; items: Content
         >
           <span className="font-display text-sm font-semibold tabular-nums text-royal">
             {String(index + 1).padStart(2, "0")}
-            <span className="text-slate/60">/{String(items.length).padStart(2, "0")}</span>
+            <span className="text-slate">/{String(items.length).padStart(2, "0")}</span>
           </span>
           <span className="min-w-0 flex-1">
-            <span className="block font-display text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate">{label}</span>
+            <span className="block font-display text-xs font-semibold uppercase tracking-[0.14em] text-slate">{label}</span>
             <span className="block truncate text-sm font-semibold text-graphite">{current?.heading}</span>
           </span>
           <svg
