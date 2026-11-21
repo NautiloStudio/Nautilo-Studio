@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowUpRight, DownloadSimple } from "@phosphor-icons/react/dist/ssr";
+import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import GuideDownload from "@/components/GuideDownload";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { getPosts } from "@/content/blog";
@@ -30,9 +31,8 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/blog">): P
   };
 }
 
-// The four free PDF guides, one per service. Names and summaries come from the dictionary.
+// The three free PDF guides, one per service. Names and summaries come from the dictionary.
 const pdfGuides = [
-  { slug: "amazon-seo", tile: "bg-cyan" },
   { slug: "listing-optimization", tile: "bg-apricot" },
   { slug: "data-analysis", tile: "bg-royal" },
   { slug: "ai-automation", tile: "bg-graphite" },
@@ -126,13 +126,9 @@ export default async function BlogIndex({ params }: PageProps<"/[lang]/blog">) {
               const copy = dict.common.guides[guide.slug];
               return (
                 <li key={guide.slug} id={`guide-${guide.slug}`} className="reveal scroll-mt-28">
-                  <a
-                    href={`/guides/nautilo-${guide.slug}-guide.pdf`}
-                    download
-                    className="group flex h-full flex-col overflow-hidden rounded-[2rem] bg-white ring-1 ring-sand transition-shadow hover:ring-2 hover:ring-royal"
-                  >
+                  <div className="flex h-full flex-col overflow-hidden rounded-[2rem] bg-white ring-1 ring-sand">
                     <span className={`block h-3 ${guide.tile}`} aria-hidden />
-                    <span className="flex flex-1 flex-col gap-3 p-6 sm:p-8">
+                    <div className="flex flex-1 flex-col gap-3 p-6 sm:p-8">
                       <span className="font-display text-sm font-semibold uppercase tracking-[0.14em] text-slate">
                         {copy.name} · {t.pdfMeta}
                         {dict.common.pdfLanguage && ` (${dict.common.pdfLanguage})`}
@@ -141,12 +137,10 @@ export default async function BlogIndex({ params }: PageProps<"/[lang]/blog">) {
                         {copy.title}
                       </span>
                       <span className="text-lg leading-relaxed text-slate">{copy.text}</span>
-                      <span className="mt-auto inline-flex items-center gap-2 pt-2 font-display font-semibold text-royal">
-                        {dict.common.gallery.download}
-                        <DownloadSimple size={16} weight="bold" aria-hidden />
-                      </span>
-                    </span>
-                  </a>
+                      {/* A short lead form opens first; the PDF downloads after it is sent. */}
+                      <GuideDownload slug={guide.slug} file={`/guides/nautilo-${guide.slug}-guide.pdf`} />
+                    </div>
+                  </div>
                 </li>
               );
             })}

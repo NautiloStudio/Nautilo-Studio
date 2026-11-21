@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
     const services = "listing-optimization|data-analysis|ai-automation";
     const merged = "/services/listing-optimization";
     return [
+      { source: "/guides/nautilo-amazon-seo-guide.pdf", destination: "/guides/nautilo-listing-optimization-guide.pdf", permanent: true },
       { source: "/services/amazon-seo", destination: merged, permanent: true },
       { source: "/:lang(es|fr|de|it)/services/amazon-seo", destination: `/:lang${merged}`, permanent: true },
       { source: "/amazon-seo", destination: merged, permanent: true },

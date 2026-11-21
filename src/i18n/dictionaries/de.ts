@@ -24,12 +24,6 @@ const de: Dictionary = {
       language: "Sprache",
     },
     guides: {
-      "amazon-seo": {
-        menu: "SEO",
-        name: "Amazon-SEO",
-        title: "Von mehr Käufern auf Amazon gefunden werden",
-        text: "Wie die Amazon-Suche funktioniert, wohin Ihre Keywords gehören und wie Sie in den Ergebnissen aufsteigen.",
-      },
       "listing-optimization": {
         menu: "SEO und Listing-Optimierung",
         name: "SEO und Listing-Optimierung",
@@ -60,6 +54,27 @@ const de: Dictionary = {
       download: "PDF herunterladen",
     },
     pdfLanguage: "auf Englisch",
+    // The short form before a PDF guide download (blog). Answers go to the leads table.
+    guideForm: {
+      title: "Kostenlosen Guide erhalten",
+      intro: "Erzählen Sie uns kurz etwas über sich, dann startet der Download sofort.",
+      name: "Name",
+      email: "Geschäftliche E-Mail",
+      company: "Unternehmen oder Marke",
+      optional: "optional",
+      role: "Ihre Rolle",
+      choose: "Bitte wählen",
+      roles: ["Gründer oder Inhaber", "E-Commerce- oder Marketplace-Manager", "Marketing", "Agentur oder Berater", "Andere"],
+      amazon: "Verkaufen Sie auf Amazon?",
+      amazonOptions: ["Ja, in den USA", "Ja, auf anderen Marktplätzen", "Noch nicht"],
+      consent: "Nautilo Studio darf mir zu diesem Guide und seinen Leistungen schreiben. Ich kann mich jederzeit abmelden.",
+      submit: "PDF herunterladen",
+      sending: "Guide wird vorbereitet...",
+      error: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+      done: "Danke! Der Download hat begonnen.",
+      again: "Erneut herunterladen",
+      cancel: "Abbrechen",
+    },
     form: {
       name: "Name",
       email: "E-Mail",
@@ -390,7 +405,7 @@ const de: Dictionary = {
       title: "Danke. Wir haben Ihre Nachricht erhalten.",
       text: "Eine oder einer von uns antwortet an die angegebene E-Mail-Adresse. Schauen Sie in Ihr Postfach und sicherheitshalber auch in den Spam-Ordner.",
     },
-    guidesHeading: "In der Zwischenzeit: {4} kostenlose Leitfäden.",
+    guidesHeading: "In der Zwischenzeit: {3} kostenlose Leitfäden.",
     guidesIntro: "Ein Leitfaden pro Leistung, mit Beispielen, Diagrammen und einer Checkliste.",
   },
 
@@ -429,6 +444,7 @@ const de: Dictionary = {
     paragraphs: [
       "Nautilo Studio ist ein Studierendenprojekt an der TBS Education Barcelona von Carlo Ambrosini, Maria Giraldo, Veronika Matkovska und Filippo Verace.",
       "Wenn Sie eines unserer Formulare nutzen, erfassen wir Ihren Namen, Ihre E-Mail-Adresse und Ihre Nachricht oder Ihren Listing-Link. Wir verwenden sie nur, um Ihnen zu antworten.",
+      "Wenn Sie einen unserer PDF-Guides herunterladen, fragen wir außerdem nach Ihrem Unternehmen, Ihrer Rolle und ob Sie auf Amazon verkaufen. Wir nutzen diese Angaben, um zu verstehen, wer unsere Guides liest, und um Ihnen, wenn Sie zustimmen, zum Guide und zu unseren Leistungen zu schreiben.",
       "Ihre Nachricht wird in unserer Supabase-Datenbank gespeichert, die in der Europäischen Union gehostet wird. Diese Website setzt keine Werbe-Cookies.",
     ],
     contact: "Um Ihre Daten einzusehen oder zu löschen, schreiben Sie an",

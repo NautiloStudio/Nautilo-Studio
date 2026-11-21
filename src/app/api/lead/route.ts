@@ -21,6 +21,9 @@ export async function POST(request: Request) {
   // Hidden field that people never see: bots that fill it get a quiet success and nothing is saved.
   if (clean(body.website, 200)) return NextResponse.json({ ok: true });
 
+  // "guide" = the short form before a PDF guide download (blog): saved for lead analysis, no emails.
+  if (body.variant === "guide") return saveGuideLead(body);
+
   const variant = body.variant === "review" ? "review" : body.variant === "talk" ? "talk" : null;
   const lang = clean(body.lang, 5);
   const name = clean(body.name, 120);
@@ -63,5 +66,50 @@ export async function POST(request: Request) {
   }
 
   after(() => sendLeadEmails(lead));
+  return NextResponse.json({ ok: true });
+}
+
+const GUIDES = ["listing-optimization", "data-analysis", "ai-automation"];
+
+// Guide downloads: name, email, company, role and whether the visitor sells on Amazon. The leads
+// table only accepts its existing `source` values (check constraint, schema left as it is), so these
+// rows use source "talk" and a message that starts with "Guide download |" to filter them.
+async function saveGuideLead(body: Record<string, unknown>) {
+  const lang = clean(body.lang, 5);
+  const guide = clean(body.guide, 60);
+  const name = clean(body.name, 120);
+  const email = clean(body.email, 200);
+  const company = clean(body.company, 160);
+  const role = clean(body.role, 80);
+  const amazon = clean(body.amazon, 80);
+  const pagePath = clean(body.page, 300);
+  const page = /^\/[A-Za-z0-9\-_/]*$/.test(pagePath) ? pagePath : null;
+
+  const valid =
+    hasLocale(lang) && GUIDES.includes(guide) && name && EMAIL.test(email) && role && amazon && body.consent === true;
+  if (!valid) return NextResponse.json({ error: "invalid" }, { status: 400 });
+
+  const message = [
+    "Guide download",
+    `Guide: ${guide}`,
+    `Company: ${company || "-"}`,
+    `Role: ${role}`,
+    `Sells on Amazon: ${amazon}`,
+    `Language: ${lang}`,
+    "Consent to email: yes",
+  ].join(" | ");
+
+  const { error } = await getSupabase().from("leads").insert({
+    source: "talk",
+    name,
+    email,
+    message,
+    listing_url: null,
+    page,
+  });
+  if (error) {
+    console.error("Guide lead insert failed:", error);
+    return NextResponse.json({ error: "save" }, { status: 500 });
+  }
   return NextResponse.json({ ok: true });
 }
