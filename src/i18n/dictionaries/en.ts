@@ -356,7 +356,9 @@ const en = {
     quickWin: { title: "Improve your listing in 10 minutes!", text: "Send us one listing and get your first fixes, free." },
     breadcrumb: "Breadcrumb",
     home: "Home",
-    getReview: "Get a free listing review",
+    getReview: "Get my free listing review",
+    // Under the main button on service pages, as a short reassurance line.
+    ctaNote: "Free · No commitment · First fixes by email",
     downloadPdf: "Download the free PDF guide",
     talk: "Talk to us",
     shortAnswer: "Short answer",

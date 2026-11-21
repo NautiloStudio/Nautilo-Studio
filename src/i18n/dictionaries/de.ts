@@ -355,7 +355,9 @@ const de: Dictionary = {
     quickWin: { title: "Verbessern Sie Ihr Listing in 10 Minuten!", text: "Senden Sie uns ein Listing und erhalten Sie die ersten Verbesserungen gratis." },
     breadcrumb: "Brotkrumennavigation",
     home: "Start",
-    getReview: "Kostenloser Listing-Check",
+    getReview: "Meinen kostenlosen Check holen",
+    // Under the main button on service pages, as a short reassurance line.
+    ctaNote: "Kostenlos · Unverbindlich · Erste Verbesserungen per E-Mail",
     downloadPdf: "Kostenlosen PDF-Leitfaden herunterladen",
     talk: "Sprechen Sie mit uns",
     shortAnswer: "Kurze Antwort",

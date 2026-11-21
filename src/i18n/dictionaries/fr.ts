@@ -355,7 +355,9 @@ const fr: Dictionary = {
     quickWin: { title: "Améliorez votre fiche en 10 minutes !", text: "Envoyez-nous une fiche et recevez vos premières corrections, gratuitement." },
     breadcrumb: "Fil d’Ariane",
     home: "Accueil",
-    getReview: "Audit gratuit de votre fiche",
+    getReview: "Obtenir mon audit gratuit",
+    // Under the main button on service pages, as a short reassurance line.
+    ctaNote: "Gratuit · Sans engagement · Premières corrections par e-mail",
     downloadPdf: "Télécharger le guide PDF gratuit",
     talk: "Parlons-en",
     shortAnswer: "Réponse courte",

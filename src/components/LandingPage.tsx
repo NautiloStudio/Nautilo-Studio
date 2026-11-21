@@ -195,34 +195,50 @@ export default function LandingPage({
                   ))}
                 </ul>
 
-                <div
-                  className="rise mt-5 flex flex-wrap items-center gap-x-7 gap-y-3"
-                  style={{ "--i": 2 } as React.CSSProperties}
-                >
-                  {/* Main CTA with the 10-minute hook: a soft cyan pulse draws the eye to the button */}
-                  <span className="flex flex-wrap items-center gap-x-4 gap-y-3">
+                {/* Unique value + call to action (inspired by conversionlab.no): a timer badge that fills,
+                    the promise, and a hand-drawn arrow that bounces towards the main button. */}
+                <div className="rise mt-6" style={{ "--i": 2 } as React.CSSProperties}>
+                  <div className="flex items-end gap-3">
+                    <span
+                      aria-hidden
+                      className="relative flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-full bg-cyan font-display leading-none text-graphite"
+                    >
+                      <svg className="absolute inset-0 h-full w-full -rotate-90" viewBox="0 0 56 56" fill="none">
+                        <circle
+                          className="qw-ring"
+                          cx="28"
+                          cy="28"
+                          r="25.5"
+                          stroke="var(--color-royal)"
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                          pathLength="100"
+                          strokeDasharray="100"
+                        />
+                      </svg>
+                      <span className="text-xl font-bold tracking-[-0.04em]">10</span>
+                      <span className="text-[0.58rem] font-semibold uppercase tracking-[0.12em]">min</span>
+                    </span>
+                    <p className="max-w-[17rem] pb-1 font-display text-[clamp(1.1rem,1.6vw,1.3rem)] font-bold leading-tight text-royal">
+                      {t.quickWin.title}
+                    </p>
+                    <svg aria-hidden className="qw-arrow hidden h-14 w-16 shrink-0 text-royal sm:block" viewBox="0 0 64 56" fill="none">
+                      <path d="M58 6C52 28 36 42 12 46" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+                      <path d="M21 37l-9 9 12 3" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                  <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-3">
                     <span className="cta-glow relative inline-flex rounded-full">
-                      <TalkButton href="#review" label={t.getReview} />
+                      <TalkButton href="#review" label={t.getReview} shine />
                     </span>
-                    <span className="inline-flex items-center gap-2.5">
-                      <span
-                        aria-hidden
-                        className="flex h-11 w-11 shrink-0 flex-col items-center justify-center rounded-full bg-cyan font-display leading-none text-graphite"
-                      >
-                        <span className="text-lg font-bold tracking-[-0.04em]">10</span>
-                        <span className="text-[0.55rem] font-semibold uppercase tracking-[0.12em]">min</span>
-                      </span>
-                      <span className="max-w-[13rem] font-display text-sm font-semibold leading-snug text-graphite">
-                        {t.quickWin.title}
-                      </span>
-                    </span>
-                  </span>
-                  <Link
-                    href={href("/#contact")}
-                    className="py-3 font-display font-semibold text-graphite underline decoration-sand decoration-2 underline-offset-8 transition-colors hover:decoration-royal"
-                  >
-                    {t.talk}
-                  </Link>
+                    <Link
+                      href={href("/#contact")}
+                      className="rounded-full px-6 py-3 font-display font-semibold text-graphite ring-2 ring-royal/25 transition-shadow hover:ring-royal"
+                    >
+                      {t.talk}
+                    </Link>
+                  </div>
+                  <p className="mt-2.5 pl-6 text-xs font-medium text-slate">{t.ctaNote}</p>
                 </div>
               </div>
               <div className="rise" style={{ "--i": 2 } as React.CSSProperties}>

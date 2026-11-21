@@ -5,6 +5,8 @@ type Props = {
   label?: string;
   tone?: "royal" | "cyan";
   size?: "md" | "sm";
+  // A light that sweeps across the button every few seconds (main CTA on service pages).
+  shine?: boolean;
 };
 
 const tones = {
@@ -22,6 +24,7 @@ export default function TalkButton({
   label = "Talk to us",
   tone = "royal",
   size = "md",
+  shine = false,
 }: Props) {
   const sizing =
     size === "md"
@@ -31,8 +34,14 @@ export default function TalkButton({
   return (
     <a
       href={href}
-      className={`group inline-flex items-center rounded-full text-left font-display font-semibold sm:whitespace-nowrap transition-transform duration-150 ease-out active:scale-[0.97] ${tones[tone]} ${sizing}`}
+      className={`group ${shine ? "relative overflow-hidden" : ""} inline-flex items-center rounded-full text-left font-display font-semibold sm:whitespace-nowrap transition-transform duration-150 ease-out active:scale-[0.97] ${tones[tone]} ${sizing}`}
     >
+      {shine && (
+        <span
+          aria-hidden
+          className="cta-shine pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 bg-[linear-gradient(100deg,transparent,rgba(255,255,255,0.45),transparent)]"
+        />
+      )}
       {label}
       <span
         className={`flex shrink-0 items-center justify-center rounded-full transition-transform duration-300 ease-(--ease-out-strong) group-hover:translate-x-0.5 group-hover:-translate-y-px ${circles[tone]} ${

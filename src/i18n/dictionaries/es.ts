@@ -353,7 +353,9 @@ const es: Dictionary = {
     quickWin: { title: "¡Mejora tu ficha en 10 minutos!", text: "Envíanos una ficha y recibe tus primeras mejoras gratis." },
     breadcrumb: "Ruta de navegación",
     home: "Inicio",
-    getReview: "Revisión gratis de tu ficha",
+    getReview: "Quiero mi revisión gratis",
+    // Under the main button on service pages, as a short reassurance line.
+    ctaNote: "Gratis · Sin compromiso · Primeras mejoras por email",
     downloadPdf: "Descargar la guía gratuita en PDF",
     talk: "Habla con nosotros",
     shortAnswer: "Respuesta corta",

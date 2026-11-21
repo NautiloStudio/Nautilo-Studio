@@ -629,3 +629,57 @@ textarea {
     opacity: 0;
   }
 }
+
+/* Unique value next to the main CTA: the timer ring fills like a clock, the hand-drawn arrow nudges
+   towards the button, and a light sweeps across it. Transform/opacity (and a small SVG stroke) only;
+   with reduced motion the ring shows full and nothing moves. */
+.qw-ring {
+  stroke-dashoffset: 0;
+}
+.cta-shine {
+  opacity: 0;
+  transform: translateX(0) skewX(-18deg);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .qw-ring {
+    animation: qw-ring 3.6s linear infinite;
+  }
+  .qw-arrow {
+    animation: qw-nudge 1.6s ease-in-out infinite;
+  }
+  .cta-shine {
+    animation: cta-shine 3.6s var(--ease-out-strong) 1.4s infinite;
+  }
+}
+@keyframes qw-ring {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  75%,
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes qw-nudge {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-4px, 4px);
+  }
+}
+@keyframes cta-shine {
+  0% {
+    opacity: 0;
+    transform: translateX(0) skewX(-18deg);
+  }
+  8% {
+    opacity: 1;
+  }
+  40%,
+  100% {
+    opacity: 0;
+    transform: translateX(460%) skewX(-18deg);
+  }
+}
