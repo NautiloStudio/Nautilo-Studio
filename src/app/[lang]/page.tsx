@@ -150,7 +150,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                   } as React.CSSProperties
                 }
               >
-                <article className="glow-ring grid gap-6 rounded-[2rem] bg-white p-5 shadow-[0_-18px_50px_-28px_rgba(22,25,31,0.35)] sm:p-6 md:h-[30rem] md:grid-cols-2 md:gap-10 md:p-8">
+                <article className="glow-ring group/card relative grid cursor-pointer gap-6 rounded-[2rem] bg-white p-5 shadow-[0_-18px_50px_-28px_rgba(22,25,31,0.35)] sm:p-6 md:h-[30rem] md:grid-cols-2 md:gap-10 md:p-8">
                   <div className="flex flex-col">
                     <p
                       className={`self-start rounded-full px-5 py-2 font-display text-[clamp(1.15rem,1.8vw,1.6rem)] font-bold leading-tight tracking-[-0.01em] ${service.chip}`}
@@ -164,9 +164,10 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                       <p className="mt-3 max-w-md text-lg leading-relaxed text-slate">
                         {service.text}
                       </p>
+                      {/* The link stretches over the whole card (after:inset-0), so a click anywhere opens the service. */}
                       <Link
                         href={href(service.href)}
-                        className="group mt-6 inline-flex items-center gap-3 rounded-full bg-royal py-2 pl-5 pr-2 font-display font-semibold text-offwhite transition-transform duration-150 ease-out active:scale-[0.97]"
+                        className="group mt-6 inline-flex items-center gap-3 rounded-full bg-royal py-2 pl-5 pr-2 font-display font-semibold text-offwhite transition-transform duration-150 ease-out after:absolute after:inset-0 after:z-10 after:rounded-[2rem] after:content-[''] active:scale-[0.97]"
                       >
                         {service.guide}
                         <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/15 transition-transform duration-300 ease-(--ease-out-strong) group-hover:-translate-y-px group-hover:translate-x-0.5">
@@ -183,7 +184,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                       alt={service.alt}
                       fill
                       sizes="(min-width: 768px) 45vw, 100vw"
-                      className="object-cover"
+                      className="object-cover transition-transform duration-500 ease-(--ease-out-strong) group-hover/card:scale-[1.03]"
                     />
                   </div>
                 </article>
