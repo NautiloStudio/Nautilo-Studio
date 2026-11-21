@@ -199,7 +199,24 @@ export default function LandingPage({
                   className="rise mt-5 flex flex-wrap items-center gap-x-7 gap-y-3"
                   style={{ "--i": 2 } as React.CSSProperties}
                 >
-                  <TalkButton href="#review" label={t.getReview} />
+                  {/* Main CTA with the 10-minute hook: a soft cyan pulse draws the eye to the button */}
+                  <span className="flex flex-wrap items-center gap-x-4 gap-y-3">
+                    <span className="cta-glow relative inline-flex rounded-full">
+                      <TalkButton href="#review" label={t.getReview} />
+                    </span>
+                    <span className="inline-flex items-center gap-2.5">
+                      <span
+                        aria-hidden
+                        className="flex h-11 w-11 shrink-0 flex-col items-center justify-center rounded-full bg-cyan font-display leading-none text-graphite"
+                      >
+                        <span className="text-lg font-bold tracking-[-0.04em]">10</span>
+                        <span className="text-[0.55rem] font-semibold uppercase tracking-[0.12em]">min</span>
+                      </span>
+                      <span className="max-w-[13rem] font-display text-sm font-semibold leading-snug text-graphite">
+                        {t.quickWin.title}
+                      </span>
+                    </span>
+                  </span>
                   <Link
                     href={href("/#contact")}
                     className="py-3 font-display font-semibold text-graphite underline decoration-sand decoration-2 underline-offset-8 transition-colors hover:decoration-royal"
@@ -218,29 +235,6 @@ export default function LandingPage({
                     </div>
                   </div>
                 </div>
-                {/* Conversion hook: one bold line that jumps to the free listing review form */}
-                <a
-                  href="#review"
-                  className="group mt-4 flex items-center gap-4 rounded-full bg-graphite py-2 pl-2 pr-3 text-offwhite shadow-[0_18px_40px_-20px_rgba(22,25,31,0.6)] transition-colors hover:bg-royal"
-                >
-                  <span
-                    aria-hidden
-                    className="flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-full bg-cyan font-display leading-none text-graphite"
-                  >
-                    <span className="text-[1.6rem] font-bold tracking-[-0.04em]">10</span>
-                    <span className="text-[0.65rem] font-semibold uppercase tracking-[0.12em]">min</span>
-                  </span>
-                  <span className="min-w-0 flex-1">
-                    <span className="block font-display text-[clamp(1.05rem,1.5vw,1.25rem)] font-semibold leading-tight">{t.quickWin.title}</span>
-                    <span className="mt-0.5 block text-sm text-offwhite/75">{t.quickWin.text}</span>
-                  </span>
-                  <span
-                    aria-hidden
-                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-cyan text-graphite transition-transform duration-300 ease-(--ease-out-strong) group-hover:translate-x-0.5"
-                  >
-                    <ArrowUpRight size={18} weight="bold" />
-                  </span>
-                </a>
               </div>
             </div>
 

@@ -80,23 +80,21 @@ export default function SiteHeader({
     current: page.slug === guide,
   }));
   // The services hub (level 2), reached from "Services" in the bar on wide screens.
-  const onServices = pathname === "/services";
-  const servicesHub: MenuItem = { href: href("/services"), label: t.header.allServices, current: onServices };
-  const onGuide = Boolean(guide);
+  // "Services" stays highlighted on the hub and on every service page.
+  const onServices = pathname === "/services" || Boolean(guide);
+  const servicesHub: MenuItem = { href: href("/services"), label: t.header.allServices, current: pathname === "/services" };
 
-  // What the dropdown lists: on guide pages it is the small-screen version of the menu.
-  const menuItems: MenuItem[] = onGuide
-    ? [{ href: href("/"), label: t.header.home }, servicesHub, ...guides]
-    : [
-        servicesHub,
-        ...guides,
-        { href: href("/blog"), label: t.header.blog, current: pathname.startsWith("/blog") },
-        {
-          href: href("/about"),
-          label: t.header.aboutUs,
-          current: pathname === "/about",
-        },
-      ];
+  // The bar is the same on every page (Services, Blog, About us); the dropdown lists the services.
+  const menuItems: MenuItem[] = [
+    servicesHub,
+    ...guides,
+    { href: href("/blog"), label: t.header.blog, current: pathname.startsWith("/blog") },
+    {
+      href: href("/about"),
+      label: t.header.aboutUs,
+      current: pathname === "/about",
+    },
+  ];
   // Links that also sit in the bar, and the screen width from which they do (the list hides them there).
   const barLinks: Record<string, string> = {
     [t.header.blog]: "sm:hidden",
@@ -114,7 +112,7 @@ export default function SiteHeader({
       className={`flex items-center gap-1.5 py-1 transition-colors sm:py-3 hover:text-cyan ${open ? "text-cyan" : ""}`}
     >
       <span className="hidden sm:inline">
-        {onGuide ? t.header.menu : t.header.services}
+        {t.header.services}
       </span>
       <CaretDown
         size={14}
@@ -140,16 +138,12 @@ export default function SiteHeader({
 
   return (
     <>
-      <LanguageCorner
-        className={onGuide ? "hidden xl:block" : "hidden lg:block"}
-      />
+      <LanguageCorner className="hidden lg:block" />
       <header className="on-dark fixed inset-x-0 top-4 z-20 flex justify-center px-4">
         <nav
           ref={navRef}
           aria-label={t.header.main}
-          className={`relative flex w-full items-center justify-between rounded-full bg-graphite/95 py-2 pl-4 pr-2 sm:pl-5 shadow-[0_12px_40px_-12px_rgba(22,25,31,0.5)] ring-1 ring-white/10 backdrop-blur-md ${
-            onGuide ? "max-w-5xl" : "max-w-3xl"
-          }`}
+          className={`relative flex w-full items-center justify-between rounded-full bg-graphite/95 py-2 pl-4 pr-2 sm:pl-5 shadow-[0_12px_40px_-12px_rgba(22,25,31,0.5)] ring-1 ring-white/10 backdrop-blur-md max-w-3xl`}
         >
           {/* Always leads to the top of the homepage, even when you are already on it. */}
           <Link
@@ -175,71 +169,38 @@ export default function SiteHeader({
           </Link>
 
           <div className="flex items-center gap-3 text-sm text-offwhite/85 sm:gap-6">
-            {onGuide ? (
-              <>
-                {/* Wide screens: every guide in the bar, with the language switch in the corner */}
-                <Link
-                  href={href("/")}
-                  className={`hidden xl:inline ${textLink}`}
-                >
-                  {t.header.home}
-                </Link>
-                <Link href={href("/services")} className={`hidden xl:inline ${textLink}`}>
-                  {t.header.services}
-                </Link>
-                {guides.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    aria-current={item.current ? "page" : undefined}
-                    className={`hidden xl:inline ${textLink} ${
-                      item.current
-                        ? "text-cyan underline decoration-2 underline-offset-8"
-                        : ""
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-                {/* Narrower screens: the same links in a list */}
-                <div className="xl:hidden">{toggle}</div>
-              </>
-            ) : (
-              <>
-                <div className="md:hidden">{toggle}</div>
-                <Link
-                  href={href("/services")}
-                  aria-current={onServices ? "page" : undefined}
-                  className={`hidden md:inline ${textLink} ${
-                    onServices ? "text-cyan underline decoration-2 underline-offset-8" : ""
-                  }`}
-                >
-                  {t.header.services}
-                </Link>
-                <Link
-                  href={href("/blog")}
-                  aria-current={pathname.startsWith("/blog") ? "page" : undefined}
-                  className={`hidden sm:inline ${textLink} ${
-                    pathname.startsWith("/blog")
-                      ? "text-cyan underline decoration-2 underline-offset-8"
-                      : ""
-                  }`}
-                >
-                  {t.header.blog}
-                </Link>
-                <Link
-                  href={href("/about")}
-                  aria-current={pathname === "/about" ? "page" : undefined}
-                  className={`hidden sm:inline ${textLink} ${
-                    pathname === "/about"
-                      ? "text-cyan underline decoration-2 underline-offset-8"
-                      : ""
-                  }`}
-                >
-                  {t.header.aboutUs}
-                </Link>
-              </>
-            )}
+            <div className="md:hidden">{toggle}</div>
+            <Link
+              href={href("/services")}
+              aria-current={pathname === "/services" ? "page" : undefined}
+              className={`hidden md:inline ${textLink} ${
+                onServices ? "text-cyan underline decoration-2 underline-offset-8" : ""
+              }`}
+            >
+              {t.header.services}
+            </Link>
+            <Link
+              href={href("/blog")}
+              aria-current={pathname.startsWith("/blog") ? "page" : undefined}
+              className={`hidden sm:inline ${textLink} ${
+                pathname.startsWith("/blog")
+                  ? "text-cyan underline decoration-2 underline-offset-8"
+                  : ""
+              }`}
+            >
+              {t.header.blog}
+            </Link>
+            <Link
+              href={href("/about")}
+              aria-current={pathname === "/about" ? "page" : undefined}
+              className={`hidden sm:inline ${textLink} ${
+                pathname === "/about"
+                  ? "text-cyan underline decoration-2 underline-offset-8"
+                  : ""
+              }`}
+            >
+              {t.header.aboutUs}
+            </Link>
             {/* Pages with their own free review form use "#review"; the others pass a link to one. */}
             <TalkButton
               href={reviewHref}
@@ -253,15 +214,11 @@ export default function SiteHeader({
             <div
               id={panelId}
               style={panelLeft === null ? undefined : { left: panelLeft, right: "auto" }}
-              className={`absolute inset-x-0 top-full mt-3 rounded-[1.75rem] bg-graphite p-2 shadow-[0_24px_60px_-20px_rgba(22,25,31,0.6)] ring-1 ring-white/10 sm:left-auto sm:w-80 ${
-                onGuide ? "xl:hidden" : ""
-              }`}
+              className={`absolute inset-x-0 top-full mt-3 rounded-[1.75rem] bg-graphite p-2 shadow-[0_24px_60px_-20px_rgba(22,25,31,0.6)] ring-1 ring-white/10 sm:left-auto sm:w-80`}
             >
-              {!onGuide && (
-                <p className="px-4 pb-1 pt-3 font-display text-xs font-semibold uppercase tracking-[0.14em] text-offwhite/60">
-                  {t.header.guidesTitle}
-                </p>
-              )}
+              <p className="px-4 pb-1 pt-3 font-display text-xs font-semibold uppercase tracking-[0.14em] text-offwhite/60">
+                {t.header.guidesTitle}
+              </p>
               <ul className="m-0 list-none p-0">
                 {menuItems.map((item) => (
                   <li key={item.href}>
@@ -286,7 +243,7 @@ export default function SiteHeader({
               </ul>
               {/* Where the corner language button doesn't fit beside the bar, the languages live here. */}
               <div
-                className={`border-t border-white/10 px-2 pb-2 pt-3 ${onGuide ? "" : "lg:hidden"}`}
+                className="border-t border-white/10 px-2 pb-2 pt-3 lg:hidden"
               >
                 <p className="px-2 font-display text-xs font-semibold uppercase tracking-[0.14em] text-offwhite/60">
                   {t.header.language}
