@@ -26,9 +26,7 @@ const page: GuideCopy["page"] = {
   },
   updated: "2026-11-16",
   quickWin: {
-    label: "Revisión de 10 minutos",
-    title: "Descubre dónde se pierden ventas en 10 minutos",
-    steps: ["Abre los Informes de negocio en Seller Central", "Apunta las sesiones y la tasa de conversión de tu producto principal", "Compáralas con la semana anterior"],
+    title: "Descubre dónde se pierden ventas",
     link: { href: "#numbers", text: "Los cuatro números que seguir" },
   },
   facts: [

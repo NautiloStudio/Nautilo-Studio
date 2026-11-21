@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, CaretDown, Timer } from "@phosphor-icons/react/dist/ssr";
+import { ArrowDown, ArrowUpRight, CaretDown } from "@phosphor-icons/react/dist/ssr";
 import ContactForm from "@/components/ContactForm";
 import CountUp from "@/components/CountUp";
 import GuideGallery from "@/components/GuideGallery";
@@ -46,9 +46,9 @@ export type LandingContent = {
   updated: string; // ISO date
   // Optional named author, shown under the H1 with the update date (English guides only for now).
   author?: { name: string; role: string; href: string };
-  // A quick win in the opening: three steps the visitor can do in about 10 minutes, all taken from
-  // this page's own content, with a link to the section that explains them.
-  quickWin?: { label: string; title: string; steps: string[]; link: { href: string; text: string } };
+  // A quick win in the opening: one bold promise the page itself delivers in about 10 minutes,
+  // linking to the section that explains it.
+  quickWin?: { title: string; link: { href: string; text: string } };
   facts: LandingFact[]; // real numbers from Amazon or the guide itself, never results
   sections: LandingSection[];
   faqs: LandingFaq[];
@@ -199,29 +199,31 @@ export default function LandingPage({
                   </p>
                 )}
 
+                {/* The 10-minute quick win: one bold line, the whole bar links to the section that explains it */}
                 {page.quickWin && (
-                  <div className="rise mt-5 rounded-2xl bg-white p-4 ring-1 ring-sand sm:p-5" style={{ "--i": 1 } as React.CSSProperties}>
-                    <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                      <span className="inline-flex items-center gap-1.5 rounded-full bg-cyan/25 px-3 py-1 font-display text-xs font-semibold text-graphite">
-                        <Timer size={14} weight="bold" aria-hidden />
-                        {page.quickWin.label}
-                      </span>
-                      <span className="font-display text-lg font-semibold leading-snug">{page.quickWin.title}</span>
-                    </p>
-                    <ol className="m-0 mt-3 grid list-none gap-2 p-0 sm:grid-cols-3 sm:gap-3">
-                      {page.quickWin.steps.map((step, index) => (
-                        <li key={step} className="flex gap-2 text-sm leading-snug text-slate">
-                          <span className="font-display font-semibold text-royal" aria-hidden>
-                            {index + 1}
-                          </span>
-                          <span>{step}</span>
-                        </li>
-                      ))}
-                    </ol>
-                    <a href={page.quickWin.link.href} className="mt-3 inline-block text-sm font-semibold text-royal underline-offset-4 hover:underline">
-                      {page.quickWin.link.text} ↓
-                    </a>
-                  </div>
+                  <a
+                    href={page.quickWin.link.href}
+                    className="rise group mt-5 flex items-center gap-4 rounded-full bg-graphite py-2 pl-2 pr-3 text-offwhite shadow-[0_18px_40px_-20px_rgba(22,25,31,0.6)] transition-colors hover:bg-royal sm:gap-5"
+                    style={{ "--i": 1 } as React.CSSProperties}
+                  >
+                    <span
+                      aria-hidden
+                      className="flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-full bg-cyan font-display leading-none text-graphite sm:h-16 sm:w-16"
+                    >
+                      <span className="text-[1.6rem] font-bold tracking-[-0.04em] sm:text-[1.85rem]">10</span>
+                      <span className="text-[0.65rem] font-semibold uppercase tracking-[0.12em]">min</span>
+                    </span>
+                    <span className="min-w-0 flex-1 font-display text-[clamp(1.05rem,1.7vw,1.35rem)] font-semibold leading-tight tracking-[-0.01em]">
+                      {page.quickWin.title}
+                      <span className="sr-only">: {page.quickWin.link.text}</span>
+                    </span>
+                    <span
+                      aria-hidden
+                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/15 transition-transform duration-300 ease-(--ease-out-strong) group-hover:translate-y-0.5"
+                    >
+                      <ArrowDown size={18} weight="bold" />
+                    </span>
+                  </a>
                 )}
 
                 {/* Numbers that count up: facts from Amazon or this guide, not client results */}

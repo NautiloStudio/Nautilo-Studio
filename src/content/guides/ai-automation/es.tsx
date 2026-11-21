@@ -29,9 +29,7 @@ const page: GuideCopy["page"] = {
   },
   updated: "2026-11-16",
   quickWin: {
-    label: "Revisión de 10 minutos",
-    title: "Elige tu primera tarea para la IA en 10 minutos",
-    steps: ["Haz una lista de las tareas que repites cada semana", "Elige una en la que un borrador erróneo no cueste nada, como un informe", "Deja que la IA proponga y revisa antes de cambiar nada"],
+    title: "Elige tu primera tarea para la IA",
     link: { href: "#how-to-start", text: "Cómo empezar" },
   },
   facts: [

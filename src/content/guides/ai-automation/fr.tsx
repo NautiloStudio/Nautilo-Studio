@@ -29,9 +29,7 @@ const page: GuideCopy["page"] = {
   },
   updated: "2026-11-16",
   quickWin: {
-    label: "Vérification en 10 minutes",
-    title: "Choisissez votre première tâche pour l’IA en 10 minutes",
-    steps: ["Listez les tâches que vous répétez chaque semaine", "Choisissez-en une où un brouillon raté ne coûte rien, comme un rapport", "Laissez l’IA proposer, et relisez avant tout changement"],
+    title: "Choisissez votre première tâche pour l’IA",
     link: { href: "#how-to-start", text: "Comment commencer" },
   },
   facts: [

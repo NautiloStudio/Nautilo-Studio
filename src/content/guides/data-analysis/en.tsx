@@ -24,9 +24,7 @@ const page: GuideCopy["page"] = {
   updated: "2026-11-16",
   author: { name: "Veronika Matkovska", role: "Data Analysis Lead", href: "/about" },
   quickWin: {
-    label: "10-minute check",
-    title: "Find where sales leak in 10 minutes",
-    steps: ["Open Business Reports in Seller Central", "Note sessions and conversion rate for your top product", "Compare both with the week before"],
+    title: "Find where sales leak",
     link: { href: "#numbers", text: "The four numbers to track" },
   },
   facts: [

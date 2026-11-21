@@ -33,9 +33,7 @@ const page: GuideCopy["page"] = {
   },
   updated: "2026-11-20",
   quickWin: {
-    label: "Revisión de 10 minutos",
-    title: "Mejora tu ficha en 10 minutos",
-    steps: ["Pon la palabra clave principal al inicio del título", "Quita las palabras repetidas más de dos veces", "Usa una imagen principal con fondo blanco en la que el producto ocupe el 85 % del encuadre"],
+    title: "Mejora tu ficha",
     link: { href: "#title", text: "Cómo escribir el título" },
   },
   facts: [

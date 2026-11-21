@@ -33,9 +33,7 @@ const page: GuideCopy["page"] = {
   },
   updated: "2026-11-20",
   quickWin: {
-    label: "10-Minuten-Check",
-    title: "Verbessern Sie Ihr Listing in 10 Minuten",
-    steps: ["Setzen Sie das Haupt-Keyword an den Anfang des Titels", "Streichen Sie jedes Wort, das öfter als zweimal vorkommt", "Nutzen Sie ein Hauptbild auf Weiß, bei dem das Produkt 85 % des Bildes füllt"],
+    title: "Verbessern Sie Ihr Listing",
     link: { href: "#title", text: "So schreiben Sie den Titel" },
   },
   facts: [

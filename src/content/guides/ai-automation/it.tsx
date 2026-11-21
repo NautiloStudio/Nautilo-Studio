@@ -29,9 +29,7 @@ const page: GuideCopy["page"] = {
   },
   updated: "2026-11-16",
   quickWin: {
-    label: "Controllo in 10 minuti",
-    title: "Scegli il primo compito per l’IA in 10 minuti",
-    steps: ["Elenca le attività che ripeti ogni settimana", "Scegline una in cui una bozza sbagliata non costa nulla, come un report", "Lascia che l’IA proponga e controlla prima di cambiare qualcosa"],
+    title: "Scegli il primo compito per l’IA",
     link: { href: "#how-to-start", text: "Come iniziare" },
   },
   facts: [

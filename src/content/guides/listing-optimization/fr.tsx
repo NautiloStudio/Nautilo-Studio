@@ -33,9 +33,7 @@ const page: GuideCopy["page"] = {
   },
   updated: "2026-11-20",
   quickWin: {
-    label: "Vérification en 10 minutes",
-    title: "Améliorez votre fiche en 10 minutes",
-    steps: ["Placez le mot-clé principal dans les premiers mots du titre", "Supprimez tout mot répété plus de deux fois", "Utilisez une image principale sur fond blanc où le produit occupe 85 % du cadre"],
+    title: "Améliorez votre fiche",
     link: { href: "#title", text: "Comment écrire le titre" },
   },
   facts: [

@@ -27,9 +27,7 @@ const page: GuideCopy["page"] = {
   updated: "2026-11-16",
   author: { name: "Carlo Ambrosini", role: "AI Automation Lead", href: "/about" },
   quickWin: {
-    label: "10-minute check",
-    title: "Pick your first AI task in 10 minutes",
-    steps: ["List the tasks you repeat every week", "Choose one where a wrong draft costs nothing, like a report", "Let AI suggest, and review before anything changes"],
+    title: "Pick your first AI task",
     link: { href: "#how-to-start", text: "How to start" },
   },
   facts: [

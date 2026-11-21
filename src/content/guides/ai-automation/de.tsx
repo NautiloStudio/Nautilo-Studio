@@ -29,9 +29,7 @@ const page: GuideCopy["page"] = {
   },
   updated: "2026-11-16",
   quickWin: {
-    label: "10-Minuten-Check",
-    title: "Wählen Sie in 10 Minuten Ihre erste KI-Aufgabe",
-    steps: ["Listen Sie die Aufgaben auf, die Sie jede Woche wiederholen", "Wählen Sie eine, bei der ein falscher Entwurf nichts kostet, etwa einen Bericht", "Lassen Sie die KI vorschlagen und prüfen Sie, bevor sich etwas ändert"],
+    title: "Wählen Sie Ihre erste KI-Aufgabe",
     link: { href: "#how-to-start", text: "So fangen Sie an" },
   },
   facts: [
